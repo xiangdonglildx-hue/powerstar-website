@@ -123,40 +123,22 @@ function initParticleBackground() {
 }
 
 // ========================================
-// 2. KEN BURNS BANNER EFFECT
+// 2. BANNER SLIDESHOW - 简洁淡入淡出效果
 // ========================================
 
 function initKenBurnsBanner() {
     const slides = document.querySelectorAll('.banner-slide img');
     if (slides.length === 0) return;
     
-    // Ken Burns zoom and pan for each banner
-    slides.forEach((img, index) => {
-        // Random direction for each slide
-        const directions = [
-            { from: { scale: 1, x: 0, y: 0 }, to: { scale: 1.15, x: -30, y: -20 } },
-            { from: { scale: 1.1, x: 20, y: 10 }, to: { scale: 1.25, x: -10, y: -30 } },
-            { from: { scale: 1, x: -20, y: 20 }, to: { scale: 1.2, x: 30, y: 0 } }
-        ];
-        
-        const dir = directions[index % directions.length];
-        
-        gsap.set(img, dir.from);
-        
-        // Only animate active slide
-        const slide = img.closest('.banner-slide');
-        if (slide && slide.classList.contains('active')) {
-            gsap.to(img, {
-                ...dir.to,
-                duration: 8,
-                ease: 'none',
-                repeat: -1,
-                yoyo: true
-            });
-        }
+    // 初始化当前幻灯片索引
+    window.currentSlide = 0;
+    
+    // 简单设置图片样式，不做动画
+    slides.forEach((img) => {
+        gsap.set(img, { scale: 1, x: 0, y: 0 });
     });
     
-    // Enhanced slide transition with Ken Burns reset
+    // Banner 切换效果 - 淡入淡出，不做缩放
     window.showSlideKenBurns = function(index) {
         const allSlides = document.querySelectorAll('.banner-slide');
         const currentActive = document.querySelector('.banner-slide.active');
@@ -166,44 +148,27 @@ function initKenBurnsBanner() {
         
         const tl = gsap.timeline();
         
-        // Current slide: fade out with zoom out
+        // 当前幻灯片淡出
         if (currentActive) {
-            const currentImg = currentActive.querySelector('img');
             tl.to(currentActive, {
                 opacity: 0,
-                duration: 1.2,
+                duration: 1,
                 ease: 'power2.inOut'
             });
-            if (currentImg) {
-                gsap.killTweensOf(currentImg);
-            }
+            currentActive.classList.remove('active');
         }
         
-        // Next slide: prepare with slight zoom, then fade in
-        const nextImg = nextSlide.querySelector('img');
+        // 下一张幻灯片淡入
         gsap.set(nextSlide, { opacity: 0 });
         nextSlide.classList.add('active');
         
-        if (nextImg) {
-            gsap.set(nextImg, { scale: 1.1, x: 10, y: 5 });
-            tl.to(nextImg, {
-                scale: 1.25,
-                x: -20,
-                y: -15,
-                duration: 8,
-                ease: 'none',
-                repeat: -1,
-                yoyo: true
-            }, 0);
-        }
-        
         tl.to(nextSlide, {
             opacity: 1,
-            duration: 1.2,
+            duration: 1,
             ease: 'power2.inOut'
         }, 0);
         
-        // Dots animation
+        // Dots 动画
         const dots = document.querySelectorAll('.banner-dots .dot');
         dots.forEach((dot, i) => {
             if (i === index) {
@@ -233,13 +198,13 @@ function initKenBurnsBanner() {
         }
     };
     
-    // Auto-advance
+    // Auto-advance - 自动轮播
     let autoSlideInterval;
     function startAutoSlide() {
         autoSlideInterval = setInterval(() => {
             const nextIndex = (window.currentSlide + 1) % slides.length;
             window.goToSlide(nextIndex);
-        }, 6000);
+        }, 5000); // 5秒切换一次
     }
     
     const heroSection = document.querySelector('.hero');
