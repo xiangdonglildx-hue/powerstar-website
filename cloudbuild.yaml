@@ -1,0 +1,26 @@
+# Google Cloud Build 配置 - 自动部署到 Cloud Run
+steps:
+  # 构建 Docker 镜像
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'us-west1-docker.pkg.dev/${PROJECT_ID}/cloud-run-source-deploy/powerstar-website:${SHORT_SHA}', '.']
+
+  # 推送到 Artifact Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'us-west1-docker.pkg.dev/${PROJECT_ID}/cloud-run-source-deploy/powerstar-website:${SHORT_SHA}']
+
+  # 部署到 Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'deploy'
+      - 'powerstar-website'
+      - '--image=us-west1-docker.pkg.dev/${PROJECT_ID}/cloud-run-source-deploy/powerstar-website:${SHORT_SHA}'
+      - '--region=us-west1'
+      - '--allow-unauthenticated'
+
+# 构建日志存储位置
+logsBucket: 'gs://${PROJECT_ID}_cloudbuild_logs'
+
+# 构建超时
+timeout: '600s'

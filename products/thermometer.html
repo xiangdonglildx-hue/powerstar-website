@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thermometer App - Temperature, Humidity & Barometer | Power Star Apps</title>
+    <meta name="description" content="Free thermometer app for Android with real-time temperature, humidity, and air pressure monitoring. GPS-based weather data, discomfort index, and fishing barometer. 1M+ downloads, 3.8 rating.">
+    <meta name="keywords" content="thermometer app, temperature app, hygrometer, barometer app, room temperature, humidity checker, weather thermometer, android thermometer, fishing barometer, discomfort index">
+    <meta name="author" content="Power Star Apps">
+    <link rel="canonical" href="https://powerstarapps.com/products/thermometer.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="product">
+    <meta property="og:url" content="https://powerstarapps.com/products/thermometer.html">
+    <meta property="og:title" content="Thermometer App - Temperature, Humidity & Barometer">
+    <meta property="og:description" content="Free Android thermometer with temperature, humidity, and air pressure. GPS-based weather data. 1M+ downloads.">
+    <meta property="og:image" content="https://powerstarapps.com/images/thermometer-og.png">
+    <meta property="og:site_name" content="Power Star Apps">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Thermometer App - Temperature, Humidity & Barometer">
+    <meta name="twitter:description" content="Free Android thermometer with temperature, humidity, and air pressure. 1M+ downloads.">
+    <meta name="twitter:image" content="https://powerstarapps.com/images/thermometer-twitter.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    
+    <link rel="stylesheet" href="../css/product.css">
+    <link rel="stylesheet" href="../css/product-enhanced.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
+    <!-- Product Theme Color -->
+    <style>
+        :root {
+            --theme: #ff6b6b;
+            --theme-glow: rgba(255, 107, 107, 0.4);
+            --theme-light: rgba(255, 107, 107, 0.1);
+        }
+    </style>
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MobileApplication",
+      "name": "Thermometer - Hygrometer",
+      "description": "Real-time temperature monitoring app with accurate readings, humidity display, barometer, weather forecasts, and discomfort index for Android.",
+      "applicationCategory": "WeatherApplication",
+      "operatingSystem": "Android",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "aggregateRating": {"@type": "AggregateRating", "ratingValue": "3.8", "ratingCount": "15000", "bestRating": "5"},
+      "numberOfDownloads": "1M+",
+      "dateModified": "2026-03-28",
+      "author": {"@type": "Organization", "name": "Power Star Apps"},
+      "downloadUrl": "https://play.google.com/store/apps/details?id=com.firefly.thermometer",
+      "featureList": ["Real-time temperature monitoring", "Hygrometer for humidity", "Barometer for air pressure", "Weather forecast", "Discomfort index", "GPS-based weather data"]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "What is Thermometer - Hygrometer?", "acceptedAnswer": {"@type": "Answer", "text": "Thermometer - Hygrometer is a weather app for Android that provides real-time temperature, humidity, and air pressure readings using GPS-based weather data. It has 1M+ downloads and 3.8 rating on Google Play."}},
+        {"@type": "Question", "name": "How accurate is the Thermometer app?", "acceptedAnswer": {"@type": "Answer", "text": "The Thermometer app uses GPS positioning to fetch weather data from nearby weather stations. It requires internet connection and GPS. Accuracy depends on local weather station data quality."}},
+        {"@type": "Question", "name": "Can the Thermometer app measure indoor temperature?", "acceptedAnswer": {"@type": "Answer", "text": "No, the Thermometer app cannot measure indoor temperature directly. It uses external weather data based on GPS location to provide outdoor temperature readings."}},
+        {"@type": "Question", "name": "Is Thermometer app free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, Thermometer - Hygrometer is free to download with ads and optional in-app purchases for premium features."}},
+        {"@type": "Question", "name": "Does the app work offline?", "acceptedAnswer": {"@type": "Answer", "text": "The app requires internet connection to fetch weather data from servers. GPS is also needed for location-based readings."}},
+        {"@type": "Question", "name": "What Android version is required?", "acceptedAnswer": {"@type": "Answer", "text": "Thermometer app requires Android 5.0 (Lollipop) or above. It's optimized for both older and newer devices."}},
+        {"@type": "Question", "name": "What is the discomfort index feature?", "acceptedAnswer": {"@type": "Answer", "text": "The discomfort index calculates how comfortable the weather feels based on temperature and humidity. It helps you plan activities and dress appropriately for the conditions."}},
+        {"@type": "Question", "name": "Can I use this for fishing?", "acceptedAnswer": {"@type": "Answer", "text": "Yes! The barometer feature is perfect for fishing enthusiasts. Atmospheric pressure changes can indicate fish activity levels, helping you choose the best fishing times."}}
+      ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <span class="logo-star">★</span> Power Star Apps
+            </a>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Products ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="thermometer.html">Thermometer</a></li>
+                        <li><a href="microphone.html">Microphone</a></li>
+                        <li><a href="voice-changer.html">Voice Changer</a></li>
+                        <li><a href="lumiwall.html">Lumiwall</a></li>
+                        <li><a href="ai-photo.html">AI Photo & Video Filters</a></li>
+                    </ul>
+                </li>
+                <li><a href="../about.html">About Us</a></li>
+                <li><a href="../help.html">Help Center</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../faq.html">FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Product Hero -->
+    <section class="page-header">
+        <div class="container">
+            <div class="product-hero-grid">
+                <div class="product-info">
+                    <div class="product-icon">
+                        <img src="../picture/logo/thermometer.png" alt="Thermometer Icon">
+                    </div>
+                    <h1>Thermometer</h1>
+                    <p class="product-subtitle">Real-time temperature, humidity, and air pressure monitoring with GPS-based weather data and discomfort index</p>
+                    
+                    <!-- Stats -->
+                    <div class="product-stats-hero">
+                        <div class="stat-badge">
+                            <span class="stat-value">1M+</span>
+                            <span class="stat-label">Downloads</span>
+                        </div>
+                        <div class="stat-badge">
+                            <span class="stat-value">3.8</span>
+                            <span class="stat-label">Rating</span>
+                        </div>
+                        <div class="stat-badge">
+                            <span class="stat-value">15K+</span>
+                            <span class="stat-label">Reviews</span>
+                        </div>
+                        <div class="stat-badge">
+                            <span class="stat-value">Free</span>
+                            <span class="stat-label">Download</span>
+                        </div>
+                    </div>
+                    
+                    <div class="product-actions">
+                        <a href="https://play.google.com/store/apps/details?id=com.firefly.thermometer" class="btn-download primary" target="_blank">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                                <path d="M3 20.5v-17c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v17c0 .83-.67 1.5-1.5 1.5S3 21.33 3 20.5zm5.5-15c-.83 0-1.5.67-1.5 1.5v11c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V7c0-.83-.67-1.5-1.5-1.5zm5 3c-.83 0-1.5.67-1.5 1.5v8c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-8c0-.83-.67-1.5-1.5-1.5zm5-3c-.83 0-1.5.67-1.5 1.5v11c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V7c0-.83-.67-1.5-1.5-1.5z"/>
+                            </svg>
+                            Download on Google Play
+                        </a>
+                        <a href="#features" class="btn-download">Learn More</a>
+                    </div>
+                </div>
+                <div class="product-mockup">
+                    <img src="../picture/screen/thermometer/p1.png_merged.png" alt="Thermometer App Screenshot">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Features Bar -->
+    <section class="quick-features">
+        <div class="container">
+            <div class="quick-features-grid">
+                <div class="quick-feature">
+                    <span class="feature-icon">🌡️</span>
+                    <span class="feature-text">Temperature</span>
+                </div>
+                <div class="quick-feature">
+                    <span class="feature-icon">💧</span>
+                    <span class="feature-text">Humidity</span>
+                </div>
+                <div class="quick-feature">
+                    <span class="feature-icon">📊</span>
+                    <span class="feature-text">Barometer</span>
+                </div>
+                <div class="quick-feature">
+                    <span class="feature-icon">☀️</span>
+                    <span class="feature-text">Weather Forecast</span>
+                </div>
+                <div class="quick-feature">
+                    <span class="feature-icon">😊</span>
+                    <span class="feature-text">Discomfort Index</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section class="content-section dark">
+        <div class="container">
+            <h2>App Screenshots</h2>
+            <p class="section-subtitle">See how Thermometer helps you monitor your environment</p>
+            <div class="screenshot-grid">
+                <img src="../picture/screen/thermometer/p1.png_merged.png" alt="Thermometer Main Screen">
+                <img src="../picture/screen/thermometer/p2.png_merged.png" alt="Temperature Display">
+                <img src="../picture/screen/thermometer/p3.png_merged.png" alt="Weather Data">
+                <img src="../picture/screen/thermometer/p4.png_merged.png" alt="Settings">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="content-section" id="features">
+        <div class="container">
+            <h2>Key Features</h2>
+            <p class="section-subtitle">Everything you need to monitor temperature, humidity, and air pressure</p>
+            
+            <div class="features-grid-enhanced">
+                <div class="feature-card-large">
+                    <div class="feature-icon-large">🌡️</div>
+                    <h3>Temperature Monitoring</h3>
+                    <p>Get real-time temperature readings based on your GPS location. The app fetches data from nearby weather stations to provide accurate outdoor temperature information in Celsius or Fahrenheit.</p>
+                    <ul class="feature-benefits">
+                        <li>✓ Real-time updates</li>
+                        <li>✓ Celsius & Fahrenheit</li>
+                        <li>✓ GPS-based accuracy</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card-large">
+                    <div class="feature-icon-large">💧</div>
+                    <h3>Hygrometer</h3>
+                    <p>Monitor humidity levels in your area with precision. Perfect for those sensitive to air moisture, managing indoor comfort, or tracking conditions for health and wellness purposes.</p>
+                    <ul class="feature-benefits">
+                        <li>✓ Accurate humidity %</li>
+                        <li>✓ Comfort indicators</li>
+                        <li>✓ Historical tracking</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card-large">
+                    <div class="feature-icon-large">📊</div>
+                    <h3>Barometer</h3>
+                    <p>Track atmospheric pressure changes with precision. Essential for fishing enthusiasts, hikers, and weather watchers. Pressure trends help predict weather changes and fish activity.</p>
+                    <ul class="feature-benefits">
+                        <li>✓ Pressure in hPa/mbar</li>
+                        <li>✓ Trend indicators</li>
+                        <li>✓ Fishing predictions</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card-large">
+                    <div class="feature-icon-large">😊</div>
+                    <h3>Discomfort Index</h3>
+                    <p>Know exactly how comfortable the weather feels. The app calculates discomfort index based on temperature and humidity combination, helping you plan activities and dress appropriately.</p>
+                    <ul class="feature-benefits">
+                        <li>✓ Comfort score</li>
+                        <li>✓ Activity suggestions</li>
+                        <li>✓ Health alerts</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="content-section dark">
+        <div class="container">
+            <h2>Perfect For</h2>
+            <p class="section-subtitle">Many ways to use Thermometer in your daily life</p>
+            <div class="use-cases-grid">
+                <div class="use-case-card">
+                    <span class="use-case-icon">🏠</span>
+                    <h3>Home Comfort</h3>
+                    <p>Monitor conditions for optimal indoor comfort. Know when to adjust heating, cooling, or ventilation for the best living environment.</p>
+                </div>
+                <div class="use-case-card">
+                    <span class="use-case-icon">🏃</span>
+                    <h3>Outdoor Activities</h3>
+                    <p>Plan your outdoor workouts, hiking, or sports activities with real-time weather data. Check discomfort index before heading out.</p>
+                </div>
+                <div class="use-case-card">
+                    <span class="use-case-icon">❤️</span>
+                    <h3>Health Management</h3>
+                    <p>Track conditions for health-sensitive individuals. Monitor humidity for respiratory health and temperature for comfort management.</p>
+                </div>
+                <div class="use-case-card">
+                    <span class="use-case-icon">🎣</span>
+                    <h3>Fishing</h3>
+                    <p>Use barometer to predict fish activity based on pressure changes. Atmospheric pressure affects fish behavior and feeding patterns.</p>
+                </div>
+                <div class="use-case-card">
+                    <span class="use-case-icon">👨‍🌾</span>
+                    <h3>Gardening</h3>
+                    <p>Monitor weather conditions for optimal planting and gardening. Temperature and humidity affect plant growth and health.</p>
+                </div>
+                <div class="use-case-card">
+                    <span class="use-case-icon">📱</span>
+                    <h3>Weather Planning</h3>
+                    <p>Plan your day with accurate weather forecasts. Know what to wear, whether to carry an umbrella, or plan outdoor events.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Specs -->
+    <section class="content-section">
+        <div class="container">
+            <h2>Technical Specifications</h2>
+            <p class="section-subtitle">App details and requirements</p>
+            
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <h3>App Information</h3>
+                    <table class="specs-table">
+                        <tr><td>Version</td><td>Latest</td></tr>
+                        <tr><td>Size</td><td>~12 MB</td></tr>
+                        <tr><td>Category</td><td>Weather / Tools</td></tr>
+                        <tr><td>Last Updated</td><td>March 2026</td></tr>
+                    </table>
+                </div>
+                
+                <div class="spec-card">
+                    <h3>Requirements</h3>
+                    <table class="specs-table">
+                        <tr><td>Android</td><td>5.0+ (Lollipop)</td></tr>
+                        <tr><td>Permissions</td><td>GPS, Internet</td></tr>
+                        <tr><td>Internet</td><td>Required</td></tr>
+                        <tr><td>Storage</td><td>15 MB recommended</td></tr>
+                    </table>
+                </div>
+                
+                <div class="spec-card">
+                    <h3>Weather Data</h3>
+                    <table class="specs-table">
+                        <tr><td>Temperature</td><td>°C / °F</td></tr>
+                        <tr><td>Humidity</td><td>Percentage %</td></tr>
+                        <tr><td>Pressure</td><td>hPa / mbar</td></tr>
+                        <tr><td>Update Rate</td><td>Every 10 min</td></tr>
+                    </table>
+                </div>
+                
+                <div class="spec-card">
+                    <h3>Features</h3>
+                    <table class="specs-table">
+                        <tr><td>Forecast</td><td>✓ 7-day</td></tr>
+                        <tr><td>Discomfort Index</td><td>✓ Calculated</td></tr>
+                        <tr><td>Multiple Units</td><td>✓ Supported</td></tr>
+                        <tr><td>Location History</td><td>✓ Premium</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison -->
+    <section class="content-section dark">
+        <div class="container">
+            <h2>Why Choose Thermometer?</h2>
+            <p class="section-subtitle">Compare with other thermometer apps</p>
+            
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th class="highlight">Power Star<br>Thermometer</th>
+                            <th>Competitor A</th>
+                            <th>Competitor B</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Free Download</td>
+                            <td class="highlight"><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td>Humidity Display</td>
+                            <td class="highlight"><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td>Barometer</td>
+                            <td class="highlight"><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>Discomfort Index</td>
+                            <td class="highlight"><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="cross">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td>Weather Forecast</td>
+                            <td class="highlight"><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td>Fishing Barometer</td>
+                            <td class="highlight"><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="cross">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td>No Account Required</td>
+                            <td class="highlight"><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="cross">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td>Downloads</td>
+                            <td class="highlight"><strong>1M+</strong></td>
+                            <td>500K+</td>
+                            <td>200K+</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="content-section">
+        <div class="container">
+            <h2>What Users Say</h2>
+            <p class="section-subtitle">Real reviews from Google Play</p>
+            
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-rating">★★★★★</div>
+                    <p class="review-text">"Perfect for my fishing trips! The barometer feature helps me predict when fish will be active. Caught my biggest bass last weekend!"</p>
+                    <div class="review-author">
+                        <span class="author-name">Mike R.</span>
+                        <span class="author-role">Fishing Enthusiast</span>
+                    </div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-rating">★★★★☆</div>
+                    <p class="review-text">"Great for monitoring humidity in my home. My kids have asthma, so tracking air moisture helps us manage their comfort."</p>
+                    <div class="review-author">
+                        <span class="author-name">Jennifer L.</span>
+                        <span class="author-role">Parent</span>
+                    </div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-rating">★★★★★</div>
+                    <p class="review-text">"The discomfort index is brilliant! I check it every morning before my run. No more guessing what to wear for the weather."</p>
+                    <div class="review-author">
+                        <span class="author-name">David K.</span>
+                        <span class="author-role">Runner</span>
+                    </div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-rating">★★★★☆</div>
+                    <p class="review-text">"Simple and accurate temperature readings. Use it for my gardening to know when conditions are right for planting."</p>
+                    <div class="review-author">
+                        <span class="author-name">Susan M.</span>
+                        <span class="author-role">Gardener</span>
+                    </div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-rating">★★★★★</div>
+                    <p class="review-text">"Love the weather forecast feature! Helps me plan outdoor events for my family. The 7-day forecast is really helpful."</p>
+                    <div class="review-author">
+                        <span class="author-name">Tom H.</span>
+                        <span class="author-role">Family Planner</span>
+                    </div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-rating">★★★★☆</div>
+                    <p class="review-text">"Accurate barometer readings for hiking. I can see pressure trends and predict weather changes before they happen."</p>
+                    <div class="review-author">
+                        <span class="author-name">Chris W.</span>
+                        <span class="author-role">Hiker</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="reviews-cta">
+                <a href="https://play.google.com/store/apps/details?id=com.firefly.thermometer" class="btn-download" target="_blank">See All Reviews on Google Play →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="content-section dark">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <p class="section-subtitle">Common questions about Thermometer app</p>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>What is Thermometer - Hygrometer?</h3>
+                    <p>Thermometer - Hygrometer is a weather app for Android that provides real-time temperature, humidity, and air pressure readings using GPS-based weather data. It has 1M+ downloads and 3.8 rating on Google Play.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>How accurate is the Thermometer app?</h3>
+                    <p>The Thermometer app uses GPS positioning to fetch weather data from nearby weather stations. It requires internet connection and GPS. Accuracy depends on local weather station data quality.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Can it measure indoor temperature?</h3>
+                    <p>No, the Thermometer app cannot measure indoor temperature directly. It uses external weather data based on GPS location to provide outdoor temperature readings.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Is Thermometer app free?</h3>
+                    <p>Yes, Thermometer - Hygrometer is free to download with ads. Optional in-app purchases are available for premium features like extended forecasts and location history.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Does the app work offline?</h3>
+                    <p>The app requires internet connection to fetch weather data from servers. GPS is also needed for location-based readings. Offline mode shows last cached data.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>What Android version is required?</h3>
+                    <p>Thermometer app requires Android 5.0 (Lollipop) or above. It's optimized to work smoothly on both older devices and the latest Android phones.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>What is the discomfort index?</h3>
+                    <p>The discomfort index calculates how comfortable the weather feels based on temperature and humidity combination. It helps you plan activities and dress appropriately for the conditions.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Can I use this for fishing?</h3>
+                    <p>Yes! The barometer feature is perfect for fishing enthusiasts. Atmospheric pressure changes can indicate fish activity levels, helping you choose the best fishing times and locations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="content-section">
+        <div class="container">
+            <h2>Other Apps You Might Like</h2>
+            <p class="section-subtitle">Explore more Power Star Apps</p>
+            <div class="related-products-grid">
+                <a href="microphone.html" class="related-product-card">
+                    <img src="../picture/logo/microphone.png" alt="Microphone">
+                    <h3>Microphone</h3>
+                    <p>Voice Amplifier</p>
+                    <span class="downloads">5M+ Downloads</span>
+                </a>
+                <a href="voice-changer.html" class="related-product-card">
+                    <img src="../picture/logo/voice change.png" alt="Voice Changer">
+                    <h3>Voice Changer</h3>
+                    <p>100+ Voice Effects</p>
+                    <span class="downloads">3M+ Downloads</span>
+                </a>
+                <a href="lumiwall.html" class="related-product-card">
+                    <img src="../picture/logo/wallpaper.png" alt="Lumiwall">
+                    <h3>Lumiwall</h3>
+                    <p>HD Wallpapers</p>
+                    <span class="downloads">500K+ Downloads</span>
+                </a>
+                <a href="ai-photo.html" class="related-product-card">
+                    <img src="../picture/logo/ai photo.png" alt="AI Photo">
+                    <h3>AI Photo Filters</h3>
+                    <p>34+ AI Filters</p>
+                    <span class="downloads">2M+ Downloads</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Monitor Your Environment?</h2>
+            <p>Download Thermometer now and get instant access to temperature, humidity, air pressure, and discomfort index. Free download with 1M+ users worldwide.</p>
+            <a href="https://play.google.com/store/apps/details?id=com.firefly.thermometer" class="btn-download primary" target="_blank">
+                Download Free on Google Play
+            </a>
+            <div class="cta-benefits">
+                <span>✓ Free Forever</span>
+                <span>✓ No Account Required</span>
+                <span>✓ GPS-Based Accuracy</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-star">★</span> Power Star Apps
+                    <p>Practical tools for everyday life</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Products</h4>
+                        <a href="thermometer.html">Thermometer</a>
+                        <a href="microphone.html">Microphone</a>
+                        <a href="voice-changer.html">Voice Changer</a>
+                        <a href="lumiwall.html">Lumiwall</a>
+                        <a href="ai-photo.html">AI Photo Filters</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <a href="../help.html">Help Center</a>
+                        <a href="../faq.html">FAQ</a>
+                        <a href="../blog.html">Blog</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <a href="../privacy.html">Privacy Policy</a>
+                        <a href="../terms.html">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Power Star Apps. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Enhanced GSAP Animations -->
+    <script src="../js/gsap-animations-enhanced.js"></script>
+    
+    <script>
+        // Initialize for product page
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // Hero entrance
+        gsap.from('.product-hero-grid', {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            ease: 'power3.out'
+        });
+        
+        // Quick features slide
+        gsap.from('.quick-feature', {
+            opacity: 0,
+            x: -30,
+            stagger: 0.1,
+            duration: 0.5,
+            scrollTrigger: {
+                trigger: '.quick-features',
+                start: 'top 80%'
+            }
+        });
+        
+        // Specs cards
+        gsap.from('.spec-card', {
+            opacity: 0,
+            y: 40,
+            stagger: 0.15,
+            duration: 0.6,
+            scrollTrigger: {
+                trigger: '.specs-grid',
+                start: 'top 80%'
+            }
+        });
+        
+        // Comparison table rows
+        gsap.from('.comparison-table tbody tr', {
+            opacity: 0,
+            x: -20,
+            stagger: 0.05,
+            duration: 0.4,
+            scrollTrigger: {
+                trigger: '.comparison-table',
+                start: 'top 80%'
+            }
+        });
+    </script>
+</body>
+</html>

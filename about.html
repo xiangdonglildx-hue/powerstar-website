@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Power Star Apps | Practical Tools for Millions</title>
+    <meta name="description" content="Power Star Apps creates practical mobile applications used by 10M+ users worldwide. Learn about our mission, values, and the team behind our popular Android apps.">
+    <meta name="keywords" content="Power Star Apps, mobile app developer, Android apps, utility apps, thermometer app, microphone app">
+    <link rel="canonical" href="https://powerstarapps.com/about.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://powerstarapps.com/about.html">
+    <meta property="og:title" content="About Power Star Apps - Practical Tools for Millions">
+    <meta property="og:description" content="Creating practical mobile applications used by 10M+ users worldwide.">
+    <meta property="og:image" content="https://powerstarapps.com/images/about-og.png">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/enhanced.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Power Star Apps",
+      "description": "Mobile app development company creating practical utility applications for Android",
+      "url": "https://powerstarapps.com",
+      "logo": "https://powerstarapps.com/images/logo.png",
+      "foundingDate": "2020",
+      "numberOfEmployees": {
+        "@type": "QuantitativeValue",
+        "minValue": 10,
+        "maxValue": 50
+      },
+      "sameAs": [
+        "https://play.google.com/store/apps/dev?id=PowerStarApps"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "support@powerstarapps.com",
+        "contactType": "customer support"
+      }
+    }
+    </script>
+    
+    <style>
+        /* About Page Specific Styles */
+        .about-hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(180deg, rgba(255,77,0,0.05) 0%, transparent 100%);
+            text-align: center;
+        }
+        
+        .about-hero h1 {
+            font-size: 4rem;
+            margin-bottom: 24px;
+        }
+        
+        .about-hero p {
+            font-size: 1.25rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Stats Banner */
+        .stats-banner {
+            background: #000;
+            padding: 60px 0;
+            color: #fff;
+        }
+        
+        .stats-grid-about {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            text-align: center;
+        }
+        
+        .stat-box {
+            padding: 20px;
+        }
+        
+        .stat-box .number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 4rem;
+            color: var(--orange);
+            display: block;
+        }
+        
+        .stat-box .label {
+            color: #999;
+            font-size: 1rem;
+        }
+        
+        /* Mission Section */
+        .mission-section {
+            padding: 100px 0;
+            background: #fff;
+        }
+        
+        .mission-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        
+        .mission-content h2 {
+            font-size: 3rem;
+            margin-bottom: 24px;
+        }
+        
+        .mission-content p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        .mission-image {
+            position: relative;
+        }
+        
+        .mission-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+        
+        /* Timeline */
+        .timeline-section {
+            padding: 100px 0;
+            background: var(--gray-bg);
+        }
+        
+        .timeline {
+            max-width: 800px;
+            margin: 60px auto 0;
+            position: relative;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: var(--orange);
+            opacity: 0.3;
+        }
+        
+        .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 50%;
+            position: relative;
+            margin-bottom: 40px;
+        }
+        
+        .timeline-item:nth-child(even) {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: 50%;
+        }
+        
+        .timeline-content {
+            background: #fff;
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            max-width: 350px;
+            margin-right: 40px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-right: 0;
+            margin-left: 40px;
+        }
+        
+        .timeline-year {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            color: var(--orange);
+            margin-bottom: 8px;
+        }
+        
+        .timeline-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+        
+        .timeline-content p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--orange);
+            border-radius: 50%;
+            border: 4px solid #fff;
+            box-shadow: 0 0 0 4px var(--orange-glow);
+        }
+        
+        /* Values */
+        .values-section {
+            padding: 100px 0;
+            background: #fff;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 60px;
+        }
+        
+        .value-card {
+            background: var(--gray-bg);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--orange);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+        
+        .value-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .value-card:hover {
+            background: #fff;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            transform: translateY(-10px);
+        }
+        
+        .value-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .value-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+        }
+        
+        .value-card p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        
+        /* Products Overview */
+        .products-overview {
+            padding: 100px 0;
+            background: #000;
+            color: #fff;
+        }
+        
+        .products-overview h2 {
+            text-align: center;
+            margin-bottom: 60px;
+            color: #fff;
+        }
+        
+        .products-showcase {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 24px;
+        }
+        
+        .showcase-item {
+            text-align: center;
+            padding: 32px 20px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .showcase-item:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-5px);
+        }
+        
+        .showcase-item img {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 16px;
+        }
+        
+        .showcase-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+        
+        .showcase-item .downloads {
+            font-size: 0.85rem;
+            color: var(--orange);
+        }
+        
+        /* CTA */
+        .about-cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--orange) 0%, #000 100%);
+            text-align: center;
+            color: #fff;
+        }
+        
+        .about-cta h2 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        
+        .about-cta p {
+            font-size: 1.15rem;
+            max-width: 600px;
+            margin: 0 auto 32px;
+            color: rgba(255,255,255,0.9);
+        }
+        
+        /* Download Chart */
+        .chart-section {
+            padding: 100px 0;
+            background: #fff;
+        }
+        
+        .download-chart {
+            max-width: 800px;
+            margin: 60px auto 0;
+            padding: 40px;
+            background: var(--gray-bg);
+            border-radius: 20px;
+        }
+        
+        .chart-bars {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            height: 300px;
+            padding: 20px 0;
+        }
+        
+        .bar-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .bar {
+            width: 60px;
+            background: linear-gradient(180deg, var(--orange) 0%, #ff8a50 100%);
+            border-radius: 8px 8px 0 0;
+            position: relative;
+            transition: all 0.5s ease;
+        }
+        
+        .bar::before {
+            content: attr(data-value);
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.2rem;
+            color: var(--orange);
+        }
+        
+        .bar-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .stats-grid-about {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .mission-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                padding-left: 60px;
+                padding-right: 0;
+                justify-content: flex-start;
+            }
+            
+            .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-left: 0;
+                margin-right: 0;
+                max-width: 100%;
+            }
+            
+            .timeline-dot {
+                left: 20px;
+            }
+            
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .products-showcase {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .chart-bars {
+                flex-wrap: wrap;
+                height: auto;
+            }
+            
+            .bar-group {
+                width: 30%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Color Stripe -->
+    <div class="color-stripe"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <span class="logo-star">★</span> Power Star Apps
+            </a>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Products ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="products/thermometer.html">Thermometer</a></li>
+                        <li><a href="products/microphone.html">Microphone</a></li>
+                        <li><a href="products/voice-changer.html">Voice Changer</a></li>
+                        <li><a href="products/lumiwall.html">Lumiwall</a></li>
+                        <li><a href="products/ai-photo.html">AI Photo & Video Filters</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="help.html">Help Center</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="about-hero">
+        <div class="container">
+            <h1>About Power Star Apps</h1>
+            <p>Creating practical tools that make everyday life easier for millions of users worldwide</p>
+        </div>
+    </section>
+
+    <!-- Stats Banner -->
+    <section class="stats-banner">
+        <div class="container">
+            <div class="stats-grid-about">
+                <div class="stat-box">
+                    <span class="number" data-target="10">0</span>
+                    <span class="label">Million+ Downloads</span>
+                </div>
+                <div class="stat-box">
+                    <span class="number" data-target="5">0</span>
+                    <span class="label">Published Apps</span>
+                </div>
+                <div class="stat-box">
+                    <span class="number" data-target="200">0</span>
+                    <span class="label">Countries Reached</span>
+                </div>
+                <div class="stat-box">
+                    <span class="number" data-target="4">0</span>
+                    <span class="label">Years of Innovation</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission-section">
+        <div class="container">
+            <div class="mission-grid">
+                <div class="mission-content">
+                    <h2>Our Mission</h2>
+                    <p>At Power Star Apps, we believe technology should simplify life, not complicate it. Our mission is to create intuitive, reliable, and practical mobile applications that solve real everyday problems.</p>
+                    <p>We focus on building tools that are accessible to everyone—regardless of technical expertise. Every feature we develop starts with a simple question: "How will this make our users' lives better?"</p>
+                    <p>From checking the temperature to amplifying your voice, from transforming photos to discovering beautiful wallpapers—our apps are designed to be helpful, fast, and free.</p>
+                </div>
+                <div class="mission-image">
+                    <img src="images/banners/banner-1.png" alt="Power Star Apps Team">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="timeline-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Journey</h2>
+                <p>From idea to millions of users</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-year">2020</span>
+                        <h3>The Beginning</h3>
+                        <p>Power Star Apps was founded with a simple vision: create practical tools that solve everyday problems. Our first app, Thermometer, was launched.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-year">2021</span>
+                        <h3>Expanding the Portfolio</h3>
+                        <p>Launched Microphone and Voice Changer apps. Reached 1 million total downloads. Started building our global user base.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-year">2022</span>
+                        <h3>5 Million Milestone</h3>
+                        <p>Introduced Lumiwall and AI Photo Filters. Crossed 5 million downloads. Our apps became top-rated in their categories on Google Play.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-year">2023</span>
+                        <h3>AI Integration</h3>
+                        <p>Added AI-powered features to our apps. Enhanced noise reduction, smart filters, and personalized recommendations. Downloads reached 8 million.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-year">2024</span>
+                        <h3>10 Million Users</h3>
+                        <p>Celebrated 10 million total downloads across all apps. Continued innovation with new features and improvements based on user feedback.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values -->
+    <section class="values-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Values</h2>
+                <p>Principles that guide everything we build</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <span class="value-icon">🎯</span>
+                    <h3>User First</h3>
+                    <p>Every feature we build starts with understanding what users actually need. We listen, iterate, and improve based on real feedback from millions of users.</p>
+                </div>
+                
+                <div class="value-card">
+                    <span class="value-icon">⚡</span>
+                    <h3>Quality Focused</h3>
+                    <p>We rigorously test every app to ensure reliability. Fast performance, minimal bugs, and smooth user experience are non-negotiable standards.</p>
+                </div>
+                
+                <div class="value-card">
+                    <span class="value-icon">🔒</span>
+                    <h3>Privacy Protected</h3>
+                    <p>Your data security is our top priority. We collect only what's necessary and never sell your information. Your trust is our most valuable asset.</p>
+                </div>
+                
+                <div class="value-card">
+                    <span class="value-icon">🌍</span>
+                    <h3>Globally Accessible</h3>
+                    <p>Our apps work for users everywhere. We support 20+ languages and optimize for devices from budget phones to flagships.</p>
+                </div>
+                
+                <div class="value-card">
+                    <span class="value-icon">💡</span>
+                    <h3>Continuous Innovation</h3>
+                    <p>We're constantly improving. AI integration, new features, and performance optimizations are regularly delivered through updates.</p>
+                </div>
+                
+                <div class="value-card">
+                    <span class="value-icon">💰</span>
+                    <h3>Free & Fair</h3>
+                    <p>Core features remain free forever. Premium options exist for those who want more, but everyone gets a complete, useful product at no cost.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Chart -->
+    <section class="chart-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Growth Over Time</h2>
+                <p>Our journey to 10 million downloads</p>
+            </div>
+            
+            <div class="download-chart">
+                <div class="chart-bars">
+                    <div class="bar-group">
+                        <div class="bar" style="height: 50px;" data-value="500K"></div>
+                        <span class="bar-label">2020</span>
+                    </div>
+                    <div class="bar-group">
+                        <div class="bar" style="height: 100px;" data-value="1.5M"></div>
+                        <span class="bar-label">2021</span>
+                    </div>
+                    <div class="bar-group">
+                        <div class="bar" style="height: 150px;" data-value="3M"></div>
+                        <span class="bar-label">2022</span>
+                    </div>
+                    <div class="bar-group">
+                        <div class="bar" style="height: 200px;" data-value="5M"></div>
+                        <span class="bar-label">2023</span>
+                    </div>
+                    <div class="bar-group">
+                        <div class="bar" style="height: 250px;" data-value="10M"></div>
+                        <span class="bar-label">2024</span>
+                    </div>
+                    <div class="bar-group">
+                        <div class="bar" style="height: 280px;" data-value="12M"></div>
+                        <span class="bar-label">2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Overview -->
+    <section class="products-overview">
+        <div class="container">
+            <h2>Our App Portfolio</h2>
+            
+            <div class="products-showcase">
+                <a href="products/microphone.html" class="showcase-item">
+                    <img src="picture/logo/microphone.png" alt="Microphone">
+                    <h3>Microphone</h3>
+                    <span class="downloads">5M+ Downloads</span>
+                </a>
+                <a href="products/thermometer.html" class="showcase-item">
+                    <img src="picture/logo/thermometer.png" alt="Thermometer">
+                    <h3>Thermometer</h3>
+                    <span class="downloads">1M+ Downloads</span>
+                </a>
+                <a href="products/ai-photo.html" class="showcase-item">
+                    <img src="picture/logo/ai photo.png" alt="AI Photo">
+                    <h3>AI Photo Filters</h3>
+                    <span class="downloads">2M+ Downloads</span>
+                </a>
+                <a href="products/voice-changer.html" class="showcase-item">
+                    <img src="picture/logo/voice change.png" alt="Voice Changer">
+                    <h3>Voice Changer</h3>
+                    <span class="downloads">3M+ Downloads</span>
+                </a>
+                <a href="products/lumiwall.html" class="showcase-item">
+                    <img src="picture/logo/wallpaper.png" alt="Lumiwall">
+                    <h3>Lumiwall</h3>
+                    <span class="downloads">500K+ Downloads</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="about-cta">
+        <div class="container">
+            <h2>Join Millions of Users</h2>
+            <p>Download our apps and experience practical tools designed to make your everyday life easier. Free forever.</p>
+            <a href="https://play.google.com/store/apps/dev?id=PowerStarApps" class="btn-download primary" target="_blank">
+                View All Apps on Google Play
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-star">★</span> Power Star Apps
+                    <p>Practical tools for everyday life</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Products</h4>
+                        <a href="products/thermometer.html">Thermometer</a>
+                        <a href="products/microphone.html">Microphone</a>
+                        <a href="products/voice-changer.html">Voice Changer</a>
+                        <a href="products/lumiwall.html">Lumiwall</a>
+                        <a href="products/ai-photo.html">AI Photo Filters</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="about.html">About Us</a>
+                        <a href="help.html">Help Center</a>
+                        <a href="faq.html">FAQ</a>
+                        <a href="blog.html">Blog</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Power Star Apps. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Enhanced GSAP Animations -->
+    <script src="js/gsap-animations-enhanced.js"></script>
+    
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // Stats counter animation
+        const statNumbers = document.querySelectorAll('.stat-box .number');
+        statNumbers.forEach(num => {
+            const target = parseInt(num.dataset.target);
+            const counter = { value: 0 };
+            
+            ScrollTrigger.create({
+                trigger: num,
+                start: 'top 80%',
+                once: true,
+                onEnter: () => {
+                    gsap.to(counter, {
+                        value: target,
+                        duration: 2,
+                        ease: 'power2.out',
+                        onUpdate: () => {
+                            num.textContent = Math.round(counter.value);
+                        }
+                    });
+                }
+            });
+        });
+        
+        // Chart bars animation
+        gsap.from('.bar', {
+            height: 0,
+            duration: 1,
+            stagger: 0.15,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: '.chart-bars',
+                start: 'top 80%'
+            }
+        });
+        
+        // Timeline items
+        gsap.from('.timeline-item', {
+            opacity: 0,
+            x: index => index % 2 === 0 ? -50 : 50,
+            duration: 0.8,
+            stagger: 0.2,
+            scrollTrigger: {
+                trigger: '.timeline',
+                start: 'top 80%'
+            }
+        });
+        
+        // Value cards
+        gsap.from('.value-card', {
+            opacity: 0,
+            y: 50,
+            duration: 0.6,
+            stagger: 0.1,
+            scrollTrigger: {
+                trigger: '.values-grid',
+                start: 'top 80%'
+            }
+        });
+    </script>
+</body>
+</html>

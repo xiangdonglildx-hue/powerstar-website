@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+
+# Documentation (不部署到生产环境)
+*.md
+!README.md
+
+# Development files
+_nav_template.txt
+generate_assets.md
+
+# Temporary files
+*.tar.gz
+*.zip

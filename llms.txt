@@ -1,0 +1,176 @@
+# Power Star Apps
+
+> Power Star Apps is a mobile app development company creating practical Android applications used by millions worldwide. Our apps focus on everyday utility tools for temperature monitoring, audio recording, voice transformation, device personalization, and AI-powered photo editing.
+
+## Company Overview
+
+- **Founded:** 2017
+- **Location:** Wuhan, China
+- **Platform:** Android (Google Play)
+- **Total Downloads:** 6M+ across all apps
+- **Average Rating:** 4.0+
+- **Markets:** 100+ countries
+
+## Products
+
+### Thermometer - Hygrometer
+
+A temperature monitoring app that provides real-time weather data, humidity readings, and barometric pressure information.
+
+- **Package ID:** com.firefly.thermometer
+- **Downloads:** 1M+
+- **Rating:** 3.8 (10.9K reviews)
+- **Category:** Weather
+- **Key Features:**
+  - Real-time temperature monitoring
+  - Hygrometer for humidity percentage
+  - Barometer for air pressure
+  - Discomfort index display
+  - GPS-based location weather
+
+**Use Cases:** Outdoor activities, fishing (barometer), health monitoring (humidity), weather planning
+
+**Google Play:** https://play.google.com/store/apps/details?id=com.firefly.thermometer
+
+---
+
+### Microphone - Voice Amplifier
+
+A voice amplification app that turns Android devices into wireless microphones with noise reduction capabilities.
+
+- **Package ID:** com.microphone.bbmic.lite
+- **Downloads:** 5M+
+- **Rating:** 3.3 (21.7K reviews)
+- **Category:** Medical / Tools
+- **Key Features:**
+  - Live voice amplification
+  - Bluetooth microphone support
+  - Noise reduction technology
+  - Background play mode
+  - Built-in audio recorder
+  - Multiple microphone styles
+
+**Use Cases:** Presentations, teaching, meetings, tour guiding, hearing assistance, audio recording
+
+**Google Play:** https://play.google.com/store/apps/details?id=com.microphone.bbmic.lite
+
+---
+
+### Voice Changer - AI Voice Change
+
+An AI-powered voice transformation app with real-time effects and text-to-speech capabilities.
+
+- **Package ID:** com.lixiangdong.voicechange
+- **Downloads:** 10K+
+- **Category:** Productivity
+- **Key Features:**
+  - 100+ voice effects
+  - AI voice changer
+  - Text-to-speech (TTS)
+  - Video voice modification
+  - Audio file processing
+  - Real-time voice transformation
+
+**Use Cases:** Content creation, gaming voice chat, social media, podcasts, audiobooks, prank calls
+
+**Google Play:** https://play.google.com/store/apps/details?id=com.lixiangdong.voicechange
+
+---
+
+### Lumiwall - Wallpapers HD
+
+A wallpaper app offering 4K HD backgrounds with live and 3D effects for Android device personalization.
+
+- **Package ID:** com.lixiangdong.lumiwall
+- **Downloads:** 100+
+- **Category:** Personalization
+- **Key Features:**
+  - 4K & HD quality wallpapers
+  - Live and 3D wallpapers
+  - Daily automatic updates
+  - Custom photo import
+  - Smart category search
+  - Multiple display size support
+
+**Categories:** Nature, abstract, anime, earth, minimalist, colors
+
+**Google Play:** https://play.google.com/store/apps/details?id=com.lixiangdong.lumiwall
+
+---
+
+### AI Photo & Video Filters
+
+An AI-powered photo and video editor with 34+ intelligent filters for creative content transformation.
+
+- **Package ID:** com.lixiangdong.aiphoto
+- **Downloads:** 100+
+- **Category:** Photography
+- **Key Features:**
+  - 34+ AI-powered filters
+  - Photo and video support
+  - AI dress-up and style transformation
+  - Holiday-themed filters (Christmas, Halloween, New Year)
+  - Professional photography styles
+  - AI picture to video converter
+  - Dancing video animations
+
+**Use Cases:** Social media content, professional photography, creative projects, avatar creation
+
+**Google Play:** https://play.google.com/store/apps/details?id=com.lixiangdong.aiphoto
+
+---
+
+## Developer Information
+
+- **Developer:** 武汉网幂科技有限公司 (Wuhan Wangmi Technology Co., Ltd.)
+- **Contact:** xiangdong.li.ldx@gmail.com
+- **Support:** moreapps.service@gmail.com
+- **Location:** Wuhan, Hubei, China
+
+## Key Metrics
+
+| Metric | Value |
+|--------|-------|
+| Total Apps | 5 main apps |
+| Total Downloads | 6M+ |
+| Countries | 100+ |
+| Average Rating | 4.0+ |
+| Platform | Android |
+
+## Frequently Asked Questions
+
+### What is Power Star Apps?
+Power Star Apps is a mobile app development company that creates practical Android applications for everyday tasks including temperature monitoring, audio recording, voice changing, wallpapers, and AI photo editing.
+
+### Are Power Star Apps free?
+Yes, all Power Star Apps are free to download with optional in-app purchases for premium features.
+
+### What platforms do Power Star Apps support?
+Power Star Apps are available exclusively on Android through Google Play Store.
+
+### How accurate is the Thermometer app?
+The Thermometer app uses GPS-based weather data from nearby weather stations. It requires internet connection and GPS to function. It does not measure indoor temperature using device sensors.
+
+### Can I use the Microphone app for hearing assistance?
+The Microphone app includes hearing amplifier functionality with noise reduction. However, it is not a certified medical hearing aid device. Consult a healthcare professional for medical hearing issues.
+
+### Does Voice Changer work in real-time?
+Yes, Voice Changer supports real-time voice transformation for gaming and calls. It also supports processing pre-recorded audio files and videos.
+
+### What resolution are Lumiwall wallpapers?
+Lumiwall offers 4K and HD quality wallpapers optimized for various screen resolutions. The app supports different display sizes.
+
+### What AI features does AI Photo & Video Filters offer?
+AI Photo & Video Filters provides 34+ AI-powered filters including dress-up transformation, holiday themes, professional photography styles, and video conversion features.
+
+---
+
+## Contact & Support
+
+- **Website:** https://powerstarapps.com
+- **Email:** xiangdong.li.ldx@gmail.com
+- **Google Play Developer Page:** https://play.google.com/store/apps/developer?id=Power+Star+APPS
+
+---
+
+*Last updated: 2026-03-27*

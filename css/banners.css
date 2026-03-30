@@ -1,0 +1,35 @@
+/* ===== Hero Section with Banners ===== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 140px 0 100px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Placeholder banners - solid colors as placeholders */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 50%, #111 100%);
+    z-index: -1;
+}
+
+/* When banner images are ready, use this:
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../images/banners/banner-1.jpg') center/cover no-repeat;
+    opacity: 0.3;
+    z-index: -1;
+}
+*/

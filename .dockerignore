@@ -1,0 +1,14 @@
+# Git
+.git
+.gitignore
+
+# macOS
+.DS_Store
+
+# Documentation
+*.md
+!README.md
+
+# Development files
+_nav_template.txt
+generate_assets.md

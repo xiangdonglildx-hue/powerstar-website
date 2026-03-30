@@ -1,0 +1,8 @@
+# Power Star Apps - robots.txt
+# https://powerstarapps.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://powerstarapps.com/sitemap.xml

@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Changer App - AI Voice Effects & Sound Transformation | Power Star Apps</title>
+    <meta name="description" content="Free AI voice changer app for Android with 100+ voice effects, real-time transformation, recording, and sharing. Perfect for gaming, pranks, dubbing, and social media content. 3M+ downloads, 3.5 rating.">
+    <meta name="keywords" content="voice changer, voice effects, ai voice changer, voice modifier, sound transformation, real time voice changer, android voice changer, voice changer for games, voice recorder, voice prank app">
+    <meta name="author" content="Power Star Apps">
+    <link rel="canonical" href="https://powerstarapps.com/products/voice-changer.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="product">
+    <meta property="og:url" content="https://powerstarapps.com/products/voice-changer.html">
+    <meta property="og:title" content="Voice Changer App - AI Voice Effects & Sound Transformation">
+    <meta property="og:description" content="Transform your voice with 100+ AI effects. Real-time voice changer for gaming and fun. 3M+ downloads.">
+    <meta property="og:image" content="https://powerstarapps.com/images/voice-changer-og.png">
+    <meta property="og:site_name" content="Power Star Apps">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Voice Changer App - AI Voice Effects & Sound Transformation">
+    <meta name="twitter:description" content="Transform your voice with 100+ AI effects. Real-time voice changer for gaming.">
+    <meta name="twitter:image" content="https://powerstarapps.com/images/voice-changer-twitter.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    
+    <link rel="stylesheet" href="../css/product.css">
+    <link rel="stylesheet" href="../css/product-enhanced.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
+    <!-- Product Theme Color -->
+    <style>
+        :root {
+            --theme: #f472b6;
+            --theme-glow: rgba(244, 114, 182, 0.4);
+            --theme-light: rgba(244, 114, 182, 0.1);
+        }
+    </style>
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MobileApplication",
+      "name": "Voice Changer - AI Voice Effects",
+      "description": "AI-powered voice transformation app with 100+ voice effects, real-time preview, recording, and sharing features for Android.",
+      "applicationCategory": "EntertainmentApplication",
+      "operatingSystem": "Android",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "aggregateRating": {"@type": "AggregateRating", "ratingValue": "3.5", "ratingCount": "25000", "bestRating": "5"},
+      "numberOfDownloads": "3M+",
+      "dateModified": "2026-03-26",
+      "author": {"@type": "Organization", "name": "Power Star Apps"},
+      "downloadUrl": "https://play.google.com/store/apps/details?id=com.lixiangdong.voicechange",
+      "featureList": ["100+ voice effects", "Real-time preview", "Voice recording", "Easy sharing", "Voice transformation", "AI-powered effects"]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "What is Voice Changer - AI Voice Effects?", "acceptedAnswer": {"@type": "Answer", "text": "Voice Changer is an AI-powered Android app that transforms your voice with 100+ effects. It includes real-time preview, voice recording, and easy sharing features. It has 3M+ downloads on Google Play."}},
+        {"@type": "Question", "name": "Can I use Voice Changer in real-time for gaming?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, Voice Changer supports real-time voice preview and transformation, making it perfect for gaming voice chats, live streaming, and online calls."}},
+        {"@type": "Question", "name": "Does Voice Changer have recording features?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, Voice Changer includes built-in voice recording. You can record your transformed voice and save it directly to your device or share it instantly."}},
+        {"@type": "Question", "name": "Is Voice Changer app free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, Voice Changer is free to download with ads and optional in-app purchases for premium voice effects."}},
+        {"@type": "Question", "name": "How many voice effects are available?", "acceptedAnswer": {"@type": "Answer", "text": "Voice Changer offers 100+ voice effects including robot, alien, monster, helium, deep voice, cartoon characters, and many more unique transformations."}},
+        {"@type": "Question", "name": "Does the app work offline?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, most voice effects work offline. Some AI-powered premium effects may require internet connection for processing."}},
+        {"@type": "Question", "name": "What Android version is required?", "acceptedAnswer": {"@type": "Answer", "text": "Voice Changer requires Android 5.0 (Lollipop) or above. It's optimized for both older and newer Android devices."}},
+        {"@type": "Question", "name": "Can I share my transformed voice directly?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, Voice Changer includes direct sharing features. You can share your transformed recordings to social media, messaging apps, or save to your device."}}
+      ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <span class="logo-star">★</span> Power Star Apps
+            </a>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Products ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="thermometer.html">Thermometer</a></li>
+                        <li><a href="microphone.html">Microphone</a></li>
+                        <li><a href="voice-changer.html">Voice Changer</a></li>
+                        <li><a href="lumiwall.html">Lumiwall</a></li>
+                        <li><a href="ai-photo.html">AI Photo & Video Filters</a></li>
+                    </ul>
+                </li>
+                <li><a href="../about.html">About Us</a></li>
+                <li><a href="../help.html">Help Center</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="../faq.html">FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Product Hero -->
+    <section class="page-header">
+        <div class="container">
+            <div class="product-hero-grid">
+                <div class="product-info">
+                    <div class="product-icon">
+                        <img src="../picture/logo/voice change.png" alt="Voice Changer Icon">
+                    </div>
+                    <h1>Voice Changer</h1>
+                    <p class="product-subtitle">Transform your voice with 100+ AI-powered effects for gaming, pranks, dubbing, and social media content</p>
+                    
+                    <!-- Stats -->
+                    <div class="product-stats-hero">
+                        <div class="stat-badge">
+                            <span class="stat-value">3M+</span>
+                            <span class="stat-label">Downloads</span>
+                        </div>
+                        <div class="stat-badge">
+                            <span class="stat-value">3.5</span>
+                            <span class="stat-label">Rating</span>
+                        </div>
+                        <div class="stat-badge">
+                            <span class="stat-value">25K+</span>
+                            <span class="stat-label">Reviews</span>
+                        </div>
+                        <div class="stat-badge">
+                            <span class="stat-value">Free</span>
+                            <span class="stat-label">Download</span>
+                        </div>
+                    </div>
+                    
+                    <div class="product-actions">
+                        <a href="https://play.google.com/store/apps/details?id=com.lixiangdong.voicechange" class="btn-download primary" target="_blank">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                                <path d="M3 20.5v-17c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v17c0 .83-.67 1.5-1.5 1.5S3 21.33 3 20.5zm5.5-15c-.83 0-1.5.67-1.5 1.5v11c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V7c0-.83-.67-1.5-1.5-1.5zm5 3c-.83 0-1.5.67-1.5 1.5v8c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-8c0-.83-.67-1.5-1.5-1.5zm5-3c-.83 0-1.5.67-1.5 1.5v11c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V7c0-.83-.67-1.5-1.5-1.5z"/>
+                            </svg>
+                            Download on Google Play
+                        </a>
+                        <a href="#features" class="btn-download">Learn More</a>
+                    </div>
+                </div>
+                <div class="product-mockup">
+                    <img src="../picture/screen/voice change/p1_merged.png" alt="Voice Changer App Screenshot">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Features Bar -->
+    <section class="quick-features">
+        <div class="container">
+            <div class="quick-features-grid">
+                <div class="quick-feature">
+                    <span class="feature-icon">🎭</span>
+                    <span class="feature-text">100+ Voice Effects</span>
+                </div>
+                <div class="quick-feature">
+                    <span class="feature-icon">🎙️</span>
+                    <span class="feature-text">Recording</span>
+                </div>
+                <div class="quick-feature">
+                    <span class="feature-icon">📤</span>
+                    <span class="feature-text">Easy Sharing</span>
+                </div>
+                <div class="quick-feature">
+                    <span class="feature-icon">🔄</span>
+                    <span class="feature-text">Voice Transform</span>
+                </div>
+                <div class="quick-feature">
+                    <span class="feature-icon">⚡</span>
+                    <span class="feature-text">Real-time Preview</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section class="content-section dark">
+        <div class="container">
+            <h2>App Screenshots</h2>
+            <p class="section-subtitle">Explore the voice transformation features</p>
+            <div class="screenshot-grid">
+                <img src="../picture/screen/voice change/p1_merged.png" alt="Voice Changer Main Screen">
+                <img src="../picture/screen/voice change/p2_merged.png" alt="Voice Effects Library">
+                <img src="../picture/screen/voice change/p3_merged.png" alt="Recording Mode">
+                <img src="../picture/screen/voice change/p4_merged.png" alt="Sharing Options">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="content-section" id="features">
+        <div class="container">
+            <h2>Key Features</h2>
+            <p class="section-subtitle">Everything you need for voice transformation and creative fun</p>
+            
+            <div class="features-grid-enhanced">
+                <div class="feature-card-large">
+                    <div class="feature-icon-large">🎭</div>
+                    <h3>100+ Voice Effects</h3>
+                    <p>Choose from a massive library of voice effects including robot, alien, monster, helium, deep voice, cartoon characters, and many more. New effects added regularly for endless creative possibilities.</p>
+                    <ul class="feature-benefits">
+                        <li>✓ Robot, alien, monster effects</li>
+                        <li>✓ Cartoon character voices</li>
+                        <li>✓ Regular new effect updates</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card-large">
+                    <div class="feature-icon-large">🎙️</div>
+                    <h3>Built-in Recording</h3>
+                    <p>Record your transformed voice directly within the app. Save unlimited recordings to your device with high-quality audio. Perfect for creating voice libraries and content archives.</p>
+                    <ul class="feature-benefits">
+                        <li>✓ High-quality audio capture</li>
+                        <li>✓ Unlimited recording storage</li>
+                        <li>✓ Easy file management</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card-large">
+                    <div class="feature-icon-large">📤</div>
+                    <h3>Instant Sharing</h3>
+                    <p>Share your transformed voice recordings directly to social media platforms, messaging apps, or save to your device. One-tap sharing makes it easy to spread the fun with friends and followers.</p>
+                    <ul class="feature-benefits">
+                        <li>✓ Direct social media sharing</li>
+                        <li>✓ Messaging app integration</li>
+                        <li>✓ Quick export options</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card-large">
+                    <div class="feature-icon-large">⚡</div>
+                    <h3>Real-time Preview</h3>
+                    <p>Preview voice effects in real-time before recording. Hear exactly how your voice will sound transformed with each effect. Adjust intensity and parameters for perfect customization.</p>
+                    <ul class="feature-benefits">
+                        <li>✓ Live voice preview</li>
+                        <li>✓ Effect intensity control</li>
+                        <li>✓ Zero latency preview</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="content-section dark">
+        <div class="container">
+            <h2>Perfect For</h2>
+            <p class="section-subtitle">Many ways to use Voice Changer in your daily life</p>
+            <div class="use-cases-grid">
+                <div class="use-case-card">
+                    <span class="use-case-icon">🎮</span>
+                    <h3>Gaming</h3>
+                    <p>Change your voice in-game for roleplay, character voices, or just for fun with friends during multiplayer sessions.</p>
+                </div>
+                <div class="use-case-card">
+                    <span class="use-case-icon">🤡</span>
+                    <h3>Pranks & Fun</h3>
+                    <p>Surprise friends and family with hilarious voice changes. Perfect for April Fool's jokes and friendly pranks.</p>
+                </div>
+                <div class="use-case-card">
+                    <span class="use-case-icon">🎬</span>
+                    <h3>Dubbing</h3>
+                    <p>Create unique character voices for videos, animations, or amateur dubbing projects. Bring your creative ideas to life.</p>
+                </div>
+                <div class="use-case-card">
+                    <span class="use-case-icon">📱</span>
+                    <h3>Social Media</h3>
+                    <p>Create viral content for TikTok, Instagram, YouTube with unique voice effects. Stand out from the crowd.</p>
+                </div>
+                <div class="use-case-card">
+                    <span class="use-case-icon">🎤</span>
+                    <h3>Content Creation</h3>
+                    <p>Podcasters and video creators can add variety to their content with different character voices and effects.</p>
+                </div>
+                <div class="use-case-card">
+                    <span class="use-case-icon">🎁</span>
+                    <h3>Personalized Messages</h3>
+                    <p>Send birthday wishes or special messages with fun voice transformations. Make greetings memorable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Specs -->
+    <section class="content-section">
+        <div class="container">
+            <h2>Technical Specifications</h2>
+            <p class="section-subtitle">App details and requirements</p>
+            
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <h3>App Information</h3>
+                    <table class="specs-table">
+                        <tr><td>Version</td><td>Latest</td></tr>
+                        <tr><td>Size</td><td>~25 MB</td></tr>
+                        <tr><td>Category</td><td>Entertainment</td></tr>
+                        <tr><td>Last Updated</td><td>March 2026</td></tr>
+                    </table>
+                </div>
+                
+                <div class="spec-card">
+                    <h3>Requirements</h3>
+                    <table class="specs-table">
+                        <tr><td>Android</td><td>5.0+ (Lollipop)</td></tr>
+                        <tr><td>Permissions</td><td>Microphone, Storage</td></tr>
+                        <tr><td>Internet</td><td>Optional (premium effects)</td></tr>
+                        <tr><td>Storage</td><td>50 MB recommended</td></tr>
+                    </table>
+                </div>
+                
+                <div class="spec-card">
+                    <h3>Audio Specs</h3>
+                    <table class="specs-table">
+                        <tr><td>Sample Rate</td><td>44.1 kHz</td></tr>
+                        <tr><td>Bit Depth</td><td>16-bit</td></tr>
+                        <tr><td>Effects Library</td><td>100+ voice effects</td></tr>
+                        <tr><td>Preview Latency</td><td>&lt;30ms (optimized)</td></tr>
+                    </table>
+                </div>
+                
+                <div class="spec-card">
+                    <h3>Features</h3>
+                    <table class="specs-table">
+                        <tr><td>Recording</td><td>✓ Built-in</td></tr>
+                        <tr><td>Sharing</td><td>✓ Direct to apps</td></tr>
+                        <tr><td>Real-time Preview</td><td>✓ Supported</td></tr>
+                        <tr><td>Custom Effects</td><td>✓ Premium</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison -->
+    <section class="content-section dark">
+        <div class="container">
+            <h2>Why Choose Voice Changer?</h2>
+            <p class="section-subtitle">Compare with other voice changer apps</p>
+            
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th class="highlight">Power Star<br>Voice Changer</th>
+                            <th>Competitor A</th>
+                            <th>Competitor B</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Free Download</td>
+                            <td class="highlight"><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td>Voice Effects</td>
+                            <td class="highlight"><strong>100+</strong></td>
+                            <td>50+</td>
+                            <td>30+</td>
+                        </tr>
+                        <tr>
+                            <td>Real-time Preview</td>
+                            <td class="highlight"><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>Built-in Recording</td>
+                            <td class="highlight"><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td>Direct Sharing</td>
+                            <td class="highlight"><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="cross">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td>No Account Required</td>
+                            <td class="highlight"><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="cross">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td>Low Latency Preview</td>
+                            <td class="highlight"><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>Downloads</td>
+                            <td class="highlight"><strong>3M+</strong></td>
+                            <td>1M+</td>
+                            <td>500K+</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="content-section">
+        <div class="container">
+            <h2>What Users Say</h2>
+            <p class="section-subtitle">Real reviews from Google Play</p>
+            
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-rating">★★★★★</div>
+                    <p class="review-text">"Perfect for gaming! I use it to roleplay different characters in my MMO guild. Everyone thinks I have multiple voice actors!"</p>
+                    <div class="review-author">
+                        <span class="author-name">Ryan M.</span>
+                        <span class="author-role">Gamer</span>
+                    </div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-rating">★★★★☆</div>
+                    <p class="review-text">"My TikTok videos got way more engagement after I started using the voice effects. The robot voice is my signature now!"</p>
+                    <div class="review-author">
+                        <span class="author-name">Emma K.</span>
+                        <span class="author-role">Social Media Creator</span>
+                    </div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-rating">★★★★★</div>
+                    <p class="review-text">"Pranked my brother on his birthday with the old man voice effect. He couldn't figure out who was calling! So much fun."</p>
+                    <div class="review-author">
+                        <span class="author-name">Jason T.</span>
+                        <span class="author-role">Prankster</span>
+                    </div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-rating">★★★★☆</div>
+                    <p class="review-text">"Great for my amateur animation projects. I can finally give each character a unique voice without hiring voice actors."</p>
+                    <div class="review-author">
+                        <span class="author-name">Sophie L.</span>
+                        <span class="author-role">Animation Hobbyist</span>
+                    </div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-rating">★★★★★</div>
+                    <p class="review-text">"The real-time preview is what makes this app special. I can hear exactly what I'll sound like before recording. Saves so much time."</p>
+                    <div class="review-author">
+                        <span class="author-name">Marcus D.</span>
+                        <span class="author-role">Podcast Host</span>
+                    </div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-rating">★★★★☆</div>
+                    <p class="review-text">"Sharing to WhatsApp and Telegram is super easy. I send funny voice messages to my friends all day now. Great app!"</p>
+                    <div class="review-author">
+                        <span class="author-name">Nina R.</span>
+                        <span class="author-role">Daily User</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="reviews-cta">
+                <a href="https://play.google.com/store/apps/details?id=com.lixiangdong.voicechange" class="btn-download" target="_blank">See All Reviews on Google Play →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="content-section dark">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <p class="section-subtitle">Common questions about Voice Changer app</p>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>What is Voice Changer - AI Voice Effects?</h3>
+                    <p>Voice Changer is an AI-powered Android app that transforms your voice with 100+ effects. It includes real-time preview, voice recording, and easy sharing features. It has 3M+ downloads on Google Play and is trusted by gamers, creators, and everyday users worldwide.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Can I use Voice Changer in real-time for gaming?</h3>
+                    <p>Yes, Voice Changer supports real-time voice preview and transformation, making it perfect for gaming voice chats, live streaming, and online calls. Preview your voice before recording or use it live during gaming sessions.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Does Voice Changer have recording features?</h3>
+                    <p>Yes, Voice Changer includes built-in voice recording with high-quality audio capture. You can record your transformed voice and save it directly to your device or share it instantly to social media and messaging apps.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Is Voice Changer app free?</h3>
+                    <p>Yes, Voice Changer is free to download with ads. Optional in-app purchases are available for premium voice effects and advanced customization features.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>How many voice effects are available?</h3>
+                    <p>Voice Changer offers 100+ voice effects including robot, alien, monster, helium, deep voice, cartoon characters, echo effects, and many more unique transformations. New effects are added regularly.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Does the app work offline?</h3>
+                    <p>Yes, most voice effects work offline for recording and preview. Some AI-powered premium effects may require internet connection for advanced processing, but the core functionality is fully offline-ready.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>What Android version is required?</h3>
+                    <p>Voice Changer requires Android 5.0 (Lollipop) or above. It's optimized to work smoothly on both older budget devices and the latest flagship Android phones.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Can I share my transformed voice directly?</h3>
+                    <p>Yes, Voice Changer includes direct sharing features. You can share your transformed recordings instantly to TikTok, Instagram, WhatsApp, Telegram, or save to your device. One-tap sharing makes it easy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="content-section">
+        <div class="container">
+            <h2>Other Apps You Might Like</h2>
+            <p class="section-subtitle">Explore more Power Star Apps</p>
+            <div class="related-products-grid">
+                <a href="thermometer.html" class="related-product-card">
+                    <img src="../picture/logo/thermometer.png" alt="Thermometer">
+                    <h3>Thermometer</h3>
+                    <p>Temperature Monitor</p>
+                    <span class="downloads">1M+ Downloads</span>
+                </a>
+                <a href="microphone.html" class="related-product-card">
+                    <img src="../picture/logo/microphone.png" alt="Microphone">
+                    <h3>Microphone</h3>
+                    <p>Voice Amplifier</p>
+                    <span class="downloads">5M+ Downloads</span>
+                </a>
+                <a href="lumiwall.html" class="related-product-card">
+                    <img src="../picture/logo/wallpaper.png" alt="Lumiwall">
+                    <h3>Lumiwall</h3>
+                    <p>HD Wallpapers</p>
+                    <span class="downloads">500K+ Downloads</span>
+                </a>
+                <a href="ai-photo.html" class="related-product-card">
+                    <img src="../picture/logo/ai photo.png" alt="AI Photo">
+                    <h3>AI Photo Filters</h3>
+                    <p>34+ AI Filters</p>
+                    <span class="downloads">2M+ Downloads</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Transform Your Voice?</h2>
+            <p>Download Voice Changer now and unlock 100+ voice effects for gaming, pranks, dubbing, and social media. Free download with 3M+ users worldwide.</p>
+            <a href="https://play.google.com/store/apps/details?id=com.lixiangdong.voicechange" class="btn-download primary" target="_blank">
+                Download Free on Google Play
+            </a>
+            <div class="cta-benefits">
+                <span>✓ 100+ Voice Effects</span>
+                <span>✓ Real-time Preview</span>
+                <span>✓ Easy Sharing</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-star">★</span> Power Star Apps
+                    <p>Practical tools for everyday life</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Products</h4>
+                        <a href="thermometer.html">Thermometer</a>
+                        <a href="microphone.html">Microphone</a>
+                        <a href="voice-changer.html">Voice Changer</a>
+                        <a href="lumiwall.html">Lumiwall</a>
+                        <a href="ai-photo.html">AI Photo Filters</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <a href="../help.html">Help Center</a>
+                        <a href="../faq.html">FAQ</a>
+                        <a href="../blog.html">Blog</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <a href="../privacy.html">Privacy Policy</a>
+                        <a href="../terms.html">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Power Star Apps. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Enhanced GSAP Animations -->
+    <script src="../js/gsap-animations-enhanced.js"></script>
+    
+    <script>
+        // Initialize for product page
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // Hero entrance
+        gsap.from('.product-hero-grid', {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            ease: 'power3.out'
+        });
+        
+        // Quick features slide
+        gsap.from('.quick-feature', {
+            opacity: 0,
+            x: -30,
+            stagger: 0.1,
+            duration: 0.5,
+            scrollTrigger: {
+                trigger: '.quick-features',
+                start: 'top 80%'
+            }
+        });
+        
+        // Specs cards
+        gsap.from('.spec-card', {
+            opacity: 0,
+            y: 40,
+            stagger: 0.15,
+            duration: 0.6,
+            scrollTrigger: {
+                trigger: '.specs-grid',
+                start: 'top 80%'
+            }
+        });
+        
+        // Comparison table rows
+        gsap.from('.comparison-table tbody tr', {
+            opacity: 0,
+            x: -20,
+            stagger: 0.05,
+            duration: 0.4,
+            scrollTrigger: {
+                trigger: '.comparison-table',
+                start: 'top 80%'
+            }
+        });
+    </script>
+</body>
+</html>

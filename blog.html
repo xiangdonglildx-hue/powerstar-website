@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Tips, Tutorials & Updates | Power Star Apps</title>
+    <meta name="description" content="Read tips, tutorials, and news from Power Star Apps. Learn how to get the most out of our apps with helpful guides and updates.">
+    <meta name="keywords" content="Power Star Apps blog, app tips, tutorials, microphone tips, thermometer guide, voice changer tutorials">
+    <link rel="canonical" href="https://powerstarapps.com/blog.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://powerstarapps.com/blog.html">
+    <meta property="og:title" content="Blog - Tips, Tutorials & Updates | Power Star Apps">
+    <meta property="og:description" content="Tips, tutorials, and news from Power Star Apps.">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/enhanced.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
+    <style>
+        /* Blog Page Specific Styles */
+        .blog-hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(180deg, rgba(255,77,0,0.05) 0%, transparent 100%);
+            text-align: center;
+        }
+        
+        .blog-hero h1 {
+            font-size: 4rem;
+            margin-bottom: 24px;
+        }
+        
+        .blog-hero p {
+            font-size: 1.25rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Categories */
+        .blog-categories {
+            padding: 40px 0;
+            background: #fff;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .categories-list {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        
+        .category-btn {
+            padding: 12px 24px;
+            background: var(--gray-bg);
+            border: none;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: #333;
+        }
+        
+        .category-btn:hover,
+        .category-btn.active {
+            background: var(--orange);
+            color: #fff;
+        }
+        
+        /* Featured Post */
+        .featured-post {
+            padding: 60px 0;
+            background: #fff;
+        }
+        
+        .featured-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 40px;
+        }
+        
+        .featured-main {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            background: #000;
+            min-height: 400px;
+        }
+        
+        .featured-main img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        
+        .featured-main:hover img {
+            opacity: 0.5;
+        }
+        
+        .featured-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 40px;
+            color: #fff;
+        }
+        
+        .featured-tag {
+            display: inline-block;
+            background: var(--orange);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 16px;
+        }
+        
+        .featured-content h2 {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+        
+        .featured-content p {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 16px;
+        }
+        
+        .featured-meta {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        
+        .featured-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .sidebar-card {
+            background: var(--gray-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            transition: all 0.3s;
+        }
+        
+        .sidebar-card:hover {
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transform: translateX(5px);
+        }
+        
+        .sidebar-card img {
+            width: 120px;
+            height: 100px;
+            object-fit: cover;
+        }
+        
+        .sidebar-content {
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .sidebar-content h3 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            font-family: 'Work Sans', sans-serif;
+            font-weight: 600;
+        }
+        
+        .sidebar-content .date {
+            font-size: 0.85rem;
+            color: #666;
+        }
+        
+        /* Blog Grid */
+        .blog-section {
+            padding: 80px 0;
+            background: var(--gray-bg);
+        }
+        
+        .blog-grid-enhanced {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .blog-card-enhanced {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.4s;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .blog-card-enhanced:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+        }
+        
+        .blog-card-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .blog-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+        
+        .blog-card-enhanced:hover .blog-card-image img {
+            transform: scale(1.1);
+        }
+        
+        .blog-card-body {
+            padding: 28px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .blog-card-tag {
+            display: inline-block;
+            background: rgba(255,77,0,0.1);
+            color: var(--orange);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 12px;
+            width: fit-content;
+        }
+        
+        .blog-card-body h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            font-family: 'Work Sans', sans-serif;
+            font-weight: 600;
+            color: #111;
+        }
+        
+        .blog-card-body p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 16px;
+            flex: 1;
+        }
+        
+        .blog-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid #eee;
+        }
+        
+        .blog-card-footer .date {
+            font-size: 0.85rem;
+            color: #999;
+        }
+        
+        .blog-card-footer .read-more {
+            color: var(--orange);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        /* Newsletter */
+        .newsletter-section {
+            padding: 80px 0;
+            background: #000;
+            color: #fff;
+            text-align: center;
+        }
+        
+        .newsletter-section h2 {
+            color: #fff;
+            margin-bottom: 16px;
+        }
+        
+        .newsletter-section p {
+            color: #999;
+            margin-bottom: 32px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 16px 24px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+        }
+        
+        .newsletter-form input::placeholder {
+            color: #666;
+        }
+        
+        .newsletter-form button {
+            padding: 16px 32px;
+            background: var(--orange);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .newsletter-form button:hover {
+            background: #ff6a33;
+            transform: translateY(-2px);
+        }
+        
+        /* Popular Tags */
+        .popular-tags {
+            padding: 60px 0;
+            background: #fff;
+        }
+        
+        .tags-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 32px;
+        }
+        
+        .tag-link {
+            padding: 10px 20px;
+            background: var(--gray-bg);
+            border-radius: 25px;
+            font-size: 0.9rem;
+            color: #333;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .tag-link:hover {
+            background: var(--orange);
+            color: #fff;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .blog-grid-enhanced {
+                grid-template-columns: 1fr;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .featured-sidebar {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Color Stripe -->
+    <div class="color-stripe"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <span class="logo-star">★</span> Power Star Apps
+            </a>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Products ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="products/thermometer.html">Thermometer</a></li>
+                        <li><a href="products/microphone.html">Microphone</a></li>
+                        <li><a href="products/voice-changer.html">Voice Changer</a></li>
+                        <li><a href="products/lumiwall.html">Lumiwall</a></li>
+                        <li><a href="products/ai-photo.html">AI Photo & Video Filters</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="help.html">Help Center</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="blog-hero">
+        <div class="container">
+            <h1>Blog</h1>
+            <p>Tips, tutorials, and updates from Power Star Apps. Learn how to get the most out of our apps.</p>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="blog-categories">
+        <div class="container">
+            <div class="categories-list">
+                <button class="category-btn active">All Posts</button>
+                <button class="category-btn">Tutorials</button>
+                <button class="category-btn">Tips & Tricks</button>
+                <button class="category-btn">App Updates</button>
+                <button class="category-btn">News</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Post -->
+    <section class="featured-post">
+        <div class="container">
+            <div class="featured-grid">
+                <a href="#" class="featured-main">
+                    <img src="images/blog/covers/cover-voice-recording.png" alt="Voice Recording Tips">
+                    <div class="featured-content">
+                        <span class="featured-tag">Featured</span>
+                        <h2>5 Tips for Better Voice Recordings</h2>
+                        <p>Learn how to capture crystal-clear audio with our Microphone app. These tips will help you record podcasts, meetings, and more.</p>
+                        <span class="featured-meta">March 20, 2026 • 5 min read</span>
+                    </div>
+                </a>
+                <div class="featured-sidebar">
+                    <a href="#" class="sidebar-card">
+                        <img src="images/blog/covers/cover-ai-photo.png" alt="AI Photo Editing">
+                        <div class="sidebar-content">
+                            <h3>How AI is Changing Photo Editing</h3>
+                            <span class="date">March 15, 2026</span>
+                        </div>
+                    </a>
+                    <a href="#" class="sidebar-card">
+                        <img src="images/blog/covers/cover-voice-changer.png" alt="Voice Changer Tips">
+                        <div class="sidebar-content">
+                            <h3>Fun Ways to Use Voice Changer</h3>
+                            <span class="date">March 10, 2026</span>
+                        </div>
+                    </a>
+                    <a href="#" class="sidebar-card">
+                        <img src="images/blog/covers/cover-thermometer.png" alt="Room Temperature">
+                        <div class="sidebar-content">
+                            <h3>Why Room Temperature Matters</h3>
+                            <span class="date">March 5, 2026</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Grid -->
+    <section class="blog-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Latest Articles</h2>
+                <p>Stay updated with our latest tips and tutorials</p>
+            </div>
+            
+            <div class="blog-grid-enhanced">
+                <a href="#" class="blog-card-enhanced">
+                    <div class="blog-card-image">
+                        <img src="images/blog/covers/cover-ai-photo.png" alt="AI Photo Editing">
+                    </div>
+                    <div class="blog-card-body">
+                        <span class="blog-card-tag">AI Photo</span>
+                        <h3>How AI is Changing Photo Editing</h3>
+                        <p>Discover how artificial intelligence is revolutionizing the way we edit photos and videos with just a few taps.</p>
+                        <div class="blog-card-footer">
+                            <span class="date">March 15, 2026</span>
+                            <span class="read-more">Read →</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="#" class="blog-card-enhanced">
+                    <div class="blog-card-image">
+                        <img src="images/blog/covers/cover-voice-changer.png" alt="Voice Changer Tips">
+                    </div>
+                    <div class="blog-card-body">
+                        <span class="blog-card-tag">Voice Changer</span>
+                        <h3>Fun Ways to Use Voice Changer</h3>
+                        <p>From gaming to pranks, here are creative ways to use our Voice Changer app for entertainment.</p>
+                        <div class="blog-card-footer">
+                            <span class="date">March 10, 2026</span>
+                            <span class="read-more">Read →</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="#" class="blog-card-enhanced">
+                    <div class="blog-card-image">
+                        <img src="images/blog/covers/cover-thermometer.png" alt="Room Temperature">
+                    </div>
+                    <div class="blog-card-body">
+                        <span class="blog-card-tag">Thermometer</span>
+                        <h3>Why Room Temperature Matters</h3>
+                        <p>Understanding how temperature affects your health and comfort, and how our Thermometer app can help.</p>
+                        <div class="blog-card-footer">
+                            <span class="date">March 5, 2026</span>
+                            <span class="read-more">Read →</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="#" class="blog-card-enhanced">
+                    <div class="blog-card-image">
+                        <img src="images/blog/covers/cover-voice-recording.png" alt="Voice Recording">
+                    </div>
+                    <div class="blog-card-body">
+                        <span class="blog-card-tag">Microphone</span>
+                        <h3>Best Practices for Voice Recording</h3>
+                        <p>Professional tips for recording clear audio using your smartphone and our Microphone app.</p>
+                        <div class="blog-card-footer">
+                            <span class="date">February 28, 2026</span>
+                            <span class="read-more">Read →</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="#" class="blog-card-enhanced">
+                    <div class="blog-card-image">
+                        <img src="images/banners/banner-2.png" alt="Wallpaper Trends">
+                    </div>
+                    <div class="blog-card-body">
+                        <span class="blog-card-tag">Lumiwall</span>
+                        <h3>Best Wallpaper Trends of 2026</h3>
+                        <p>Explore the latest design trends and find inspiration for your next wallpaper with Lumiwall.</p>
+                        <div class="blog-card-footer">
+                            <span class="date">February 20, 2026</span>
+                            <span class="read-more">Read →</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="#" class="blog-card-enhanced">
+                    <div class="blog-card-image">
+                        <img src="images/banners/banner-3.png" alt="AI Filters">
+                    </div>
+                    <div class="blog-card-body">
+                        <span class="blog-card-tag">Tutorial</span>
+                        <h3>Getting Started with AI Filters</h3>
+                        <p>A beginner's guide to using AI-powered filters to transform your photos and videos.</p>
+                        <div class="blog-card-footer">
+                            <span class="date">February 15, 2026</span>
+                            <span class="read-more">Read →</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="#" class="blog-card-enhanced">
+                    <div class="blog-card-image">
+                        <img src="images/blog/covers/cover-thermometer.png" alt="Health Monitoring">
+                    </div>
+                    <div class="blog-card-body">
+                        <span class="blog-card-tag">Health</span>
+                        <h3>Monitoring Health with Temperature Apps</h3>
+                        <p>How temperature and humidity monitoring can help you maintain a healthy living environment.</p>
+                        <div class="blog-card-footer">
+                            <span class="date">February 10, 2026</span>
+                            <span class="read-more">Read →</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="#" class="blog-card-enhanced">
+                    <div class="blog-card-image">
+                        <img src="images/blog/covers/cover-voice-recording.png" alt="Bluetooth Mic">
+                    </div>
+                    <div class="blog-card-body">
+                        <span class="blog-card-tag">Microphone</span>
+                        <h3>Setting Up Bluetooth Microphone</h3>
+                        <p>Step-by-step guide to connect your phone to Bluetooth speakers for wireless voice amplification.</p>
+                        <div class="blog-card-footer">
+                            <span class="date">February 5, 2026</span>
+                            <span class="read-more">Read →</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="#" class="blog-card-enhanced">
+                    <div class="blog-card-image">
+                        <img src="images/blog/covers/cover-voice-changer.png" alt="Gaming Voice">
+                    </div>
+                    <div class="blog-card-body">
+                        <span class="blog-card-tag">Gaming</span>
+                        <h3>Voice Effects for Gaming Streams</h3>
+                        <p>Enhance your gaming streams with creative voice effects that entertain your audience.</p>
+                        <div class="blog-card-footer">
+                            <span class="date">January 28, 2026</span>
+                            <span class="read-more">Read →</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Tags -->
+    <section class="popular-tags">
+        <div class="container">
+            <div class="section-header">
+                <h2>Popular Topics</h2>
+                <p>Browse articles by topic</p>
+            </div>
+            
+            <div class="tags-cloud">
+                <a href="#" class="tag-link">Voice Recording</a>
+                <a href="#" class="tag-link">AI Filters</a>
+                <a href="#" class="tag-link">Temperature</a>
+                <a href="#" class="tag-link">Bluetooth</a>
+                <a href="#" class="tag-link">Tutorials</a>
+                <a href="#" class="tag-link">Tips & Tricks</a>
+                <a href="#" class="tag-link">Voice Changer</a>
+                <a href="#" class="tag-link">Wallpapers</a>
+                <a href="#" class="tag-link">Photo Editing</a>
+                <a href="#" class="tag-link">Health</a>
+                <a href="#" class="tag-link">Gaming</a>
+                <a href="#" class="tag-link">Streaming</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section">
+        <div class="container">
+            <h2>Stay Updated</h2>
+            <p>Subscribe to get the latest tips, tutorials, and app updates delivered to your inbox.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email">
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-star">★</span> Power Star Apps
+                    <p>Practical tools for everyday life</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Products</h4>
+                        <a href="products/thermometer.html">Thermometer</a>
+                        <a href="products/microphone.html">Microphone</a>
+                        <a href="products/voice-changer.html">Voice Changer</a>
+                        <a href="products/lumiwall.html">Lumiwall</a>
+                        <a href="products/ai-photo.html">AI Photo Filters</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <a href="help.html">Help Center</a>
+                        <a href="faq.html">FAQ</a>
+                        <a href="blog.html">Blog</a>
+                        <a href="about.html">About Us</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Power Star Apps. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- GSAP Animations -->
+    <script src="js/gsap-animations-enhanced.js"></script>
+    
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // Blog cards animation
+        gsap.from('.blog-card-enhanced', {
+            opacity: 0,
+            y: 50,
+            duration: 0.6,
+            stagger: 0.1,
+            scrollTrigger: {
+                trigger: '.blog-grid-enhanced',
+                start: 'top 80%'
+            }
+        });
+        
+        // Featured sidebar
+        gsap.from('.sidebar-card', {
+            opacity: 0,
+            x: 30,
+            duration: 0.5,
+            stagger: 0.15,
+            scrollTrigger: {
+                trigger: '.featured-sidebar',
+                start: 'top 80%'
+            }
+        });
+        
+        // Tags animation
+        gsap.from('.tag-link', {
+            opacity: 0,
+            scale: 0.8,
+            duration: 0.4,
+            stagger: 0.05,
+            scrollTrigger: {
+                trigger: '.tags-cloud',
+                start: 'top 80%'
+            }
+        });
+        
+        // Category buttons
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
