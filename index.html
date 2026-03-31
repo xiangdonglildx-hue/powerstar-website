@@ -28,6 +28,7 @@
     
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/enhanced.css">
+    <link rel="stylesheet" href="css/hero-new.css">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -102,95 +103,71 @@
 
     <!-- Hero Section - Full Screen Banner -->
     <section class="hero">
-        <!-- Banner Slider -->
-        <div class="banner-slider">
-            <div class="banner-slide active">
-                <img src="images/banners/banner-1.png" alt="Power Star Apps - Microphone">
+        <!-- Hero Content - Centered -->
+        <div class="hero-content">
+            <div class="hero-brand">
+                <span class="logo-star">★</span>
+                <span class="brand-name">Power Star Apps</span>
             </div>
-            <div class="banner-slide">
-                <img src="images/banners/banner-2.png" alt="Power Star Apps - Voice Changer">
+            <h1 class="hero-title">Smart Tools for <span class="highlight">Your Daily Life</span></h1>
+            <p class="hero-subtitle">5 practical Android apps trusted by 10M+ users worldwide</p>
+            
+            <!-- App Icons Preview -->
+            <div class="hero-apps">
+                <div class="app-icon-item" data-tooltip="Thermometer">
+                    <img src="images/icons/icon-thermometer.png" alt="Thermometer App">
+                </div>
+                <div class="app-icon-item" data-tooltip="Microphone">
+                    <img src="images/icons/icon-microphone.png" alt="Microphone App">
+                </div>
+                <div class="app-icon-item" data-tooltip="Voice Changer">
+                    <img src="images/icons/icon-voice-changer.png" alt="Voice Changer App">
+                </div>
+                <div class="app-icon-item" data-tooltip="Lumiwall">
+                    <img src="images/icons/icon-lumiwall.png" alt="Lumiwall App">
+                </div>
+                <div class="app-icon-item" data-tooltip="AI Photo Filters">
+                    <img src="images/icons/icon-ai-photo.png" alt="AI Photo Filters App">
+                </div>
             </div>
-            <div class="banner-slide">
-                <img src="images/banners/banner-3.png" alt="Power Star Apps - AI Photo Filters">
+            
+            <div class="hero-cta">
+                <a href="#products" class="btn-hero-primary">
+                    <svg class="play-icon" viewBox="0 0 24 24" width="20" height="20">
+                        <path fill="currentColor" d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+                    </svg>
+                    View All Apps
+                </a>
+            </div>
+            
+            <div class="hero-stats-inline">
+                <div class="stat-badge">
+                    <span class="stat-value">10M+</span>
+                    <span class="stat-text">Downloads</span>
+                </div>
+                <div class="stat-badge">
+                    <span class="stat-value">4.0+</span>
+                    <span class="stat-text">Rating</span>
+                </div>
+                <div class="stat-badge">
+                    <span class="stat-value">200+</span>
+                    <span class="stat-text">Countries</span>
+                </div>
             </div>
         </div>
         
-        <!-- Hero Overlay Content -->
-        <div class="hero-overlay">
-            <div class="hero-content">
-                <h1 class="hero-title">Smart Tools for <span class="highlight">Your Daily Life</span></h1>
-                <p class="hero-subtitle">5 practical apps trusted by 10M+ users worldwide</p>
-                <div class="hero-cta">
-                    <a href="https://play.google.com/store/apps/dev?id=PowerStarApps" class="btn-hero-primary" target="_blank">Download on Google Play</a>
-                    <a href="#products" class="btn-hero-secondary">Explore Apps</a>
-                </div>
-                <div class="hero-trust">
-                    <span>✓ 10M+ Downloads</span>
-                    <span>✓ 4.0+ Rating</span>
-                    <span>✓ Privacy First</span>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Banner Dots -->
-        <div class="banner-dots">
-            <span class="dot active" onclick="goToSlide(0)"></span>
-            <span class="dot" onclick="goToSlide(1)"></span>
-            <span class="dot" onclick="goToSlide(2)"></span>
+        <!-- Animated Background -->
+        <div class="hero-bg-animation">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+            <div class="floating-shape shape-4"></div>
+            <div class="floating-shape shape-5"></div>
         </div>
         
         <!-- Scroll Indicator -->
         <div class="scroll-indicator">
             <span></span>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="container">
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <span class="stat-number" data-target="10000000">0</span>
-                    <span class="stat-label">Downloads</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-target="5">0</span>
-                    <span class="stat-label">Apps</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-target="200">0</span>
-                    <span class="stat-label">Countries</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-target="4.0" data-decimal="true">0</span>
-                    <span class="stat-label">Avg Rating</span>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Featured In Section -->
-    <section class="featured-section">
-        <div class="container">
-            <p class="featured-label">Trusted by millions worldwide</p>
-            <div class="featured-logos">
-                <div class="featured-item">
-                    <span class="featured-icon">📱</span>
-                    <span>Google Play Store</span>
-                </div>
-                <div class="featured-item">
-                    <span class="featured-icon">🏆</span>
-                    <span>Top Charts App</span>
-                </div>
-                <div class="featured-item">
-                    <span class="featured-icon">⭐</span>
-                    <span>4.0+ Average Rating</span>
-                </div>
-                <div class="featured-item">
-                    <span class="featured-icon">🌍</span>
-                    <span>200+ Countries</span>
-                </div>
-            </div>
         </div>
     </section>
 
