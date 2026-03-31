@@ -889,3 +889,44 @@ window.refreshPowerStarAnimations = function() {
     ScrollTrigger.refresh();
     console.log('🔄 PowerStar animations refreshed');
 };
+// ========================================
+// COUNTER ANIMATION WITH DATA-TARGET
+// ========================================
+function initEnhancedCounter() {
+    const statNumbers = document.querySelectorAll('.stat-number[data-target]');
+    
+    statNumbers.forEach(stat => {
+        const target = parseFloat(stat.dataset.target);
+        const isDecimal = stat.dataset.decimal === 'true';
+        
+        ScrollTrigger.create({
+            trigger: stat,
+            start: 'top 80%',
+            once: true,
+            onEnter: () => {
+                const counter = { value: 0 };
+                gsap.to(counter, {
+                    value: target,
+                    duration: 2.5,
+                    ease: 'power2.out',
+                    onUpdate: () => {
+                        if (target >= 1000000) {
+                            stat.textContent = (counter.value / 1000000).toFixed(0) + 'M+';
+                        } else if (target >= 1000) {
+                            stat.textContent = Math.round(counter.value) + '+';
+                        } else if (isDecimal) {
+                            stat.textContent = counter.value.toFixed(1);
+                        } else {
+                            stat.textContent = Math.round(counter.value);
+                        }
+                    }
+                });
+            }
+        });
+    });
+}
+
+// Auto-initialize
+document.addEventListener('DOMContentLoaded', () => {
+    initEnhancedCounter();
+});
