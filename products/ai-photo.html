@@ -45,6 +45,38 @@
             --theme-glow: rgba(255, 77, 0, 0.4);
             --theme-light: rgba(255, 77, 0, 0.1);
         }
+        
+        /* Clickable card styles for scene landing pages */
+        .clickable-card {
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+        }
+        .clickable-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(255, 77, 0, 0.2);
+            border-color: var(--theme);
+        }
+        .clickable-card:hover h3 {
+            color: var(--theme);
+        }
+        .card-link-hint {
+            display: inline-block;
+            margin-top: 0.75rem;
+            color: var(--theme);
+            font-weight: 600;
+            font-size: 0.9rem;
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .clickable-card:hover .card-link-hint {
+            opacity: 1;
+            transform: translateX(0);
+        }
     </style>
     
     <!-- Schema.org Structured Data -->
@@ -299,64 +331,74 @@
             <p class="section-subtitle">Explore AI filters for every occasion</p>
             
             <div class="features-grid-enhanced">
-                <a href="ai-photo/anime-style.html" class="feature-card-large" style="text-decoration: none; color: inherit;">
+                <a href="ai-photo/anime-style.html" class="feature-card-large clickable-card">
                     <div class="feature-icon-large">🎌</div>
                     <h3>Anime Style</h3>
                     <p>Turn your photos into stunning anime artwork. Japanese anime, manga styles, and cartoon effects.</p>
+                    <span class="card-link-hint">Learn more →</span>
                 </a>
                 
-                <a href="ai-photo/cartoon-style.html" class="feature-card-large" style="text-decoration: none; color: inherit;">
+                <a href="ai-photo/cartoon-style.html" class="feature-card-large clickable-card">
                     <div class="feature-icon-large">🎨</div>
                     <h3>Cartoon Style</h3>
                     <p>Transform into fun cartoon characters. Perfect for profile pictures and social media fun.</p>
+                    <span class="card-link-hint">Learn more →</span>
                 </a>
                 
-                <a href="ai-photo/vintage-90s-style.html" class="feature-card-large" style="text-decoration: none; color: inherit;">
+                <a href="ai-photo/vintage-90s-style.html" class="feature-card-large clickable-card">
                     <div class="feature-icon-large">📼</div>
                     <h3>90s Vintage</h3>
                     <p>Join the 90s yearbook trend! Retro filters for that nostalgic vintage look.</p>
+                    <span class="card-link-hint">Learn more →</span>
                 </a>
                 
-                <a href="ai-photo/for-instagram.html" class="feature-card-large" style="text-decoration: none; color: inherit;">
+                <a href="ai-photo/for-instagram.html" class="feature-card-large clickable-card">
                     <div class="feature-icon-large">📸</div>
                     <h3>For Instagram</h3>
                     <p>IG-ready filters for posts, stories, and reels. Stand out on Instagram.</p>
+                    <span class="card-link-hint">Learn more →</span>
                 </a>
                 
-                <a href="ai-photo/for-tiktok.html" class="feature-card-large" style="text-decoration: none; color: inherit;">
+                <a href="ai-photo/for-tiktok.html" class="feature-card-large clickable-card">
                     <div class="feature-icon-large">🎵</div>
                     <h3>For TikTok</h3>
                     <p>Eye-catching filters for TikTok thumbnails and content creation.</p>
+                    <span class="card-link-hint">Learn more →</span>
                 </a>
                 
-                <a href="ai-photo/for-selfies.html" class="feature-card-large" style="text-decoration: none; color: inherit;">
+                <a href="ai-photo/for-selfies.html" class="feature-card-large clickable-card">
                     <div class="feature-icon-large">🤳</div>
                     <h3>For Selfies</h3>
                     <p>Perfect your selfies with AI. Smooth skin, enhance lighting, one-tap results.</p>
+                    <span class="card-link-hint">Learn more →</span>
                 </a>
                 
-                <a href="ai-photo/for-pets.html" class="feature-card-large" style="text-decoration: none; color: inherit;">
+                <a href="ai-photo/for-pets.html" class="feature-card-large clickable-card">
                     <div class="feature-icon-large">🐕</div>
                     <h3>For Pets</h3>
                     <p>Turn pet photos into adorable artwork. AI pet portraits and artistic effects.</p>
+                    <span class="card-link-hint">Learn more →</span>
                 </a>
                 
-                <a href="ai-photo/lensa-alternative.html" class="feature-card-large" style="text-decoration: none; color: inherit;">
+                <a href="ai-photo/lensa-alternative.html" class="feature-card-large clickable-card">
                     <div class="feature-icon-large">💎</div>
                     <h3>Lensa Alternative</h3>
                     <p>Free alternative to Lensa AI. Similar AI transformation without subscription.</p>
+                    <span class="card-link-hint">Learn more →</span>
                 </a>
                 
-                <a href="ai-photo/for-influencers.html" class="feature-card-large" style="text-decoration: none; color: inherit;">
+                <a href="ai-photo/for-influencers.html" class="feature-card-large clickable-card">
                     <div class="feature-icon-large">⭐</div>
                     <h3>For Influencers</h3>
                     <p>Pro-quality filters for content creators. Save hours of editing.</p>
+                    <span class="card-link-hint">Learn more →</span>
                 </a>
                 
-                <a href="ai-photo/aesthetic-style.html" class="feature-card-large" style="text-decoration: none; color: inherit;">
+                <a href="ai-photo/aesthetic-style.html" class="feature-card-large clickable-card">
                     <div class="feature-icon-large">🌸</div>
                     <h3>Aesthetic Style</h3>
                     <p>Dreamy aesthetic filters for social media. Soft tones and cohesive vibes.</p>
+                    <span class="card-link-hint">Learn more →</span>
                 </a>
             </div>
         </div>
