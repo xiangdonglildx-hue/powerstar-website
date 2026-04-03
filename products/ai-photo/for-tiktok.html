@@ -36,113 +36,19 @@
     
     <link rel="stylesheet" href="../../css/product.css">
     <link rel="stylesheet" href="../../css/product-enhanced.css">
-    
+    <link rel="stylesheet" href="../../css/landing-page.css">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Product Theme Color -->
+    <!-- Page-specific theme color -->
     <style>
         :root {
-            --theme: #ff4d00;
-            --theme-glow: rgba(255, 77, 0, 0.4);
-            --theme-light: rgba(255, 77, 0, 0.1);
-        }
-        .landing-hero {
-            min-height: 70vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, var(--theme-light) 0%, transparent 50%);
-        }
-        .landing-content {
-            text-align: center;
-            padding: 2rem;
-        }
-        .landing-title {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--theme);
-        }
-        .landing-desc {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-            color: #666;
-        }
-        .before-after-section {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 2rem auto;
-            max-width: 800px;
-        }
-        .image-box {
-            position: relative;
-            width: 300px;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        .image-box img {
-            width: 100%;
-            display: block;
-        }
-        .image-label {
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-            background: rgba(0,0,0,0.7);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-        .arrow-icon {
-            font-size: 2rem;
-            color: var(--theme);
-        }
-        .feature-tags {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin: 2rem 0;
-            flex-wrap: wrap;
-        }
-        .tag {
-            background: var(--theme-light);
-            border: 2px solid var(--theme);
-            color: var(--theme);
-            padding: 0.5rem 1.5rem;
-            border-radius: 30px;
-            font-weight: 600;
-        }
-        .cta-section {
-            text-align: center;
-            padding: 3rem 2rem;
-            background: var(--theme-light);
-            margin-top: 2rem;
-        }
-        .cta-btn {
-            display: inline-block;
-            background: var(--theme);
-            color: white;
-            padding: 1rem 3rem;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            text-decoration: none;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .cta-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px var(--theme-glow);
-        }
-        .cta-stats {
-            margin-top: 1rem;
-            color: #666;
+            --landing-theme: #ff4d00;
+            --landing-theme-glow: rgba(255, 77, 0, 0.4);
+            --landing-theme-light: rgba(255, 77, 0, 0.1);
         }
     </style>
     
