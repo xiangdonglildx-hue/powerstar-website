@@ -1,0 +1,26 @@
+{
+  "project": {
+    "name": "PowerStar Website",
+    "initialized": "2026-04-03",
+    "type": "brownfield"
+  },
+  "workflow": {
+    "research": false,
+    "parallel_research": true,
+    "commit_docs": true,
+    "nyquist_validation": false,
+    "_auto_chain_active": false
+  },
+  "models": {
+    "researcher": "sonnet",
+    "synthesizer": "sonnet",
+    "roadmapper": "sonnet",
+    "planner": "sonnet",
+    "executor": "sonnet",
+    "verifier": "sonnet"
+  },
+  "ui": {
+    "brand": "powerstar",
+    "audit_mode": false
+  }
+}
