@@ -38,12 +38,12 @@
 4. Scene landing page CSS is cacheable for 1 year (extracted from inline to external file)
 5. All existing Schema.org JSON-LD passes Google Rich Results Test validation
 
-**Plans:** 4/6 plans executed
+**Plans:** 3/6 plans executed
 
 Plans:
 - [x] 01-PLAN.md — Mobile Navigation CSS/JS Infrastructure (Wave 1) ✓ 2026-04-03
-- [ ] 02-PLAN.md — Blog Links Fix (Wave 1)
-- [ ] 03-PLAN.md — Landing Page CSS Extraction (Wave 1)
+- [x] 02-PLAN.md — Blog Links Fix (Wave 1) ✓ 2026-04-03
+- [x] 03-PLAN.md — Landing Page CSS Extraction (Wave 1) ✓ 2026-04-03
 - [ ] 04-PLAN.md — Demo Images Creation (Wave 1)
 - [ ] 05-PLAN.md — Mobile Navigation HTML Updates (Wave 2)
 - [ ] 06-PLAN.md — Schema.org Validation (Wave 3)
@@ -110,7 +110,7 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation Fixes | 4/6 | In Progress|  |
+| 1. Foundation Fixes | 3/6 | In Progress|  |
 | 2. Content Infrastructure | 0/4 | Not started | - |
 | 3. Structured Data Enhancement | 0/5 | Not started | - |
 | 4. Content Expansion | 0/8 | Not started | - |

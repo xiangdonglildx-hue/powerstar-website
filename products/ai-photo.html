@@ -37,7 +37,8 @@
     
     <link rel="stylesheet" href="../css/product.css">
     <link rel="stylesheet" href="../css/product-enhanced.css">
-    
+    <link rel="stylesheet" href="../css/mobile-nav.css">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -130,6 +131,11 @@
             <a href="../index.html" class="logo">
                 <span class="logo-star">★</span> Power Star Apps
             </a>
+            <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
             <ul class="nav-links">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">Products ▾</a>
@@ -148,6 +154,27 @@
             </ul>
         </div>
     </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-menu-overlay"></div>
+    <div class="mobile-menu" aria-hidden="true">
+        <ul class="mobile-nav-links">
+            <li class="mobile-dropdown">
+                <a href="#">Products</a>
+                <ul class="dropdown-menu">
+                    <li><a href="thermometer.html">Thermometer</a></li>
+                    <li><a href="microphone.html">Microphone</a></li>
+                    <li><a href="voice-changer.html">Voice Changer</a></li>
+                    <li><a href="lumiwall.html">Lumiwall</a></li>
+                    <li><a href="ai-photo.html">AI Photo Filters</a></li>
+                </ul>
+            </li>
+            <li><a href="../about.html">About Us</a></li>
+            <li><a href="../help.html">Help Center</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../faq.html">FAQ</a></li>
+        </ul>
+    </div>
 
     <!-- Product Hero -->
     <section class="page-header">
@@ -740,7 +767,10 @@
     
     <!-- Enhanced GSAP Animations -->
     <script src="../js/gsap-animations-enhanced.js"></script>
-    
+
+    <!-- Mobile Navigation -->
+    <script src="../js/mobile-nav.js"></script>
+
     <script>
         // Initialize for product page
         gsap.registerPlugin(ScrollTrigger);
