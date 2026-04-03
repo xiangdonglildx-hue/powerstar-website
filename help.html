@@ -15,7 +15,8 @@
     <title>Help Center - Power Star Apps</title>
     <meta name="description" content="Get help and support for Power Star Apps products. Find guides, tutorials, and contact information.">
     <link rel="stylesheet" href="css/style.css">
-    
+    <link rel="stylesheet" href="css/mobile-nav.css">
+
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -32,6 +33,11 @@
             <a href="index.html" class="logo">
                 <span class="logo-star">★</span> Power Star Apps
             </a>
+            <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
             <ul class="nav-links">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">Products ▾</a>
@@ -50,6 +56,27 @@
             </ul>
         </div>
     </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-menu-overlay"></div>
+    <div class="mobile-menu" aria-hidden="true">
+        <ul class="mobile-nav-links">
+            <li class="mobile-dropdown">
+                <a href="#">Products</a>
+                <ul class="dropdown-menu">
+                    <li><a href="products/thermometer.html">Thermometer</a></li>
+                    <li><a href="products/microphone.html">Microphone</a></li>
+                    <li><a href="products/voice-changer.html">Voice Changer</a></li>
+                    <li><a href="products/lumiwall.html">Lumiwall</a></li>
+                    <li><a href="products/ai-photo.html">AI Photo Filters</a></li>
+                </ul>
+            </li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="help.html">Help Center</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+        </ul>
+    </div>
 
     <!-- Page Header -->
     <section class="page-header">
@@ -139,5 +166,8 @@
     
     <!-- GSAP Animations -->
     <script src="js/gsap-animations.js"></script>
+
+    <!-- Mobile Navigation -->
+    <script src="js/mobile-nav.js"></script>
 </body>
 </html>

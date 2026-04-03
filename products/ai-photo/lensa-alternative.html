@@ -24,6 +24,7 @@
     <link rel="icon" type="image/png" href="../../images/favicon.png">
     <link rel="stylesheet" href="../../css/product.css">
     <link rel="stylesheet" href="../../css/landing-page.css">
+    <link rel="stylesheet" href="../../css/mobile-nav.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Page-specific theme color -->
@@ -36,11 +37,30 @@
     </style>
     
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"MobileApplication","name":"Free Lensa AI Alternative - AI Photo Filters","description":"Free AI-powered photo transformation app. Alternative to Lensa AI.","operatingSystem":"Android","offers":{"@type":"Offer","price":"0"},"downloadUrl":"https://play.google.com/store/apps/details?id=com.lixiangdong.aiphoto"}
+    {"@context":"https://schema.org","@type":"MobileApplication","name":"Free Lensa AI Alternative - AI Photo Filters","description":"Free AI-powered photo transformation app. Alternative to Lensa AI.","applicationCategory":"PhotographyApplication","operatingSystem":"Android","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"3.6","ratingCount":"18000"},"numberOfDownloads":"2M+","downloadUrl":"https://play.google.com/store/apps/details?id=com.lixiangdong.aiphoto"}
     </script>
 </head>
 <body>
-    <nav class="navbar"><div class="container"><a href="../../index.html" class="logo"><span class="logo-star">★</span> Power Star Apps</a></div></nav>
+    <nav class="navbar">
+        <div class="container">
+            <a href="../../index.html" class="logo"><span class="logo-star">★</span> Power Star Apps</a>
+            <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-menu-overlay"></div>
+    <div class="mobile-menu" aria-hidden="true">
+        <ul class="mobile-nav-links">
+            <li><a href="../../products/ai-photo.html">AI Photo Filters</a></li>
+            <li><a href="../../about.html">About</a></li>
+            <li><a href="../../help.html">Help</a></li>
+        </ul>
+    </div>
 
     <section class="landing-hero">
         <div class="container landing-content">
@@ -76,5 +96,8 @@
     </section>
 
     <footer class="footer"><div class="container"><p>&copy; 2026 Power Star Apps</p></div></footer>
+
+    <!-- Mobile Navigation -->
+    <script src="../../js/mobile-nav.js"></script>
 </body>
 </html>

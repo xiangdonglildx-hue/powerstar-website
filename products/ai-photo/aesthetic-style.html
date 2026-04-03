@@ -37,6 +37,7 @@
     <link rel="stylesheet" href="../../css/product.css">
     <link rel="stylesheet" href="../../css/product-enhanced.css">
     <link rel="stylesheet" href="../../css/landing-page.css">
+    <link rel="stylesheet" href="../../css/mobile-nav.css">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -75,6 +76,11 @@
             <a href="../../index.html" class="logo">
                 <span class="logo-star">★</span> Power Star Apps
             </a>
+            <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
             <ul class="nav-links">
                 <li><a href="../../products/ai-photo.html">AI Photo Filters</a></li>
                 <li><a href="../../about.html">About</a></li>
@@ -82,6 +88,16 @@
             </ul>
         </div>
     </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-menu-overlay"></div>
+    <div class="mobile-menu" aria-hidden="true">
+        <ul class="mobile-nav-links">
+            <li><a href="../../products/ai-photo.html">AI Photo Filters</a></li>
+            <li><a href="../../about.html">About</a></li>
+            <li><a href="../../help.html">Help</a></li>
+        </ul>
+    </div>
 
     <!-- Landing Hero -->
     <section class="landing-hero">
@@ -166,5 +182,8 @@
             <p>&copy; 2026 Power Star Apps. <a href="../../privacy.html">Privacy Policy</a> | <a href="../../terms.html">Terms</a></p>
         </div>
     </footer>
+
+    <!-- Mobile Navigation -->
+    <script src="../../js/mobile-nav.js"></script>
 </body>
 </html>

@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="../../css/product.css">
     <link rel="stylesheet" href="../../css/product-enhanced.css">
     <link rel="stylesheet" href="../../css/landing-page.css">
+    <link rel="stylesheet" href="../../css/mobile-nav.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -63,12 +64,26 @@
     <nav class="navbar">
         <div class="container">
             <a href="../../index.html" class="logo"><span class="logo-star">★</span> Power Star Apps</a>
+            <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
             <ul class="nav-links">
                 <li><a href="../../products/ai-photo.html">AI Photo Filters</a></li>
                 <li><a href="../../about.html">About</a></li>
             </ul>
         </div>
     </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-menu-overlay"></div>
+    <div class="mobile-menu" aria-hidden="true">
+        <ul class="mobile-nav-links">
+            <li><a href="../../products/ai-photo.html">AI Photo Filters</a></li>
+            <li><a href="../../about.html">About</a></li>
+        </ul>
+    </div>
 
     <section class="landing-hero">
         <div class="container">
@@ -128,5 +143,8 @@
     <footer class="footer">
         <div class="container"><p>&copy; 2026 Power Star Apps. <a href="../../privacy.html">Privacy</a></p></div>
     </footer>
+
+    <!-- Mobile Navigation -->
+    <script src="../../js/mobile-nav.js"></script>
 </body>
 </html>
