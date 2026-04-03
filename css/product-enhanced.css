@@ -758,6 +758,9 @@
 }
 
 @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: block; order: 2; margin-left: auto; }
+
     .product-hero-grid {
         grid-template-columns: 1fr;
         gap: 40px;
