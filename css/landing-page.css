@@ -1,0 +1,231 @@
+/**
+ * Landing Page Shared Styles - Power Star Apps
+ * Used by: products/ai-photo/*.html scene landing pages
+ *
+ * Enables 1-year browser caching via nginx configuration.
+ * Page-specific theme colors are set via inline :root overrides.
+ */
+
+/* Root Theme Variables (default - pages override with inline style) */
+:root {
+    --landing-theme: #ff4d00;
+    --landing-theme-glow: rgba(255, 77, 0, 0.4);
+    --landing-theme-light: rgba(255, 77, 0, 0.1);
+}
+
+/* Landing Hero Section */
+.landing-hero {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--landing-theme-light) 0%, transparent 50%);
+}
+
+.landing-content {
+    text-align: center;
+    padding: 2rem;
+}
+
+.landing-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--landing-theme);
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.landing-desc {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    color: #666;
+}
+
+.landing-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.stat-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--landing-theme);
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* Before/After Image Section */
+.before-after-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem auto;
+    max-width: 800px;
+    padding: 0 1rem;
+}
+
+.image-box {
+    position: relative;
+    width: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.image-box img {
+    width: 100%;
+    display: block;
+}
+
+.image-label {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.arrow-icon {
+    font-size: 2rem;
+    color: var(--landing-theme);
+}
+
+/* Feature Tags */
+.feature-tags {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background: var(--landing-theme-light);
+    border: 2px solid var(--landing-theme);
+    color: var(--landing-theme);
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 600;
+}
+
+/* CTA Section */
+.cta-section {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: var(--landing-theme-light);
+    margin-top: 2rem;
+}
+
+.cta-btn {
+    display: inline-block;
+    background: var(--landing-theme);
+    color: white;
+    padding: 1rem 3rem;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px var(--landing-theme-glow);
+}
+
+.cta-stats {
+    margin-top: 1rem;
+    color: #666;
+}
+
+/* Comparison Box (for lensa-alternative page) */
+.comparison-box {
+    background: #f5f5f5;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 2rem auto;
+    max-width: 600px;
+}
+
+/* FAQ Section */
+.landing-faq {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.landing-faq h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+}
+
+.faq-item {
+    background: #f5f5f5;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+}
+
+.faq-item strong {
+    color: #333;
+}
+
+.faq-item p {
+    margin-top: 0.5rem;
+    color: #666;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .before-after-section {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .image-box {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .landing-title {
+        font-size: 2rem;
+    }
+
+    .landing-desc {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    .arrow-icon {
+        display: none;
+    }
+
+    .cta-btn {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+
+    .landing-stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
