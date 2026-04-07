@@ -1,30 +1,22 @@
-# Milestones: PowerStar Website
+# Milestones
 
-Historical record of shipped versions.
+## v1.0 - SEO/GEO Optimization (Completed 2026-04-07)
 
----
+### Goal
+优化 PowerStar 网站的 SEO/GEO 表现，提升品牌权重和产品发现率。
 
-## v1.0 SEO/GEO 优化迭代 ✅
+### Phases
+1. **Foundation Fixes** - 移动端导航、基础设施修复
+2. **Content Infrastructure** - Blog 基础设施、llms.txt
+3. **Structured Data Enhancement** - Schema.org 完善
+4. **Content Expansion** - 20 个新落地页
 
-**Shipped:** 2026-04-07
+### Results
+- ✅ 移动端汉堡菜单正常工作
+- ✅ 20+ SEO 优化落地页上线
+- ✅ Schema.org 100% 覆盖
+- ✅ AI crawler 支持 (Perplexity, GPT, Claude)
+- ✅ UAT 测试全部通过
 
-**Stats:**
-- 4 phases, 10 plans
-- 22 requirements complete
-- 27 commits, 58 files changed
-- Timeline: 2026-03-30 → 2026-04-07 (8 days)
-
-**Key Accomplishments:**
-1. Mobile hamburger menu navigation across all pages
-2. 30 landing pages (10 AI Photo + 20 new product pages)
-3. 5 blog articles with Article schema
-4. Full Schema.org coverage (BreadcrumbList, FAQPage, MobileApplication)
-5. SEO/GEO optimization (sitemap.xml, robots.txt, llms.txt)
-
-**Archive:**
-- [v1.0-ROADMAP.md](milestones/v1.0-ROADMAP.md)
-- [v1.0-REQUIREMENTS.md](milestones/v1.0-REQUIREMENTS.md)
-
----
-
-*Last updated: 2026-04-07*
+### Archive
+`.planning/archive/v1.0-milestone/`
