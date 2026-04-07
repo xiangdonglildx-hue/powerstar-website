@@ -26,6 +26,18 @@
     border-radius: 1px;
 }
 
+/* Dark navbar support - hamburger must be white on dark background */
+.navbar.dark .hamburger-line {
+    background: #ffffff;
+}
+
+/* Scrolled navbar (white background) - hamburger must be black */
+/* Higher specificity to override .navbar.dark when both classes present */
+.navbar.scrolled .hamburger-line,
+.navbar.dark.scrolled .hamburger-line {
+    background: #000000 !important;
+}
+
 /* Show hamburger on mobile */
 @media (max-width: 768px) {
     .hamburger {
