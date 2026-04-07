@@ -40,12 +40,6 @@
     gap: 30px;
 }
 
-.products-row.two-products {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 800px;
-    margin: 0 auto;
-}
-
 /* ===== Product Card Enhanced ===== */
 .product-card-enhanced {
     background: var(--white);
@@ -815,11 +809,6 @@
     .products-row {
         grid-template-columns: repeat(2, 1fr);
     }
-    
-    .products-row.two-products {
-        grid-template-columns: 1fr;
-        max-width: 400px;
-    }
 }
 
 @media (max-width: 768px) {
@@ -846,8 +835,7 @@
         bottom: 30px;
     }
     
-    .products-row,
-    .products-row.two-products {
+    .products-row {
         grid-template-columns: 1fr;
     }
     
