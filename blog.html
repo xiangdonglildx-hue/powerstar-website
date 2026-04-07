@@ -243,6 +243,7 @@
             transition: all 0.4s;
             display: flex;
             flex-direction: column;
+            opacity: 1; /* Ensure cards are visible before animation */
         }
         
         .blog-card-enhanced:hover {
@@ -776,13 +777,12 @@
         
         // Blog cards animation
         gsap.from('.blog-card-enhanced', {
-            opacity: 0,
-            y: 50,
-            duration: 0.6,
-            stagger: 0.1,
+            y: 30,
+            duration: 0.5,
+            stagger: 0.08,
             scrollTrigger: {
                 trigger: '.blog-grid-enhanced',
-                start: 'top 80%'
+                start: 'top 85%'
             }
         });
         
