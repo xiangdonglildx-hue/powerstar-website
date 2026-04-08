@@ -1,696 +1,771 @@
-# Architecture Research: SEO/GEO Integration
+# Architecture Research: SEO Monitoring System
 
-**Project:** PowerStar Website SEO/GEO Optimization
-**Researched:** 2026-04-03
-**Mode:** Architecture Integration
-**Confidence:** HIGH (based on existing codebase analysis + verified research)
+**Project:** PowerStar Website v1.1 SEO Monitoring
+**Milestone:** v1.1 - SEO/GEO Monitoring Infrastructure
+**Researched:** 2026-04-08
+**Mode:** Architecture Integration (Subsequent Milestone)
+**Confidence:** MEDIUM-HIGH (based on established patterns + project context)
 
 ---
 
 ## Executive Summary
 
-The PowerStar website uses a pure static HTML/CSS/JS architecture deployed via nginx/Docker on Google Cloud Run. This research identifies how SEO/GEO features integrate with this existing architecture without introducing build tools or server-side processing. The integration approach preserves the static deployment model while enhancing content creation workflows, structured data, and llms.txt optimization.
+The v1.1 milestone adds SEO monitoring capabilities to an existing pure static HTML/CSS/JS website. The critical architecture constraint is that the site remains **static** - all monitoring must happen **outside** the deployed site, with results stored as static JSON files that the Dashboard reads client-side.
 
-**Key Finding:** The existing architecture already has foundational SEO infrastructure (llms.txt, Schema.org, sitemap.xml), but critical gaps exist: blog articles are minimal HTML without proper templates, blog.html has placeholder links, and landing pages use inline CSS (hurting caching). The integration strategy focuses on **enhancing existing patterns** rather than introducing new systems.
-
----
-
-## Integration Approach
-
-### Strategy: Enhancement Over Addition
-
-The static architecture constraint means we cannot introduce:
-- Build tools (webpack, Vite, SSG generators)
-- Server-side processing (PHP, Node.js)
-- Database-backed content management
-
-Instead, the integration approach is:
-
-| Approach | Description | Rationale |
-|----------|-------------|-----------|
-| **Template Enhancement** | Improve existing HTML templates with missing SEO elements | No new infrastructure needed |
-| **CSS Extraction** | Move inline styles to shared stylesheet | Improves caching, reduces page weight |
-| **Content Patterns** | Establish consistent content creation patterns | Enables efficient scaling |
-| **Structured Data Templates** | Reusable JSON-LD blocks | Copy-paste efficiency |
-
-### Data Flow (Unchanged)
-
-```
-User Request → nginx → Static HTML File → CSS/JS/Images → Browser
-                    ↓
-              Cloud Run Container
-```
-
-The SEO/GEO enhancements do not change this flow. They only enhance the static files served.
+**Key Integration Insight:** Monitoring scripts are **external infrastructure** that generates data. The Dashboard is a **static HTML page** that reads pre-generated JSON via `fetch()`. This preserves the nginx/Docker/Cloud Run deployment model while adding monitoring visibility.
 
 ---
 
-## New Components/Pages
+## Integration Architecture
 
-### 1. FAQ Content Sections (AI-Referenceable Format)
+### High-Level Architecture
 
-**Purpose:** Create content structured for ChatGPT/Perplexity citation
+```
+                    EXTERNAL MONITORING INFRASTRUCTURE
+                    ================================
+                    
+    +------------------+     +------------------+     +------------------+
+    | GSC API Scripts  |     | GEO Query Scripts|     | Indexing Monitor |
+    | (Node.js/Bash)   |     | (Claude API)     |     | (Curl/Requests)  |
+    +--------+---------+     +--------+---------+     +--------+---------+
+             |                        |                        |
+             |                        |                        |
+             v                        v                        v
+    +----------------------------------------------------------------+
+    |                    Monitoring Orchestrator                      |
+    |                    (cron/scheduled runner)                      |
+    |                                                                 |
+    |  - Daily: GSC metrics collection                               |
+    |  - Weekly: Full report generation                               |
+    |  - Hourly: Anomaly detection alerts                             |
+    +----------------------------------------------------------------+
+                                |
+                                | Generates JSON
+                                v
+    +----------------------------------------------------------------+
+    |                    seo-metrics.json                             |
+    |                    (Deployed as static file)                    |
+    |                                                                 |
+    |  {                                                              |
+    |    "gsc": { clicks, impressions, ctr, position... },           |
+    |    "geo": { chatgpt_mentions, perplexity_rankings... },        |
+    |    "alerts": [...],                                             |
+    |    "last_updated": "2026-04-08T..."                             |
+    |  }                                                              |
+    +----------------------------------------------------------------+
+                                |
+                                | Deployed to static site
+                                v
+                    
+    STATIC WEBSITE (nginx/Docker/Cloud Run)
+    =======================================
+                    
+    +------------------+     +------------------+
+    | dashboard.html   |     | seo-metrics.json |
+    | (Monitoring UI)  |---->| (Data source)    |
+    +--------+---------+     +------------------+
+             |  fetch()
+             v
+    +------------------+
+    | Dashboard Render |
+    | (Client-side JS) |
+    +------------------+
+```
 
-**What:** FAQ sections using consistent question-answer format with Schema.org FAQPage markup
+### Key Architecture Decisions
 
-**Location:** 
-- New: `/faq/` directory for product-specific FAQs
-- Enhanced: Existing product pages' FAQ sections
+| Decision | Rationale | Constraint Addressed |
+|----------|-----------|---------------------|
+| **External monitoring scripts** | Cannot run server-side on static site | Pure static architecture preserved |
+| **JSON as static file** | Dashboard needs data without API calls | Same nginx caching/deployment |
+| **Client-side fetch()** | No server-side rendering capability | Browser-executed only |
+| **Service account for GSC** | Automated script access without OAuth flow | No user authentication needed |
+| **Claude API for GEO** | Test AI visibility programmatically | LLM query capability |
 
-**Pattern:**
-```html
-<section class="faq-section">
-  <h2>Frequently Asked Questions</h2>
-  <div class="faq-item">
-    <strong class="faq-question">Q: [Question text]</strong>
-    <p class="faq-answer">A: [Answer text - 50-100 words, factual]</p>
-  </div>
-</section>
+---
 
-<script type="application/ld+json">
+## Component Architecture
+
+### 1. Monitoring Scripts (External)
+
+**Location:** Outside the static site repository (e.g., `/scripts/` or separate repo)
+
+**Technology Stack:**
+| Component | Technology | Purpose |
+|-----------|------------|---------|
+| Runtime | Node.js 18+ | Script execution environment |
+| GSC API Client | googleapis npm package | Official Google API library |
+| GEO Query | Anthropic Claude API (or Perplexity) | AI visibility testing |
+| Authentication | Service account JSON key | Secure API access |
+| Scheduler | cron (Linux) or Cloud Scheduler | Automated execution |
+
+**Files Structure (External):**
+```
+monitoring-scripts/
++-- config/
+|   +-- service-account.json    # GSC API credentials (NOT in repo)
+|   +-- claude-api-key.txt      # Claude API key (NOT in repo)
+|   +-- settings.json           # Site URLs, thresholds, schedules
++-- scripts/
+|   +-- gsc-collector.js        # GSC API data collection
+|   +-- geo-query.js            # GEO/AI visibility testing
+|   +-- anomaly-detector.js     # Alert generation
+|   +-- report-generator.js     # Weekly report compilation
+|   +-- orchestrator.js         # Main runner (calls all scripts)
++-- output/
+|   +-- seo-metrics.json        # Generated output (deployed to site)
++-- templates/
+|   +-- dashboard-data.json     # JSON structure template
+```
+
+### 2. JSON Data File (Deployed to Static Site)
+
+**Location:** `/data/seo-metrics.json` in static site repository
+
+**Why this location:**
+- Part of static site for nginx to serve
+- Cacheable (with short TTL for updates)
+- Dashboard HTML can fetch via relative path
+- Included in Docker build/deployment
+
+**JSON Structure:**
+```json
 {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "[Question]",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "[Answer]"
+  "meta": {
+    "version": "1.0",
+    "generated_at": "2026-04-08T10:30:00Z",
+    "site": "powerstarapps.com",
+    "next_update": "2026-04-09T10:30:00Z"
+  },
+  "gsc": {
+    "overview": {
+      "total_clicks": 1234,
+      "total_impressions": 56789,
+      "avg_ctr": 2.18,
+      "avg_position": 15.3
+    },
+    "by_page": [
+      {
+        "page": "/products/ai-photo.html",
+        "clicks": 450,
+        "impressions": 12000,
+        "ctr": 3.75,
+        "position": 8.2
+      }
+    ],
+    "top_queries": [
+      {
+        "query": "ai photo filter",
+        "clicks": 320,
+        "impressions": 8500,
+        "ctr": 3.76,
+        "position": 5.1
+      }
+    ],
+    "trend": {
+      "clicks_7d_change": 12.5,
+      "impressions_7d_change": 8.3,
+      "position_7d_change": -1.2
     }
-  }]
+  },
+  "geo": {
+    "chatgpt": {
+      "mentioned": true,
+      "last_checked": "2026-04-08T09:00:00Z",
+      "response_snippet": "Power Star Apps offers...",
+      "confidence": "high"
+    },
+    "perplexity": {
+      "ranked": true,
+      "position": 3,
+      "last_checked": "2026-04-08T09:00:00Z",
+      "query_used": "best thermometer apps for Android"
+    },
+    "google_ai_overview": {
+      "appears": false,
+      "last_checked": "2026-04-08T09:00:00Z"
+    }
+  },
+  "indexing": {
+    "indexed_pages": 25,
+    "total_pages": 28,
+    "coverage_ratio": 0.89,
+    "last_crawl": "2026-04-07T...",
+    "sitemap_status": "submitted",
+    "errors": []
+  },
+  "alerts": [
+    {
+      "type": "traffic_drop",
+      "severity": "high",
+      "message": "Clicks dropped 35% compared to last week",
+      "detected_at": "2026-04-08T08:00:00Z",
+      "threshold": 30,
+      "actual": 35
+    }
+  ],
+  "weekly_report": {
+    "generated": true,
+    "date": "2026-04-07",
+    "highlights": [
+      "AI Photo landing pages gained 15% impressions",
+      "New blog article indexed within 24 hours"
+    ],
+    "recommendations": [
+      "Consider adding more thermometer scene pages",
+      "Mobile navigation fix improved mobile traffic"
+    ]
+  }
 }
-</script>
 ```
 
-**Why:** AI systems like ChatGPT/Perplexity prioritize content that:
-- Uses clear Q&A format
-- Has Schema.org FAQPage markup
-- Provides factual, concise answers (50-100 words)
+### 3. Dashboard HTML (Static Site Page)
 
-### 2. Blog Article Full Template
+**Location:** `/dashboard.html` in static site repository
 
-**Purpose:** Standardized blog article layout matching site design
-
-**Current Issue:** Existing blog articles (`blog/*.html`) are minimal HTML lacking:
-- Navigation
-- CSS styling
-- Footer
-- Schema.org Article markup
-- Open Graph tags
-
-**New Template Pattern:**
+**Architecture Pattern:**
 ```
-/blog/[article-slug].html
-├── <head>
-│   ├── GA4 tracking
-│   ├── Meta tags (title, description, keywords)
-│   ├── Canonical URL
-│   ├── Open Graph + Twitter Card
-│   ├── CSS imports (style.css, enhanced.css)
-│   ├── Google Fonts
-│   └── Schema.org Article JSON-LD
-├── <body>
-│   ├── Navigation (shared navbar)
-│   ├── Article hero
-│   ├── Article content (structured with H2/H3)
-│   ├── Author/date metadata
-│   ├── Related articles
-│   ├── CTA section
-│   ├── Footer (shared)
-│   └── GSAP animations
+dashboard.html (Static HTML)
+|
++-- <head>
+|   +-- CSS imports (existing styles)
+|   +-- Dashboard-specific CSS (css/dashboard.css)
+|   +-- Chart library CDN (Chart.js recommended)
+|
++-- <body>
+|   +-- Navigation (shared navbar)
+|   +-- Dashboard container
+|   |   +-- Overview cards (clicks, impressions, CTR)
+|   |   +-- Charts (trends, top queries)
+|   |   +-- GEO status section
+|   |   +-- Alerts panel (critical warnings)
+|   |   +-- Weekly report summary
+|   +-- Footer (shared)
+|
++-- <script>
+|   +-- fetch('/data/seo-metrics.json')
+|   +-- Render functions (update charts, cards, alerts)
+|   +-- Chart.js initialization
 ```
 
-**Implementation:** Create template file at `blog/template.html` for copy-paste content creation.
-
-### 3. Landing Page Shared CSS
-
-**Purpose:** Extract inline styles from landing pages for caching
-
-**Current Issue:** All 10 AI Photo landing pages have ~150 lines of inline CSS (same styles repeated). This:
-- Cannot be cached
-- Increases page weight
-- Creates maintenance burden
-
-**New Component:** `css/landing-page.css`
-
-**Contains:**
-- `.landing-hero` styles
-- `.landing-content` styles
-- `.before-after-section` styles
-- `.feature-tags` styles
-- `.cta-section` styles
-
-**Impact:**
-| Metric | Before (Inline) | After (External) |
-|--------|------------------|------------------|
-| Page weight | +150 lines per page | +1 link per page |
-| Cacheability | No cache | 1 year cache |
-| Maintenance | Edit 10 files | Edit 1 file |
-
-### 4. Enhanced llms.txt Structure
-
-**Purpose:** Better AI/LLM understanding of website content
-
-**Current State:** Existing llms.txt has:
-- Company overview
-- Product details
-- Contact info
-- Content guidelines
-
-**Enhancement Needed:**
-- FAQ section (most common questions with answers)
-- Blog article summaries
-- Landing page directory with descriptions
-- Update frequency indication
-
-**New Structure:**
-```markdown
-# Power Star Apps
-
-> [Existing tagline]
-
-## Company Overview
-[Existing content]
-
-## Products
-[Existing product details]
-
-## FAQ (Most Common Questions)
-[New section - 10-15 Q&A pairs for AI citation]
-
-## Blog Articles
-[New section - article summaries]
-
-## Landing Pages
-[New section - directory of scene landing pages]
-
-## Contact & Support
-[Existing content]
+**Client-Side Data Loading Pattern:**
+```javascript
+// dashboard.html embedded script
+document.addEventListener('DOMContentLoaded', async () => {
+  try {
+    const response = await fetch('/data/seo-metrics.json');
+    if (!response.ok) {
+      throw new Error('Failed to load SEO metrics');
+    }
+    const data = await response.json();
+    
+    // Render overview cards
+    renderOverviewCards(data.gsc.overview);
+    
+    // Render charts
+    renderTrendChart(data.gsc.by_page);
+    renderQueriesChart(data.gsc.top_queries);
+    
+    // Render GEO status
+    renderGEOStatus(data.geo);
+    
+    // Render alerts
+    renderAlerts(data.alerts);
+    
+    // Update last updated timestamp
+    updateTimestamp(data.meta.generated_at);
+    
+  } catch (error) {
+    console.error('Dashboard load error:', error);
+    showErrorState();
+  }
+});
 ```
 
-**Reference:** llms.txt specification by AnswerDotAI (Jeremy Howard) recommends structured sections with clear headings.
+### 4. GSC API Authentication Flow
 
-### 5. Demo Images Directory Structure
+**Authentication Method:** Google Service Account
 
-**Purpose:** Replace placeholder.com fallbacks with real demo images
-
-**New Directory:** `images/demo/`
-
-**Required Files:**
+**Flow Diagram:**
 ```
-images/demo/
-├── anime-before.jpg
-├── anime-after.jpg
-├── cartoon-before.jpg
-├── cartoon-after.jpg
-├── vintage-90s-before.jpg
-├── vintage-90s-after.jpg
-├── [10 landing pages × 2 images]
+1. SETUP (One-time)
+   +-- Create GCP project (or use existing Cloud Run project)
+   +-- Create Service Account in IAM
+   +-- Generate JSON key file (download locally)
+   +-- Enable Google Search Console API in GCP
+   +-- Add Service Account email to GSC property (as user)
+   
+2. SCRIPT EXECUTION
+   +-- Load service-account.json from secure location
+   +-- Initialize google.auth.GoogleAuth with scopes
+   +-- Obtain access token (automatic via library)
+   +-- Call searchanalytics.query endpoint
+   +-- Parse response and update JSON
 ```
 
-**Impact:** Landing pages currently fallback to `via.placeholder.com` which hurts:
-- Brand credibility
-- SEO image ranking
-- User engagement
+**Required GSC API Scopes:**
+```
+https://www.googleapis.com/auth/webmasters.readonly
+```
+
+**Service Account Setup Steps (HIGH Confidence - Official Google Pattern):**
+
+| Step | Action | Command/UI |
+|------|--------|------------|
+| 1 | Create service account | GCP Console > IAM > Service Accounts |
+| 2 | Generate key | Download JSON key file |
+| 3 | Enable API | GCP Console > APIs > Search Console API |
+| 4 | Grant access | GSC Console > Settings > Users > Add service account email |
+| 5 | Verify access | Test script execution |
+
+**Script Implementation Pattern:**
+```javascript
+// gsc-collector.js
+const { google } = require('googleapis');
+const auth = new google.auth.GoogleAuth({
+  keyFile: './config/service-account.json',
+  scopes: ['https://www.googleapis.com/auth/webmasters.readonly'],
+});
+
+async function collectGSCData(siteUrl) {
+  const client = await auth.getClient();
+  const searchconsole = google.searchconsole({ version: 'v1', auth: client });
+  
+  // Query search analytics
+  const response = await searchconsole.searchanalytics.query({
+    siteUrl: siteUrl,
+    requestBody: {
+      startDate: '2026-04-01',
+      endDate: '2026-04-07',
+      dimensions: ['page', 'query'],
+      rowLimit: 100,
+    },
+  });
+  
+  return response.data.rows;
+}
+```
+
+### 5. GEO Query Automation Approach
+
+**Objective:** Test if AI systems (ChatGPT, Perplexity, Google AI Overview) mention or cite the site/products.
+
+**Methods:**
+
+| AI System | Query Method | API/Library | Feasibility |
+|-----------|--------------|-------------|-------------|
+| ChatGPT/GPT | Anthropic Claude API (similar) | anthropic npm package | HIGH - Official API |
+| Perplexity | Perplexity API (if available) | HTTP requests | MEDIUM - API access needed |
+| Google AI Overview | No direct API | Manual testing | LOW - No automation possible |
+
+**Recommended GEO Testing Approach:**
+
+1. **Claude API Testing (HIGH Confidence):**
+   ```javascript
+   // geo-query.js
+   const Anthropic = require('@anthropic-ai/sdk');
+   
+   async function testChatGPTVisibility() {
+     const anthropic = new Anthropic({
+       apiKey: process.env.ANTHROPIC_API_KEY, // From secure config
+     });
+     
+     const queries = [
+       "What are the best thermometer apps for Android?",
+       "How can I filter photos with anime style?",
+       "Recommend a microphone app for presentations",
+     ];
+     
+     const results = [];
+     for (const query of queries) {
+       const response = await anthropic.messages.create({
+         model: 'claude-3-sonnet-20240229',
+         max_tokens: 500,
+         messages: [{ role: 'user', content: query }],
+       });
+       
+       // Check if Power Star Apps is mentioned
+       const mentioned = response.content.some(c => 
+         c.text.toLowerCase().includes('power star') ||
+         c.text.toLowerCase().includes('thermometer app') // etc.
+       );
+       
+       results.push({
+         query,
+         mentioned,
+         snippet: mentioned ? extractMention(response) : null,
+       });
+     }
+     
+     return results;
+   }
+   ```
+
+2. **llms.txt Effectiveness Testing:**
+   - Query AI with site-specific questions
+   - Measure citation frequency
+   - Track improvement over time
+
+3. **Perplexity Testing (MEDIUM Confidence):**
+   - Perplexity may have API access (check official docs)
+   - Alternative: Use Perplexity browser automation (complex)
 
 ---
 
-## Modified Components
+## Data Flow Architecture
 
-### 1. blog.html (Critical Fix)
+### Daily Collection Flow
 
-**Issue:** All blog card links are `href="#"` placeholders
-
-**Current:**
-```html
-<a href="#" class="blog-card-enhanced">
+```
+07:00 UTC - Scheduled Trigger
+    |
+    v
+[orchestrator.js runs]
+    |
+    +---> [gsc-collector.js]
+    |         |  Fetch last 7 days GSC data
+    |         |  Parse metrics
+    |         v
+    |     Return GSC data object
+    |
+    +---> [geo-query.js]
+    |         |  Query Claude API (3-5 test queries)
+    |         |  Check mentions
+    |         v
+    |     Return GEO visibility data
+    |
+    +---> [anomaly-detector.js]
+    |         |  Compare against thresholds
+    |         |  Generate alerts if needed
+    |         v
+    |     Return alerts array
+    |
+    v
+[Generate seo-metrics.json]
+    |
+    v
+[Deploy JSON to static site]
+    |  (Manual: copy to /data/)
+    |  (Automated: git push + CI/CD)
+    v
+[Cloud Run redeploys with new JSON]
+    |
+    v
+[Dashboard fetches fresh data]
 ```
 
-**Modified:**
-```html
-<a href="blog/ai-photo-filters-guide.html" class="blog-card-enhanced">
+### Weekly Report Flow
+
+```
+Sunday 10:00 UTC
+    |
+    v
+[report-generator.js runs]
+    |
+    +-- Aggregate 7 days of data
+    +-- Calculate week-over-week changes
+    +-- Identify top gaining/losing pages
+    +-- Generate recommendations
+    +-- Update seo-metrics.json "weekly_report" section
+    |
+    v
+[Deploy updated JSON]
 ```
 
-**Files to Update:**
-- Featured post link: `blog/ai-photo-filters-guide.html`
-- Sidebar cards: Link to actual articles
-- Blog grid cards: Link to actual articles
+---
 
-**Effort:** ~20 href replacements
+## Integration Points with Existing Architecture
 
-### 2. Existing Blog Articles (Enhancement)
+### Modified Components
 
-**Files:** All 5 existing articles in `blog/`
+| Component | Modification | Impact |
+|-----------|--------------|--------|
+| `sitemap.xml` | None (existing serves purpose) | GSC reads it |
+| `robots.txt` | None (existing serves purpose) | Crawlers read it |
+| `nginx.conf` | Add short cache for JSON (optional) | `/data/*.json` cache policy |
+| `Dockerfile` | Include `/data/` directory | JSON file in container |
+| `llms.txt` | None (already optimized) | GEO testing validates |
 
-**Current State:** Minimal HTML (no styling, no nav, no schema)
+### New Components (Static Site)
 
-**Modification Required:**
-1. Add CSS imports: `<link rel="stylesheet" href="../css/style.css">`
-2. Add navigation: Copy navbar from blog.html
-3. Add footer: Copy footer from blog.html
-4. Add Schema.org Article JSON-LD
-5. Add Open Graph tags
-6. Add GSAP animations (optional)
+| Component | Location | Purpose |
+|-----------|----------|---------|
+| `dashboard.html` | Root level | Monitoring UI page |
+| `css/dashboard.css` | `/css/` | Dashboard-specific styles |
+| `js/dashboard.js` | `/js/` | Dashboard rendering logic (or inline) |
+| `data/seo-metrics.json` | `/data/` | Metrics data source |
 
-**Template Approach:** Create `blog/article-template.html` first, then apply to existing articles.
+### New Components (External - Monitoring Scripts)
 
-### 3. Scene Landing Pages (CSS Extraction)
+| Component | Location | Purpose |
+|-----------|----------|--------|
+| Monitoring scripts repo | Separate (or `/scripts/` excluded from Docker) | Data collection |
+| Service account JSON | Secure storage (NOT in repo) | GSC authentication |
+| Claude API key | Secure storage (NOT in repo) | GEO testing |
 
-**Files:** All 10 files in `products/ai-photo/*.html`
+---
 
-**Current:** ~150 lines inline `<style>` per page
+## Deployment Architecture
 
-**Modification:**
-1. Create `css/landing-page.css` with shared styles
-2. Replace inline `<style>` with `<link rel="stylesheet" href="../../css/landing-page.css">`
-3. Keep only product-specific theme colors inline:
-```html
-<style>
-    :root {
-        --theme: #ff4d00;  /* Product-specific only */
-        --theme-glow: rgba(255, 77, 0, 0.4);
-        --theme-light: rgba(255, 77, 0, 0.1);
-    }
-</style>
+### Static Site Deployment (Unchanged + New Files)
+
+```dockerfile
+# Dockerfile (add /data/ directory)
+FROM nginx:alpine
+COPY . /usr/share/nginx/html
+# /data/seo-metrics.json will be included
+RUN rm -f /etc/nginx/conf.d/default.conf
+COPY default.conf /etc/nginx/conf.d/default.conf
+EXPOSE 8080
+CMD ["nginx", "-g", "daemon off;"]
 ```
 
-### 4. nginx.conf (Optional Performance Enhancement)
+### nginx Configuration Enhancement
 
-**Current:**
 ```nginx
-location ~* \.(jpg|jpeg|png|gif|ico|css|js|svg|woff|woff2)$ {
-    expires 1y;
-    add_header Cache-Control "public, immutable";
-}
-```
+# default.conf (add JSON caching policy)
+# Existing static asset caching...
 
-**Recommended Additions:**
-```nginx
-# Enable Gzip (if not present)
-gzip on;
-gzip_types text/plain text/css application/json application/javascript text/xml;
-gzip_min_length 1000;
-
-# Add HTML caching (short duration)
-location ~* \.html$ {
-    expires 1h;
+# Add JSON data caching (short TTL for monitoring updates)
+location ~* ^/data/.*\.json$ {
+    expires 5m;  # 5 minute cache - balances freshness and performance
     add_header Cache-Control "public, must-revalidate";
+    add_header Access-Control-Allow-Origin "*";  # Allow fetch from dashboard
 }
-
-# Security headers (SEO benefit)
-add_header X-Content-Type-Options nosniff;
-add_header X-Frame-Options DENY;
 ```
 
-**Note:** This is optional - current config is sufficient for SEO.
+### Monitoring Scripts Deployment
 
-### 5. sitemap.xml (Update for New Pages)
+**Option A: Local Machine (Simple)**
+- Run scripts on developer machine
+- Copy JSON to static site repo
+- Deploy via existing CI/CD
 
-**Current:** Lists 22 URLs
+**Option B: Cloud Scheduler + Cloud Run Job**
+- Deploy monitoring scripts as separate Cloud Run service
+- Use Cloud Scheduler to trigger daily
+- Output JSON to Cloud Storage
+- Sync Cloud Storage to static site (or build step)
 
-**Modification Required:** When adding new pages:
-1. Add new blog articles
-2. Add new landing pages
-3. Update lastmod dates
-4. Adjust priorities for new content types
+**Option C: GitHub Actions (CI/CD Integration)**
+- Run monitoring scripts in GitHub Actions workflow
+- Daily scheduled workflow
+- Output JSON committed to repo
+- Automatic deployment trigger
 
-**Pattern for New Entries:**
-```xml
-<url>
-  <loc>https://powerstarapps.com/blog/[new-article].html</loc>
-  <lastmod>2026-04-XX</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.6</priority>
-</url>
-```
+**Recommended: Option A for MVP (simplicity), Option C for automation**
 
-### 6. Product Pages (FAQ Enhancement)
+---
 
-**Files:** All 5 product pages (`products/*.html`)
+## Security Architecture
 
-**Modification:** Add AI-referenceable FAQ sections
+### Credentials Storage
 
-**Pattern:**
-- 5-7 questions per product
-- Concise factual answers (50-100 words)
-- FAQPage Schema.org markup
+| Credential | Storage | Access |
+|------------|---------|--------|
+| GSC Service Account JSON | Local secure file (NOT in git) | Script runtime only |
+| Claude API Key | Environment variable or secure file | Script runtime only |
+| Site configuration | `config/settings.json` (can be in repo) | Public data OK |
+
+### Dashboard Access
+
+| Aspect | Recommendation |
+|--------|----------------|
+| Public visibility | Dashboard can be public (SEO metrics not sensitive) |
+| Alternative | Add simple password protection (nginx basic auth) |
+| Data sensitivity | Metrics are public (GSC data is site-level, not user-level) |
+
+### JSON Data Protection
+
+- SEO metrics are **site-level aggregate data** - not sensitive
+- No user personal data in JSON
+- Can be publicly accessible
+- If more sensitive: Add nginx auth for `/data/` path
 
 ---
 
 ## Build Order Recommendation
 
-Based on 1-2 week timeline and existing static architecture:
+Based on integration dependencies:
 
-### Phase 1: Critical Fixes (Day 1-2)
-**Highest ROI, blocking SEO performance**
+### Phase 1: Data Infrastructure (Day 1-2)
 
-| Task | Effort | Impact |
-|------|--------|--------|
-| Fix blog.html placeholder links | Low (30 min) | Critical - enables blog discovery |
-| Create demo images | Medium (2-4 hrs) | High - landing page credibility |
-| Extract landing page CSS | Medium (1 hr) | Medium - caching/performance |
+| Task | Effort | Dependencies |
+|------|--------|--------------|
+| Create `/data/` directory structure | Low | None |
+| Create JSON template structure | Low | None |
+| Create dashboard.html skeleton | Medium | None |
+| Create css/dashboard.css | Medium | None |
+| Test JSON fetch from dashboard | Low | JSON structure defined |
 
-**Why First:** These fix broken functionality and have immediate SEO impact.
+### Phase 2: GSC Integration (Day 3-5)
 
-### Phase 2: Content Enhancement (Day 3-5)
-**Foundation for content scaling**
+| Task | Effort | Dependencies |
+|------|--------|--------------|
+| Create GCP service account | Low | GCP project access |
+| Generate service account JSON key | Low | Service account created |
+| Grant GSC property access | Low | GSC Console access |
+| Implement gsc-collector.js | Medium | Service account setup |
+| Test GSC API queries | Medium | Script implemented |
 
-| Task | Effort | Impact |
-|------|--------|--------|
-| Create blog article template | Medium (2 hrs) | High - enables efficient creation |
-| Update existing blog articles | Medium (3 hrs) | High - proper SEO markup |
-| Enhance llms.txt with FAQ | Low (1 hr) | Medium - GEO benefit |
+### Phase 3: GEO Testing Integration (Day 6-7)
 
-**Why Second:** These establish patterns that make subsequent content creation efficient.
+| Task | Effort | Dependencies |
+|------|--------|--------------|
+| Get Claude API key | Low | Anthropic account |
+| Implement geo-query.js | Medium | API key |
+| Test GEO visibility queries | Medium | Script implemented |
 
-### Phase 3: Structured Data Enhancement (Day 6-8)
-**SEO/GEO optimization**
+### Phase 4: Dashboard Completion (Day 8-10)
 
-| Task | Effort | Impact |
-|------|--------|--------|
-| Add FAQPage schema to landing pages | Medium (2 hrs) | Medium - AI visibility |
-| Add Article schema to blog | Low (1 hr) | Medium - search visibility |
-| Add FAQ sections to product pages | Medium (3 hrs) | Medium - GEO benefit |
+| Task | Effort | Dependencies |
+|------|--------|--------------|
+| Implement dashboard rendering JS | Medium | JSON structure defined |
+| Add Chart.js integration | Medium | Dashboard skeleton |
+| Implement alert display | Medium | Alert structure defined |
+| Test full dashboard flow | Medium | All scripts working |
 
-**Why Third:** Schema markup enhances existing content without structural changes.
+### Phase 5: Automation Setup (Day 11-14)
 
-### Phase 4: Content Expansion (Day 9-14)
-**Scaling SEO footprint**
-
-| Task | Effort | Impact |
-|------|--------|--------|
-| Create new blog articles (3-5) | High (4-6 hrs) | High - keyword coverage |
-| Create new landing pages (10-20) | High (4-6 hrs) | High - programmatic SEO |
-| Update sitemap.xml | Low (30 min) | Medium - crawlability |
-
-**Why Last:** Uses templates established in Phase 2 for efficient creation.
-
----
-
-## Content Creation Workflow
-
-### Blog Article Workflow (No Build Tools)
-
-**Step 1: Content Planning**
-- Identify target keyword from SEO research
-- Determine article type: Tutorial, Comparison, Review
-- Outline H2/H3 structure
-
-**Step 2: Template Usage**
-```bash
-# Copy template
-cp blog/article-template.html blog/[new-slug].html
-
-# Edit in text editor
-# Replace: title, meta description, content, images
-```
-
-**Step 3: Required Elements**
-| Element | Location | Source |
-|---------|----------|--------|
-| Title | `<title>` + `<h1>` | Keyword-focused |
-| Meta description | `<meta name="description">` | 150-160 chars |
-| Canonical URL | `<link rel="canonical">` | Full URL |
-| Open Graph | OG meta tags | Same as meta description |
-| Schema.org Article | JSON-LD in `<head>` | Copy template |
-| Images | `images/blog/covers/` | Create new |
-
-**Step 4: Link Integration**
-- Add to blog.html grid
-- Add to sitemap.xml
-- Link from related product page
-
-### Landing Page Workflow (Programmatic SEO)
-
-**Step 1: Keyword Matrix**
-```
-Product: AI Photo
-Keywords: [anime, cartoon, vintage, selfie, pet, instagram, tiktok...]
-URL pattern: /products/ai-photo/[keyword]-style.html
-```
-
-**Step 2: Template Usage**
-```bash
-# Copy landing page template
-cp products/ai-photo/template.html products/ai-photo/[keyword]-style.html
-
-# Modify: theme color, title, description, FAQ, demo images
-```
-
-**Step 3: Product-Specific Customization**
-| Element | Customization |
-|---------|---------------|
-| Theme color | `--theme: #[product-color]` |
-| Title | `[Keyword] Style - [Product Name]` |
-| Meta description | Keyword-focused, 150-160 chars |
-| FAQ questions | 3-5 keyword-specific Q&A |
-| Demo images | `images/demo/[keyword]-before/after.jpg` |
+| Task | Effort | Dependencies |
+|------|--------|--------------|
+| Implement orchestrator.js | Medium | All scripts implemented |
+| Set up cron/scheduler | Low | Orchestrator ready |
+| Implement anomaly-detector.js | Medium | GSC data available |
+| Implement weekly-report-generator.js | Medium | All data available |
+| End-to-end testing | Medium | Full pipeline ready |
 
 ---
 
 ## Performance Considerations
 
-### Current nginx Configuration (Verified)
+### Dashboard Load Performance
 
-The existing `default.conf` already has optimal caching:
-```nginx
-expires 1y;
-add_header Cache-Control "public, immutable";
-```
+| Metric | Target | Approach |
+|--------|--------|----------|
+| JSON fetch time | <100ms | Small file (~10-20KB), nginx cached |
+| Dashboard render | <500ms | Client-side JS, Chart.js |
+| Total load | <1s | CDN + nginx optimizations |
 
-This is excellent for SEO - static assets cached for 1 year.
+### JSON File Size Estimate
 
-### Recommended Enhancements (Optional)
+| Section | Estimated Size |
+|---------|----------------|
+| GSC overview | ~500 bytes |
+| GSC by_page (10 pages) | ~2KB |
+| GSC top_queries (20) | ~3KB |
+| GEO data | ~1KB |
+| Alerts | ~500 bytes |
+| Weekly report | ~1KB |
+| **Total** | **~8KB** |
 
-| Enhancement | Benefit | Effort |
-|-------------|---------|--------|
-| Gzip compression | ~70% text size reduction | Low |
-| HTML short-cache | Fresh content while caching static | Low |
-| Image optimization | Better LCP | Medium |
-| Brotli compression | ~15% better than Gzip | Medium |
-
-**Priority:** Not required for 1-2 week timeline. Current config is sufficient.
-
-### Image Strategy
-
-**Current Issue:** No images in `images/demo/` directory
-
-**Recommended Approach:**
-| Image Type | Size | Format | Optimization |
-|------------|------|--------|--------------|
-| Demo before/after | 300x400px | JPEG | 80% quality |
-| Blog covers | 800x600px | PNG/JPEG | Optimized |
-| OG images | 1200x630px | PNG | For social |
+Very small - excellent performance.
 
 ---
 
-## Structured Data Strategy
+## Scalability Considerations
 
-### Existing Schema.org Coverage
+### At Current Scale (28 pages)
 
-| Page Type | Schema Type | Status |
-|-----------|-------------|--------|
-| Homepage | Organization | Needs verification |
-| Product pages | MobileApplication | Present on landing pages |
-| Blog listing | None | Needs addition |
-| Blog articles | None | Critical gap |
-| FAQ pages | FAQPage | Present on landing pages |
+- JSON size: ~10KB
+- Dashboard load: <1s
+- GSC API calls: 1-2 per day
+- GEO API calls: 3-5 per day
 
-### Recommended Schema Additions
+### At 100 Pages
 
-**1. Blog Articles - Article Schema**
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "[Article title]",
-  "description": "[Meta description]",
-  "author": {"@type": "Organization", "name": "Power Star Apps"},
-  "datePublished": "[YYYY-MM-DD]",
-  "dateModified": "[YYYY-MM-DD]",
-  "image": "[OG image URL]",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Power Star Apps",
-    "logo": {"@type": "ImageObject", "url": "[Logo URL]"}
-  }
-}
-```
+- JSON size: ~30KB (still excellent)
+- Dashboard load: <1.5s
+- GSC API calls: Same (site-level query)
+- GEO API calls: Same (fixed test queries)
 
-**2. Blog Listing - CollectionPage Schema**
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "name": "Blog - Power Star Apps",
-  "description": "Tips, tutorials, and updates...",
-  "mainEntity": {
-    "@type": "ItemList",
-    "itemListElement": [/* Article references */]
-  }
-}
-```
+### At 1000 Pages
 
-**3. Enhanced Product Page Schema**
-Add BreadcrumbList for navigation hierarchy.
+- JSON size: Consider pagination or lazy loading
+- Dashboard: Add pagination for page list
+- GSC API: May need multiple queries (rowLimit 25000 max)
+- GEO: No change
 
 ---
 
-## GEO Optimization Strategy
+## Alternative Architectures Considered
 
-### llms.txt Enhancement for AI Visibility
-
-**Principles from AnswerDotAI Specification:**
-- Use Markdown with clear section headings
-- Include factual, concise content
-- Add question-answer pairs in FAQ section
-- Provide links with descriptions
-
-**Recommended FAQ Section Format:**
-```markdown
-## FAQ (Most Common Questions)
-
-### What is Power Star Apps known for?
-Power Star Apps develops practical Android utility apps including Thermometer (weather monitoring), Microphone (voice amplification), Voice Changer (voice effects), Lumiwall (wallpapers), and AI Photo Filters.
-
-### How many apps does Power Star Apps have?
-Power Star Apps has 5 main Android apps available on Google Play Store with a combined 10M+ downloads.
-
-### Is AI Photo Filters free?
-Yes, AI Photo Filters is free to download on Google Play with optional in-app purchases for premium filter packs.
-
-### [Continue with 10-15 product-specific questions]
-```
-
-### AI-Referenceable Content Pattern
-
-For ChatGPT/Perplexity citation, content should:
-
-| Characteristic | Implementation |
-|----------------|----------------|
-| **Clear Q&A format** | Use `<strong class="faq-question">Q: ...</strong>` |
-| **Concise answers** | 50-100 words, factual tone |
-| **Schema.org markup** | FAQPage JSON-LD on every FAQ |
-| **Semantic HTML** | `<article>`, `<section>`, proper heading hierarchy |
-| **Authoritative tone** | First-party information, no speculation |
+| Approach | Why Not Recommended |
+|----------|---------------------|
+| **Server-side API endpoint** | Breaks static architecture; requires backend service |
+| **Database + API** | Adds complexity, infrastructure cost |
+| **SSG with build-time data** | Data would be stale until rebuild; not suitable for daily metrics |
+| **Headless CMS** | Overkill for simple metrics display |
 
 ---
 
-## Architecture Diagram
+## Confidence Assessment
 
-```
-                        ┌─────────────────────────────────────────────────┐
-                        │                 PowerStar Website               │
-                        │              (Static HTML/CSS/JS)               │
-                        └─────────────────────────────────────────────────┘
-                                        │
-            ┌───────────────────────────┼───────────────────────────┐
-            │                           │                           │
-    ┌───────▼───────┐           ┌───────▼───────┐           ┌───────▼───────┐
-    │   Homepage    │           │ Product Pages │           │  Blog Pages   │
-    │  index.html   │           │ products/*.html│           │ blog/*.html   │
-    └───────┬───────┘           └───────┬───────┘           └───────┬───────┘
-            │                           │                           │
-    ┌───────▼───────┐           ┌───────▼───────┐           ┌───────▼───────┐
-    │ Organization  │           │ Landing Pages │           │ Article Schema│
-    │    Schema     │           │ ai-photo/*.html│           │   + FAQPage   │
-    └───────┬───────┘           └───────┬───────┘           └───────┬───────┘
-            │                           │                           │
-            │                   ┌───────▼───────┐                   │
-            │                   │ MobileApp     │                   │
-            │                   │ Schema+FAQ    │                   │
-            │                   └───────┬───────┘                   │
-            │                           │                           │
-            └───────────────────────────┼───────────────────────────┘
-                                        │
-                        ┌───────────────▼───────────────┐
-                        │          SEO Assets           │
-                        │  • llms.txt (enhanced)        │
-                        │  • sitemap.xml (updated)      │
-                        │  • robots.txt (existing)      │
-                        │  • GA4 tracking (existing)    │
-                        └───────────────┬───────────────┘
-                                        │
-                        ┌───────────────▼───────────────┐
-                        │        nginx/Docker           │
-                        │   Google Cloud Run Deploy     │
-                        │   Cache-Control: public       │
-                        │   Expires: 1y (static)        │
-                        └───────────────────────────────┘
-
-NEW/ENHANCED COMPONENTS:
-┌─────────────────────────────────────────────────────────────────┐
-│ css/landing-page.css     ← NEW (extracted from inline)          │
-│ blog/article-template.html ← NEW (standardized template)        │
-│ images/demo/*.jpg        ← NEW (landing page demo images)       │
-│ llms.txt FAQ section     ← ENHANCED (AI-referenceable content) │
-│ blog/*.html full layout  ← ENHANCED (add nav, schema, styling) │
-│ blog.html href fixes     ← ENHANCED (replace href="#")         │
-│ sitemap.xml new entries  ← ENHANCED (add new pages)            │
-└─────────────────────────────────────────────────────────────────┘
-```
-
----
-
-## Compatibility with Static nginx Deployment
-
-### Deployment Constraints
-
-| Constraint | Status | Notes |
-|------------|--------|-------|
-| No build tools required | Compatible | All changes are static HTML edits |
-| Docker/nginx unchanged | Compatible | Optional nginx enhancements only |
-| Cloud Run compatible | Compatible | Same deployment process |
-| No server-side processing | Compatible | Pure static file serving |
-
-### CI/CD Pipeline (Unchanged)
-
-```yaml
-# cloudbuild.yaml - No changes required
-steps:
-  - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', '...', '.']
-  - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', '...']
-  - name: 'gcr.io/google-appengine/cmd/cloud-run-deploy'
-    args: ['deploy', '...']
-```
-
-### Development Workflow (No Build Step)
-
-```bash
-# Local development - unchanged
-docker build -t powerstar-website .
-docker run -p 8080:8080 powerstar-website
-
-# Deploy - unchanged
-gcloud builds submit --config=cloudbuild.yaml
-```
-
----
-
-## Summary
-
-| Aspect | Approach | Key Action |
-|--------|----------|------------|
-| **Integration strategy** | Enhancement over addition | Improve existing templates, no new tools |
-| **Content creation** | Template-based copy-paste | Create `article-template.html`, `landing-page-template.html` |
-| **Structured data** | Add missing schemas | Article schema for blog, FAQPage for FAQs |
-| **llms.txt** | FAQ section addition | 10-15 Q&A pairs for AI citation |
-| **Performance** | CSS extraction | `landing-page.css` enables 1-year caching |
-| **Timeline fit** | Phased approach | Critical fixes first, content expansion last |
+| Area | Confidence | Notes |
+|------|------------|-------|
+| Static integration pattern | HIGH | Standard pattern for static site + external data |
+| GSC API authentication | HIGH | Official Google service account pattern |
+| GEO automation (Claude) | HIGH | Official Anthropic API documented |
+| GEO automation (Perplexity) | MEDIUM | API availability needs verification |
+| GEO automation (Google AI Overview) | LOW | No API available; manual testing only |
+| JSON structure | HIGH | Based on GSC API response structure |
+| Dashboard rendering | HIGH | Standard client-side fetch pattern |
 
 ---
 
 ## Sources
 
-- AnswerDotAI llms.txt Specification (WebSearch verified) - HIGH confidence
-- Programmatic SEO static site patterns (WebSearch) - MEDIUM confidence
-- nginx Core Web Vitals optimization (WebSearch) - HIGH confidence
-- Existing codebase analysis (Read tool) - HIGH confidence
-- llms.txt v0.2 format guidelines (existing file analysis) - HIGH confidence
+| Source | Confidence | Type |
+|--------|------------|------|
+| Google Service Account authentication pattern | HIGH | Official Google docs (training knowledge) |
+| Google Search Console API structure | HIGH | Official API docs (training knowledge) |
+| Anthropic Claude API | HIGH | Official docs (training knowledge) |
+| Static site + JSON data pattern | HIGH | Industry standard pattern |
+| nginx caching configuration | HIGH | Official nginx docs |
+| Perplexity API availability | MEDIUM | Unverified - needs research |
+| Google AI Overview API | LOW | No known API - training knowledge says not available |
 
 ---
 
-*Architecture research completed: 2026-04-03*
+## Gaps to Address
+
+1. **Perplexity API access** - Need to verify if Perplexity provides API for automated queries
+2. **Google AI Overview testing** - Currently no automation possible; consider manual weekly check
+3. **Monitoring scripts repository location** - Decide if separate repo or excluded directory
+4. **Automated deployment pipeline** - Need to decide between manual copy vs GitHub Actions
+
+---
+
+## Recommendations for Phase Planning
+
+### Phase 1: Foundation (Data + Dashboard Skeleton)
+- Create `/data/` directory
+- Define JSON structure
+- Create dashboard.html template
+- Test client-side fetch
+
+### Phase 2: GSC Integration
+- Set up service account
+- Implement GSC collector script
+- Generate real JSON data
+
+### Phase 3: GEO Integration
+- Set up Claude API access
+- Implement GEO query script
+- Add GEO section to JSON
+
+### Phase 4: Dashboard Completion
+- Implement rendering logic
+- Add charts (Chart.js)
+- Implement alert display
+
+### Phase 5: Automation
+- Implement orchestrator
+- Set up scheduled execution
+- Implement anomaly detection
+- Implement weekly reports
+
+---
+
+*Architecture research completed: 2026-04-08*
+*Milestone: v1.1 SEO Monitoring System*

@@ -1,325 +1,508 @@
-# Technology Stack Additions for SEO/GEO Optimization
+# Technology Stack: SEO Monitoring System
 
-**Project:** PowerStar Website
-**Researched:** 2026-04-03
-**Focus:** New capabilities for SEO/GEO optimization (existing SEO capabilities not re-researched)
+**Project:** PowerStar Website - SEO/GEO Monitoring (v1.1 Milestone)
+**Researched:** 2026-04-08
+**Focus:** NEW monitoring capabilities only (GSC API, AI citation tracking, Dashboard, Automation, Alerts)
+**Note:** Previous v1.0 research focused on GEO content strategy - this document addresses monitoring stack.
+
+---
 
 ## Executive Summary
 
-The current pure static HTML/CSS/JS architecture is well-suited for GEO optimization. **No major stack changes required.** The key additions are:
+SEO monitoring requires adding a **Node.js script layer** to the existing static architecture. Scripts run separately from the static site, generating JSON data files that the dashboard consumes. **No changes to existing site architecture** - monitoring scripts are an external addition.
 
-1. **Content approach** - Manual HTML templates for blog/landing pages (not a new tool)
-2. **llms-full.txt** - Expanded AI-readable content file (no tool needed)
-3. **robots.txt update** - Allow PerplexityBot crawler (configuration change)
-4. **Content structure** - FAQ formatting guidelines (no tool needed)
+**Key additions:**
+1. Node.js scripts for data collection (Google Search Console, AI APIs)
+2. Chart.js for dashboard visualization
+3. Automation via GitHub Actions or node-cron
+4. Alert mechanisms via email/Slack
 
-**Recommendation:** Keep the current zero-build-tool architecture. Complexity cost of adding a static site generator (SSG) outweighs benefits for 5-10 blog posts.
-
----
-
-## Recommended Additions
-
-### 1. llms-full.txt (New File)
-
-| Aspect | Details |
-|--------|---------|
-| **What** | Comprehensive AI-readable content file |
-| **Version** | llms.txt v0.2 spec |
-| **Purpose** | Provide full product/FAQ content for LLM citation |
-| **Why** | Current `/llms.txt` is brief index; `llms-full.txt` provides detailed content for AI citation |
-| **Confidence** | HIGH - Emerging standard adopted by documentation sites |
-
-**Implementation:**
-```
-/llms-full.txt - Contains:
-- Full product descriptions
-- Detailed FAQ answers
-- Use case explanations
-- Feature comparisons
-- Tutorial summaries
-```
-
-**Rationale:** Perplexity and ChatGPT can cite from this structured content. More detailed than current `/llms.txt` which is just an index.
+**Principle:** Keep the static site static. Monitoring scripts operate independently, outputting JSON files that the dashboard HTML reads at runtime.
 
 ---
 
-### 2. robots.txt Update (Configuration)
+## Recommended Stack
 
-| Aspect | Details |
-|--------|---------|
-| **What** | Add PerplexityBot crawler permission |
-| **Current** | Standard robots.txt exists |
-| **Addition** | Explicit allow directive for AI crawlers |
-| **Why** | PerplexityBot requires explicit permission to crawl for citations |
-| **Confidence** | HIGH - Documented by Perplexity |
+### Core Runtime
 
-**Implementation:**
-```robots.txt
-User-agent: PerplexityBot
-Allow: /
+| Technology | Version | Purpose | Why |
+|------------|---------|---------|-----|
+| Node.js | 20 LTS | Script runtime | Native JSON handling, async APIs, large ecosystem. Compatible with JS-based site context. |
+| TypeScript | 5.x | Type safety | Schema validation for API responses, IDE support, catch errors at compile time. Use `tsx` for execution without build step. |
+| tsx | 4.x | TypeScript executor | Run TS directly, no compilation step needed. Faster than tsc + node. |
 
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-```
-
-**Rationale:** Perplexity uses `PerplexityBot/1.0` crawler. Without explicit allow, it may not index all content. OpenAI uses `GPTBot` for training/crawling.
+**Rationale:** Node.js 20 LTS is current stable. TypeScript adds safety for API response handling. `tsx` eliminates build complexity - scripts run directly from source.
 
 ---
 
-### 3. FAQ Content Structure (Content Pattern)
+### Google Search Console Integration
 
-| Aspect | Details |
-|--------|---------|
-| **What** | Structured Q&A format for AI citation |
-| **Tool** | None - content pattern, not a tool |
-| **Format** | Clear question + concise 40-60 word answer |
-| **Why** | AI systems prefer direct, factual answers they can cite |
-| **Confidence** | HIGH - SEO best practice, confirmed by multiple sources |
+| Library | Version | Purpose | Why |
+|---------|---------|---------|-----|
+| googleapis | 171.4.0 | GSC API client | Official Google library, complete API coverage, maintained by Google. Access to searchAnalytics.query for metrics. |
+| google-auth-library | 10.6.2 | Service Account auth | Required for server-to-server auth. Supports JWT, computes signatures automatically. No OAuth user flow needed. |
 
-**Implementation Pattern:**
+**Rationale:** Official library ensures API compatibility. Service Account authentication ideal for automated scripts - no user interaction required.
+
+**What GSC API provides:**
+- `searchAnalytics.query` - Impressions, clicks, CTR, average position by query/page/country/device
+- `urlInspection.index.inspect` - Indexing status, coverage issues
+- `sitemaps.list` - Sitemap submission status
+
+**Integration approach:**
+```typescript
+import { google } from 'googleapis';
+
+const auth = new google.auth.GoogleAuth({
+  keyFile: process.env.GOOGLE_APPLICATION_CREDENTIALS,
+  scopes: ['https://www.googleapis.com/auth/webmasters.readonly'],
+});
+
+const searchconsole = google.searchconsole({ version: 'v1', auth });
+
+// Query metrics
+const response = await searchconsole.searchanalytics.query({
+  siteUrl: 'https://powerstar.app',
+  requestBody: {
+    startDate: '2026-03-01',
+    endDate: '2026-03-31',
+    dimensions: ['query', 'page'],
+    metrics: ['clicks', 'impressions', 'ctr', 'position'],
+    rowLimit: 1000,
+  },
+});
+```
+
+---
+
+### GEO/AI Citation Tracking
+
+| Library | Version | Purpose | Why |
+|---------|---------|---------|-----|
+| ai | 6.0.152 | Vercel AI SDK core | Unified interface across AI providers. Handles streaming, structured output, retries. |
+| @ai-sdk/perplexity | 3.0.29 | Perplexity Sonar API | Perplexity's real-time web search API. Query "What apps measure body temperature?" to check citation. |
+| openai | 6.33.0 | ChatGPT API | Official SDK for GPT-4 models. Use `gpt-4o` for citation queries. |
+| @anthropic-ai/sdk | 0.85.0 | Claude API | Official SDK for Claude models. Use `claude-haiku-4-5` (cost-effective) or `claude-sonnet-4-6` (better reasoning). |
+
+**Rationale:** Vercel AI SDK provides unified interface - same code pattern for Perplexity, OpenAI, Anthropic. Each SDK remains available for provider-specific features.
+
+**Models to use:**
+| Provider | Model | API ID | Use Case | Cost |
+|----------|-------|--------|----------|------|
+| Perplexity | Sonar | `sonar` | Web search queries, real-time results | $5/1M input, $10/1M output |
+| Perplexity | Sonar Pro | `sonar-pro` | More detailed answers | Higher cost |
+| OpenAI | GPT-4o | `gpt-4o` | General queries, citation analysis | $2.50/1M input, $10/1M output |
+| Anthropic | Claude Haiku 4.5 | `claude-haiku-4-5` | Fast, cost-effective queries | $1/1M input, $5/1M output |
+| Anthropic | Claude Sonnet 4.6 | `claude-sonnet-4-6` | Better reasoning for complex analysis | $3/1M input, $15/1M output |
+
+**Tracking approach:**
+```typescript
+import { createPerplexity } from '@ai-sdk/perplexity';
+import { generateText } from 'ai';
+
+const perplexity = createPerplexity({
+  apiKey: process.env.PERPLEXITY_API_KEY
+});
+
+const result = await generateText({
+  model: perplexity('sonar'),
+  prompt: 'What are the best mobile apps for measuring body temperature? List specific apps.',
+});
+
+// Parse result for "PowerStar" or product names (Thermometer, Microphone, etc.)
+```
+
+**Query template:**
+- Query: "What apps can measure body temperature on iPhone/Android?"
+- Query: "Best voice changer apps for mobile"
+- Query: "Apps for dynamic wallpaper on phone"
+- Analyze: Does response mention PowerStar products? Track citation frequency.
+
+---
+
+### Dashboard & Visualization
+
+| Library | Version | Purpose | Why |
+|---------|---------|---------|-----|
+| Chart.js | 4.5.1 | Standard charts | Lightweight, CDN-compatible, renders to canvas. Line charts for trends, bar for comparisons, pie for distribution. |
+| D3.js | 7.9.0 (optional) | Custom visualizations | Only if Chart.js insufficient. Powerful but heavier. |
+
+**Rationale:** Chart.js is sufficient for SEO metrics - time series for trends, bar charts for keyword comparisons. Works with static JSON data files.
+
+**Architecture pattern:**
+```
+/monitoring/
+  scripts/           # Run separately (not part of site)
+    daily-check.ts   # Collect GSC metrics, AI citations
+    weekly-report.ts # Aggregate weekly data
+  data/              # Output: JSON files
+    gsc-metrics.json # Daily GSC data
+    ai-citations.json # AI mention tracking
+    alerts.json      # Active alerts list
+  dashboard/         # Static HTML (part of site)
+    index.html       # Dashboard page
+    app.js           # Chart.js rendering
+```
+
+**Dashboard page structure:**
 ```html
-<section itemscope itemtype="https://schema.org/FAQPage">
-  <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-    <h3 itemprop="name">Clear question as users would ask it?</h3>
-    <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-      <p itemprop="text">Direct factual answer in 40-60 words. 
-         Front-load key information. Avoid fluff.</p>
-    </div>
-  </div>
-</section>
+<!-- /dashboard/index.html -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1"></script>
+<script>
+  // Fetch JSON data files
+  fetch('/monitoring/data/gsc-metrics.json')
+    .then(r => r.json())
+    .then(data => {
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: data.dates,
+          datasets: [{
+            label: 'Impressions',
+            data: data.impressions,
+          }]
+        }
+      });
+    });
+</script>
 ```
 
-**Key Principles:**
-- Questions mirror natural language queries
-- Answers are definitive, not vague
-- Include specific details (numbers, names, comparisons)
-- Already have FAQPage schema - enhance content quality
+---
+
+### Automation & Scheduling
+
+| Library | Version | Purpose | Why |
+|---------|---------|---------|-----|
+| node-cron | 4.2.1 | Local scheduling | Simple cron syntax, reliable. Use for local development/testing. |
+
+**Alternative: GitHub Actions (recommended for production)**
+```yaml
+# .github/workflows/seo-monitor.yml
+name: Daily SEO Check
+on:
+  schedule:
+    - cron: '0 6 * * *'  # 6 AM UTC daily
+  workflow_dispatch:      # Manual trigger
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - run: npm ci
+        working-directory: monitoring
+      
+      - name: Run daily check
+        run: npx tsx scripts/daily-check.ts
+        working-directory: monitoring
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS_JSON: ${{ secrets.GCP_SA_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      
+      - name: Commit data updates
+        run: |
+          git config user.name "SEO Monitor Bot"
+          git config user.email "bot@powerstar.app"
+          git add monitoring/data/*.json
+          git diff --quiet && git commit -m "Update SEO metrics [skip ci]"
+          git push
+```
+
+**Rationale:** GitHub Actions free tier includes 2000 minutes/month - sufficient for daily 5-minute script runs. Data commits to repo, dashboard reads from served JSON. No server needed.
 
 ---
 
-### 4. Blog Content Template (Content Pattern)
+### Alert Mechanisms
 
-| Aspect | Details |
-|--------|---------|
-| **What** | Reusable HTML template for blog posts |
-| **Tool** | None - manual copy/paste approach |
-| **Format** | Standardized HTML structure with placeholders |
-| **Why** | Consistency without build tool complexity |
-| **Confidence** | HIGH - Fits current architecture |
+| Library | Version | Purpose | Why |
+|---------|---------|---------|-----|
+| nodemailer | 8.0.5 | Email alerts | Battle-tested, supports SMTP. Free via Gmail SMTP (with app password). |
+| resend | 6.10.0 | Modern email API | Alternative: better deliverability, simpler API. Free tier: 3000 emails/month. |
+| @slack/webhook | 7.0.8 | Slack notifications | Simple webhook integration. No OAuth complexity. Team alerts. |
 
-**Approach:**
-- Create `blog/template.html` with standard structure
-- Copy for each new post, replace content
-- Maintain manually (acceptable for 5-10 posts)
+**Rationale:** Email via nodemailer (free SMTP) or Resend (modern API). Slack for immediate team notification. Configure both as optional channels.
 
-**Rationale:** For 5-10 blog posts, manual approach is simpler than introducing Node.js/npm build step. Current site has zero build dependencies - adding SSG increases complexity disproportionately.
+**Alert thresholds (from PROJECT.md):**
+| Metric | Threshold | Alert |
+|--------|-----------|-------|
+| Traffic (clicks) | > 30% drop vs previous week | HIGH |
+| Indexed pages | > 20% drop | HIGH |
+| Average position | > 10 positions drop for top keywords | MEDIUM |
+| AI citations | No mentions in weekly query batch | LOW (informational) |
+
+**Alert implementation:**
+```typescript
+// scripts/send-alerts.ts
+import nodemailer from 'nodemailer';
+import { WebClient } from '@slack/web-api';
+
+async function sendAlert(type: 'email' | 'slack', message: string) {
+  if (type === 'email') {
+    const transporter = nodemailer.createTransport({
+      host: 'smtp.gmail.com',
+      port: 587,
+      auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS },
+    });
+    await transporter.sendMail({
+      from: 'SEO Monitor <alerts@powerstar.app>',
+      to: 'team@powerstar.app',
+      subject: 'SEO Alert: Traffic Drop Detected',
+      text: message,
+    });
+  }
+  
+  if (type === 'slack') {
+    await slackClient.chat.postMessage({
+      channel: '#seo-alerts',
+      text: message,
+    });
+  }
+}
+```
 
 ---
 
-### 5. Landing Page Generation (Existing Pattern)
+### Data & Utilities
 
-| Aspect | Details |
-|--------|---------|
-| **What** | Continue manual template approach for landing pages |
-| **Tool** | None - already have pattern from AI Photo pages |
-| **Pattern** | Copy existing landing page, modify content |
-| **Why** | Already validated; 10 AI Photo landing pages created this way |
-| **Confidence** | HIGH - Proven pattern |
+| Library | Version | Purpose | Why |
+|---------|---------|---------|-----|
+| axios | 1.14.0 | HTTP client | Promise-based, interceptors, retry support. Used for any direct API calls. |
+| dotenv | 17.4.1 | Environment variables | Load secrets from .env. Never commit API keys. |
+| fs-extra | 11.3.4 | File operations | Promise-based fs, atomic writes. Write JSON data files safely. |
+| zod | 4.3.6 | Schema validation | Validate API responses before writing. Catch data errors early. |
 
-**Current Template:** `/products/ai-photo/anime-style.html` (and 9 others)
+**Rationale:** Standard utilities for Node.js data handling. Zod validates GSC and AI API responses match expected structure.
 
-**For 5 Products:**
-- Thermometer: thermometer-baby.html, thermometer-outdoor.html, etc.
-- Microphone: microphone-karaoke.html, microphone-recording.html, etc.
-- Voice Changer: voice-changer-female.html, voice-changer-robot.html, etc.
-- Lumiwall: lumiwall-nature.html, lumiwall-abstract.html, etc.
-- AI Photo: Already has 10 pages (expand if needed)
+---
+
+### CLI Development (Optional)
+
+| Library | Version | Purpose | Why |
+|---------|---------|---------|-----|
+| @clack/prompts | 1.2.0 | Interactive CLI | Beautiful terminal UI for manual script runs, debugging. |
+
+---
+
+## Alternatives Considered
+
+| Category | Recommended | Alternative | Why Not |
+|----------|-------------|-------------|---------|
+| Runtime | Node.js 20 LTS | Python 3.11+ | Would fragment stack: site is JS, scripts would be Python. Node handles everything for this use case. |
+| Charts | Chart.js | Plotly.js | Larger bundle, more complex. Chart.js sufficient for SEO metrics. |
+| Charts | Chart.js | ApexCharts | Good alternative, but Chart.js larger community, more Stack Overflow answers. |
+| Charts | Chart.js | D3.js | Overkill for standard charts. Only consider for custom visualizations. |
+| Email | nodemailer | SendGrid API | Free tier only 100 emails/day. nodemailer + Gmail SMTP = effectively unlimited. |
+| Email | nodemailer | Resend | Excellent but newer. Use nodemailer first, migrate to Resend if deliverability issues. |
+| Alerts | Slack webhook | PagerDuty | Overkill for SEO monitoring. PagerDuty for ops emergencies. |
+| GSC API | googleapis | n8n-nodes-gsc | n8n is workflow platform, adds complexity. Direct API simpler. |
+| GSC API | googleapis | MCP server GSC | MCP is for LLM context, not data collection. |
+| AI SDK | Vercel AI SDK | Direct fetch | SDK handles retries, streaming, structured output. Worth dependency. |
+| Automation | GitHub Actions | AWS Lambda | Lambda requires AWS account, costs. Actions free for small scripts. |
+| Automation | GitHub Actions | Cloud Run Jobs | Already using Cloud Run, but Jobs requires separate config. Actions simpler. |
 
 ---
 
 ## What NOT to Add
 
-| Rejected | Why Rejected | What to Do Instead |
-|----------|--------------|-------------------|
-| **Static Site Generator (11ty, Hugo)** | Adds Node.js/Go dependency, build step, deployment complexity for ~15 pages total | Manual HTML templates |
-| **Headless CMS** | Overkill for static marketing site, adds API dependency, latency, cost | Direct HTML editing |
-| **JavaScript Framework (React, Vue)** | Site is static; no interactivity benefit; breaks SEO if SSR required | Continue with vanilla JS |
-| **Server-side Processing** | Cloud Run configured for static files; adds complexity, cost | Keep pure static |
-| **Database** | No dynamic content needs; adds infrastructure burden | Static JSON if needed |
-| **npm/yarn** | Zero-dependency architecture is feature; adding package manager breaks this simplicity | CDN libraries only |
-| **Blog commenting system** | No user interaction needed; potential spam target | No comments |
-| **Cookie consent banner** | Has policy page; analytics is GA4 (legitimate interest) | Update privacy policy if needed |
+| Avoid | Why |
+|-------|-----|
+| Database (PostgreSQL, MongoDB) | JSON files sufficient. Monitoring data is historical records, not complex queries. ~100KB/month growth. |
+| Backend server (Express, Fastify) | Scripts generate JSON, static dashboard reads it. No real-time requirements. |
+| Frontend framework (React, Vue) | Single dashboard page. Vanilla JS + Chart.js simpler, no build step. |
+| Build tool (Vite, Webpack) | TypeScript via tsx, no compilation needed. Site remains zero-build. |
+| Testing framework (Jest, Vitest) | Monitoring scripts. Validation via Zod. Consider only if complexity grows. |
+| Redis/caching | Not needed for daily runs. Data freshness matters, cache would hurt. |
+| Authentication for dashboard | Internal use only. Use nginx HTTP Basic Auth if needed: `auth_basic "SEO Dashboard";` |
+| Full-stack framework | Monitoring is scripts + data files. No server component. |
+| GraphQL | Overkill. Simple REST patterns for API calls. |
 
 ---
 
-## Integration Approach
+## Installation
 
-### Current Architecture (Preserve)
+```bash
+# Create monitoring directory
+mkdir -p monitoring/scripts monitoring/data monitoring/dashboard
+
+# Monitoring package.json
+cd monitoring
+npm init -y
+
+# TypeScript execution
+npm install -D typescript tsx @types/node
+
+# Google Search Console
+npm install googleapis google-auth-library
+
+# AI APIs (install only providers you'll use)
+npm install ai @ai-sdk/perplexity    # Perplexity
+npm install openai                    # OpenAI/ChatGPT
+npm install @anthropic-ai/sdk         # Claude
+
+# Dashboard
+npm install chart.js                   # If bundling (or use CDN in HTML)
+
+# Automation
+npm install node-cron                  # Local scheduling
+
+# Alerts
+npm install nodemailer                 # Email
+npm install @slack/webhook             # Slack webhook
+npm install resend                     # Alternative email (optional)
+
+# Utilities
+npm install axios dotenv fs-extra zod
+
+# CLI (optional)
+npm install @clack/prompts
 ```
-nginx:alpine Docker container
-├── Pure HTML/CSS/JS files
-├── CDN-loaded GSAP 3.12.5
-├── Google Fonts (Bebas Neue, Work Sans)
-├── Google Analytics 4 (G-HRVN6H8K26)
-├── sitemap.xml, robots.txt, llms.txt
-└── Schema.org JSON-LD (Product, FAQPage, Organization)
+
+**Total dependencies:** ~15 packages
+**Site bundle impact:** None. Scripts run separately, dashboard uses CDN Chart.js.
+
+---
+
+## Configuration Required
+
+### Environment Variables (.env)
+
+```bash
+# Google Search Console
+GOOGLE_APPLICATION_CREDENTIALS=./credentials.json
+GSC_SITE_URL=https://powerstar.app
+
+# AI APIs (install SDKs only for providers you configure)
+OPENAI_API_KEY=sk-proj-...
+ANTHROPIC_API_KEY=sk-ant-...
+PERPLEXITY_API_KEY=pplx-...
+
+# Alerts
+SLACK_WEBHOOK_URL=https://hooks.slack.com/services/TXXX/BXXX/XXX
+SMTP_HOST=smtp.gmail.com
+SMTP_USER=alerts@example.com
+SMTP_PASS=your-app-password-here
+
+# Or Resend instead of SMTP
+RESEND_API_KEY=re_...
 ```
 
-### New Additions (Minimal)
+### Google Cloud Setup
+
+1. Go to [Google Cloud Console](https://console.cloud.google.com)
+2. Create new project or use existing
+3. Enable "Google Search Console API" 
+4. Create Service Account:
+   - IAM & Admin > Service Accounts > Create
+   - Generate JSON key file (save as `credentials.json`)
+5. Add Service Account email to Search Console:
+   - Go to Search Console > Settings > Users
+   - Add user: paste Service Account email
+   - Permission: Full or Restricted (Read-only sufficient)
+
+### Slack Webhook Setup
+
+1. Go to Slack App settings
+2. Create Incoming Webhook
+3. Select channel (e.g., #seo-alerts)
+4. Copy webhook URL to .env
+
+---
+
+## File Structure
+
 ```
-nginx:alpine Docker container
-├── [EXISTING] All current files
-├── [NEW] llms-full.txt              # Expanded AI content
-├── [UPDATE] robots.txt              # Add AI crawler permissions
-├── [NEW] blog/template.html        # Blog post template
-├── [NEW] products/thermometer-*.html # New landing pages
-├── [NEW] products/microphone-*.html  # New landing pages
-├── [NEW] products/voice-changer-*.html # New landing pages
-├── [NEW] products/lumiwall-*.html   # New landing pages
-└── [UPDATE] Enhanced FAQ content    # Better Q&A format
+powerstar-website/
+  # EXISTING SITE (unchanged)
+  index.html
+  products/
+    thermometer.html
+    ...
+  css/
+  js/
+  
+  # NEW: Monitoring Layer
+  monitoring/
+    scripts/
+      daily-check.ts      # Run daily via GitHub Actions
+      weekly-report.ts    # Run weekly, aggregate data
+      query-ai-citations.ts # Query Perplexity/ChatGPT for mentions
+      send-alerts.ts      # Alert dispatch logic
+    data/
+      gsc-metrics.json    # { dates, impressions, clicks, ctr, position, queries }
+      ai-citations.json   # { queries, mentions, sentiment, timestamp }
+      alerts-history.json # { alerts: [{ type, message, timestamp, resolved }] }
+      dashboard-config.json # Dashboard settings
+    dashboard/
+      index.html          # Dashboard page (served as static)
+      styles.css
+      app.js              # Chart.js rendering logic
+    lib/
+      gsc-client.ts       # Google Search Console wrapper
+      ai-client.ts        # Unified AI query interface
+      alert-client.ts     # Alert dispatch wrapper
+      schemas.ts          # Zod schemas for API responses
+      config.ts           # Environment configuration
+    package.json
+    tsconfig.json
+    .env.example
+    credentials.json      # GCP Service Account key (DO NOT COMMIT)
 ```
-
-### No Build Process Changes
-- Dockerfile unchanged
-- nginx.conf unchanged
-- Cloud Build config unchanged
-- Deployment workflow unchanged
-
----
-
-## Content Strategy for GEO
-
-### What AI Systems Look For
-
-Based on research into PerplexityBot, ChatGPT browsing, and Google AI Overview:
-
-| Factor | How to Address | Priority |
-|--------|---------------|----------|
-| **Clear structure** | Use H1-H3 hierarchy, semantic HTML | HIGH |
-| **Factual content** | Specific numbers, comparisons, definitive statements | HIGH |
-| **Authority signals** | Author info, citations, external links | MEDIUM |
-| **Fresh content** | Publication dates, update timestamps | MEDIUM |
-| **Accessible format** | No JavaScript-rendered content, fast load | HIGH |
-| **Schema markup** | FAQPage, Product, Article schemas | HIGH (already done) |
-| **AI-readable file** | llms-full.txt with comprehensive content | HIGH |
-
-### Content Format for AI Citation
-
-**Do:**
-- Front-load key information (inverted pyramid)
-- Use definitive language ("The thermometer app measures..." not "This app might help...")
-- Include specific details (numbers, feature names, comparisons)
-- Write questions as users would ask them
-- Keep answers to 40-60 words for voice/AI search
-- Use clear section headings
-
-**Don't:**
-- Use vague marketing language
-- Hide key info behind "read more" clicks
-- Require JavaScript for main content
-- Use paywalls or login requirements
-- Block AI crawlers in robots.txt
-
----
-
-## Detailed Tool Analysis
-
-### Considered: Eleventy (11ty) Static Site Generator
-
-| Aspect | Evaluation |
-|--------|------------|
-| **What** | Node.js-based SSG, outputs plain HTML |
-| **Installation** | `npm install @11ty/eleventy` |
-| **Build** | `npx @11ty/eleventy` |
-| **Pros** | Zero-config, template agnostic, fast builds |
-| **Cons** | Requires Node.js, npm, build step, adds ~200 files to project |
-| **Verdict** | **REJECT** - Complexity cost exceeds benefit for ~15 new pages |
-
-### Considered: Hugo Static Site Generator
-
-| Aspect | Evaluation |
-|--------|------------|
-| **What** | Go-based SSG, extremely fast builds |
-| **Installation** | Download binary, install Go |
-| **Pros** | Single binary, very fast, mature |
-| **Cons** | Requires Go, new templating syntax, deployment complexity |
-| **Verdict** | **REJECT** - Steeper learning curve, not worth for small site |
-
-### Considered: Continue Manual HTML
-
-| Aspect | Evaluation |
-|--------|------------|
-| **What** | Copy template, modify content, commit |
-| **Pros** | Zero new dependencies, consistent with current architecture, simple deployment |
-| **Cons** | Time-consuming, manual consistency maintenance |
-| **Verdict** | **ACCEPT** - For 5-10 blog posts + 20 landing pages, manual approach is appropriate |
-
----
-
-## Cost Analysis
-
-| Addition | One-Time Cost | Ongoing Cost | Complexity |
-|----------|--------------|--------------|------------|
-| llms-full.txt | 2 hours writing | 30 min/month updates | Zero |
-| robots.txt update | 5 minutes | None | Zero |
-| Blog template | 1 hour setup | Copy/paste per post | Zero |
-| Landing pages | 30 min/page | None | Zero |
-| FAQ enhancement | 2 hours writing | 30 min/month updates | Zero |
-| **Total** | ~10 hours | ~1 hour/month | **Zero** |
-
-**Compared to adding SSG:**
-- Setup: 4-8 hours (install, configure, test, CI/CD updates)
-- Learning curve: 2-4 hours
-- Ongoing: 30 min/build troubleshooting
-- Risk: Build failures, dependency updates, version conflicts
-
----
-
-## Implementation Priority
-
-### Phase 1: Foundation (Day 1)
-1. Update `robots.txt` with AI crawler permissions
-2. Create `llms-full.txt` with comprehensive product/FAQ content
-
-### Phase 2: Content (Days 2-5)
-3. Create blog template HTML
-4. Write first 3 blog posts (tutorial, comparison, review)
-5. Enhance FAQ content with direct Q&A format
-
-### Phase 3: Landing Pages (Days 6-10)
-6. Create landing pages for Thermometer (5 pages)
-7. Create landing pages for Microphone (5 pages)
-8. Create landing pages for Voice Changer (5 pages)
-9. Create landing pages for Lumiwall (5 pages)
-
----
-
-## Confidence Assessment
-
-| Area | Level | Reason |
-|------|-------|--------|
-| llms-full.txt approach | HIGH | Emerging standard, adopted by major docs sites |
-| PerplexityBot crawler config | HIGH | Documented by Perplexity |
-| Manual HTML approach | HIGH | Already proven with 10 AI Photo pages |
-| FAQ format for AI citation | HIGH | SEO standard practice, multiple sources confirm |
-| Content strategy | MEDIUM | Based on current best practices, GEO is evolving |
 
 ---
 
 ## Sources
 
-- PerplexityBot crawler documentation (perplexity.ai)
-- llms.txt specification discussion (llmstxt.org)
-- ChatGPT browsing citation behavior research
-- Google AI Overview optimization guides
-- Static site generator comparisons (Hugo, Jekyll, 11ty)
-- FAQPage schema documentation (schema.org)
-- AI search optimization best practices (multiple SEO sources)
+| Topic | Source | Confidence |
+|-------|--------|------------|
+| googleapis version/methods | npm registry (`npm view`) | HIGH |
+| google-auth-library version | npm registry | HIGH |
+| Chart.js version | npm registry | HIGH |
+| @ai-sdk/perplexity | npm registry (`npm search`) | HIGH |
+| Vercel AI SDK version | npm registry | HIGH |
+| Claude API models/pricing | platform.claude.com/docs (WebFetch) | HIGH |
+| Claude SDK version | npm registry | HIGH |
+| OpenAI SDK version | npm registry | HIGH |
+| GSC API structure | googleapis documentation | MEDIUM |
+| Perplexity integration | @ai-sdk/perplexity description | MEDIUM |
+| GEO tracking methodology | Emerging practice, llms.txt spec | LOW |
 
 ---
 
-*Research completed: 2026-04-03*
-*Recommendation: No stack changes. Add content files only.*
+## Risk Notes
+
+| Risk | Severity | Mitigation |
+|------|----------|------------|
+| **Perplexity API docs inaccessible** | Medium | Use Vercel AI SDK abstraction. Test thoroughly. |
+| **GEO tracking experimental** | Low | New field. Start with simple query approach, iterate. |
+| **GSC API quotas** | Low | Daily queries well within limits. Hourly would exceed. |
+| **GitHub Actions data commit** | Low | Use `[skip ci]` in commit message to avoid CI loop. |
+| **Service Account key security** | High | Use GitHub Secrets for credentials. Never commit keys.json. |
+| **AI API costs** | Medium | Use Haiku for routine queries. Sonnet/Opus only when needed. |
+
+---
+
+## Previous Research (v1.0 GEO Content)
+
+The following were researched for GEO optimization content strategy and remain valid:
+
+| Addition | Status | Notes |
+|----------|--------|-------|
+| llms-full.txt | Recommended | Create expanded AI-readable content file |
+| robots.txt update | Recommended | Add PerplexityBot, GPTBot permissions |
+| FAQ structure enhancement | Recommended | Direct Q&A format for AI citation |
+| Blog template | Recommended | Manual HTML template for consistency |
+| Landing pages | Recommended | Template-based pages for each product |
+
+These are **content additions**, not stack changes. They complement the monitoring system by improving the content that monitoring tracks.
+
+---
+
+*Research completed: 2026-04-08*
+*Stack additions: Node.js scripts layer, no changes to static site architecture*
