@@ -183,6 +183,11 @@
                 // Update GSC metrics
                 updateGSCMetrics(data.gsc);
 
+                // Render trend chart
+                if (data.gsc?.dailyTrend) {
+                    renderTrendChart(data.gsc.dailyTrend);
+                }
+
                 // Update GEO status
                 updateGEOStatus(data.geo);
 
@@ -399,6 +404,97 @@
             const div = document.createElement('div');
             div.textContent = text;
             return div.innerHTML;
+        }
+
+        function renderTrendChart(dailyTrend) {
+            if (!dailyTrend || dailyTrend.length === 0) {
+                console.warn('No trend data available');
+                return;
+            }
+
+            const ctx = document.getElementById('trendChart').getContext('2d');
+
+            // Prepare data
+            const labels = dailyTrend.map(d => {
+                const date = new Date(d.date);
+                return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+            });
+            const clicksData = dailyTrend.map(d => d.clicks);
+            const impressionsData = dailyTrend.map(d => d.impressions);
+            const positionData = dailyTrend.map(d => d.position);
+
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Clicks',
+                            data: clicksData,
+                            borderColor: '#ff4d00',
+                            backgroundColor: 'rgba(255, 77, 0, 0.1)',
+                            yAxisID: 'y',
+                            tension: 0.3,
+                            fill: false,
+                        },
+                        {
+                            label: 'Impressions',
+                            data: impressionsData,
+                            borderColor: '#00fff0',
+                            backgroundColor: 'rgba(0, 255, 240, 0.1)',
+                            yAxisID: 'y',
+                            tension: 0.3,
+                            fill: false,
+                        },
+                        {
+                            label: 'Position',
+                            data: positionData,
+                            borderColor: '#888888',
+                            backgroundColor: 'rgba(136, 136, 136, 0.1)',
+                            yAxisID: 'y1',
+                            tension: 0.3,
+                            fill: false,
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: '#ffffff',
+                                font: { family: 'Work Sans' }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: { color: '#888888' },
+                            grid: { color: 'rgba(255, 255, 255, 0.05)' }
+                        },
+                        y: {
+                            type: 'linear',
+                            position: 'left',
+                            title: { display: true, text: 'Clicks / Impressions', color: '#888888' },
+                            ticks: { color: '#888888' },
+                            grid: { color: 'rgba(255, 255, 255, 0.05)' }
+                        },
+                        y1: {
+                            type: 'linear',
+                            position: 'right',
+                            title: { display: true, text: 'Position', color: '#888888' },
+                            ticks: { color: '#888888' },
+                            grid: { drawOnChartArea: false },
+                            reverse: true,
+                        }
+                    }
+                }
+            });
         }
     </script>
 </body>
