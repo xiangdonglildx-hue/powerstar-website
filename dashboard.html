@@ -157,6 +157,29 @@
                     </div>
                 </div>
             </section>
+
+            <!-- Indexing Status Section -->
+            <section class="indexing-section">
+                <div class="section-header">
+                    <h2 class="section-title">Indexing <span>Status</span></h2>
+                    <div class="indexing-summary" id="indexingSummary">-</div>
+                </div>
+                <div class="data-table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>URL</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="unindexedTableBody">
+                            <tr>
+                                <td colspan="2" class="no-data">All pages indexed</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
         </div>
     </div>
 
@@ -190,6 +213,9 @@
 
                 // Update GEO status
                 updateGEOStatus(data.geo);
+
+                // Update indexing status
+                updateIndexingStatus(data.gsc);
 
                 // Update alerts
                 updateAlerts(data.alerts);
@@ -495,6 +521,33 @@
                     }
                 }
             });
+        }
+
+        function updateIndexingStatus(gsc) {
+            if (!gsc) return;
+
+            const indexed = gsc.indexedPages || 0;
+            const total = gsc.totalSubmitted || 0;
+            const unindexed = gsc.unindexedUrls || [];
+
+            // Update summary
+            document.getElementById('indexingSummary').textContent =
+                `${indexed} of ${total} indexed`;
+
+            // Update table
+            const tbody = document.getElementById('unindexedTableBody');
+
+            if (unindexed.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="2" class="no-data">All pages indexed</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = unindexed.map(url => `
+                <tr>
+                    <td class="url-cell">${escapeHtml(url)}</td>
+                    <td><span class="status-badge not-indexed">Not indexed</span></td>
+                </tr>
+            `).join('');
         }
     </script>
 </body>
