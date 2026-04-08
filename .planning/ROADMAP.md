@@ -73,7 +73,11 @@ Plans:
   3. gsc-collector.ts script successfully fetches top 50 keywords with metrics (impressions, clicks, CTR, position)
   4. JSON file is updated with real GSC data after script execution
   5. Historical JSON files are retained in /data/history/ for 90 days
-**Plans**: TBD
+**Plans**: 2 plans
+
+Plans:
+- [ ] 06-01-PLAN.md — Create scripts infrastructure and Service Account setup documentation
+- [ ] 06-02-PLAN.md — Implement GSC collector script with API integration and JSON output
 
 ### Phase 7: Dashboard Completion
 **Goal**: 用户可以在 Dashboard 上可视化查看 SEO 指标、图表和表格
@@ -121,7 +125,7 @@ Phases execute in numeric order: 5 → 6 → 7 → 8 → 9
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
 | 5. Data Infrastructure | v1.1 | 1/1 | Complete   | 2026-04-08 |
-| 6. GSC Integration | v1.1 | 0/TBD | Not started | - |
+| 6. GSC Integration | v1.1 | 2/2 | Planned    | - |
 | 7. Dashboard Completion | v1.1 | 0/TBD | Not started | - |
 | 8. GEO Integration | v1.1 | 0/TBD | Not started | - |
 | 9. Automation + Alert | v1.1 | 0/TBD | Not started | - |
