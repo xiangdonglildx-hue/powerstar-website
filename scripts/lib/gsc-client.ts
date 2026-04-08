@@ -344,7 +344,7 @@ export async function fetchDailyMetrics(
   siteUrl: string,
   startDate: string,
   endDate: string
-): Promise<{ date: string; clicks: number; impressions: number }[]> {
+): Promise<{ date: string; clicks: number; impressions: number; position: number }[]> {
   console.log(`Fetching daily metrics from ${startDate} to ${endDate}...`);
 
   const searchconsole = await getSearchConsoleClient();
@@ -356,14 +356,14 @@ export async function fetchDailyMetrics(
         startDate,
         endDate,
         dimensions: ['date'],
-        metrics: ['clicks', 'impressions'],
+        metrics: ['clicks', 'impressions', 'position'],
         rowLimit: 30,
       },
     }),
     'Fetch daily metrics'
   );
 
-  const dailyMetrics: { date: string; clicks: number; impressions: number }[] = [];
+  const dailyMetrics: { date: string; clicks: number; impressions: number; position: number }[] = [];
 
   if (response.data.rows && response.data.rows.length > 0) {
     for (const row of response.data.rows) {
@@ -371,6 +371,7 @@ export async function fetchDailyMetrics(
         date: row.keys?.[0] || '',
         clicks: row.clicks || 0,
         impressions: row.impressions || 0,
+        position: row.position || 0,
       });
     }
   }

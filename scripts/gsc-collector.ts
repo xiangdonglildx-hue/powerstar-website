@@ -23,7 +23,7 @@ import {
   fetchCoverageErrors,
   fetchDailyMetrics,
 } from './lib/gsc-client.js';
-import { GSCMetricsSchema, type SeoMetrics } from './lib/schemas.js';
+import { GSCMetricsSchema, type SeoMetrics, type DailyTrend } from './lib/schemas.js';
 import fs from 'fs-extra';
 import path from 'path';
 
@@ -186,6 +186,7 @@ async function main(): Promise<void> {
   const gscData = {
     indexedPages: indexedPagesData.indexedCount,
     totalSubmitted: indexedPagesData.totalSubmitted,
+    unindexedUrls: indexedPagesData.unindexedUrls,
     topKeywords: topKeywords,
     clicks: {
       last7Days: metrics7d.totalClicks,
@@ -197,6 +198,7 @@ async function main(): Promise<void> {
       last30Days: metrics30d.totalImpressions,
       trend: dailyMetrics.map(d => d.impressions),
     },
+    dailyTrend: dailyMetrics,
     avgPosition: metrics30d.avgPosition,
     avgCTR: metrics30d.avgCTR,
     coverageErrors: coverageErrors,
