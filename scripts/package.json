@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "collect": "tsx gsc-collector.ts",
-    "test:auth": "tsx test-auth.ts"
+    "test:auth": "tsx test-auth.ts",
+    "geo": "tsx geo-query.ts",
+    "test": "vitest run"
   },
   "dependencies": {
     "googleapis": "171.4.0",
@@ -13,12 +15,15 @@
     "dotenv": "17.4.1",
     "fs-extra": "11.3.4",
     "zod": "4.3.6",
-    "xml2js": "^0.6.2"
+    "xml2js": "^0.6.2",
+    "openai": "^4.0.0",
+    "@google/generative-ai": "^0.21.0"
   },
   "devDependencies": {
     "typescript": "^5.0.0",
     "tsx": "^4.0.0",
-    "@types/node": "^22.0.0"
+    "@types/node": "^22.0.0",
+    "vitest": "^2.0.0"
   },
   "keywords": [
     "seo",
