@@ -4,6 +4,7 @@
 # Documentation (不部署到生产环境)
 *.md
 !README.md
+!scripts/GCP-SA-SETUP.md
 
 # Development files
 _nav_template.txt
@@ -12,3 +13,12 @@ generate_assets.md
 # Temporary files
 *.tar.gz
 *.zip
+
+# Scripts directory (SEO monitoring)
+scripts/node_modules/
+scripts/.env
+scripts/credentials.json
+scripts/*.json
+!scripts/package.json
+!scripts/tsconfig.json
+scripts/dist/
