@@ -1,0 +1,124 @@
+# Requirements: v1.1 SEO 监控体系
+
+**Milestone:** v1.1
+**Goal:** 建立 SEO/GEO 监控闭环，追踪收录、排名、AI 引用，自动告警异常变化
+**Created:** 2026-04-08
+
+---
+
+## v1.1 Requirements
+
+### GSC - Google Search Console Integration
+
+- [ ] **GSC-01**: User can view indexed pages count for powerstarapps.com domain
+- [ ] **GSC-02**: User can view top 50 keywords with impressions, clicks, CTR, and average position
+- [ ] **GSC-03**: User can compare indexed pages count against sitemap.xml URLs (flag unindexed pages)
+- [ ] **GSC-04**: User can view coverage errors and warnings from GSC (indexing issues)
+- [ ] **GSC-05**: System fetches GSC metrics daily (quick check at scheduled time)
+- [ ] **GSC-06**: System fetches full GSC metrics weekly (top 100 keywords, page-level data)
+
+### GEO - AI Citation Tracking
+
+- [x] **GEO-01**: System queries ChatGPT monthly with product-related questions (e.g., "best thermometer apps")
+- [ ] **GEO-02**: System queries Perplexity monthly with product-related questions
+- [ ] **GEO-03**: System queries Claude monthly with product-related questions
+- [x] **GEO-04**: System detects if domain/brand is mentioned in AI responses
+- [x] **GEO-05**: System logs AI responses for historical comparison
+- [x] **GEO-06**: User can view citation status per AI system (cited/not cited, last check date)
+
+### VIS - Dashboard Visualization
+
+- [ ] **VIS-01**: User can access monitoring dashboard at dashboard.html
+- [ ] **VIS-02**: Dashboard displays indexed pages count, total clicks, total impressions
+- [ ] **VIS-03**: Dashboard displays top keywords table (query, impressions, clicks, CTR, position)
+- [ ] **VIS-04**: Dashboard displays 30-day trend charts for clicks and impressions (Chart.js)
+- [ ] **VIS-05**: Dashboard displays indexing status (indexed vs submitted, unindexed URL list)
+- [x] **VIS-06**: Dashboard displays AI citation status section
+- [ ] **VIS-07**: Dashboard displays metrics per product (Thermometer, Microphone, Voice Changer, Lumiwall, AI Photo)
+
+### ALERT - Anomaly Detection
+
+- [ ] **ALERT-01**: System detects traffic drop >30% vs previous day
+- [ ] **ALERT-02**: System detects indexed pages drop >20% vs sitemap count
+- [ ] **ALERT-03**: System detects top keyword position drop >5 positions
+- [ ] **ALERT-04**: Dashboard displays red banner when anomalies detected
+- [ ] **ALERT-05**: Dashboard displays highlighted rows for affected metrics
+- [ ] **ALERT-06**: Threshold tuning deferred to Phase 2 (requires 2-4 weeks baseline data)
+
+### AUTO - Automation & Data Storage
+
+- [ ] **AUTO-01**: Monitoring scripts run via GitHub Actions scheduled workflow
+- [ ] **AUTO-02**: Daily check script runs at scheduled time (e.g., 6 AM UTC)
+- [ ] **AUTO-03**: Weekly full script runs at scheduled time (e.g., Monday 8 AM UTC)
+- [ ] **AUTO-04**: AI citation script runs monthly (1st of month)
+- [ ] **AUTO-05**: JSON data files stored at /data/ directory
+- [ ] **AUTO-06**: Historical data retained for 90 days minimum
+- [ ] **AUTO-07**: Dashboard reads JSON via client-side fetch() on page load
+
+---
+
+## Future Requirements (Deferred)
+
+- **Email/Slack notifications** — External notification service integration
+- **Competitor comparison** — Requires competitor GSC access or third-party API
+- **Keyword position history tracking** — Beyond GSC averages
+- **Weekly full report generation (Markdown)** — Full report with recommendations
+- **llms.txt effectiveness correlation** — Correlate llms.txt updates with AI citations
+
+---
+
+## Out of Scope
+
+| Feature | Reason |
+|---------|--------|
+| Real-time dashboard updates | Static architecture constraint (no WebSocket) |
+| User authentication for dashboard | Static site, no backend auth |
+| Database backend | Static architecture, JSON files only |
+| Server-side processing | Cloud Run static files only |
+| Email notification system | Adds SMTP complexity, use dashboard alerts |
+| Paid SEO tool integration (Ahrefs, SEMrush) | API costs, subscription required |
+| Backlink monitoring | GSC API doesn't provide backlink data |
+| Page speed monitoring | Requires Lighthouse CI, separate tool |
+
+---
+
+## Traceability
+
+| REQ-ID | Phase | Plan |
+|--------|-------|------|
+| GSC-01 | Phase 6 | TBD |
+| GSC-02 | Phase 6 | TBD |
+| GSC-03 | Phase 6 | TBD |
+| GSC-04 | Phase 6 | TBD |
+| GSC-05 | Phase 6 | TBD |
+| GSC-06 | Phase 6 | TBD |
+| GEO-01 | Phase 8 | TBD |
+| GEO-02 | Phase 8 | TBD |
+| GEO-03 | Phase 8 | TBD |
+| GEO-04 | Phase 8 | TBD |
+| GEO-05 | Phase 8 | TBD |
+| GEO-06 | Phase 8 | TBD |
+| VIS-01 | Phase 5 | TBD |
+| VIS-02 | Phase 7 | TBD |
+| VIS-03 | Phase 7 | TBD |
+| VIS-04 | Phase 7 | TBD |
+| VIS-05 | Phase 7 | TBD |
+| VIS-06 | Phase 8 | TBD |
+| VIS-07 | Phase 7 | TBD |
+| ALERT-01 | Phase 9 | TBD |
+| ALERT-02 | Phase 9 | TBD |
+| ALERT-03 | Phase 9 | TBD |
+| ALERT-04 | Phase 9 | TBD |
+| ALERT-05 | Phase 9 | TBD |
+| ALERT-06 | Phase 9 | TBD |
+| AUTO-01 | Phase 9 | TBD |
+| AUTO-02 | Phase 9 | TBD |
+| AUTO-03 | Phase 9 | TBD |
+| AUTO-04 | Phase 9 | TBD |
+| AUTO-05 | Phase 5 | TBD |
+| AUTO-06 | Phase 6 | TBD |
+| AUTO-07 | Phase 5 | TBD |
+
+---
+
+*Requirements defined: 2026-04-08*

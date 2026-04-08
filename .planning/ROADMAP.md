@@ -110,7 +110,7 @@ Plans:
 **Plans**: 1 plan
 
 Plans:
-- [ ] 08-01-PLAN.md — Create GEO query script and update dashboard for ChatGPT/Gemini citation tracking
+- [x] 08-01-PLAN.md — Create GEO query script and update dashboard for ChatGPT/Gemini citation tracking
 
 **Note**: GEO-02 (Perplexity) and GEO-03 (Claude) are NOT implemented per user decision — user opted to track Gemini instead of Perplexity/Claude.
 
