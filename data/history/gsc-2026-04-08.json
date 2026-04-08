@@ -1,5 +1,6 @@
 {
-  "lastUpdated": "2026-04-08T06:51:37.002Z",
+  "snapshotDate": "2026-04-08",
+  "collectedAt": "2026-04-08T06:51:37.005Z",
   "gsc": {
     "indexedPages": 2,
     "totalSubmitted": 47,
@@ -181,23 +182,5 @@
     "avgPosition": 11,
     "avgCTR": 0.04032258064516129,
     "coverageErrors": []
-  },
-  "geo": {
-    "chatgpt": {
-      "cited": false,
-      "lastCheck": null,
-      "response": ""
-    },
-    "perplexity": {
-      "cited": false,
-      "lastCheck": null,
-      "response": ""
-    },
-    "claude": {
-      "cited": false,
-      "lastCheck": null,
-      "response": ""
-    }
-  },
-  "alerts": []
+  }
 }

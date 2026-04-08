@@ -61,12 +61,22 @@ export const ImpressionsMetricSchema = z.object({
   trend: z.array(z.number()),
 });
 
+// Coverage error schema (defined before GSCMetricsSchema to avoid reference error)
+export const CoverageErrorSchema = z.object({
+  url: z.string(),
+  impressions: z.number(),
+  clicks: z.number(),
+});
+
 export const GSCMetricsSchema = z.object({
   indexedPages: z.number(),
   totalSubmitted: z.number(),
   topKeywords: z.array(KeywordSchema),
   clicks: ClicksMetricSchema,
   impressions: ImpressionsMetricSchema,
+  avgPosition: z.number().optional(),
+  avgCTR: z.number().optional(),
+  coverageErrors: z.array(CoverageErrorSchema).optional(),
 });
 
 export const SeoMetricsSchema = z.object({
@@ -105,13 +115,6 @@ export const SearchMetricsResultSchema = z.object({
   totalImpressions: z.number(),
   avgCTR: z.number(),
   avgPosition: z.number(),
-});
-
-// Coverage error schema
-export const CoverageErrorSchema = z.object({
-  url: z.string(),
-  impressions: z.number(),
-  clicks: z.number(),
 });
 
 // Export types for use in other modules

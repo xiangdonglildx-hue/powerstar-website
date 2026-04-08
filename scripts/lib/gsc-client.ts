@@ -2,6 +2,7 @@ import { google } from 'googleapis';
 import { config } from './config.js';
 import type { Keyword, IndexedPagesResult, SearchMetricsResult, CoverageError } from './schemas.js';
 import fs from 'fs-extra';
+import path from 'path';
 import xml2js from 'xml2js';
 
 // Retry configuration
@@ -137,7 +138,7 @@ export async function fetchIndexedPages(siteUrl: string): Promise<IndexedPagesRe
   const searchconsole = await getSearchConsoleClient();
 
   // Try to find and parse sitemap
-  const sitemapPath = require('path').resolve('../sitemap.xml');
+  const sitemapPath = path.resolve('../sitemap.xml');
   let submittedUrls: string[] = [];
 
   try {
@@ -301,7 +302,7 @@ export async function fetchCoverageErrors(
 
   const searchconsole = await getSearchConsoleClient();
 
-  // Get pages with low impressions (potential issues)
+  // Get all pages and filter for low impressions locally
   const response = await withRetry(
     () => searchconsole.searchanalytics.query({
       siteUrl: siteUrl,
@@ -311,18 +312,6 @@ export async function fetchCoverageErrors(
         dimensions: ['page'],
         metrics: ['clicks', 'impressions'],
         rowLimit: 100,
-        // Filter for pages with low impressions (potential issues)
-        dimensionFilterGroups: [
-          {
-            filters: [
-              {
-                dimension: 'impression',
-                operator: 'lessThan',
-                expression: '10',
-              },
-            ],
-          },
-        ],
       },
     }),
     'Fetch coverage errors'
@@ -332,11 +321,15 @@ export async function fetchCoverageErrors(
 
   if (response.data.rows && response.data.rows.length > 0) {
     for (const row of response.data.rows) {
-      coverageErrors.push({
-        url: row.keys?.[0] || '(unknown)',
-        impressions: row.impressions || 0,
-        clicks: row.clicks || 0,
-      });
+      // Filter locally for pages with low impressions (< 10)
+      const impressions = row.impressions || 0;
+      if (impressions < 10) {
+        coverageErrors.push({
+          url: row.keys?.[0] || '(unknown)',
+          impressions: impressions,
+          clicks: row.clicks || 0,
+        });
+      }
     }
   }
 
