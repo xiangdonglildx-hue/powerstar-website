@@ -1,0 +1,36 @@
+{
+  "lastUpdated": "2026-04-08T00:00:00Z",
+  "gsc": {
+    "indexedPages": 0,
+    "totalSubmitted": 0,
+    "topKeywords": [],
+    "clicks": {
+      "last7Days": 0,
+      "last30Days": 0,
+      "trend": []
+    },
+    "impressions": {
+      "last7Days": 0,
+      "last30Days": 0,
+      "trend": []
+    }
+  },
+  "geo": {
+    "chatgpt": {
+      "cited": false,
+      "lastCheck": null,
+      "response": ""
+    },
+    "perplexity": {
+      "cited": false,
+      "lastCheck": null,
+      "response": ""
+    },
+    "claude": {
+      "cited": false,
+      "lastCheck": null,
+      "response": ""
+    }
+  },
+  "alerts": []
+}

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Dashboard - PowerStar</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="dashboard-container">
+            <!-- Header -->
+            <header class="dashboard-header">
+                <h1 class="dashboard-title">SEO <span>Dashboard</span></h1>
+                <div class="dashboard-last-updated">
+                    <span id="lastUpdated">Loading...</span>
+                </div>
+            </header>
+
+            <!-- Summary Cards -->
+            <section class="metric-cards">
+                <div class="metric-card">
+                    <div class="metric-card-header">
+                        <span class="metric-card-label">Indexed Pages</span>
+                        <span class="metric-card-icon">&#128196;</span>
+                    </div>
+                    <div class="metric-card-value" id="indexedPages">-</div>
+                    <div class="metric-card-change neutral" id="indexedPagesChange">
+                        <span>No data</span>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-card-header">
+                        <span class="metric-card-label">Clicks (7 days)</span>
+                        <span class="metric-card-icon">&#128270;</span>
+                    </div>
+                    <div class="metric-card-value" id="clicks7Days">-</div>
+                    <div class="metric-card-change neutral" id="clicksChange">
+                        <span>No data</span>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-card-header">
+                        <span class="metric-card-label">Impressions (7 days)</span>
+                        <span class="metric-card-icon">&#128065;</span>
+                    </div>
+                    <div class="metric-card-value" id="impressions7Days">-</div>
+                    <div class="metric-card-change neutral" id="impressionsChange">
+                        <span>No data</span>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-card-header">
+                        <span class="metric-card-label">GEO Citations</span>
+                        <span class="metric-card-icon">&#129302;</span>
+                    </div>
+                    <div class="metric-card-value" id="geoCitations">-</div>
+                    <div class="metric-card-change neutral" id="geoChange">
+                        <span>No data</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Alerts Section -->
+            <section class="alerts-section">
+                <div class="section-header">
+                    <h2 class="section-title"><span>Alerts</span> & Notifications</h2>
+                </div>
+                <div id="alertsContainer">
+                    <div class="empty-state">
+                        <div class="empty-state-icon">&#128276;</div>
+                        <div class="empty-state-text">No alerts at this time</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Keywords Table -->
+            <section class="keywords-section">
+                <div class="section-header">
+                    <h2 class="section-title">Top <span>Keywords</span></h2>
+                </div>
+                <div class="data-table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Keyword</th>
+                                <th>Position</th>
+                                <th>Clicks</th>
+                                <th>Impressions</th>
+                                <th>CTR</th>
+                            </tr>
+                        </thead>
+                        <tbody id="keywordsTableBody">
+                            <tr>
+                                <td colspan="5" class="no-data">No keyword data available</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- GEO Status Section -->
+            <section class="geo-section">
+                <div class="section-header">
+                    <h2 class="section-title">GEO <span>Status</span></h2>
+                </div>
+                <div class="geo-grid" id="geoGrid">
+                    <div class="geo-card">
+                        <div class="geo-icon">&#129302;</div>
+                        <div class="geo-info">
+                            <div class="geo-name">ChatGPT</div>
+                            <div class="geo-status not-cited">
+                                <span class="geo-status-indicator not-cited"></span>
+                                <span id="chatgptStatus">Not checked</span>
+                            </div>
+                            <div class="geo-last-check" id="chatgptLastCheck">-</div>
+                        </div>
+                    </div>
+
+                    <div class="geo-card">
+                        <div class="geo-icon">&#128269;</div>
+                        <div class="geo-info">
+                            <div class="geo-name">Perplexity</div>
+                            <div class="geo-status not-cited">
+                                <span class="geo-status-indicator not-cited"></span>
+                                <span id="perplexityStatus">Not checked</span>
+                            </div>
+                            <div class="geo-last-check" id="perplexityLastCheck">-</div>
+                        </div>
+                    </div>
+
+                    <div class="geo-card">
+                        <div class="geo-icon">&#129302;</div>
+                        <div class="geo-info">
+                            <div class="geo-name">Claude</div>
+                            <div class="geo-status not-cited">
+                                <span class="geo-status-indicator not-cited"></span>
+                                <span id="claudeStatus">Not checked</span>
+                            </div>
+                            <div class="geo-last-check" id="claudeLastCheck">-</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        // Dashboard Data Fetcher
+        document.addEventListener('DOMContentLoaded', function() {
+            fetchDashboardData();
+        });
+
+        async function fetchDashboardData() {
+            try {
+                const response = await fetch('./data/seo-metrics.json');
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                console.log('Dashboard data loaded successfully:', data);
+
+                // Update last updated timestamp
+                updateLastUpdated(data.lastUpdated);
+
+                // Update GSC metrics
+                updateGSCMetrics(data.gsc);
+
+                // Update GEO status
+                updateGEOStatus(data.geo);
+
+                // Update alerts
+                updateAlerts(data.alerts);
+
+            } catch (error) {
+                console.error('Error fetching dashboard data:', error);
+
+                // Show error state
+                document.getElementById('lastUpdated').textContent = 'Error loading data';
+
+                // Display error in console for debugging
+                const container = document.querySelector('.dashboard-container');
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'error-state';
+                errorDiv.innerHTML = `
+                    <div class="error-state-icon">&#9888;</div>
+                    <div>Failed to load SEO data</div>
+                    <div style="font-size: 0.875rem; margin-top: 8px; color: var(--gray);">
+                        ${error.message}
+                    </div>
+                `;
+                container.insertBefore(errorDiv, container.firstChild.nextSibling);
+            }
+        }
+
+        function updateLastUpdated(timestamp) {
+            const element = document.getElementById('lastUpdated');
+
+            if (!timestamp) {
+                element.textContent = 'Never';
+                return;
+            }
+
+            const date = new Date(timestamp);
+            const now = new Date();
+            const diffMs = now - date;
+            const diffMins = Math.floor(diffMs / 60000);
+            const diffHours = Math.floor(diffMs / 3600000);
+            const diffDays = Math.floor(diffMs / 86400000);
+
+            if (diffMins < 1) {
+                element.textContent = 'Just now';
+            } else if (diffMins < 60) {
+                element.textContent = `${diffMins} minute${diffMins > 1 ? 's' : ''} ago`;
+            } else if (diffHours < 24) {
+                element.textContent = `${diffHours} hour${diffHours > 1 ? 's' : ''} ago`;
+            } else if (diffDays < 7) {
+                element.textContent = `${diffDays} day${diffDays > 1 ? 's' : ''} ago`;
+            } else {
+                element.textContent = date.toLocaleDateString('en-US', {
+                    month: 'short',
+                    day: 'numeric',
+                    year: 'numeric'
+                });
+            }
+        }
+
+        function updateGSCMetrics(gsc) {
+            if (!gsc) {
+                console.warn('No GSC data available');
+                return;
+            }
+
+            // Update indexed pages
+            document.getElementById('indexedPages').textContent =
+                gsc.indexedPages !== undefined ? gsc.indexedPages : '0';
+
+            // Update clicks
+            document.getElementById('clicks7Days').textContent =
+                gsc.clicks?.last7Days !== undefined ? gsc.clicks.last7Days.toLocaleString() : '0';
+
+            // Update impressions
+            document.getElementById('impressions7Days').textContent =
+                gsc.impressions?.last7Days !== undefined ? gsc.impressions.last7Days.toLocaleString() : '0';
+
+            // Update keywords table
+            updateKeywordsTable(gsc.topKeywords || []);
+        }
+
+        function updateKeywordsTable(keywords) {
+            const tbody = document.getElementById('keywordsTableBody');
+
+            if (!keywords || keywords.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="5" class="no-data">No keyword data available</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = keywords.map(kw => {
+                const positionClass = kw.position <= 3 ? 'high' : kw.position <= 10 ? 'medium' : 'low';
+                const ctr = kw.impressions > 0 ? ((kw.clicks / kw.impressions) * 100).toFixed(1) : '0.0';
+
+                return `
+                    <tr>
+                        <td class="keyword">${escapeHtml(kw.keyword || 'N/A')}</td>
+                        <td class="position ${positionClass}">${kw.position || '-'}</td>
+                        <td>${(kw.clicks || 0).toLocaleString()}</td>
+                        <td>${(kw.impressions || 0).toLocaleString()}</td>
+                        <td>${ctr}%</td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function updateGEOStatus(geo) {
+            if (!geo) {
+                console.warn('No GEO data available');
+                return;
+            }
+
+            // Update ChatGPT status
+            const chatgptCited = geo.chatgpt?.cited;
+            updateGeoCard('chatgpt', chatgptCited, geo.chatgpt?.lastCheck);
+
+            // Update Perplexity status
+            const perplexityCited = geo.perplexity?.cited;
+            updateGeoCard('perplexity', perplexityCited, geo.perplexity?.lastCheck);
+
+            // Update Claude status
+            const claudeCited = geo.claude?.cited;
+            updateGeoCard('claude', claudeCited, geo.claude?.lastCheck);
+
+            // Update GEO citations count
+            const citationsCount = [chatgptCited, perplexityCited, claudeCited].filter(Boolean).length;
+            document.getElementById('geoCitations').textContent = citationsCount;
+        }
+
+        function updateGeoCard(platform, cited, lastCheck) {
+            const statusEl = document.getElementById(`${platform}Status`);
+            const lastCheckEl = document.getElementById(`${platform}LastCheck`);
+            const statusContainer = statusEl?.parentElement;
+
+            if (!statusEl) return;
+
+            if (cited) {
+                statusEl.textContent = 'Cited';
+                statusContainer?.classList.remove('not-cited');
+                statusContainer?.classList.add('cited');
+                statusContainer?.querySelector('.geo-status-indicator')?.classList.remove('not-cited');
+                statusContainer?.querySelector('.geo-status-indicator')?.classList.add('cited');
+            } else {
+                statusEl.textContent = 'Not cited';
+                statusContainer?.classList.remove('cited');
+                statusContainer?.classList.add('not-cited');
+                statusContainer?.querySelector('.geo-status-indicator')?.classList.remove('cited');
+                statusContainer?.querySelector('.geo-status-indicator')?.classList.add('not-cited');
+            }
+
+            if (lastCheck) {
+                const date = new Date(lastCheck);
+                lastCheckEl.textContent = `Last check: ${date.toLocaleDateString('en-US', {
+                    month: 'short',
+                    day: 'numeric'
+                })}`;
+            } else {
+                lastCheckEl.textContent = 'Never checked';
+            }
+        }
+
+        function updateAlerts(alerts) {
+            const container = document.getElementById('alertsContainer');
+
+            if (!alerts || alerts.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-state-icon">&#128276;</div>
+                        <div class="empty-state-text">No alerts at this time</div>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = alerts.map(alert => {
+                const typeClass = alert.type || 'info';
+                const icon = alert.type === 'error' ? '&#9888;' :
+                            alert.type === 'warning' ? '&#9888;' : '&#128712;';
+
+                return `
+                    <div class="alert-banner ${typeClass}">
+                        <span class="alert-icon">${icon}</span>
+                        <div class="alert-content">
+                            <div class="alert-title">${escapeHtml(alert.title || 'Alert')}</div>
+                            <div class="alert-description">${escapeHtml(alert.description || '')}</div>
+                        </div>
+                        <span class="alert-time">${formatAlertTime(alert.timestamp)}</span>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function formatAlertTime(timestamp) {
+            if (!timestamp) return '';
+
+            const date = new Date(timestamp);
+            const now = new Date();
+            const diffMs = now - date;
+            const diffMins = Math.floor(diffMs / 60000);
+            const diffHours = Math.floor(diffMs / 3600000);
+
+            if (diffMins < 1) {
+                return 'Just now';
+            } else if (diffMins < 60) {
+                return `${diffMins}m ago`;
+            } else if (diffHours < 24) {
+                return `${diffHours}h ago`;
+            } else {
+                return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+            }
+        }
+
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+    </script>
+</body>
+</html>
