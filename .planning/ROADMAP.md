@@ -57,8 +57,11 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. Dashboard loads and displays data from /data/seo-metrics.json via fetch()
   3. JSON template file exists with correct schema for GSC, GEO, and alerts sections
   4. /data/ directory exists with proper structure for historical data files
-**Plans**: TBD
+**Plans**: 1 plan
 **UI hint**: yes
+
+Plans:
+- [ ] 05-01-PLAN.md — Create Dashboard skeleton and JSON data infrastructure
 
 ### Phase 6: GSC Integration
 **Goal**: 真实的 Google Search Console SEO 指标被收集并存储到 JSON
@@ -117,7 +120,7 @@ Phases execute in numeric order: 5 → 6 → 7 → 8 → 9
 
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
-| 5. Data Infrastructure | v1.1 | 0/TBD | Not started | - |
+| 5. Data Infrastructure | v1.1 | 0/1 | Planned | - |
 | 6. GSC Integration | v1.1 | 0/TBD | Not started | - |
 | 7. Dashboard Completion | v1.1 | 0/TBD | Not started | - |
 | 8. GEO Integration | v1.1 | 0/TBD | Not started | - |
