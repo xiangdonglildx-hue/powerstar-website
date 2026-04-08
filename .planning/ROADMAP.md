@@ -98,16 +98,21 @@ Plans:
 **Note**: VIS-02, VIS-03 already implemented in Phase 5. VIS-07 (per-product metrics) deferred per CONTEXT.md decision due to current zero traffic state.
 
 ### Phase 8: GEO Integration
-**Goal**: 用户可以追踪 ChatGPT、Perplexity、Claude 对产品内容的引用状态
+**Goal**: 用户可以追踪 ChatGPT、Gemini 对产品内容的引用状态
 **Depends on**: Phase 7
-**Requirements**: GEO-01, GEO-02, GEO-03, GEO-04, GEO-05, GEO-06, VIS-06
+**Requirements**: GEO-01, GEO-04, GEO-05, GEO-06, VIS-06
 **Success Criteria** (what must be TRUE):
-  1. geo-query.ts script successfully queries ChatGPT, Perplexity, and Claude with product-related questions
-  2. Script detects and logs domain/brand mentions in AI responses
-  3. AI responses are stored for historical comparison
-  4. Dashboard displays citation status per AI system (cited/not cited, last check date)
-  5. Dashboard includes dedicated AI citation section showing status for all 5 products
-**Plans**: TBD
+  1. geo-query.ts script successfully queries ChatGPT (via CodeX proxy) and Gemini with 15 product questions
+  2. Script detects domain/brand mentions in AI responses using keyword matching
+  3. AI responses are stored for historical comparison in /data/history/ai-responses/
+  4. Dashboard displays citation status per AI system (cited/not cited, last check date, citations list)
+  5. Dashboard GEO section shows ChatGPT and Gemini cards (per user decision to track these 2 only)
+**Plans**: 1 plan
+
+Plans:
+- [ ] 08-01-PLAN.md — Create GEO query script and update dashboard for ChatGPT/Gemini citation tracking
+
+**Note**: GEO-02 (Perplexity) and GEO-03 (Claude) are NOT implemented per user decision — user opted to track Gemini instead of Perplexity/Claude.
 
 ### Phase 9: Automation + Alert System
 **Goal**: 用户通过自动化调度接收 SEO 异常告警
@@ -132,7 +137,7 @@ Phases execute in numeric order: 5 → 6 → 7 → 8 → 9
 | 5. Data Infrastructure | v1.1 | 1/1 | Complete   | 2026-04-08 |
 | 6. GSC Integration | v1.1 | 2/2 | Complete   | 2026-04-08 |
 | 7. Dashboard Completion | v1.1 | 0/1 | Planned    | - |
-| 8. GEO Integration | v1.1 | 0/TBD | Not started | - |
+| 8. GEO Integration | v1.1 | 0/1 | Planned    | - |
 | 9. Automation + Alert | v1.1 | 0/TBD | Not started | - |
 
 ---
