@@ -5,6 +5,7 @@
 *.md
 !README.md
 !scripts/GCP-SA-SETUP.md
+!.planning/**/*.md
 
 # Development files
 _nav_template.txt
