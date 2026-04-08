@@ -129,30 +129,20 @@
                                 <span id="chatgptStatus">Not checked</span>
                             </div>
                             <div class="geo-last-check" id="chatgptLastCheck">-</div>
+                            <div class="geo-citations" id="chatgptCitations"></div>
                         </div>
                     </div>
 
                     <div class="geo-card">
-                        <div class="geo-icon">&#128269;</div>
+                        <div class="geo-icon">&#128172;</div>
                         <div class="geo-info">
-                            <div class="geo-name">Perplexity</div>
+                            <div class="geo-name">Gemini</div>
                             <div class="geo-status not-cited">
                                 <span class="geo-status-indicator not-cited"></span>
-                                <span id="perplexityStatus">Not checked</span>
+                                <span id="geminiStatus">Not checked</span>
                             </div>
-                            <div class="geo-last-check" id="perplexityLastCheck">-</div>
-                        </div>
-                    </div>
-
-                    <div class="geo-card">
-                        <div class="geo-icon">&#129302;</div>
-                        <div class="geo-info">
-                            <div class="geo-name">Claude</div>
-                            <div class="geo-status not-cited">
-                                <span class="geo-status-indicator not-cited"></span>
-                                <span id="claudeStatus">Not checked</span>
-                            </div>
-                            <div class="geo-last-check" id="claudeLastCheck">-</div>
+                            <div class="geo-last-check" id="geminiLastCheck">-</div>
+                            <div class="geo-citations" id="geminiCitations"></div>
                         </div>
                     </div>
                 </div>
@@ -326,25 +316,20 @@
             }
 
             // Update ChatGPT status
-            const chatgptCited = geo.chatgpt?.cited;
-            updateGeoCard('chatgpt', chatgptCited, geo.chatgpt?.lastCheck);
+            updateGeoCard('chatgpt', geo.chatgpt?.cited, geo.chatgpt?.lastCheck, geo.chatgpt?.citations);
 
-            // Update Perplexity status
-            const perplexityCited = geo.perplexity?.cited;
-            updateGeoCard('perplexity', perplexityCited, geo.perplexity?.lastCheck);
-
-            // Update Claude status
-            const claudeCited = geo.claude?.cited;
-            updateGeoCard('claude', claudeCited, geo.claude?.lastCheck);
+            // Update Gemini status (replaces Perplexity)
+            updateGeoCard('gemini', geo.gemini?.cited, geo.gemini?.lastCheck, geo.gemini?.citations);
 
             // Update GEO citations count
-            const citationsCount = [chatgptCited, perplexityCited, claudeCited].filter(Boolean).length;
+            const citationsCount = [geo.chatgpt?.cited, geo.gemini?.cited].filter(Boolean).length;
             document.getElementById('geoCitations').textContent = citationsCount;
         }
 
-        function updateGeoCard(platform, cited, lastCheck) {
+        function updateGeoCard(platform, cited, lastCheck, citations) {
             const statusEl = document.getElementById(`${platform}Status`);
             const lastCheckEl = document.getElementById(`${platform}LastCheck`);
+            const citationsEl = document.getElementById(`${platform}Citations`);
             const statusContainer = statusEl?.parentElement;
 
             if (!statusEl) return;
@@ -371,6 +356,19 @@
                 })}`;
             } else {
                 lastCheckEl.textContent = 'Never checked';
+            }
+
+            // Display citations list
+            if (citationsEl && citations && citations.length > 0) {
+                citationsEl.innerHTML = `
+                    <div class="geo-citations-list">
+                        <div style="font-weight: 500; margin-bottom: 4px;">Cited in:</div>
+                        ${citations.slice(0, 3).map(q => `<div class="geo-citation-item">"${escapeHtml(q)}"</div>`).join('')}
+                        ${citations.length > 3 ? `<div style="color: var(--gray);">+${citations.length - 3} more</div>` : ''}
+                    </div>
+                `;
+            } else if (citationsEl) {
+                citationsEl.innerHTML = '';
             }
         }
 
