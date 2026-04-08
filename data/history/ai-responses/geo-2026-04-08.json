@@ -1,0 +1,247 @@
+{
+  "date": "2026-04-08",
+  "chatgpt": [
+    {
+      "platform": "chatgpt",
+      "question": "best thermometer app for Android",
+      "response": "",
+      "cited": false,
+      "matchedKeywords": [],
+      "timestamp": "2026-04-08T09:35:12.397Z"
+    },
+    {
+      "platform": "chatgpt",
+      "question": "room temperature app for phone",
+      "response": "",
+      "cited": false,
+      "matchedKeywords": [],
+      "timestamp": "2026-04-08T09:35:17.093Z"
+    },
+    {
+      "platform": "chatgpt",
+      "question": "indoor thermometer app",
+      "response": "",
+      "cited": false,
+      "matchedKeywords": [],
+      "timestamp": "2026-04-08T09:35:24.447Z"
+    },
+    {
+      "platform": "chatgpt",
+      "question": "best microphone app for Android",
+      "response": "",
+      "cited": false,
+      "matchedKeywords": [],
+      "timestamp": "2026-04-08T09:35:29.317Z"
+    },
+    {
+      "platform": "chatgpt",
+      "question": "voice recorder app for phone",
+      "response": "",
+      "cited": false,
+      "matchedKeywords": [],
+      "timestamp": "2026-04-08T09:35:37.864Z"
+    },
+    {
+      "platform": "chatgpt",
+      "question": "voice changer app for Android",
+      "response": "",
+      "cited": false,
+      "matchedKeywords": [],
+      "timestamp": "2026-04-08T09:35:49.842Z"
+    },
+    {
+      "platform": "chatgpt",
+      "question": "best voice modulator app",
+      "response": "",
+      "cited": false,
+      "matchedKeywords": [],
+      "timestamp": "2026-04-08T09:35:57.039Z"
+    },
+    {
+      "platform": "chatgpt",
+      "question": "HD wallpapers for Android",
+      "response": "",
+      "cited": false,
+      "matchedKeywords": [],
+      "timestamp": "2026-04-08T09:36:00.453Z"
+    },
+    {
+      "platform": "chatgpt",
+      "question": "best wallpaper app for phone",
+      "response": "",
+      "cited": false,
+      "matchedKeywords": [],
+      "timestamp": "2026-04-08T09:36:05.459Z"
+    },
+    {
+      "platform": "chatgpt",
+      "question": "live wallpaper app",
+      "response": "",
+      "cited": false,
+      "matchedKeywords": [],
+      "timestamp": "2026-04-08T09:36:13.380Z"
+    },
+    {
+      "platform": "chatgpt",
+      "question": "AI photo filter app",
+      "response": "",
+      "cited": false,
+      "matchedKeywords": [],
+      "timestamp": "2026-04-08T09:36:23.907Z"
+    },
+    {
+      "platform": "chatgpt",
+      "question": "photo editing app with AI effects",
+      "response": "",
+      "cited": false,
+      "matchedKeywords": [],
+      "timestamp": "2026-04-08T09:36:34.826Z"
+    },
+    {
+      "platform": "chatgpt",
+      "question": "cartoon photo filter app",
+      "response": "",
+      "cited": false,
+      "matchedKeywords": [],
+      "timestamp": "2026-04-08T09:36:41.526Z"
+    },
+    {
+      "platform": "chatgpt",
+      "question": "anime photo filter",
+      "response": "",
+      "cited": false,
+      "matchedKeywords": [],
+      "timestamp": "2026-04-08T09:36:46.342Z"
+    },
+    {
+      "platform": "chatgpt",
+      "question": "vintage photo editor app",
+      "response": "",
+      "cited": false,
+      "matchedKeywords": [],
+      "timestamp": "2026-04-08T09:36:53.864Z"
+    }
+  ],
+  "gemini": [
+    {
+      "platform": "gemini",
+      "question": "best thermometer app for Android",
+      "response": "Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent: [404 Not Found] models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+      "cited": false,
+      "matchedKeywords": [],
+      "timestamp": "2026-04-08T09:36:54.352Z"
+    },
+    {
+      "platform": "gemini",
+      "question": "room temperature app for phone",
+      "response": "Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent: [404 Not Found] models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+      "cited": false,
+      "matchedKeywords": [],
+      "timestamp": "2026-04-08T09:36:54.592Z"
+    },
+    {
+      "platform": "gemini",
+      "question": "indoor thermometer app",
+      "response": "Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent: [404 Not Found] models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+      "cited": false,
+      "matchedKeywords": [],
+      "timestamp": "2026-04-08T09:36:54.794Z"
+    },
+    {
+      "platform": "gemini",
+      "question": "best microphone app for Android",
+      "response": "Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent: [404 Not Found] models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+      "cited": false,
+      "matchedKeywords": [],
+      "timestamp": "2026-04-08T09:36:54.939Z"
+    },
+    {
+      "platform": "gemini",
+      "question": "voice recorder app for phone",
+      "response": "Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent: [404 Not Found] models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+      "cited": false,
+      "matchedKeywords": [],
+      "timestamp": "2026-04-08T09:36:55.048Z"
+    },
+    {
+      "platform": "gemini",
+      "question": "voice changer app for Android",
+      "response": "Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent: [404 Not Found] models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+      "cited": false,
+      "matchedKeywords": [],
+      "timestamp": "2026-04-08T09:36:55.190Z"
+    },
+    {
+      "platform": "gemini",
+      "question": "best voice modulator app",
+      "response": "Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent: [404 Not Found] models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+      "cited": false,
+      "matchedKeywords": [],
+      "timestamp": "2026-04-08T09:36:55.343Z"
+    },
+    {
+      "platform": "gemini",
+      "question": "HD wallpapers for Android",
+      "response": "Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent: [404 Not Found] models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+      "cited": false,
+      "matchedKeywords": [],
+      "timestamp": "2026-04-08T09:36:55.498Z"
+    },
+    {
+      "platform": "gemini",
+      "question": "best wallpaper app for phone",
+      "response": "Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent: [404 Not Found] models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+      "cited": false,
+      "matchedKeywords": [],
+      "timestamp": "2026-04-08T09:36:55.785Z"
+    },
+    {
+      "platform": "gemini",
+      "question": "live wallpaper app",
+      "response": "Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent: [404 Not Found] models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+      "cited": false,
+      "matchedKeywords": [],
+      "timestamp": "2026-04-08T09:36:55.893Z"
+    },
+    {
+      "platform": "gemini",
+      "question": "AI photo filter app",
+      "response": "Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent: [404 Not Found] models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+      "cited": false,
+      "matchedKeywords": [],
+      "timestamp": "2026-04-08T09:36:56.008Z"
+    },
+    {
+      "platform": "gemini",
+      "question": "photo editing app with AI effects",
+      "response": "Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent: [404 Not Found] models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+      "cited": false,
+      "matchedKeywords": [],
+      "timestamp": "2026-04-08T09:36:56.152Z"
+    },
+    {
+      "platform": "gemini",
+      "question": "cartoon photo filter app",
+      "response": "Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent: [404 Not Found] models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+      "cited": false,
+      "matchedKeywords": [],
+      "timestamp": "2026-04-08T09:36:56.330Z"
+    },
+    {
+      "platform": "gemini",
+      "question": "anime photo filter",
+      "response": "Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent: [404 Not Found] models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+      "cited": false,
+      "matchedKeywords": [],
+      "timestamp": "2026-04-08T09:36:56.496Z"
+    },
+    {
+      "platform": "gemini",
+      "question": "vintage photo editor app",
+      "response": "Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent: [404 Not Found] models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+      "cited": false,
+      "matchedKeywords": [],
+      "timestamp": "2026-04-08T09:36:56.635Z"
+    }
+  ]
+}

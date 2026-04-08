@@ -46,12 +46,12 @@ export async function queryGemini(question: string): Promise<{ response: string;
     throw new Error('Google AI API key not configured. Set GOOGLE_AI_API_KEY in .env');
   }
 
-  const model = gemini.getGenerativeModel({ model: 'gemini-2.0-flash' });
+  const model = gemini.getGenerativeModel({ model: 'gemini-pro' });
   const result = await model.generateContent(question);
 
   return {
     response: result.response.text(),
-    model: 'gemini-2.0-flash'
+    model: 'gemini-pro'
   };
 }
 

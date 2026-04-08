@@ -135,3 +135,28 @@ export type SeoMetrics = z.infer<typeof SeoMetricsSchema>;
 export type IndexedPagesResult = z.infer<typeof IndexedPagesResultSchema>;
 export type SearchMetricsResult = z.infer<typeof SearchMetricsResultSchema>;
 export type CoverageError = z.infer<typeof CoverageErrorSchema>;
+
+// GEO Citation Result Schema
+export const GEOCitationResultSchema = z.object({
+  question: z.string(),
+  response: z.string(),
+  cited: z.boolean(),
+  matchedKeywords: z.array(z.string()),
+});
+
+export const GEOPlatformResultSchema = z.object({
+  cited: z.boolean(),
+  lastCheck: z.string().nullable(),
+  citations: z.array(z.string()), // Questions that triggered citations
+  response: z.string(), // Full concatenated response or summary
+  model: z.string().optional(),
+});
+
+// Updated GEO schema for ChatGPT and Gemini (replacing perplexity/claude)
+export const UpdatedGeoSchema = z.object({
+  chatgpt: GEOPlatformResultSchema,
+  gemini: GEOPlatformResultSchema,
+});
+
+export type GEOCitationResult = z.infer<typeof GEOCitationResultSchema>;
+export type GEOPlatformResult = z.infer<typeof GEOPlatformResultSchema>;
