@@ -40,7 +40,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 **Milestone Goal:** 建立 SEO/GEO 监控闭环，追踪收录、排名、AI 引用，自动告警异常变化
 
-- [ ] **Phase 5: Data Infrastructure Foundation** - 建立 JSON 数据结构和 Dashboard 骨架
+- [x] **Phase 5: Data Infrastructure Foundation** - 建立 JSON 数据结构和 Dashboard 骨架 (completed 2026-04-08)
 - [ ] **Phase 6: GSC Integration** - 集成 Google Search Console API，收集真实 SEO 数据
 - [ ] **Phase 7: Dashboard Completion** - 完成 Dashboard 可视化渲染逻辑
 - [ ] **Phase 8: GEO Integration** - 集成 AI 引用追踪系统
@@ -61,7 +61,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 **UI hint**: yes
 
 Plans:
-- [ ] 05-01-PLAN.md — Create Dashboard skeleton and JSON data infrastructure
+- [x] 05-01-PLAN.md — Create Dashboard skeleton and JSON data infrastructure
 
 ### Phase 6: GSC Integration
 **Goal**: 真实的 Google Search Console SEO 指标被收集并存储到 JSON
@@ -120,7 +120,7 @@ Phases execute in numeric order: 5 → 6 → 7 → 8 → 9
 
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
-| 5. Data Infrastructure | v1.1 | 0/1 | Planned | - |
+| 5. Data Infrastructure | v1.1 | 1/1 | Complete   | 2026-04-08 |
 | 6. GSC Integration | v1.1 | 0/TBD | Not started | - |
 | 7. Dashboard Completion | v1.1 | 0/TBD | Not started | - |
 | 8. GEO Integration | v1.1 | 0/TBD | Not started | - |
