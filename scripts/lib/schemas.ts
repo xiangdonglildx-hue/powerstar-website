@@ -1,5 +1,13 @@
 import { z } from 'zod';
 
+// Daily trend schema for 30-day chart visualization
+export const DailyTrendSchema = z.object({
+  date: z.string(),
+  clicks: z.number(),
+  impressions: z.number(),
+  position: z.number(),
+});
+
 // GSC API response schemas
 export const GSCQueryRowSchema = z.object({
   keys: z.array(z.string()), // [query, page] or just [query]
@@ -71,9 +79,11 @@ export const CoverageErrorSchema = z.object({
 export const GSCMetricsSchema = z.object({
   indexedPages: z.number(),
   totalSubmitted: z.number(),
+  unindexedUrls: z.array(z.string()).optional(),
   topKeywords: z.array(KeywordSchema),
   clicks: ClicksMetricSchema,
   impressions: ImpressionsMetricSchema,
+  dailyTrend: z.array(DailyTrendSchema).optional(),
   avgPosition: z.number().optional(),
   avgCTR: z.number().optional(),
   coverageErrors: z.array(CoverageErrorSchema).optional(),
@@ -119,6 +129,7 @@ export const SearchMetricsResultSchema = z.object({
 
 // Export types for use in other modules
 export type Keyword = z.infer<typeof KeywordSchema>;
+export type DailyTrend = z.infer<typeof DailyTrendSchema>;
 export type GSCMetrics = z.infer<typeof GSCMetricsSchema>;
 export type SeoMetrics = z.infer<typeof SeoMetricsSchema>;
 export type IndexedPagesResult = z.infer<typeof IndexedPagesResultSchema>;
