@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.1
 milestone_name: SEO 监控体系
 status: in_progress
-stopped_at: Phase 6 Plan 01 complete - Scripts infrastructure created
-last_updated: "2026-04-08T05:36:00Z"
-last_activity: 2026-04-08 — Scripts infrastructure + Service Account documentation created
+stopped_at: Phase 7 Plan 01 complete - 30-day trend chart and unindexed URLs display
+last_updated: "2026-04-08T07:55:00Z"
+last_activity: 2026-04-08 — Phase 7 Plan 01 executed: Dashboard trend chart + indexing status
 progress:
   total_phases: 5
-  completed_phases: 1
-  total_plans: 6
-  completed_plans: 2
-  percent: 33
+  completed_phases: 2
+  total_plans: 7
+  completed_plans: 3
+  percent: 43
 ---
 
 # Project State: PowerStar Website
@@ -21,18 +21,18 @@ progress:
 See: .planning/PROJECT.md (updated 2026-04-08)
 
 **Core value:** 提升 SEO/GEO 可见度，吸引目标用户访问产品页面并转化为下载
-**Current focus:** Phase 5: Data Infrastructure Foundation
+**Current focus:** Phase 7: Dashboard Completion
 
 ---
 
 ## Current Position
 
-Phase: 6 of 9 (GSC Integration)
+Phase: 7 of 9 (Dashboard Completion)
 Plan: 01 (Complete)
-Status: Scripts infrastructure + Service Account documentation created
-Last activity: 2026-04-08 — Phase 6 Plan 01 executed: scripts directory infrastructure
+Status: 30-day trend chart and unindexed URLs display implemented
+Last activity: 2026-04-08 — Phase 7 Plan 01 executed: Dashboard trend chart + indexing status
 
-Progress: [███░░░░░░░] 33%
+Progress: [████░░░░░] 43%
 
 ---
 
@@ -40,9 +40,9 @@ Progress: [███░░░░░░░] 33%
 
 **Velocity:**
 
-- Total plans completed: 2 (v1.1)
-- Average duration: 6.5 min
-- Total execution time: 13 min
+- Total plans completed: 3 (v1.1)
+- Average duration: 8 min
+- Total execution time: 24 min
 
 **By Phase:**
 
@@ -50,11 +50,11 @@ Progress: [███░░░░░░░] 33%
 |-------|-------|-------|----------|
 | 5. Data Infrastructure | 1/1 | 8 min | 8 min |
 | 6. GSC Integration | 1/2 | 5 min | 5 min |
-| 7. Dashboard Completion | 0/TBD | — | — |
+| 7. Dashboard Completion | 1/TBD | 15 min | 15 min |
 | 8. GEO Integration | 0/TBD | — | — |
 | 9. Automation + Alert | 0/TBD | — | — |
 
-**Recent Trend:** Second plan completed, scripts infrastructure ready for GSC collector
+**Recent Trend:** Third plan completed, dashboard visualization ready for testing
 
 ---
 
@@ -79,14 +79,17 @@ For v1.1:
 - Scripts directory location — At project root `/scripts/` per CONTEXT.md decision (06-01)
 - Service Account authentication — No OAuth user flow, server-to-server auth (06-01)
 - ESM module type — Modern Node.js compatibility for scripts (06-01)
+- DailyTrend optional fields — Backward compatibility for existing JSON (07-01)
+- Chart.js dual Y-axis — Left for clicks/impressions, right for position (07-01)
+- Position axis reversed — Lower position = better at top (07-01)
 
 ### Pending Todos
 
-None yet.
+- GSC API Authentication setup: Add service account to Search Console property
 
 ### Blockers/Concerns
 
-- **GSC API Authentication**: Service account setup requires multiple steps (create SA, enable API, generate key, add to GSC property) — any missed step causes 403 errors
+- **GSC API Authentication**: Service account `powerstar-gsc-collector@hongyanapps.iam.gserviceaccount.com` needs to be added to GSC property `https://powerstarapps.com` — currently 403 errors
 - **GEO Accuracy**: AI responses vary by user, time, model version — accept as directional only
 - **Alert Thresholds**: New site has limited historical data — require 2-4 weeks baseline before tuning
 
@@ -95,8 +98,8 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-04-08
-Stopped at: Phase 6 Plan 01 complete - Scripts infrastructure created
-Resume file: .planning/phases/06-gsc-integration/06-02-PLAN.md (next plan)
+Stopped at: Phase 7 Plan 01 complete - 30-day trend chart and unindexed URLs display
+Resume file: .planning/phases/07-dashboard-completion/07-02-PLAN.md (next plan)
 
 ---
 
