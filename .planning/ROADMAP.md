@@ -124,8 +124,12 @@ Plans:
   3. Dashboard displays red banner when anomalies are detected
   4. Dashboard highlights affected metric rows in red for visibility
   5. Alert thresholds are documented with note that tuning requires 2-4 weeks baseline data
-**Plans**: TBD
+**Plans**: 2 plans
 **UI hint**: yes
+
+Plans:
+- [ ] 09-01-PLAN.md — Create GitHub Actions workflow, anomaly detection script, and cleanup automation
+- [ ] 09-02-PLAN.md — Implement Dashboard alert banner and metric highlighting
 
 ## Progress
 
@@ -138,7 +142,7 @@ Phases execute in numeric order: 5 → 6 → 7 → 8 → 9
 | 6. GSC Integration | v1.1 | 2/2 | Complete   | 2026-04-08 |
 | 7. Dashboard Completion | v1.1 | 0/1 | Planned    | - |
 | 8. GEO Integration | v1.1 | 0/1 | Planned    | - |
-| 9. Automation + Alert | v1.1 | 0/TBD | Not started | - |
+| 9. Automation + Alert | v1.1 | 0/2 | Planned    | - |
 
 ---
 
