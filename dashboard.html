@@ -19,9 +19,19 @@
                 </div>
             </header>
 
+            <!-- Critical Alert Banner -->
+            <div id="alertBanner" class="alert-banner-critical hidden">
+                <div class="alert-icon-critical">⚠️</div>
+                <div class="alert-content-critical">
+                    <span class="alert-count">0 anomalies detected</span>
+                    <span class="alert-severity"></span>
+                </div>
+                <button class="alert-dismiss" onclick="dismissAlert()">×</button>
+            </div>
+
             <!-- Summary Cards -->
             <section class="metric-cards">
-                <div class="metric-card">
+                <div class="metric-card anomaly-indicator" data-metric="indexedPages">
                     <div class="metric-card-header">
                         <span class="metric-card-label">Indexed Pages</span>
                         <span class="metric-card-icon">&#128196;</span>
@@ -32,7 +42,7 @@
                     </div>
                 </div>
 
-                <div class="metric-card">
+                <div class="metric-card anomaly-indicator" data-metric="clicks7Days">
                     <div class="metric-card-header">
                         <span class="metric-card-label">Clicks (7 days)</span>
                         <span class="metric-card-icon">&#128270;</span>
@@ -43,7 +53,7 @@
                     </div>
                 </div>
 
-                <div class="metric-card">
+                <div class="metric-card anomaly-indicator" data-metric="impressions7Days">
                     <div class="metric-card-header">
                         <span class="metric-card-label">Impressions (7 days)</span>
                         <span class="metric-card-icon">&#128065;</span>
@@ -54,7 +64,7 @@
                     </div>
                 </div>
 
-                <div class="metric-card">
+                <div class="metric-card anomaly-indicator" data-metric="geoCitations">
                     <div class="metric-card-header">
                         <span class="metric-card-label">GEO Citations</span>
                         <span class="metric-card-icon">&#129302;</span>
@@ -173,10 +183,12 @@
         </div>
     </div>
 
+    <script src="js/dashboard-alerts.js"></script>
     <script>
         // Dashboard Data Fetcher
         document.addEventListener('DOMContentLoaded', function() {
             fetchDashboardData();
+            loadAnomalies();
         });
 
         async function fetchDashboardData() {
