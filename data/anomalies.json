@@ -1,0 +1,20 @@
+{
+  "detectedAt": "2026-04-09T01:25:43.769Z",
+  "totalAnomalies": 1,
+  "anomalies": [
+    {
+      "type": "indexing_drop",
+      "severity": "P1",
+      "metric": "indexedPages",
+      "change": 95.74468085106383,
+      "threshold": 20,
+      "details": "Indexing gap: only 2 of 47 pages indexed (95.7% unindexed)",
+      "detectedAt": "2026-04-09T01:25:43.768Z"
+    }
+  ],
+  "thresholds": {
+    "TRAFFIC_DROP_THRESHOLD": 30,
+    "INDEXING_DROP_THRESHOLD": 20,
+    "POSITION_DROP_THRESHOLD": 5
+  }
+}
