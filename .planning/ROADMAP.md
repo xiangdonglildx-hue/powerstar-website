@@ -128,7 +128,7 @@ Plans:
 **UI hint**: yes
 
 Plans:
-- [ ] 09-01-PLAN.md — Create GitHub Actions workflow, anomaly detection script, and cleanup automation
+- [x] 09-01-PLAN.md — Create GitHub Actions workflow, anomaly detection script, and cleanup automation
 - [ ] 09-02-PLAN.md — Implement Dashboard alert banner and metric highlighting
 
 ## Progress

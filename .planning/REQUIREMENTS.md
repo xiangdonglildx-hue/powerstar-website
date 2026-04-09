@@ -38,19 +38,19 @@
 
 ### ALERT - Anomaly Detection
 
-- [ ] **ALERT-01**: System detects traffic drop >30% vs previous day
-- [ ] **ALERT-02**: System detects indexed pages drop >20% vs sitemap count
-- [ ] **ALERT-03**: System detects top keyword position drop >5 positions
+- [x] **ALERT-01**: System detects traffic drop >30% vs previous day
+- [x] **ALERT-02**: System detects indexed pages drop >20% vs sitemap count
+- [x] **ALERT-03**: System detects top keyword position drop >5 positions
 - [ ] **ALERT-04**: Dashboard displays red banner when anomalies detected
 - [ ] **ALERT-05**: Dashboard displays highlighted rows for affected metrics
 - [ ] **ALERT-06**: Threshold tuning deferred to Phase 2 (requires 2-4 weeks baseline data)
 
 ### AUTO - Automation & Data Storage
 
-- [ ] **AUTO-01**: Monitoring scripts run via GitHub Actions scheduled workflow
-- [ ] **AUTO-02**: Daily check script runs at scheduled time (e.g., 6 AM UTC)
-- [ ] **AUTO-03**: Weekly full script runs at scheduled time (e.g., Monday 8 AM UTC)
-- [ ] **AUTO-04**: AI citation script runs monthly (1st of month)
+- [x] **AUTO-01**: Monitoring scripts run via GitHub Actions scheduled workflow
+- [x] **AUTO-02**: Daily check script runs at scheduled time (e.g., 6 AM UTC)
+- [x] **AUTO-03**: Weekly full script runs at scheduled time (e.g., Monday 8 AM UTC)
+- [x] **AUTO-04**: AI citation script runs monthly (1st of month)
 - [ ] **AUTO-05**: JSON data files stored at /data/ directory
 - [ ] **AUTO-06**: Historical data retained for 90 days minimum
 - [ ] **AUTO-07**: Dashboard reads JSON via client-side fetch() on page load
