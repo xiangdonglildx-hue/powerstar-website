@@ -1,164 +1,20 @@
 {
-  "lastUpdated": "2026-04-08T07:50:00.000Z",
-  "gsc": {
-    "indexedPages": 2,
-    "totalSubmitted": 47,
-    "unindexedUrls": [
-      "https://powerstarapps.com/thermometer",
-      "https://powerstarapps.com/microphone",
-      "https://powerstarapps.com/voice-changer",
-      "https://powerstarapps.com/lumiwall",
-      "https://powerstarapps.com/ai-photo"
-    ],
-    "topKeywords": [
-      {
-        "query": "power star app",
-        "impressions": 5,
-        "clicks": 1,
-        "ctr": 0.2,
-        "position": 3
-      },
-      {
-        "query": "power star apps",
-        "impressions": 8,
-        "clicks": 1,
-        "ctr": 0.125,
-        "position": 2.875
-      },
-      {
-        "query": "app to check room temperature",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 26
-      },
-      {
-        "query": "best indoor thermometer app",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 63
-      },
-      {
-        "query": "com.lumiwall.wallpaper.background",
-        "impressions": 7,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 7.142857142857143
-      },
-      {
-        "query": "free indoor thermometer app",
-        "impressions": 3,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 13
-      },
-      {
-        "query": "free room temperature app for android",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 17
-      },
-      {
-        "query": "home temperature monitor app",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 17
-      },
-      {
-        "query": "indoor temperature app",
-        "impressions": 4,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 17.5
-      },
-      {
-        "query": "indoor temperature app for android",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 15
-      }
-    ],
-    "clicks": {
-      "last7Days": 5,
-      "last30Days": 5,
-      "trend": [
-        0,
-        0,
-        1,
-        0,
-        3,
-        0,
-        1
-      ]
-    },
-    "impressions": {
-      "last7Days": 120,
-      "last30Days": 124,
-      "trend": [
-        0,
-        4,
-        8,
-        12,
-        21,
-        19,
-        60
-      ]
-    },
-    "dailyTrend": [
-      { "date": "2026-03-09", "clicks": 0, "impressions": 0, "position": 0 },
-      { "date": "2026-03-10", "clicks": 0, "impressions": 2, "position": 45 },
-      { "date": "2026-03-11", "clicks": 0, "impressions": 3, "position": 42 },
-      { "date": "2026-03-12", "clicks": 0, "impressions": 4, "position": 38 },
-      { "date": "2026-03-13", "clicks": 0, "impressions": 5, "position": 35 },
-      { "date": "2026-03-14", "clicks": 0, "impressions": 6, "position": 32 },
-      { "date": "2026-03-15", "clicks": 0, "impressions": 4, "position": 30 },
-      { "date": "2026-03-16", "clicks": 0, "impressions": 8, "position": 28 },
-      { "date": "2026-03-17", "clicks": 0, "impressions": 10, "position": 25 },
-      { "date": "2026-03-18", "clicks": 0, "impressions": 12, "position": 22 },
-      { "date": "2026-03-19", "clicks": 0, "impressions": 8, "position": 20 },
-      { "date": "2026-03-20", "clicks": 0, "impressions": 15, "position": 18 },
-      { "date": "2026-03-21", "clicks": 0, "impressions": 18, "position": 16 },
-      { "date": "2026-03-22", "clicks": 1, "impressions": 21, "position": 14 },
-      { "date": "2026-03-23", "clicks": 0, "impressions": 19, "position": 13 },
-      { "date": "2026-03-24", "clicks": 0, "impressions": 25, "position": 12 },
-      { "date": "2026-03-25", "clicks": 3, "impressions": 30, "position": 11 },
-      { "date": "2026-03-26", "clicks": 0, "impressions": 35, "position": 10 },
-      { "date": "2026-03-27", "clicks": 0, "impressions": 40, "position": 9 },
-      { "date": "2026-03-28", "clicks": 0, "impressions": 60, "position": 8 },
-      { "date": "2026-03-29", "clicks": 0, "impressions": 45, "position": 8.5 },
-      { "date": "2026-03-30", "clicks": 0, "impressions": 50, "position": 9 },
-      { "date": "2026-03-31", "clicks": 0, "impressions": 55, "position": 10 },
-      { "date": "2026-04-01", "clicks": 0, "impressions": 0, "position": 0 },
-      { "date": "2026-04-02", "clicks": 0, "impressions": 4, "position": 15 },
-      { "date": "2026-04-03", "clicks": 1, "impressions": 8, "position": 12 },
-      { "date": "2026-04-04", "clicks": 0, "impressions": 12, "position": 11 },
-      { "date": "2026-04-05", "clicks": 3, "impressions": 21, "position": 10 },
-      { "date": "2026-04-06", "clicks": 0, "impressions": 19, "position": 11 },
-      { "date": "2026-04-07", "clicks": 1, "impressions": 60, "position": 11 }
-    ],
-    "avgPosition": 11,
-    "avgCTR": 0.04032258064516129,
-    "coverageErrors": []
-  },
+  "lastUpdated": "2026-04-09T08:21:09.814Z",
+  "gsc": {},
   "geo": {
     "chatgpt": {
       "cited": false,
-      "lastCheck": null,
-      "response": ""
+      "lastCheck": "2026-04-09",
+      "citations": [],
+      "response": "[Q: best thermometer app for Android] ...\n\n[Q: room temperature app for phone] ...\n\n[Q: indoor thermometer app] ...\n\n[Q: best microphone app for Android] ...\n\n[Q: voice recorder app for phone] ...\n\n[Q: voice changer app for Android] ...\n\n[Q: best voice modulator app] ...\n\n[Q: HD wallpapers for Android] ...\n\n[Q: best wallpaper app for phone] ...\n\n[Q: live wallpaper app] ...\n\n[Q: AI photo filter app] ...\n\n[Q: photo editing app with AI effects] ...\n\n[Q: cartoon photo filter app] ...\n\n[Q: anime photo filter] ...\n\n[Q: vintage photo editor app] ...",
+      "model": "gpt-4o"
     },
-    "perplexity": {
+    "gemini": {
       "cited": false,
-      "lastCheck": null,
-      "response": ""
-    },
-    "claude": {
-      "cited": false,
-      "lastCheck": null,
-      "response": ""
+      "lastCheck": "2026-04-09",
+      "citations": [],
+      "response": "[Q: best thermometer app for Android] It's important to clarify a common misconception: **there is no reliable \"thermometer app\" that can accurately measure ambient room temperature or body temperature using only the sensors built into a ...\n\n[Q: room temperature app for phone] It's important to understand that **most smartphones do NOT have a dedicated sensor to accurately measure ambient room temperature.**\n\nHere's why and what apps claiming to do so are actually doing:\n\n1...\n\n[Q: indoor thermometer app] Unfortunately, **smartphones do not have a built-in sensor that can accurately measure the ambient room temperature.**\n\nHere's why and what your options are:\n\n1.  **Why your phone can't do it directly...\n\n[Q: best microphone app for Android] The \"best\" microphone app for Android really depends on what you want to use it for. Do you want to:\n\n1.  **Record audio (voice notes, interviews, music ideas)?**\n2.  **Use your phone as an external m...\n\n[Q: voice recorder app for phone] You're in luck! There are many excellent voice recorder apps available for both iPhone and Android, ranging from basic to feature-rich. The \"best\" one depends on your specific needs.\n\nHere's a breakdo...\n\n[Q: voice changer app for Android] Finding a good voice changer app for Android depends on whether you want to change your voice in **real-time** (during calls, gaming) or for **pre-recorded audio**. Real-time changing directly within ...\n\n[Q: best voice modulator app] The \"best\" voice modulator app really depends on your specific needs:\n\n*   **Are you looking for real-time modulation for gaming, streaming, or calls?** (This is mostly a PC thing, but some mobile app...\n\n[Q: HD wallpapers for Android] Finding high-quality HD (or even 4K) wallpapers for your Android phone is easy with so many great options available! Here's a breakdown of the best places and methods:\n\n## Top Wallpaper Apps for Andro...\n\n[Q: best wallpaper app for phone] The \"best\" wallpaper app depends heavily on what you're looking for: variety, quality, uniqueness, specific styles, or advanced features like live wallpapers or auto-changing.\n\nHere's a breakdown of t...\n\n[Q: live wallpaper app] Live wallpaper apps can bring your phone screen to life with dynamic, animated backgrounds. The options and capabilities vary significantly between Android and iOS due to their different operating sys...\n\n[Q: AI photo filter app] You're looking for apps that leverage Artificial Intelligence to apply creative, enhancing, or transformative filters to photos. These apps go beyond simple color adjustments, often using AI to unders...\n\n[Q: photo editing app with AI effects] The world of photo editing has been revolutionized by AI, making sophisticated effects and enhancements accessible to everyone. Here are some of the best photo editing apps with significant AI capabil...\n\n[Q: cartoon photo filter app] There are many fantastic cartoon photo filter apps available, each with its own unique style and features. Here are some of the most popular and highly-rated ones:\n\n**Top Recommendations:**\n\n1.  **Too...\n\n[Q: anime photo filter] Anime photo filters are tools, often powered by Artificial Intelligence (AI) and deep learning, that transform a real-life photograph into an image that resembles various styles of anime or manga art....\n\n[Q: vintage photo editor app] There are many fantastic vintage photo editor apps available, each with its own unique strengths and set of filters. The \"best\" one often depends on the specific vintage look you're going for and how ...",
+      "model": "gemini-pro"
     }
   },
   "alerts": []
