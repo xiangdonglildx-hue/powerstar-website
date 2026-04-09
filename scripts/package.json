@@ -7,7 +7,10 @@
     "collect": "tsx gsc-collector.ts",
     "test:auth": "tsx test-auth.ts",
     "geo": "tsx geo-query.ts",
-    "test": "vitest run"
+    "test": "vitest run",
+    "gsc": "tsx gsc-collector.ts",
+    "detect-anomalies": "tsx detect-anomalies.ts",
+    "cleanup": "tsx cleanup-history.ts"
   },
   "dependencies": {
     "googleapis": "171.4.0",
