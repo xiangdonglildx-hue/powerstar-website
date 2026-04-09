@@ -1,0 +1,122 @@
+name: SEO Monitor
+
+on:
+  schedule:
+    # Daily at 6:00 UTC - quick check with anomaly detection and cleanup
+    - cron: '0 6 * * *'
+    # Weekly on Monday at 8:00 UTC - full data collection
+    - cron: '0 8 * * 1'
+    # Monthly on 1st at 6:00 UTC - GEO citation check
+    - cron: '0 6 1 * *'
+  workflow_dispatch:
+    # Manual trigger for testing
+
+jobs:
+  daily-check:
+    runs-on: ubuntu-latest
+    if: github.event.schedule == '0 6 * * *'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        working-directory: scripts
+        run: npm ci
+
+      - name: Run GSC collector
+        working-directory: scripts
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ./credentials.json
+          GSC_SITE_URL: ${{ secrets.GSC_SITE_URL }}
+          GOOGLE_APPLICATION_CREDENTIALS_CONTENT: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_CONTENT }}
+        run: |
+          # Decode credentials from secret
+          echo "$GOOGLE_APPLICATION_CREDENTIALS_CONTENT" | base64 -d > credentials.json
+          npm run gsc
+
+      - name: Detect anomalies
+        working-directory: scripts
+        run: npm run detect-anomalies
+
+      - name: Cleanup history
+        working-directory: scripts
+        run: npm run cleanup
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add data/
+          git diff --quiet && git diff --staged --quiet || git commit -m "chore: daily SEO monitoring data update"
+          git push
+
+  weekly-full:
+    runs-on: ubuntu-latest
+    if: github.event.schedule == '0 8 * * 1'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        working-directory: scripts
+        run: npm ci
+
+      - name: Run GSC collector (full)
+        working-directory: scripts
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ./credentials.json
+          GSC_SITE_URL: ${{ secrets.GSC_SITE_URL }}
+          GOOGLE_APPLICATION_CREDENTIALS_CONTENT: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_CONTENT }}
+        run: |
+          # Decode credentials from secret
+          echo "$GOOGLE_APPLICATION_CREDENTIALS_CONTENT" | base64 -d > credentials.json
+          npm run gsc -- --full
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add data/
+          git diff --quiet && git diff --staged --quiet || git commit -m "chore: weekly SEO full data collection"
+          git push
+
+  monthly-geo:
+    runs-on: ubuntu-latest
+    if: github.event.schedule == '0 6 1 * *'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        working-directory: scripts
+        run: npm ci
+
+      - name: Run GEO query
+        working-directory: scripts
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: npm run geo
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add data/
+          git diff --quiet && git diff --staged --quiet || git commit -m "chore: monthly GEO citation check"
+          git push
