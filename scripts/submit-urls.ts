@@ -86,12 +86,20 @@ async function getUrlsFromSitemap(): Promise<string[]> {
 }
 
 /**
- * Get unindexed URLs from seo-metrics.json
+ * Get unindexed URLs from seo-metrics.json, or fallback to sitemap
  */
 async function getUnindexedUrls(): Promise<string[]> {
   try {
     const metrics = await fs.readJson(CONFIG.seoMetricsPath);
-    return metrics.gsc?.unindexedUrls || [];
+    const unindexed = metrics.gsc?.unindexedUrls || [];
+
+    // If unindexed URLs exist, use them; otherwise use sitemap
+    if (unindexed.length > 0) {
+      return unindexed;
+    }
+
+    log('No unindexed URLs in metrics, using sitemap...', 'yellow');
+    return getUrlsFromSitemap();
   } catch (error: any) {
     log(`Warning: Could not read seo-metrics.json, using sitemap URLs`, 'yellow');
     return getUrlsFromSitemap();
@@ -180,6 +188,7 @@ async function submitUrlsBatch(
 async function main() {
   const args = process.argv.slice(2);
   const dryRun = args.includes('--dry-run');
+  const useSitemap = args.includes('--sitemap');
   const limitIndex = args.indexOf('--limit');
   const limit = limitIndex !== -1 ? parseInt(args[limitIndex + 1]) : undefined;
 
@@ -198,8 +207,8 @@ async function main() {
     }
 
     // Get URLs to submit
-    log('📋 Fetching unindexed URLs...', 'cyan');
-    const urls = await getUnindexedUrls();
+    log('📋 Fetching URLs...', 'cyan');
+    const urls = useSitemap ? await getUrlsFromSitemap() : await getUnindexedUrls();
 
     if (urls.length === 0) {
       log('✅ No unindexed URLs found!', 'green');
