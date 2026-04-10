@@ -1,6 +1,36 @@
 {
-  "lastUpdated": "2026-04-09T08:21:09.814Z",
-  "gsc": {},
+  "lastUpdated": "2026-04-10T09:42:24.917Z",
+  "gsc": {
+    "indexedPages": 0,
+    "totalSubmitted": 49,
+    "unindexedUrls": [
+      "https://powerstarapps.com/",
+      "https://powerstarapps.com/products/thermometer.html",
+      "https://powerstarapps.com/products/thermometer-landing/indoor-thermometer-app.html",
+      "https://powerstarapps.com/products/thermometer-landing/room-temperature-app.html",
+      "https://powerstarapps.com/products/thermometer-landing/barometer-for-fishing.html",
+      "https://powerstarapps.com/products/thermometer-landing/hygrometer-app.html",
+      "https://powerstarapps.com/products/thermometer-landing/fever-thermometer-app.html",
+      "https://powerstarapps.com/products/microphone.html",
+      "https://powerstarapps.com/products/microphone-landing/microphone-for-presentations.html",
+      "https://powerstarapps.com/products/microphone-landing/voice-amplifier-app.html"
+    ],
+    "topKeywords": [],
+    "clicks": {
+      "last7Days": 0,
+      "last30Days": 0,
+      "trend": []
+    },
+    "impressions": {
+      "last7Days": 0,
+      "last30Days": 0,
+      "trend": []
+    },
+    "dailyTrend": [],
+    "avgPosition": 0,
+    "avgCTR": 0,
+    "coverageErrors": []
+  },
   "geo": {
     "chatgpt": {
       "cited": false,
@@ -17,5 +47,24 @@
       "model": "gemini-pro"
     }
   },
-  "alerts": []
+  "alerts": [
+    {
+      "type": "traffic_drop",
+      "severity": "P1",
+      "metric": "clicks.last7Days",
+      "change": 100,
+      "threshold": 30,
+      "details": "Clicks dropped 100.0% (from 5 to 0)",
+      "detectedAt": "2026-04-10T09:42:25.379Z"
+    },
+    {
+      "type": "indexing_drop",
+      "severity": "P1",
+      "metric": "indexedPages",
+      "change": 100,
+      "threshold": 20,
+      "details": "Indexing gap: only 0 of 49 pages indexed (100.0% unindexed)",
+      "detectedAt": "2026-04-10T09:42:25.379Z"
+    }
+  ]
 }
