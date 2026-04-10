@@ -14,7 +14,7 @@ on:
 jobs:
   daily-check:
     runs-on: ubuntu-latest
-    if: github.event.schedule == '0 6 * * *'
+    if: github.event.schedule == '0 6 * * *' || github.event_name == 'workflow_dispatch'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -57,7 +57,7 @@ jobs:
 
   weekly-full:
     runs-on: ubuntu-latest
-    if: github.event.schedule == '0 8 * * 1'
+    if: github.event.schedule == '0 8 * * 1' || github.event_name == 'workflow_dispatch'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -92,7 +92,7 @@ jobs:
 
   monthly-geo:
     runs-on: ubuntu-latest
-    if: github.event.schedule == '0 6 1 * *'
+    if: github.event.schedule == '0 6 1 * *' || github.event_name == 'workflow_dispatch'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
