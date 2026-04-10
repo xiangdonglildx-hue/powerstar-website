@@ -11,6 +11,10 @@ on:
   workflow_dispatch:
     # Manual trigger for testing
 
+concurrency:
+  group: seo-monitor
+  cancel-in-progress: false
+
 jobs:
   daily-check:
     runs-on: ubuntu-latest
@@ -55,7 +59,8 @@ jobs:
           git config --local user.name "GitHub Action"
           git add data/
           git diff --quiet && git diff --staged --quiet || git commit -m "chore: daily SEO monitoring data update"
-          git push
+          git pull --rebase origin main
+          git push origin main
 
   weekly-full:
     runs-on: ubuntu-latest
@@ -92,7 +97,8 @@ jobs:
           git config --local user.name "GitHub Action"
           git add data/
           git diff --quiet && git diff --staged --quiet || git commit -m "chore: weekly SEO full data collection"
-          git push
+          git pull --rebase origin main
+          git push origin main
 
   monthly-geo:
     runs-on: ubuntu-latest
@@ -125,4 +131,5 @@ jobs:
           git config --local user.name "GitHub Action"
           git add data/
           git diff --quiet && git diff --staged --quiet || git commit -m "chore: monthly GEO citation check"
-          git push
+          git pull --rebase origin main
+          git push origin main
