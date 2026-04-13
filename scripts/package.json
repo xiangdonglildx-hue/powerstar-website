@@ -1,39 +1,11 @@
 {
-  "name": "powerstar-gsc-scripts",
+  "name": "powerstar-seo-scripts",
   "version": "1.0.0",
-  "description": "Google Search Console data collection scripts for PowerStar SEO monitoring",
-  "type": "module",
+  "description": "SEO scripts for PowerStar website",
   "scripts": {
-    "collect": "tsx gsc-collector.ts",
-    "test:auth": "tsx test-auth.ts",
-    "geo": "tsx geo-query.ts",
-    "test": "vitest run",
-    "gsc": "tsx gsc-collector.ts",
-    "detect-anomalies": "tsx detect-anomalies.ts",
-    "cleanup": "tsx cleanup-history.ts"
+    "index": "node submit-to-indexing-api.js"
   },
   "dependencies": {
-    "googleapis": "171.4.0",
-    "google-auth-library": "10.6.2",
-    "dotenv": "17.4.1",
-    "fs-extra": "11.3.4",
-    "zod": "4.3.6",
-    "xml2js": "^0.6.2",
-    "openai": "^4.0.0",
-    "@google/generative-ai": "^0.21.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.0.0",
-    "tsx": "^4.0.0",
-    "@types/node": "^22.0.0",
-    "vitest": "^2.0.0"
-  },
-  "keywords": [
-    "seo",
-    "gsc",
-    "google-search-console",
-    "monitoring"
-  ],
-  "author": "PowerStar",
-  "license": "MIT"
+    "google-auth-library": "^9.0.0"
+  }
 }
