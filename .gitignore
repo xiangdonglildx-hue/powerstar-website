@@ -23,3 +23,17 @@ scripts/*.json
 !scripts/package.json
 !scripts/tsconfig.json
 scripts/dist/
+
+# Media files (large binaries - use external storage or Git LFS)
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.mp4
+*.mov
+*.webm
+*.pptx
+*.pdf
+!images/favicon.png
+!images/logo.png
+!images/icons/*.png
