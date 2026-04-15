@@ -496,7 +496,7 @@ function initScrollBackground() {
         }
     });
     
-    // Features section color shift
+    // Features section color shift - 只改变 section 自身，不影响 body
     const featuresSection = document.querySelector('.features') || document.querySelector('[style*="background: #f8f9fa"]');
     if (featuresSection) {
         ScrollTrigger.create({
@@ -504,13 +504,14 @@ function initScrollBackground() {
             start: 'top 60%',
             end: 'bottom 40%',
             onEnter: () => {
-                gsap.to('body', {
+                // 不再改变 body 背景，避免影响页面上其他元素
+                gsap.to(featuresSection, {
                     backgroundColor: '#f8f9fa',
                     duration: 0.5
                 });
             },
             onLeaveBack: () => {
-                gsap.to('body', {
+                gsap.to(featuresSection, {
                     backgroundColor: '#ffffff',
                     duration: 0.5
                 });
@@ -518,21 +519,22 @@ function initScrollBackground() {
         });
     }
     
-    // CTA section dark mode
+    // CTA section dark mode - 只改变 CTA section 自身，不影响 body
     const ctaSection = document.querySelector('.cta-section');
     if (ctaSection) {
         ScrollTrigger.create({
             trigger: ctaSection,
             start: 'top 70%',
             onEnter: () => {
-                gsap.to('body', {
+                // 不再改变 body 背景，避免影响页面上其他浅色元素
+                gsap.to(ctaSection, {
                     backgroundColor: '#0a0a0a',
                     duration: 0.6
                 });
             },
             onLeaveBack: () => {
-                gsap.to('body', {
-                    backgroundColor: '#ffffff',
+                gsap.to(ctaSection, {
+                    backgroundColor: 'linear-gradient(135deg, #ff4d00 0%, #000 100%)',
                     duration: 0.4
                 });
             }

@@ -155,7 +155,7 @@
 /* ===== Content Sections ===== */
 .content-section {
     padding: 80px 0;
-    background: #fff;
+    background: #f5f5f7;  /* 浅灰背景，让 spec-card 等浅色元素可见 */
 }
 
 .content-section.dark {
@@ -212,11 +212,13 @@
 }
 
 .feature-card-large {
-    background: var(--gray-bg, #f5f5f7);
+    background: #ffffff;
     padding: 40px;
     border-radius: 20px;
     transition: all 0.4s;
     position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.08);
 }
 
 .feature-card-large::before {
@@ -331,17 +333,18 @@
 }
 
 .spec-card {
-    background: #f5f5f7;
+    background: #ffffff;
     padding: 32px;
     border-radius: 16px;
     transition: all 0.3s;
-    border: 1px solid rgba(255,255,255,0.1);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 
 .spec-card:hover {
     background: #fff;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
 }
 
 .spec-card h3 {
@@ -447,11 +450,13 @@
 }
 
 .review-card {
-    background: var(--gray-bg, #f5f5f7);
+    background: #ffffff;
     padding: 32px;
     border-radius: 16px;
     transition: all 0.3s;
     position: relative;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.08);
 }
 
 .review-card::before {
@@ -514,11 +519,12 @@
 }
 
 .guide-card {
-    background: var(--gray-bg, #f5f5f7);
+    background: #ffffff;
     padding: 32px;
     border-radius: 16px;
     transition: all 0.3s;
-    border: 1px solid rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
 .guide-card:hover {
@@ -598,13 +604,15 @@
 }
 
 .related-product-card {
-    background: var(--gray-bg, #f5f5f7);
+    background: #ffffff;
     padding: 32px 24px;
     border-radius: 16px;
     text-align: center;
     text-decoration: none;
     color: inherit;
     transition: all 0.4s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.08);
 }
 
 .related-product-card:hover {
