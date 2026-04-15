@@ -37,3 +37,5 @@ scripts/dist/
 !images/favicon.png
 !images/logo.png
 !images/icons/*.png
+!images/og/*.png
+!picture/logo/*.png
