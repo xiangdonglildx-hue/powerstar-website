@@ -1,0 +1,21 @@
+{
+  "name": "powerstar-remotion-sidecar",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "remotion studio src/index.ts",
+    "compositions": "remotion compositions src/index.ts",
+    "render:ai-photo-og": "remotion still src/index.ts AIPhotoOg ../images/og/og-ai-photo.png"
+  },
+  "dependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "remotion": "^4.0.0"
+  },
+  "devDependencies": {
+    "@remotion/cli": "^4.0.0",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "typescript": "^5.4.5"
+  }
+}

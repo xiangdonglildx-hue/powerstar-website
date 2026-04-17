@@ -24,6 +24,11 @@ scripts/*.json
 !scripts/tsconfig.json
 scripts/dist/
 
+# Remotion sidecar
+remotion/node_modules/
+remotion/dist/
+remotion/.tmp/
+
 # Media files (large binaries - use external storage or Git LFS)
 *.png
 *.jpg
@@ -39,3 +44,5 @@ scripts/dist/
 !images/icons/*.png
 !images/og/*.png
 !picture/logo/*.png
+!remotion/public/
+!remotion/public/**/*.png
