@@ -749,53 +749,5 @@
     <!-- Mobile Navigation -->
     <script src="../js/mobile-nav.js"></script>
 
-    <script>
-        // Initialize for product page
-        gsap.registerPlugin(ScrollTrigger);
-        
-        // Hero entrance
-        gsap.from('.product-hero-grid', {
-            opacity: 0,
-            y: 50,
-            duration: 1,
-            ease: 'power3.out'
-        });
-        
-        // Quick features slide
-        gsap.from('.quick-feature', {
-            opacity: 0,
-            x: -30,
-            stagger: 0.1,
-            duration: 0.5,
-            scrollTrigger: {
-                trigger: '.quick-features',
-                start: 'top 80%'
-            }
-        });
-        
-        // Specs cards
-        gsap.from('.spec-card', {
-            opacity: 0,
-            y: 40,
-            stagger: 0.15,
-            duration: 0.6,
-            scrollTrigger: {
-                trigger: '.specs-grid',
-                start: 'top 80%'
-            }
-        });
-        
-        // Comparison table rows
-        gsap.from('.comparison-table tbody tr', {
-            opacity: 0,
-            x: -20,
-            stagger: 0.05,
-            duration: 0.4,
-            scrollTrigger: {
-                trigger: '.comparison-table',
-                start: 'top 80%'
-            }
-        });
-    </script>
 </body>
 </html>

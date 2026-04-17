@@ -9,6 +9,25 @@
     margin-bottom: 60px;
 }
 
+.section-kicker {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(255, 77, 0, 0.08);
+    color: var(--orange);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.section-header-showcase h2 {
+    margin-top: 0;
+}
+
 .section-header h2 {
     font-size: 3rem;
     margin-bottom: 16px;
@@ -25,7 +44,9 @@
 /* ===== Products Section Enhanced ===== */
 .products-section {
     padding: 120px 0;
-    background: var(--white);
+    background:
+        radial-gradient(circle at top right, rgba(255, 77, 0, 0.05), transparent 28%),
+        linear-gradient(180deg, #ffffff 0%, #fbfbfd 100%);
 }
 
 .products-grid-full {
@@ -42,85 +63,99 @@
 
 /* ===== Product Card Enhanced ===== */
 .product-card-enhanced {
-    background: var(--white);
-    border-radius: 20px;
+    background: rgba(255,255,255,0.92);
+    border-radius: 24px;
     overflow: hidden;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    box-shadow: 0 18px 60px rgba(15, 23, 42, 0.08);
     text-decoration: none;
     color: var(--black);
     display: block;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.45s ease, border-color 0.3s ease;
+    border: 1px solid rgba(15, 23, 42, 0.06);
     border-top: 4px solid var(--gray-bg);
     position: relative;
+    isolation: isolate;
 }
 
 .product-card-enhanced::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: var(--orange);
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 30%);
     opacity: 0;
-    transition: opacity 0.3s;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
 }
 
-.product-card-enhanced:hover::before {
+.product-card-enhanced::after {
+    content: '';
+    position: absolute;
+    inset: auto 20px 0 20px;
+    height: 80px;
+    background: radial-gradient(circle at center, rgba(255, 77, 0, 0.12), transparent 70%);
+    opacity: 0;
+    filter: blur(22px);
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+}
+
+.product-card-enhanced:hover::before,
+.product-card-enhanced:hover::after {
     opacity: 1;
 }
 
 /* Product theme colors */
 .product-card-enhanced[data-product="microphone"] { border-top-color: #a78bfa; }
-.product-card-enhanced[data-product="microphone"]:hover { 
-    box-shadow: 0 20px 60px rgba(167, 139, 250, 0.25);
+.product-card-enhanced[data-product="microphone"]:hover {
+    box-shadow: 0 24px 70px rgba(167, 139, 250, 0.2);
     border-top-color: #a78bfa;
 }
 
 .product-card-enhanced[data-product="thermometer"] { border-top-color: #ff6b6b; }
-.product-card-enhanced[data-product="thermometer"]:hover { 
-    box-shadow: 0 20px 60px rgba(255, 107, 107, 0.25);
+.product-card-enhanced[data-product="thermometer"]:hover {
+    box-shadow: 0 24px 70px rgba(255, 107, 107, 0.2);
 }
 
 .product-card-enhanced[data-product="ai-photo"] { border-top-color: #ff4d00; }
-.product-card-enhanced[data-product="ai-photo"]:hover { 
-    box-shadow: 0 20px 60px rgba(255, 77, 0, 0.25);
+.product-card-enhanced[data-product="ai-photo"]:hover {
+    box-shadow: 0 24px 70px rgba(255, 77, 0, 0.2);
 }
 
 .product-card-enhanced[data-product="voice-changer"] { border-top-color: #f472b6; }
-.product-card-enhanced[data-product="voice-changer"]:hover { 
-    box-shadow: 0 20px 60px rgba(244, 114, 182, 0.25);
+.product-card-enhanced[data-product="voice-changer"]:hover {
+    box-shadow: 0 24px 70px rgba(244, 114, 182, 0.2);
 }
 
 .product-card-enhanced[data-product="lumiwall"] { border-top-color: #00c4b4; }
-.product-card-enhanced[data-product="lumiwall"]:hover { 
-    box-shadow: 0 20px 60px rgba(0, 196, 180, 0.25);
+.product-card-enhanced[data-product="lumiwall"]:hover {
+    box-shadow: 0 24px 70px rgba(0, 196, 180, 0.2);
 }
 
 .product-card-image-wrapper {
     overflow: hidden;
-    background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+    background: linear-gradient(180deg, #f8f9fa 0%, #edf1f5 100%);
     padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 200px;
+    min-height: 210px;
 }
 
 .product-card-image {
     width: 100%;
-    height: 200px;
+    height: 210px;
     object-fit: cover;
-    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.4s ease;
 }
 
 .product-card-enhanced:hover .product-card-image {
     transform: scale(1.08);
+    filter: saturate(1.06);
 }
 
 .product-card-content {
     padding: 32px;
-    background: var(--white);
+    background: transparent;
 }
 
 .product-card-icon {
@@ -169,35 +204,36 @@
     color: var(--orange);
 }
 
-[data-product="microphone"]:hover .tag { 
-    background: rgba(167, 139, 250, 0.1); 
-    color: #a78bfa; 
+[data-product="microphone"]:hover .tag {
+    background: rgba(167, 139, 250, 0.1);
+    color: #a78bfa;
 }
 
-[data-product="thermometer"]:hover .tag { 
-    background: rgba(255, 107, 107, 0.1); 
-    color: #ff6b6b; 
+[data-product="thermometer"]:hover .tag {
+    background: rgba(255, 107, 107, 0.1);
+    color: #ff6b6b;
 }
 
-[data-product="ai-photo"]:hover .tag { 
-    background: rgba(255, 77, 0, 0.1); 
-    color: #ff4d00; 
+[data-product="ai-photo"]:hover .tag {
+    background: rgba(255, 77, 0, 0.1);
+    color: #ff4d00;
 }
 
-[data-product="voice-changer"]:hover .tag { 
-    background: rgba(244, 114, 182, 0.1); 
-    color: #f472b6; 
+[data-product="voice-changer"]:hover .tag {
+    background: rgba(244, 114, 182, 0.1);
+    color: #f472b6;
 }
 
-[data-product="lumiwall"]:hover .tag { 
-    background: rgba(0, 196, 180, 0.1); 
-    color: #00c4b4; 
+[data-product="lumiwall"]:hover .tag {
+    background: rgba(0, 196, 180, 0.1);
+    color: #00c4b4;
 }
 
 .product-stats {
     display: flex;
     gap: 24px;
     margin-bottom: 20px;
+    flex-wrap: wrap;
 }
 
 .product-stats span {

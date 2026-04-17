@@ -727,33 +727,30 @@ function initNavigationEffects() {
 // ========================================
 
 function initMinimalAnimations() {
-    // Simple fade-in without motion
-    gsap.set([
+    const visibleSelectors = [
         '.hero-content h1',
         '.hero-subtitle',
         '.hero-content .btn-download',
+        '.scroll-indicator',
         '.stat-item',
         '.product-card',
-        '.feature-card'
-    ], { opacity: 0 });
-    
-    ScrollTrigger.batch([
-        '.hero-content h1',
-        '.hero-subtitle',
-        '.hero-content .btn-download'
-    ], {
-        onEnter: (elements) => gsap.to(elements, { opacity: 1, duration: 0.3 })
+        '.feature-card',
+        '.cta-section h2',
+        '.cta-section p',
+        '.cta-section .btn-download',
+        '.footer-brand',
+        '.footer-column'
+    ];
+
+    const elements = gsap.utils.toArray(visibleSelectors.join(', '));
+    if (elements.length === 0) return;
+
+    gsap.set(elements, {
+        opacity: 1,
+        clearProps: 'opacity,transform,filter'
     });
-    
-    ScrollTrigger.batch([
-        '.stat-item',
-        '.product-card',
-        '.feature-card'
-    ], {
-        onEnter: (elements) => gsap.to(elements, { opacity: 1, stagger: 0.05, duration: 0.3 })
-    });
-    
-    console.log('✅ PowerStar Minimal Animations initialized');
+
+    console.log('✅ PowerStar Minimal Animations initialized (content-first mode)');
 }
 
 // ========================================

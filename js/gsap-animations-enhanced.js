@@ -39,6 +39,8 @@ function initEnhancedAnimations() {
     initParticleBackground();
     initKenBurnsBanner();
     initHeroSplitText();
+    initProductPageShowcase();
+    initBlogPageShowcase();
     initMagneticCards();
     initScrollBackground();
     initRippleButtons();
@@ -46,7 +48,7 @@ function initEnhancedAnimations() {
     initStatsCounter();
     initNavigationEffects();
     initTestimonialSlider();
-    
+
     console.log('✅ PowerStar Enhanced Animations v4.0 initialized');
 }
 
@@ -221,165 +223,687 @@ function initKenBurnsBanner() {
 // ========================================
 
 function initHeroSplitText() {
-    const heroTitle = document.querySelector('.hero-content h1');
-    if (!heroTitle) return;
-    
-    // Get text and create letter spans
-    const fullText = heroTitle.textContent;
-    const lines = fullText.split('\n').filter(l => l.trim());
-    
-    // Simple split by words for better effect
-    heroTitle.innerHTML = '';
-    
-    const words = fullText.split(/(\s+)/);
-    const wrapper = document.createElement('div');
-    wrapper.style.cssText = 'display: inline-block;';
-    
-    words.forEach(word => {
-        if (word.trim() === '') {
-            wrapper.appendChild(document.createTextNode(word));
-        } else {
-            const span = document.createElement('span');
-            span.textContent = word;
-            span.style.cssText = `
-                display: inline-block;
-                opacity: 0;
-                transform: translateY(80px) rotateX(-40deg);
-            `;
-            wrapper.appendChild(span);
+    const heroTitle = document.querySelector('.hero-title');
+    if (!heroTitle || heroTitle.dataset.enhanced === 'true') return;
+
+    const textNodes = [];
+    heroTitle.childNodes.forEach(node => {
+        if (node.nodeType === Node.TEXT_NODE && node.textContent.trim()) {
+            textNodes.push({ type: 'text', text: node.textContent.trim() });
+        } else if (node.nodeType === Node.ELEMENT_NODE && node.classList.contains('highlight')) {
+            textNodes.push({ type: 'highlight', text: node.textContent.trim() });
         }
     });
-    
-    heroTitle.appendChild(wrapper);
-    
-    // Staggered word entrance
-    const wordSpans = heroTitle.querySelectorAll('span');
+
+    if (textNodes.length === 0) return;
+
+    heroTitle.innerHTML = '';
+    const fragment = document.createDocumentFragment();
+
+    textNodes.forEach((part, index) => {
+        const partWrapper = document.createElement('span');
+        partWrapper.className = part.type === 'highlight' ? 'hero-title-part highlight' : 'hero-title-part';
+        partWrapper.style.cssText = 'display:inline-flex; flex-wrap:wrap; gap:0.22em; margin-right:0.22em;';
+
+        const words = part.text.split(/\s+/).filter(Boolean);
+        words.forEach((word) => {
+            const wordSpan = document.createElement('span');
+            wordSpan.className = 'hero-word';
+            wordSpan.textContent = word;
+            wordSpan.style.cssText = 'display:inline-block; opacity:0; transform: translateY(46px) rotateX(-18deg); transform-origin: 50% 100%; will-change: transform, opacity;';
+            partWrapper.appendChild(wordSpan);
+        });
+
+        fragment.appendChild(partWrapper);
+        if (index < textNodes.length - 1) {
+            fragment.appendChild(document.createTextNode(' '));
+        }
+    });
+
+    heroTitle.appendChild(fragment);
+    heroTitle.dataset.enhanced = 'true';
+
+    const titleParts = heroTitle.querySelectorAll('.hero-title-part');
+    const wordSpans = heroTitle.querySelectorAll('.hero-word');
+
     gsap.to(wordSpans, {
         opacity: 1,
         y: 0,
         rotateX: 0,
-        duration: 1,
-        stagger: 0.08,
+        duration: 0.9,
+        stagger: 0.06,
         ease: 'power3.out',
-        delay: 0.5
+        delay: 0.24
     });
-    
-    // Span special animation (orange text)
-    const heroSpan = heroTitle.querySelector('span:last-child');
-    if (heroSpan && heroSpan.textContent.includes('Life')) {
-        gsap.from(heroSpan, {
-            textShadow: '0 0 40px rgba(255,77,0,1), 0 0 80px rgba(255,77,0,0.5)',
-            scale: 1.2,
-            duration: 1.5,
-            ease: 'power2.out',
-            delay: 1.5
-        });
-        
-        // Continuous glow pulse
-        gsap.to(heroSpan, {
-            textShadow: '0 0 20px rgba(255,77,0,0.6)',
-            duration: 2,
+
+    titleParts.forEach((part, index) => {
+        if (!part.classList.contains('highlight')) return;
+
+        gsap.fromTo(part,
+            {
+                filter: 'drop-shadow(0 0 0 rgba(255,77,0,0))'
+            },
+            {
+                filter: 'drop-shadow(0 0 28px rgba(255,143,112,0.38))',
+                duration: 1.2,
+                ease: 'power2.out',
+                delay: 0.85 + index * 0.08
+            }
+        );
+
+        gsap.to(part, {
+            y: -3,
+            duration: 2.8,
             repeat: -1,
             yoyo: true,
-            ease: 'sine.inOut'
+            ease: 'sine.inOut',
+            delay: 1.6
+        });
+    });
+
+    const eyebrow = document.querySelector('.hero-eyebrow');
+    if (eyebrow) {
+        gsap.from(eyebrow, {
+            opacity: 0,
+            y: 24,
+            duration: 0.6,
+            ease: 'power2.out'
         });
     }
-    
-    // Subtitle entrance
+
+    const brand = document.querySelector('.hero-brand');
+    if (brand) {
+        gsap.from(brand, {
+            opacity: 0,
+            y: 18,
+            scale: 0.96,
+            duration: 0.7,
+            ease: 'power2.out',
+            delay: 0.08
+        });
+    }
+
     const subtitle = document.querySelector('.hero-subtitle');
     if (subtitle) {
         gsap.from(subtitle, {
             opacity: 0,
-            y: 40,
+            y: 28,
             duration: 0.8,
+            ease: 'power2.out',
+            delay: 0.85
+        });
+    }
+
+    const proof = document.querySelector('.hero-proof');
+    if (proof) {
+        gsap.from(proof, {
+            opacity: 0,
+            y: 22,
+            duration: 0.8,
+            ease: 'power2.out',
+            delay: 1
+        });
+    }
+
+    const heroIcons = document.querySelectorAll('.hero-apps .app-icon-item');
+    if (heroIcons.length) {
+        gsap.from(heroIcons, {
+            opacity: 0,
+            y: 30,
+            scale: 0.86,
+            duration: 0.7,
+            stagger: 0.08,
+            ease: 'back.out(1.7)',
+            delay: 1.05
+        });
+    }
+
+    const statBadges = document.querySelectorAll('.hero-stats-inline .stat-badge');
+    if (statBadges.length) {
+        gsap.from(statBadges, {
+            opacity: 0,
+            y: 26,
+            scale: 0.92,
+            duration: 0.65,
+            stagger: 0.1,
             ease: 'power2.out',
             delay: 1.2
         });
     }
-    
-    // Button with magnetic effect
-    const heroBtn = document.querySelector('.hero-content .btn-download');
-    if (heroBtn) {
-        gsap.from(heroBtn, {
+
+    const trustStrip = document.querySelectorAll('.hero-trust-strip span');
+    if (trustStrip.length) {
+        gsap.from(trustStrip, {
             opacity: 0,
-            scale: 0.8,
-            y: 30,
-            duration: 0.6,
-            ease: 'back.out(2)',
-            delay: 1.5
+            y: 18,
+            duration: 0.55,
+            stagger: 0.08,
+            ease: 'power2.out',
+            delay: 1.35
         });
-        
-        // Magnetic pull on mouse
+    }
+
+    const heroBtn = document.querySelector('.btn-hero-primary');
+    if (heroBtn) {
+        gsap.fromTo(heroBtn,
+            {
+                opacity: 0,
+                scale: 0.9,
+                y: 24,
+                immediateRender: false
+            },
+            {
+                opacity: 1,
+                scale: 1,
+                y: 0,
+                duration: 0.7,
+                ease: 'back.out(1.8)',
+                delay: 1.1,
+                clearProps: 'opacity,transform'
+            }
+        );
+
         heroBtn.addEventListener('mousemove', (e) => {
             const rect = heroBtn.getBoundingClientRect();
             const x = e.clientX - rect.left - rect.width / 2;
             const y = e.clientY - rect.top - rect.height / 2;
-            
+
             gsap.to(heroBtn, {
-                x: x * 0.3,
-                y: y * 0.3,
-                duration: 0.3,
+                x: x * 0.12,
+                y: y * 0.12,
+                duration: 0.25,
                 ease: 'power2.out'
             });
         });
-        
+
         heroBtn.addEventListener('mouseleave', () => {
             gsap.to(heroBtn, {
                 x: 0,
                 y: 0,
-                duration: 0.5,
-                ease: 'elastic.out(1, 0.5)'
+                duration: 0.4,
+                ease: 'power2.out'
             });
         });
     }
 }
 
 // ========================================
-// 4. MAGNETIC PRODUCT CARDS
+// 4. PRODUCT PAGE SHOWCASE
+// ========================================
+
+function initProductPageShowcase() {
+    const productHero = document.querySelector('.product-hero-grid');
+    if (!productHero) return;
+
+    const productInfo = productHero.querySelector('.product-info');
+    const productIcon = productHero.querySelector('.product-icon');
+    const productTitle = productHero.querySelector('.product-info h1');
+    const productSubtitle = productHero.querySelector('.product-subtitle');
+    const productStats = productHero.querySelectorAll('.product-stats-hero .stat-badge');
+    const productActions = productHero.querySelectorAll('.product-actions .btn-download');
+    const productMockup = productHero.querySelector('.product-mockup');
+    const productMockupImage = productHero.querySelector('.product-mockup img');
+
+    const heroTimeline = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+    if (productInfo) {
+        heroTimeline.from(productInfo, {
+            opacity: 0,
+            x: -36,
+            duration: 0.7
+        });
+    }
+
+    if (productIcon) {
+        heroTimeline.from(productIcon, {
+            opacity: 0,
+            scale: 0.82,
+            y: 18,
+            duration: 0.5
+        }, productInfo ? '-=0.42' : 0);
+    }
+
+    if (productTitle) {
+        heroTimeline.from(productTitle, {
+            opacity: 0,
+            y: 28,
+            duration: 0.55
+        }, '-=0.28');
+    }
+
+    if (productSubtitle) {
+        heroTimeline.from(productSubtitle, {
+            opacity: 0,
+            y: 26,
+            duration: 0.6
+        }, '-=0.22');
+    }
+
+    if (productStats.length) {
+        heroTimeline.from(productStats, {
+            opacity: 0,
+            y: 22,
+            scale: 0.94,
+            duration: 0.48,
+            stagger: 0.08
+        }, '-=0.18');
+    }
+
+    if (productActions.length) {
+        heroTimeline.from(productActions, {
+            opacity: 0,
+            y: 20,
+            scale: 0.96,
+            duration: 0.45,
+            stagger: 0.08
+        }, '-=0.12');
+    }
+
+    if (productMockup) {
+        heroTimeline.from(productMockup, {
+            opacity: 0,
+            x: 42,
+            y: 18,
+            rotateY: -10,
+            transformPerspective: 1200,
+            duration: 0.9,
+            clearProps: 'transform'
+        }, 0.08);
+    }
+
+    if (productMockupImage) {
+        gsap.fromTo(productMockupImage,
+            {
+                filter: 'drop-shadow(0 0 0 rgba(0,0,0,0))'
+            },
+            {
+                filter: 'drop-shadow(0 24px 48px var(--theme-glow, rgba(167, 139, 250, 0.28)))',
+                duration: 1.1,
+                ease: 'power2.out',
+                delay: 0.45
+            }
+        );
+    }
+
+    const quickFeatures = gsap.utils.toArray('.quick-feature');
+    if (quickFeatures.length) {
+        gsap.from(quickFeatures, {
+            y: 24,
+            duration: 0.55,
+            stagger: 0.07,
+            ease: 'power2.out',
+            clearProps: 'transform',
+            scrollTrigger: {
+                trigger: quickFeatures[0].closest('.quick-features') || quickFeatures[0],
+                start: 'top 82%',
+                once: true
+            }
+        });
+    }
+
+    const featureCards = gsap.utils.toArray('.feature-card-large');
+    if (featureCards.length) {
+        gsap.from(featureCards, {
+            y: 42,
+            duration: 0.7,
+            stagger: 0.12,
+            ease: 'power3.out',
+            clearProps: 'transform',
+            scrollTrigger: {
+                trigger: featureCards[0].closest('.content-section') || featureCards[0],
+                start: 'top 78%',
+                once: true
+            }
+        });
+    }
+
+    const useCaseCards = gsap.utils.toArray('.use-case-card');
+    if (useCaseCards.length) {
+        gsap.from(useCaseCards, {
+            y: 34,
+            scale: 0.96,
+            duration: 0.6,
+            stagger: 0.08,
+            ease: 'power2.out',
+            clearProps: 'transform',
+            scrollTrigger: {
+                trigger: useCaseCards[0].closest('.content-section') || useCaseCards[0],
+                start: 'top 78%',
+                once: true
+            }
+        });
+    }
+
+    const specCards = gsap.utils.toArray('.spec-card');
+    if (specCards.length) {
+        gsap.from(specCards, {
+            y: 34,
+            duration: 0.6,
+            stagger: 0.08,
+            ease: 'power2.out',
+            clearProps: 'transform',
+            scrollTrigger: {
+                trigger: specCards[0].closest('.content-section') || specCards[0],
+                start: 'top 80%',
+                once: true
+            }
+        });
+    }
+
+    const comparisonRows = gsap.utils.toArray('.comparison-table tbody tr');
+    if (comparisonRows.length) {
+        gsap.from(comparisonRows, {
+            x: -24,
+            duration: 0.45,
+            stagger: 0.06,
+            ease: 'power2.out',
+            clearProps: 'transform',
+            scrollTrigger: {
+                trigger: comparisonRows[0].closest('.comparison-table-wrapper') || comparisonRows[0],
+                start: 'top 82%',
+                once: true
+            }
+        });
+    }
+
+    const reviewCards = gsap.utils.toArray('.review-card');
+    if (reviewCards.length) {
+        gsap.from(reviewCards, {
+            y: 30,
+            duration: 0.55,
+            stagger: 0.08,
+            ease: 'power2.out',
+            clearProps: 'transform',
+            scrollTrigger: {
+                trigger: reviewCards[0].closest('.content-section') || reviewCards[0],
+                start: 'top 80%',
+                once: true
+            }
+        });
+    }
+
+    const faqItems = gsap.utils.toArray('.faq-item');
+    if (faqItems.length) {
+        gsap.from(faqItems, {
+            y: 24,
+            duration: 0.5,
+            stagger: 0.05,
+            ease: 'power2.out',
+            clearProps: 'transform',
+            scrollTrigger: {
+                trigger: faqItems[0].closest('.content-section') || faqItems[0],
+                start: 'top 82%',
+                once: true
+            }
+        });
+    }
+
+    const guideCards = gsap.utils.toArray('.guide-card');
+    if (guideCards.length) {
+        gsap.from(guideCards, {
+            y: 28,
+            duration: 0.55,
+            stagger: 0.08,
+            ease: 'power2.out',
+            clearProps: 'transform',
+            scrollTrigger: {
+                trigger: guideCards[0].closest('.content-section') || guideCards[0],
+                start: 'top 80%',
+                once: true
+            }
+        });
+    }
+
+    const relatedProducts = gsap.utils.toArray('.related-product-card');
+    if (relatedProducts.length) {
+        gsap.from(relatedProducts, {
+            y: 26,
+            scale: 0.96,
+            duration: 0.5,
+            stagger: 0.08,
+            ease: 'power2.out',
+            clearProps: 'transform',
+            scrollTrigger: {
+                trigger: relatedProducts[0].closest('.content-section') || relatedProducts[0],
+                start: 'top 82%',
+                once: true
+            }
+        });
+    }
+
+    const sectionHeadings = gsap.utils.toArray('.content-section h2, .content-section .section-subtitle');
+    if (sectionHeadings.length) {
+        gsap.from(sectionHeadings, {
+            y: 26,
+            duration: 0.55,
+            stagger: 0.06,
+            ease: 'power2.out',
+            clearProps: 'transform',
+            scrollTrigger: {
+                trigger: sectionHeadings[0].closest('.content-section') || sectionHeadings[0],
+                start: 'top 82%',
+                once: true
+            }
+        });
+    }
+
+    const ctaSection = document.querySelector('.cta-section');
+    if (ctaSection) {
+        gsap.from(ctaSection, {
+            y: 36,
+            duration: 0.7,
+            ease: 'power3.out',
+            clearProps: 'transform',
+            scrollTrigger: {
+                trigger: ctaSection,
+                start: 'top 84%',
+                once: true
+            }
+        });
+    }
+}
+
+function initBlogPageShowcase() {
+    const blogHero = document.querySelector('.blog-hero');
+    if (!blogHero) return;
+
+    const heroTitle = blogHero.querySelector('h1');
+    const heroText = blogHero.querySelector('p');
+    const categoryButtons = gsap.utils.toArray('.category-btn');
+    const featuredMain = document.querySelector('.featured-main');
+    const featuredSidebarCards = gsap.utils.toArray('.featured-sidebar .sidebar-card');
+    const blogCards = gsap.utils.toArray('.blog-card-enhanced');
+    const tagLinks = gsap.utils.toArray('.tag-link');
+    const newsletterSection = document.querySelector('.newsletter-section');
+    const newsletterHeading = newsletterSection?.querySelector('h2');
+    const newsletterText = newsletterSection?.querySelector('p');
+    const newsletterForm = newsletterSection?.querySelector('.newsletter-form');
+
+    const heroTimeline = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+    if (heroTitle) {
+        heroTimeline.from(heroTitle, {
+            opacity: 0,
+            y: 28,
+            duration: 0.7
+        });
+    }
+
+    if (heroText) {
+        heroTimeline.from(heroText, {
+            opacity: 0,
+            y: 24,
+            duration: 0.65
+        }, '-=0.36');
+    }
+
+    if (categoryButtons.length) {
+        heroTimeline.from(categoryButtons, {
+            opacity: 0,
+            y: 18,
+            scale: 0.96,
+            duration: 0.42,
+            stagger: 0.06,
+            clearProps: 'transform',
+            immediateRender: false
+        }, '-=0.2');
+    }
+
+    if (featuredMain) {
+        gsap.from(featuredMain, {
+            y: 34,
+            scale: 0.98,
+            duration: 0.72,
+            ease: 'power3.out',
+            clearProps: 'transform',
+            scrollTrigger: {
+                trigger: featuredMain,
+                start: 'top 82%',
+                once: true
+            }
+        });
+
+        const featuredImage = featuredMain.querySelector('img');
+        if (featuredImage) {
+            gsap.fromTo(featuredImage,
+                {
+                    scale: 1.08
+                },
+                {
+                    scale: 1,
+                    duration: 1.2,
+                    ease: 'power2.out',
+                    clearProps: 'transform',
+                    scrollTrigger: {
+                        trigger: featuredMain,
+                        start: 'top 82%',
+                        once: true
+                    }
+                }
+            );
+        }
+    }
+
+    if (featuredSidebarCards.length) {
+        gsap.from(featuredSidebarCards, {
+            x: 28,
+            duration: 0.55,
+            stagger: 0.08,
+            ease: 'power2.out',
+            clearProps: 'transform',
+            scrollTrigger: {
+                trigger: featuredSidebarCards[0].closest('.featured-grid') || featuredSidebarCards[0],
+                start: 'top 82%',
+                once: true
+            }
+        });
+    }
+
+    if (blogCards.length) {
+        gsap.from(blogCards, {
+            y: 36,
+            duration: 0.62,
+            stagger: {
+                each: 0.05,
+                from: 'start'
+            },
+            ease: 'power2.out',
+            clearProps: 'transform',
+            scrollTrigger: {
+                trigger: blogCards[0].parentElement,
+                start: 'top 80%',
+                once: true
+            }
+        });
+    }
+
+    if (tagLinks.length) {
+        gsap.from(tagLinks, {
+            y: 18,
+            scale: 0.96,
+            duration: 0.4,
+            stagger: 0.04,
+            ease: 'power2.out',
+            clearProps: 'transform',
+            scrollTrigger: {
+                trigger: tagLinks[0].closest('.popular-tags') || tagLinks[0],
+                start: 'top 84%',
+                once: true
+            }
+        });
+    }
+
+    if (newsletterHeading || newsletterText || newsletterForm) {
+        gsap.from([newsletterHeading, newsletterText, newsletterForm].filter(Boolean), {
+            y: 28,
+            duration: 0.55,
+            stagger: 0.08,
+            ease: 'power2.out',
+            clearProps: 'transform',
+            scrollTrigger: {
+                trigger: newsletterSection,
+                start: 'top 84%',
+                once: true
+            }
+        });
+    }
+}
+
+// ========================================
+// 5. MAGNETIC PRODUCT CARDS
 // ========================================
 
 function initMagneticCards() {
-    // Target inline product cards first (from index.html)
-    const inlineCards = document.querySelectorAll('#products a[style*="border-top"]');
+    const enhancedCards = document.querySelectorAll('.product-card-enhanced');
     const productCards = document.querySelectorAll('.product-card');
-    const allCards = inlineCards.length > 0 ? inlineCards : productCards;
-    
+    const inlineCards = document.querySelectorAll('#products a[style*="border-top"]');
+    const allCards = enhancedCards.length > 0
+        ? enhancedCards
+        : (productCards.length > 0 ? productCards : inlineCards);
+
     if (allCards.length === 0) return;
-    
-    // Scroll entrance with 3D effect
-    gsap.from(allCards, {
-        opacity: 0,
-        y: 100,
-        rotateX: 20,
-        rotateY: -10,
-        scale: 0.9,
-        duration: 1,
-        stagger: {
-            amount: 0.8,
-            from: 'start'
+
+    gsap.fromTo(allCards,
+        {
+            y: 72,
+            rotateX: 14,
+            rotateY: -8,
+            scale: 0.96,
+            transformPerspective: 1200,
+            transformOrigin: '50% 50% -120'
         },
-        ease: 'power3.out',
-        scrollTrigger: {
-            trigger: allCards[0].parentElement,
-            start: 'top 80%',
-            once: true
+        {
+            y: 0,
+            rotateX: 0,
+            rotateY: 0,
+            scale: 1,
+            duration: 1,
+            stagger: {
+                amount: 0.8,
+                from: 'start'
+            },
+            ease: 'power3.out',
+            clearProps: 'transform',
+            immediateRender: false,
+            scrollTrigger: {
+                trigger: allCards[0].parentElement,
+                start: 'top 80%',
+                once: true
+            }
         }
-    });
-    
+    );
+
     allCards.forEach(card => {
-        // Magnetic hover effect
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
-            
-            // Calculate magnetic pull
+
             const pullX = (x - centerX) / centerX;
             const pullY = (y - centerY) / centerY;
-            
-            // 3D rotation + magnetic movement
+
             gsap.to(card, {
                 x: pullX * 15,
                 y: pullY * 10,
@@ -390,9 +914,8 @@ function initMagneticCards() {
                 duration: 0.4,
                 ease: 'power2.out'
             });
-            
-            // Icon pop with direction
-            const icon = card.querySelector('img[style*="width: 50px"]') || card.querySelector('.product-card-icon');
+
+            const icon = card.querySelector('.product-card-icon') || card.querySelector('img[style*="width: 50px"]');
             if (icon) {
                 gsap.to(icon, {
                     scale: 1.2,
@@ -401,7 +924,7 @@ function initMagneticCards() {
                 });
             }
         });
-        
+
         card.addEventListener('mouseleave', () => {
             gsap.to(card, {
                 x: 0,
@@ -413,8 +936,8 @@ function initMagneticCards() {
                 duration: 0.6,
                 ease: 'elastic.out(1, 0.4)'
             });
-            
-            const icon = card.querySelector('img[style*="width: 50px"]') || card.querySelector('.product-card-icon');
+
+            const icon = card.querySelector('.product-card-icon') || card.querySelector('img[style*="width: 50px"]');
             if (icon) {
                 gsap.to(icon, {
                     scale: 1,
@@ -423,8 +946,7 @@ function initMagneticCards() {
                 });
             }
         });
-        
-        // Click ripple
+
         card.addEventListener('click', (e) => {
             const rect = card.getBoundingClientRect();
             const ripple = document.createElement('div');
@@ -439,10 +961,10 @@ function initMagneticCards() {
                 left: ${e.clientX - rect.left}px;
                 top: ${e.clientY - rect.top}px;
             `;
-            
+
             card.style.position = 'relative';
             card.appendChild(ripple);
-            
+
             gsap.to(ripple, {
                 scale: 20,
                 opacity: 0,
@@ -547,7 +1069,7 @@ function initScrollBackground() {
 // ========================================
 
 function initRippleButtons() {
-    const buttons = document.querySelectorAll('.btn-download');
+    const buttons = document.querySelectorAll('.btn-download, .btn-hero-primary');
     
     buttons.forEach(btn => {
         // Create ripple on click
@@ -852,14 +1374,18 @@ function initTestimonialSlider() {
 function initMinimalAnimations() {
     const visibleSelectors = [
         '.hero-brand',
+        '.hero-eyebrow',
         '.hero-title',
         '.hero-subtitle',
+        '.hero-proof',
         '.hero-apps .app-icon-item',
         '.hero-cta .btn-hero-primary',
         '.hero-content .btn-download',
         '.hero-stats-inline .stat-badge',
+        '.hero-trust-strip span',
         '.scroll-indicator',
         '.section-header',
+        '.section-kicker',
         '.product-card-enhanced',
         '.product-hero-grid',
         '.quick-feature',

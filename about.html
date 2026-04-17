@@ -829,65 +829,74 @@
 
     <script>
         gsap.registerPlugin(ScrollTrigger);
-        
-        // Stats counter animation
-        const statNumbers = document.querySelectorAll('.stat-box .number');
-        statNumbers.forEach(num => {
-            const target = parseInt(num.dataset.target);
-            const counter = { value: 0 };
-            
-            ScrollTrigger.create({
-                trigger: num,
-                start: 'top 80%',
-                once: true,
-                onEnter: () => {
-                    gsap.to(counter, {
-                        value: target,
-                        duration: 2,
-                        ease: 'power2.out',
-                        onUpdate: () => {
-                            num.textContent = Math.round(counter.value);
-                        }
-                    });
+
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+        if (prefersReducedMotion.matches) {
+            gsap.set(['.bar', '.timeline-item', '.value-card'], {
+                opacity: 1,
+                clearProps: 'opacity,transform'
+            });
+        } else {
+            // Stats counter animation
+            const statNumbers = document.querySelectorAll('.stat-box .number');
+            statNumbers.forEach(num => {
+                const target = parseInt(num.dataset.target);
+                const counter = { value: 0 };
+
+                ScrollTrigger.create({
+                    trigger: num,
+                    start: 'top 80%',
+                    once: true,
+                    onEnter: () => {
+                        gsap.to(counter, {
+                            value: target,
+                            duration: 2,
+                            ease: 'power2.out',
+                            onUpdate: () => {
+                                num.textContent = Math.round(counter.value);
+                            }
+                        });
+                    }
+                });
+            });
+
+            // Chart bars animation
+            gsap.from('.bar', {
+                height: 0,
+                duration: 1,
+                stagger: 0.15,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: '.chart-bars',
+                    start: 'top 80%'
                 }
             });
-        });
-        
-        // Chart bars animation
-        gsap.from('.bar', {
-            height: 0,
-            duration: 1,
-            stagger: 0.15,
-            ease: 'power3.out',
-            scrollTrigger: {
-                trigger: '.chart-bars',
-                start: 'top 80%'
-            }
-        });
-        
-        // Timeline items
-        gsap.from('.timeline-item', {
-            opacity: 0,
-            x: index => index % 2 === 0 ? -50 : 50,
-            duration: 0.8,
-            stagger: 0.2,
-            scrollTrigger: {
-                trigger: '.timeline',
-                start: 'top 80%'
-            }
-        });
-        
-        // Value cards
-        gsap.from('.value-card', {
-            opacity: 0,
-            y: 50,
-            duration: 0.6,
-            stagger: 0.1,
-            scrollTrigger: {
-                trigger: '.values-grid',
-                start: 'top 80%'
-            }
-        });
+
+            // Timeline items
+            gsap.from('.timeline-item', {
+                opacity: 0,
+                x: index => index % 2 === 0 ? -50 : 50,
+                duration: 0.8,
+                stagger: 0.2,
+                scrollTrigger: {
+                    trigger: '.timeline',
+                    start: 'top 80%'
+                }
+            });
+
+            // Value cards
+            gsap.from('.value-card', {
+                opacity: 0,
+                y: 50,
+                duration: 0.6,
+                stagger: 0.1,
+                scrollTrigger: {
+                    trigger: '.values-grid',
+                    start: 'top 80%'
+                }
+            });
+        }
     </script>
 </body>
 </html>

@@ -10,12 +10,61 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+function initMinimalAnimations() {
+    const visibleSelectors = [
+        '.article-header h1',
+        '.article-header .article-meta',
+        '.article-intro',
+        '.breadcrumb',
+        '.content-section',
+        '.content-section h2',
+        '.content-section p',
+        '.content-section li',
+        '.app-card',
+        '.step-card',
+        '.use-case-card',
+        '.faq-item',
+        '.cta-box',
+        '.comparison-table',
+        '.related-links a',
+        '.main-footer',
+        '.hero-content h1',
+        '.hero-subtitle',
+        '.hero-content .btn-download',
+        '.scroll-indicator',
+        '.stat-item',
+        '.product-card',
+        '.feature-card',
+        '.cta-section h2',
+        '.cta-section p',
+        '.cta-section .btn-download',
+        '.footer-brand',
+        '.footer-column'
+    ];
+
+    const elements = gsap.utils.toArray(visibleSelectors.join(', '));
+    if (elements.length === 0) return;
+
+    gsap.set(elements, {
+        opacity: 1,
+        clearProps: 'opacity,transform,filter'
+    });
+
+    console.log('✅ PowerStar GSAP Animations v2.1 initialized (content-first reduced motion)');
+}
+
 function initAnimations() {
-    
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    if (prefersReducedMotion.matches) {
+        initMinimalAnimations();
+        return;
+    }
+
     // ========================================
     // 1. Hero Animations - Full Screen
     // ========================================
-    
+
     // Banner parallax effect
     gsap.to('.banner-slide.active img', {
         scale: 1.1,
@@ -26,7 +75,7 @@ function initAnimations() {
             scrub: 1
         }
     });
-    
+
     // Hero content fade in
     gsap.from('.hero-content h1', {
         opacity: 0,
@@ -35,7 +84,7 @@ function initAnimations() {
         delay: 0.3,
         ease: 'power3.out'
     });
-    
+
     gsap.from('.hero-subtitle', {
         opacity: 0,
         y: 40,
@@ -43,7 +92,7 @@ function initAnimations() {
         delay: 0.5,
         ease: 'power2.out'
     });
-    
+
     gsap.from('.hero-content .btn-download', {
         opacity: 0,
         y: 30,
@@ -51,7 +100,7 @@ function initAnimations() {
         delay: 0.7,
         ease: 'power2.out'
     });
-    
+
     // Scroll indicator
     gsap.from('.scroll-indicator', {
         opacity: 0,
@@ -59,7 +108,7 @@ function initAnimations() {
         delay: 1.2,
         ease: 'power2.out'
     });
-    
+
     // ========================================
     // 2. Stats Section
     // ========================================
@@ -74,14 +123,14 @@ function initAnimations() {
             start: 'top 80%'
         }
     });
-    
+
     // Number counter
     const statNumbers = document.querySelectorAll('.stat-number');
-    
+
     statNumbers.forEach(stat => {
         const text = stat.textContent;
         const num = parseInt(text.replace(/[^0-9]/g, ''));
-        
+
         if (!isNaN(num) && num > 0) {
             gsap.from(stat, {
                 textContent: 0,
@@ -105,7 +154,7 @@ function initAnimations() {
             });
         }
     });
-    
+
     // ========================================
     // 3. Product Cards
     // ========================================
@@ -120,7 +169,7 @@ function initAnimations() {
             start: 'top 80%'
         }
     });
-    
+
     // Hover animations
     document.querySelectorAll('.product-card').forEach(card => {
         card.addEventListener('mouseenter', () => {
@@ -130,7 +179,7 @@ function initAnimations() {
                 ease: 'power2.out'
             });
         });
-        
+
         card.addEventListener('mouseleave', () => {
             gsap.to(card, {
                 y: 0,
@@ -139,7 +188,7 @@ function initAnimations() {
             });
         });
     });
-    
+
     // ========================================
     // 4. Features Section
     // ========================================
@@ -154,7 +203,7 @@ function initAnimations() {
             start: 'top 80%'
         }
     });
-    
+
     // ========================================
     // 5. CTA Section
     // ========================================
@@ -167,7 +216,7 @@ function initAnimations() {
             start: 'top 80%'
         }
     });
-    
+
     gsap.from('.cta-section p, .cta-section .btn-download', {
         opacity: 0,
         y: 20,
@@ -178,7 +227,7 @@ function initAnimations() {
             start: 'top 80%'
         }
     });
-    
+
     // ========================================
     // 6. Footer
     // ========================================
@@ -191,7 +240,7 @@ function initAnimations() {
             start: 'top 90%'
         }
     });
-    
+
     gsap.from('.footer-column', {
         opacity: 0,
         y: 20,
@@ -202,7 +251,7 @@ function initAnimations() {
             start: 'top 90%'
         }
     });
-    
+
     // ========================================
     // 7. Button Hover Effects
     // ========================================
@@ -214,7 +263,7 @@ function initAnimations() {
                 ease: 'power2.out'
             });
         });
-        
+
         btn.addEventListener('mouseleave', () => {
             gsap.to(btn, {
                 scale: 1,
@@ -223,15 +272,6 @@ function initAnimations() {
             });
         });
     });
-    
-    // ========================================
-    // 8. Reduced Motion Support
-    // ========================================
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    
-    if (prefersReducedMotion.matches) {
-        gsap.globalTimeline.timeScale(0);
-    }
-    
+
     console.log('✅ PowerStar GSAP Animations v2.1 initialized');
 }
