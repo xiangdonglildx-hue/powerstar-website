@@ -1,6 +1,13 @@
 /**
  * PowerStar Website - Enhanced GSAP Animations
- * Version: 5.0.0 - Unified Motion Runtime
+ * Version: 4.0.0 - Premium Dynamic Effects
+ * 
+ * New Features:
+ * - Banner: Ken Burns effect (zoom + pan), particle overlay
+ * - Hero: SplitText letter animation, floating particles
+ * - Products: Magnetic hover effect, glowing borders
+ * - Scroll: Background color transitions, parallax layers
+ * - Micro: Ripple effects, magnetic buttons
  */
 
 // ========================================
@@ -12,12 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
         console.warn('GSAP not loaded');
         return;
     }
-
+    
     gsap.registerPlugin(ScrollTrigger);
-    initBlogCategoryButtons();
-
+    
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
+    
     if (prefersReducedMotion) {
         initMinimalAnimations();
     } else {
@@ -33,83 +39,15 @@ function initEnhancedAnimations() {
     initParticleBackground();
     initKenBurnsBanner();
     initHeroSplitText();
-    initHomepageShowcase();
     initMagneticCards();
-    initSharedPageReveals();
     initScrollBackground();
     initRippleButtons();
     initParallaxLayers();
     initStatsCounter();
     initNavigationEffects();
     initTestimonialSlider();
-    initEnhancedCounter();
-
-    console.log('✅ PowerStar Enhanced Animations v5.0 initialized');
-}
-
-function createRevealAnimation(targets, fromVars = {}, options = {}) {
-    const elements = gsap.utils.toArray(targets);
-    if (elements.length === 0) return;
-
-    const {
-        trigger = elements[0].parentElement || elements[0],
-        start = 'top 82%',
-        once = true,
-        stagger,
-        duration = 0.6,
-        ease = 'power2.out',
-        clearProps = 'opacity,transform,filter',
-        ...scrollOptions
-    } = options;
-
-    const toVars = {
-        opacity: 1,
-        duration,
-        ease,
-        clearProps,
-        scrollTrigger: {
-            trigger,
-            start,
-            once,
-            ...scrollOptions
-        }
-    };
-
-    if (stagger !== undefined) {
-        toVars.stagger = stagger;
-    }
-
-    ['x', 'y', 'scale', 'rotate', 'rotateX', 'rotateY'].forEach((prop) => {
-        if (!Object.prototype.hasOwnProperty.call(fromVars, prop)) return;
-        toVars[prop] = prop === 'scale' ? 1 : 0;
-    });
-
-    if (Object.prototype.hasOwnProperty.call(fromVars, 'filter')) {
-        toVars.filter = 'blur(0px)';
-    }
-
-    gsap.fromTo(elements, {
-        opacity: 0,
-        ...fromVars
-    }, toVars);
-}
-
-function animateOnScroll(targets, vars, scrollOptions = {}) {
-    const {
-        duration = 0.6,
-        ease = 'power2.out',
-        stagger,
-        clearProps = 'opacity,transform,filter',
-        ...fromVars
-    } = vars;
-
-    createRevealAnimation(targets, fromVars, {
-        duration,
-        ease,
-        stagger,
-        clearProps,
-        ...scrollOptions
-    });
+    
+    console.log('✅ PowerStar Enhanced Animations v4.0 initialized');
 }
 
 // ========================================
@@ -118,8 +56,9 @@ function animateOnScroll(targets, vars, scrollOptions = {}) {
 
 function initParticleBackground() {
     const hero = document.querySelector('.hero');
-    if (!hero || hero.querySelector('.particle-container')) return;
-
+    if (!hero) return;
+    
+    // Create particle container
     const particleContainer = document.createElement('div');
     particleContainer.className = 'particle-container';
     particleContainer.style.cssText = `
@@ -133,14 +72,16 @@ function initParticleBackground() {
         overflow: hidden;
     `;
     hero.appendChild(particleContainer);
-
+    
+    // Create particles
     const particleCount = 30;
-
+    const particles = [];
+    
     for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
         const size = Math.random() * 4 + 2;
         const isOrange = Math.random() > 0.5;
-
+        
         particle.style.cssText = `
             position: absolute;
             width: ${size}px;
@@ -152,9 +93,11 @@ function initParticleBackground() {
             left: ${Math.random() * 100}%;
             top: ${Math.random() * 100}%;
         `;
-
+        
         particleContainer.appendChild(particle);
-
+        particles.push(particle);
+        
+        // Floating animation
         gsap.to(particle, {
             y: `${Math.random() * -100 - 50}`,
             x: `${Math.random() * 50 - 25}`,
@@ -165,7 +108,8 @@ function initParticleBackground() {
             ease: 'sine.inOut',
             delay: Math.random() * 2
         });
-
+        
+        // Glowing pulse
         gsap.to(particle, {
             scale: Math.random() * 1.5 + 1,
             opacity: Math.random() * 0.5 + 0.3,
@@ -185,22 +129,26 @@ function initParticleBackground() {
 function initKenBurnsBanner() {
     const slides = document.querySelectorAll('.banner-slide img');
     if (slides.length === 0) return;
-
+    
+    // 初始化当前幻灯片索引
     window.currentSlide = 0;
-
+    
+    // 简单设置图片样式，不做动画
     slides.forEach((img) => {
         gsap.set(img, { scale: 1, x: 0, y: 0 });
     });
-
+    
+    // Banner 切换效果 - 淡入淡出，不做缩放
     window.showSlideKenBurns = function(index) {
         const allSlides = document.querySelectorAll('.banner-slide');
         const currentActive = document.querySelector('.banner-slide.active');
         const nextSlide = allSlides[index];
-
+        
         if (!nextSlide || currentActive === nextSlide) return;
-
+        
         const tl = gsap.timeline();
-
+        
+        // 当前幻灯片淡出
         if (currentActive) {
             tl.to(currentActive, {
                 opacity: 0,
@@ -209,16 +157,18 @@ function initKenBurnsBanner() {
             });
             currentActive.classList.remove('active');
         }
-
+        
+        // 下一张幻灯片淡入
         gsap.set(nextSlide, { opacity: 0 });
         nextSlide.classList.add('active');
-
+        
         tl.to(nextSlide, {
             opacity: 1,
             duration: 1,
             ease: 'power2.inOut'
         }, 0);
-
+        
+        // Dots 动画
         const dots = document.querySelectorAll('.banner-dots .dot');
         dots.forEach((dot, i) => {
             if (i === index) {
@@ -239,213 +189,219 @@ function initKenBurnsBanner() {
             }
         });
     };
-
+    
+    // Override goToSlide
     window.goToSlide = function(index) {
         window.currentSlide = index;
         if (typeof window.showSlideKenBurns === 'function') {
             window.showSlideKenBurns(index);
         }
     };
-
+    
+    // Auto-advance - 自动轮播
     let autoSlideInterval;
     function startAutoSlide() {
         autoSlideInterval = setInterval(() => {
             const nextIndex = (window.currentSlide + 1) % slides.length;
             window.goToSlide(nextIndex);
-        }, 5000);
+        }, 5000); // 5秒切换一次
     }
-
+    
     const heroSection = document.querySelector('.hero');
     if (heroSection) {
         heroSection.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
         heroSection.addEventListener('mouseleave', startAutoSlide);
     }
-
+    
     startAutoSlide();
 }
 
 // ========================================
-// 3. HERO ENTRANCE ANIMATION
+// 3. HERO SPLIT TEXT ANIMATION
 // ========================================
 
 function initHeroSplitText() {
-    const hero = document.querySelector('.hero');
-    if (!hero) return;
-
-    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-
-    if (document.querySelector('.hero-brand')) {
-        tl.from('.hero-brand', {
-            opacity: 0,
-            y: 24,
-            scale: 0.96,
-            duration: 0.55
-        });
-    }
-
-    if (document.querySelector('.hero-title')) {
-        tl.from('.hero-title', {
-            opacity: 0,
-            y: 48,
-            scale: 0.97,
-            duration: 0.9
-        }, '-=0.2');
-    }
-
-    if (document.querySelector('.hero-title .highlight')) {
-        tl.from('.hero-title .highlight', {
-            opacity: 0,
-            scale: 0.88,
-            filter: 'blur(8px)',
-            duration: 0.7
-        }, '-=0.45');
-    }
-
-    if (document.querySelector('.hero-subtitle')) {
-        tl.from('.hero-subtitle', {
-            opacity: 0,
-            y: 32,
-            duration: 0.65
-        }, '-=0.4');
-    }
-
-    const heroApps = gsap.utils.toArray('.hero-apps .app-icon-item');
-    if (heroApps.length > 0) {
-        tl.from(heroApps, {
-            opacity: 0,
-            y: 20,
-            scale: 0.9,
-            stagger: 0.08,
-            duration: 0.45,
-            ease: 'back.out(1.8)'
-        }, '-=0.25');
-    }
-
-    const heroButtons = gsap.utils.toArray('.hero-cta .btn-hero-primary, .hero-content .btn-download');
-    if (heroButtons.length > 0) {
-        tl.from(heroButtons, {
-            opacity: 0,
-            y: 24,
-            scale: 0.96,
-            duration: 0.5
-        }, '-=0.2');
-    }
-
-    const heroStats = gsap.utils.toArray('.hero-stats-inline .stat-badge');
-    if (heroStats.length > 0) {
-        tl.from(heroStats, {
-            opacity: 0,
-            y: 24,
-            scale: 0.92,
-            stagger: 0.08,
-            duration: 0.45
-        }, '-=0.2');
-    }
-
-    if (document.querySelector('.scroll-indicator')) {
-        tl.from('.scroll-indicator', {
-            opacity: 0,
-            y: 12,
-            duration: 0.4
-        }, '-=0.15');
-    }
-}
-
-// ========================================
-// 4. HOMEPAGE SHOWCASE REVEALS
-// ========================================
-
-function initHomepageShowcase() {
-    const hero = document.querySelector('.hero');
-    if (!hero) return;
-
-    document.querySelectorAll('.section-header').forEach((header) => {
-        const items = Array.from(header.children);
-        if (items.length === 0) return;
-
-        createRevealAnimation(items, {
-            y: 28
-        }, {
-            duration: 0.65,
-            stagger: 0.12,
-            ease: 'power2.out',
-            trigger: header,
-            start: 'top 85%'
-        });
+    const heroTitle = document.querySelector('.hero-content h1');
+    if (!heroTitle) return;
+    
+    // Get text and create letter spans
+    const fullText = heroTitle.textContent;
+    const lines = fullText.split('\n').filter(l => l.trim());
+    
+    // Simple split by words for better effect
+    heroTitle.innerHTML = '';
+    
+    const words = fullText.split(/(\s+)/);
+    const wrapper = document.createElement('div');
+    wrapper.style.cssText = 'display: inline-block;';
+    
+    words.forEach(word => {
+        if (word.trim() === '') {
+            wrapper.appendChild(document.createTextNode(word));
+        } else {
+            const span = document.createElement('span');
+            span.textContent = word;
+            span.style.cssText = `
+                display: inline-block;
+                opacity: 0;
+                transform: translateY(80px) rotateX(-40deg);
+            `;
+            wrapper.appendChild(span);
+        }
     });
-}
-
-// ========================================
-// 5. MAGNETIC PRODUCT CARDS
-// ========================================
-
-function initMagneticCards() {
-    const allCards = gsap.utils.toArray('.product-card-enhanced, .product-card');
-    if (allCards.length === 0) return;
-
-    const trigger = allCards[0].closest('.products-grid-full, .products-row, #products') || allCards[0].parentElement;
-
-    gsap.fromTo(allCards, {
-        opacity: 0,
-        y: 80,
-        rotateX: 14,
-        rotateY: -8,
-        scale: 0.94
-    }, {
+    
+    heroTitle.appendChild(wrapper);
+    
+    // Staggered word entrance
+    const wordSpans = heroTitle.querySelectorAll('span');
+    gsap.to(wordSpans, {
         opacity: 1,
         y: 0,
         rotateX: 0,
-        rotateY: 0,
-        scale: 1,
-        duration: 0.9,
+        duration: 1,
+        stagger: 0.08,
+        ease: 'power3.out',
+        delay: 0.5
+    });
+    
+    // Span special animation (orange text)
+    const heroSpan = heroTitle.querySelector('span:last-child');
+    if (heroSpan && heroSpan.textContent.includes('Life')) {
+        gsap.from(heroSpan, {
+            textShadow: '0 0 40px rgba(255,77,0,1), 0 0 80px rgba(255,77,0,0.5)',
+            scale: 1.2,
+            duration: 1.5,
+            ease: 'power2.out',
+            delay: 1.5
+        });
+        
+        // Continuous glow pulse
+        gsap.to(heroSpan, {
+            textShadow: '0 0 20px rgba(255,77,0,0.6)',
+            duration: 2,
+            repeat: -1,
+            yoyo: true,
+            ease: 'sine.inOut'
+        });
+    }
+    
+    // Subtitle entrance
+    const subtitle = document.querySelector('.hero-subtitle');
+    if (subtitle) {
+        gsap.from(subtitle, {
+            opacity: 0,
+            y: 40,
+            duration: 0.8,
+            ease: 'power2.out',
+            delay: 1.2
+        });
+    }
+    
+    // Button with magnetic effect
+    const heroBtn = document.querySelector('.hero-content .btn-download');
+    if (heroBtn) {
+        gsap.from(heroBtn, {
+            opacity: 0,
+            scale: 0.8,
+            y: 30,
+            duration: 0.6,
+            ease: 'back.out(2)',
+            delay: 1.5
+        });
+        
+        // Magnetic pull on mouse
+        heroBtn.addEventListener('mousemove', (e) => {
+            const rect = heroBtn.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            
+            gsap.to(heroBtn, {
+                x: x * 0.3,
+                y: y * 0.3,
+                duration: 0.3,
+                ease: 'power2.out'
+            });
+        });
+        
+        heroBtn.addEventListener('mouseleave', () => {
+            gsap.to(heroBtn, {
+                x: 0,
+                y: 0,
+                duration: 0.5,
+                ease: 'elastic.out(1, 0.5)'
+            });
+        });
+    }
+}
+
+// ========================================
+// 4. MAGNETIC PRODUCT CARDS
+// ========================================
+
+function initMagneticCards() {
+    // Target inline product cards first (from index.html)
+    const inlineCards = document.querySelectorAll('#products a[style*="border-top"]');
+    const productCards = document.querySelectorAll('.product-card');
+    const allCards = inlineCards.length > 0 ? inlineCards : productCards;
+    
+    if (allCards.length === 0) return;
+    
+    // Scroll entrance with 3D effect
+    gsap.from(allCards, {
+        opacity: 0,
+        y: 100,
+        rotateX: 20,
+        rotateY: -10,
+        scale: 0.9,
+        duration: 1,
         stagger: {
-            amount: 0.5,
+            amount: 0.8,
             from: 'start'
         },
         ease: 'power3.out',
-        clearProps: 'opacity,transform',
         scrollTrigger: {
-            trigger,
+            trigger: allCards[0].parentElement,
             start: 'top 80%',
             once: true
         }
     });
-
-    if (!window.matchMedia('(hover: hover)').matches) return;
-
-    allCards.forEach((card) => {
-        const baseShadow = window.getComputedStyle(card).boxShadow;
-
+    
+    allCards.forEach(card => {
+        // Magnetic hover effect
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
+            
+            // Calculate magnetic pull
             const pullX = (x - centerX) / centerX;
             const pullY = (y - centerY) / centerY;
-
+            
+            // 3D rotation + magnetic movement
             gsap.to(card, {
-                x: pullX * 12,
-                y: pullY * 8,
-                rotateX: -pullY * 8,
-                rotateY: pullX * 8,
+                x: pullX * 15,
+                y: pullY * 10,
+                rotateX: -pullY * 12,
+                rotateY: pullX * 12,
                 scale: 1.02,
-                duration: 0.35,
+                boxShadow: `${-pullX * 20}px ${-pullY * 15}px 40px rgba(255,77,0,0.2)`,
+                duration: 0.4,
                 ease: 'power2.out'
             });
-
-            const icon = card.querySelector('.product-card-icon') || card.querySelector('img');
+            
+            // Icon pop with direction
+            const icon = card.querySelector('img[style*="width: 50px"]') || card.querySelector('.product-card-icon');
             if (icon) {
                 gsap.to(icon, {
-                    scale: 1.14,
-                    rotate: pullX * 8,
-                    duration: 0.3,
-                    ease: 'power2.out'
+                    scale: 1.2,
+                    rotate: pullX * 10,
+                    duration: 0.3
                 });
             }
         });
-
+        
         card.addEventListener('mouseleave', () => {
             gsap.to(card, {
                 x: 0,
@@ -453,22 +409,22 @@ function initMagneticCards() {
                 rotateX: 0,
                 rotateY: 0,
                 scale: 1,
-                boxShadow: baseShadow,
-                duration: 0.55,
-                ease: 'elastic.out(1, 0.45)'
+                boxShadow: '0 10px 40px rgba(0,0,0,0.1)',
+                duration: 0.6,
+                ease: 'elastic.out(1, 0.4)'
             });
-
-            const icon = card.querySelector('.product-card-icon') || card.querySelector('img');
+            
+            const icon = card.querySelector('img[style*="width: 50px"]') || card.querySelector('.product-card-icon');
             if (icon) {
                 gsap.to(icon, {
                     scale: 1,
                     rotate: 0,
-                    duration: 0.35,
-                    ease: 'power2.out'
+                    duration: 0.4
                 });
             }
         });
-
+        
+        // Click ripple
         card.addEventListener('click', (e) => {
             const rect = card.getBoundingClientRect();
             const ripple = document.createElement('div');
@@ -476,19 +432,19 @@ function initMagneticCards() {
                 position: absolute;
                 width: 20px;
                 height: 20px;
-                background: rgba(255,77,0,0.25);
+                background: rgba(255,77,0,0.4);
                 border-radius: 50%;
                 transform: scale(0);
                 pointer-events: none;
                 left: ${e.clientX - rect.left}px;
                 top: ${e.clientY - rect.top}px;
             `;
-
+            
             card.style.position = 'relative';
             card.appendChild(ripple);
-
+            
             gsap.to(ripple, {
-                scale: 18,
+                scale: 20,
                 opacity: 0,
                 duration: 0.6,
                 ease: 'power2.out',
@@ -499,221 +455,11 @@ function initMagneticCards() {
 }
 
 // ========================================
-// 6. SHARED PAGE REVEALS
-// ========================================
-
-function initSharedPageReveals() {
-    initProductPageReveals();
-    initBlogPageReveals();
-}
-
-function initProductPageReveals() {
-    const productHero = document.querySelector('.product-hero-grid');
-    if (!productHero) return;
-
-    const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-
-    if (document.querySelector('.product-icon')) {
-        heroTl.from('.product-icon', {
-            opacity: 0,
-            y: 24,
-            scale: 0.88,
-            duration: 0.5
-        });
-    }
-
-    heroTl.from('.product-info h1', {
-        opacity: 0,
-        y: 36,
-        duration: 0.75
-    }, '-=0.2');
-
-    heroTl.from('.product-subtitle', {
-        opacity: 0,
-        y: 28,
-        duration: 0.6
-    }, '-=0.45');
-
-    const heroStats = gsap.utils.toArray('.product-stats-hero .stat-badge');
-    if (heroStats.length > 0) {
-        heroTl.from(heroStats, {
-            opacity: 0,
-            y: 18,
-            scale: 0.94,
-            stagger: 0.08,
-            duration: 0.4
-        }, '-=0.3');
-    }
-
-    const heroActions = gsap.utils.toArray('.product-actions > *');
-    if (heroActions.length > 0) {
-        heroTl.from(heroActions, {
-            opacity: 0,
-            y: 18,
-            stagger: 0.08,
-            duration: 0.4
-        }, '-=0.2');
-    }
-
-    if (document.querySelector('.product-mockup')) {
-        heroTl.from('.product-mockup', {
-            opacity: 0,
-            x: 48,
-            rotateY: -10,
-            duration: 0.85
-        }, '-=0.8');
-    }
-
-    document.querySelectorAll('.content-section').forEach((section) => {
-        const items = Array.from(section.querySelectorAll(':scope h2, :scope .section-subtitle')).filter((item) => {
-            const nearestContentSection = item.closest('.content-section');
-            return nearestContentSection === section;
-        });
-
-        if (items.length === 0) return;
-
-        createRevealAnimation(items, {
-            y: 28
-        }, {
-            duration: 0.6,
-            stagger: 0.12,
-            ease: 'power2.out',
-            trigger: section,
-            start: 'top 85%'
-        });
-    });
-
-    animateOnScroll('.quick-feature', {
-        x: -24,
-        stagger: 0.08,
-        duration: 0.5
-    }, {
-        trigger: '.quick-features'
-    });
-
-    animateOnScroll('.screenshot-grid img', {
-        y: 30,
-        stagger: 0.08,
-        duration: 0.55
-    }, {
-        trigger: '.screenshot-grid'
-    });
-
-    animateOnScroll('.feature-card-large', {
-        y: 40,
-        stagger: 0.12,
-        duration: 0.65
-    }, {
-        trigger: '.features-grid-enhanced'
-    });
-
-    animateOnScroll('.use-case-card', {
-        y: 36,
-        stagger: 0.12,
-        duration: 0.6
-    }, {
-        trigger: '.use-cases-grid'
-    });
-
-    animateOnScroll('.spec-card', {
-        y: 40,
-        stagger: 0.15,
-        duration: 0.6
-    }, {
-        trigger: '.specs-grid'
-    });
-
-    animateOnScroll('.comparison-table tbody tr', {
-        x: -20,
-        stagger: 0.05,
-        duration: 0.4
-    }, {
-        trigger: '.comparison-table'
-    });
-
-    animateOnScroll('.review-card', {
-        y: 30,
-        stagger: 0.12,
-        duration: 0.55
-    }, {
-        trigger: '.reviews-grid'
-    });
-
-    animateOnScroll('.guide-card', {
-        y: 30,
-        stagger: 0.12,
-        duration: 0.55
-    }, {
-        trigger: '.guides-grid'
-    });
-
-    animateOnScroll('.faq-item', {
-        y: 24,
-        stagger: 0.1,
-        duration: 0.5
-    }, {
-        trigger: '.faq-grid'
-    });
-
-    animateOnScroll('.related-product-card', {
-        y: 30,
-        stagger: 0.1,
-        duration: 0.55
-    }, {
-        trigger: '.related-products-grid'
-    });
-}
-
-function initBlogPageReveals() {
-    if (!document.querySelector('.blog-grid-enhanced')) return;
-
-    animateOnScroll('.blog-card-enhanced', {
-        y: 30,
-        duration: 0.5,
-        stagger: 0.08
-    }, {
-        trigger: '.blog-grid-enhanced',
-        start: 'top 85%'
-    });
-
-    animateOnScroll('.sidebar-card', {
-        x: 30,
-        duration: 0.5,
-        stagger: 0.15
-    }, {
-        trigger: '.featured-sidebar',
-        start: 'top 80%'
-    });
-
-    animateOnScroll('.tag-link', {
-        scale: 0.8,
-        duration: 0.4,
-        stagger: 0.05
-    }, {
-        trigger: '.tags-cloud',
-        start: 'top 80%'
-    });
-}
-
-function initBlogCategoryButtons() {
-    const categoryButtons = document.querySelectorAll('.category-btn');
-    if (categoryButtons.length === 0) return;
-
-    categoryButtons.forEach((btn) => {
-        btn.addEventListener('click', function() {
-            categoryButtons.forEach((button) => button.classList.remove('active'));
-            this.classList.add('active');
-        });
-    });
-}
-
-// ========================================
-// 7. SCROLL BACKGROUND TRANSITIONS
+// 5. SCROLL BACKGROUND TRANSITIONS
 // ========================================
 
 function initScrollBackground() {
-    if (!document.body || document.querySelector('.scroll-gradient')) return;
-
+    // Create gradient overlay that follows scroll
     const gradientOverlay = document.createElement('div');
     gradientOverlay.className = 'scroll-gradient';
     gradientOverlay.style.cssText = `
@@ -736,18 +482,21 @@ function initScrollBackground() {
         transition: opacity 0.3s;
     `;
     document.body.appendChild(gradientOverlay);
-
+    
+    // Fade in/out based on scroll position
     ScrollTrigger.create({
         start: 'top top',
         end: 'max',
         onUpdate: (self) => {
+            const progress = self.progress;
             gsap.to(gradientOverlay, {
-                opacity: self.progress > 0.1 ? 0.8 : 0,
+                opacity: progress > 0.1 ? 0.8 : 0,
                 duration: 0.3
             });
         }
     });
-
+    
+    // Features section color shift - 只改变 section 自身，不影响 body
     const featuresSection = document.querySelector('.features') || document.querySelector('[style*="background: #f8f9fa"]');
     if (featuresSection) {
         ScrollTrigger.create({
@@ -755,43 +504,53 @@ function initScrollBackground() {
             start: 'top 60%',
             end: 'bottom 40%',
             onEnter: () => {
+                // 不再改变 body 背景，避免影响页面上其他元素
                 gsap.to(featuresSection, {
                     backgroundColor: '#f8f9fa',
                     duration: 0.5
                 });
             },
             onLeaveBack: () => {
-                gsap.set(featuresSection, { clearProps: 'backgroundColor' });
+                gsap.to(featuresSection, {
+                    backgroundColor: '#ffffff',
+                    duration: 0.5
+                });
             }
         });
     }
-
+    
+    // CTA section dark mode - 只改变 CTA section 自身，不影响 body
     const ctaSection = document.querySelector('.cta-section');
     if (ctaSection) {
         ScrollTrigger.create({
             trigger: ctaSection,
             start: 'top 70%',
             onEnter: () => {
+                // 不再改变 body 背景，避免影响页面上其他浅色元素
                 gsap.to(ctaSection, {
                     backgroundColor: '#0a0a0a',
                     duration: 0.6
                 });
             },
             onLeaveBack: () => {
-                gsap.set(ctaSection, { clearProps: 'backgroundColor' });
+                gsap.to(ctaSection, {
+                    backgroundColor: 'linear-gradient(135deg, #ff4d00 0%, #000 100%)',
+                    duration: 0.4
+                });
             }
         });
     }
 }
 
 // ========================================
-// 8. RIPPLE BUTTON EFFECTS
+// 6. RIPPLE BUTTON EFFECTS
 // ========================================
 
 function initRippleButtons() {
-    const buttons = document.querySelectorAll('.btn-download, .btn-hero-primary');
-
-    buttons.forEach((btn) => {
+    const buttons = document.querySelectorAll('.btn-download');
+    
+    buttons.forEach(btn => {
+        // Create ripple on click
         btn.addEventListener('click', function(e) {
             const rect = this.getBoundingClientRect();
             const ripple = document.createElement('span');
@@ -799,18 +558,18 @@ function initRippleButtons() {
                 position: absolute;
                 width: 0;
                 height: 0;
-                background: rgba(255,255,255,0.35);
+                background: rgba(255,255,255,0.4);
                 border-radius: 50%;
                 transform: translate(-50%, -50%);
                 pointer-events: none;
                 left: ${e.clientX - rect.left}px;
                 top: ${e.clientY - rect.top}px;
             `;
-
+            
             this.style.position = 'relative';
             this.style.overflow = 'hidden';
             this.appendChild(ripple);
-
+            
             gsap.to(ripple, {
                 width: 200,
                 height: 200,
@@ -820,36 +579,39 @@ function initRippleButtons() {
                 onComplete: () => ripple.remove()
             });
         });
-
+        
+        // Hover glow expansion
         btn.addEventListener('mouseenter', () => {
             gsap.to(btn, {
-                scale: 1.03,
-                duration: 0.25,
+                boxShadow: '0 0 30px rgba(255,77,0,0.5), 0 8px 25px rgba(255,77,0,0.3)',
+                scale: 1.05,
+                duration: 0.3,
                 ease: 'power2.out'
             });
         });
-
+        
         btn.addEventListener('mouseleave', () => {
             gsap.to(btn, {
+                boxShadow: '0 4px 15px rgba(255,77,0,0.2)',
                 scale: 1,
-                duration: 0.25,
-                ease: 'power2.out'
+                duration: 0.3
             });
         });
-
+        
+        // Magnetic effect for primary buttons
         if (btn.classList.contains('primary')) {
             btn.addEventListener('mousemove', (e) => {
                 const rect = btn.getBoundingClientRect();
                 const x = e.clientX - rect.left - rect.width / 2;
                 const y = e.clientY - rect.top - rect.height / 2;
-
+                
                 gsap.to(btn, {
                     x: x * 0.2,
                     y: y * 0.15,
                     duration: 0.2
                 });
             });
-
+            
             btn.addEventListener('mouseleave', () => {
                 gsap.to(btn, {
                     x: 0,
@@ -863,13 +625,14 @@ function initRippleButtons() {
 }
 
 // ========================================
-// 9. PARALLAX LAYERS
+// 7. PARALLAX LAYERS
 // ========================================
 
 function initParallaxLayers() {
+    // Hero content parallax vs background
     const heroContent = document.querySelector('.hero-content');
     const bannerImages = document.querySelectorAll('.banner-slide img');
-
+    
     if (heroContent && bannerImages.length) {
         gsap.to(heroContent, {
             yPercent: -50,
@@ -881,8 +644,8 @@ function initParallaxLayers() {
                 scrub: 0.5
             }
         });
-
-        bannerImages.forEach((img) => {
+        
+        bannerImages.forEach(img => {
             gsap.to(img, {
                 yPercent: 30,
                 scale: 1.2,
@@ -896,7 +659,8 @@ function initParallaxLayers() {
             });
         });
     }
-
+    
+    // Stats parallax
     const statsSection = document.querySelector('.stats-section');
     if (statsSection) {
         gsap.to(statsSection, {
@@ -913,47 +677,53 @@ function initParallaxLayers() {
 }
 
 // ========================================
-// 10. STATS COUNTER (Enhanced)
+// 8. STATS COUNTER (Enhanced)
 // ========================================
 
 function initStatsCounter() {
     const statItems = document.querySelectorAll('.stat-item');
     if (statItems.length === 0) return;
-
-    createRevealAnimation(statItems, {
+    
+    // Entrance animation
+    gsap.from(statItems, {
+        opacity: 0,
         y: 60,
         scale: 0.8,
-        rotateY: 20
-    }, {
+        rotateY: 20,
         duration: 0.8,
         stagger: {
             amount: 0.6,
             from: 'center'
         },
         ease: 'back.out(1.5)',
-        trigger: '.stats-section',
-        start: 'top 75%',
-        clearProps: 'opacity,transform'
+        scrollTrigger: {
+            trigger: '.stats-section',
+            start: 'top 75%',
+            once: true
+        }
     });
-
+    
+    // Number counting with glow
     const statNumbers = document.querySelectorAll('.stat-number');
-
-    statNumbers.forEach((stat) => {
+    
+    statNumbers.forEach(stat => {
         const originalText = stat.textContent;
         const numericValue = parseFloat(originalText.replace(/[^0-9.]/g, ''));
-
+        const suffix = originalText.replace(/[0-9.]/g, '');
+        
         if (isNaN(numericValue)) return;
-
+        
         ScrollTrigger.create({
             trigger: stat,
             start: 'top 80%',
             once: true,
             onEnter: () => {
+                // Glow effect during counting
                 gsap.to(stat, {
                     textShadow: '0 0 30px rgba(255,77,0,0.6)',
                     duration: 0.5
                 });
-
+                
                 const counter = { value: 0 };
                 gsap.to(counter, {
                     value: numericValue,
@@ -962,7 +732,7 @@ function initStatsCounter() {
                     onUpdate: () => {
                         const current = counter.value;
                         let display;
-
+                        
                         if (originalText.includes('M+')) {
                             display = current.toFixed(0) + 'M+';
                         } else if (originalText.includes('+')) {
@@ -972,10 +742,11 @@ function initStatsCounter() {
                         } else {
                             display = Math.round(current);
                         }
-
+                        
                         stat.textContent = display;
                     },
                     onComplete: () => {
+                        // Fade out glow
                         gsap.to(stat, {
                             textShadow: 'none',
                             duration: 0.5
@@ -988,19 +759,21 @@ function initStatsCounter() {
 }
 
 // ========================================
-// 11. NAVIGATION EFFECTS
+// 9. NAVIGATION EFFECTS
 // ========================================
 
 function initNavigationEffects() {
     const navbar = document.querySelector('.navbar');
     if (!navbar) return;
-
+    
+    let lastScrollY = 0;
+    
     ScrollTrigger.create({
         start: 'top -80',
         end: 'max',
         onUpdate: (self) => {
             const scrollY = self.scroll();
-
+            
             if (scrollY > 50) {
                 navbar.classList.add('scrolled');
                 gsap.to(navbar, {
@@ -1017,14 +790,16 @@ function initNavigationEffects() {
                     duration: 0.3
                 });
             }
+            
+            lastScrollY = scrollY;
         }
     });
-
-    const logoStar = navbar.querySelector('.logo-star');
+    
+    // Logo star spinning
+    const logoStar = document.querySelector('.logo-star');
     if (logoStar) {
         const logoLink = logoStar.closest('a');
-        if (!logoLink) return;
-
+        
         logoLink.addEventListener('mouseenter', () => {
             gsap.to(logoStar, {
                 rotation: 360,
@@ -1034,7 +809,7 @@ function initNavigationEffects() {
                 ease: 'power2.out'
             });
         });
-
+        
         logoLink.addEventListener('mouseleave', () => {
             gsap.to(logoStar, {
                 rotation: 0,
@@ -1047,23 +822,26 @@ function initNavigationEffects() {
 }
 
 // ========================================
-// 12. TESTIMONIAL SLIDER (Prepared)
+// 10. TESTIMONIAL SLIDER (Prepared)
 // ========================================
 
 function initTestimonialSlider() {
     const testimonials = document.querySelectorAll('.testimonial-card');
     if (testimonials.length === 0) return;
-
-    createRevealAnimation(testimonials, {
+    
+    // Entrance stagger
+    gsap.from(testimonials, {
+        opacity: 0,
         y: 50,
-        scale: 0.95
-    }, {
+        scale: 0.95,
         duration: 0.6,
         stagger: 0.15,
         ease: 'power2.out',
-        trigger: testimonials[0].parentElement,
-        start: 'top 80%',
-        clearProps: 'opacity,transform'
+        scrollTrigger: {
+            trigger: testimonials[0].parentElement,
+            start: 'top 80%',
+            once: true
+        }
     });
 }
 
@@ -1115,16 +893,29 @@ function initMinimalAnimations() {
 }
 
 // ========================================
-// COUNTER ANIMATION WITH DATA-TARGET
+// UTILITY
 // ========================================
 
+let resizeTimeout;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => ScrollTrigger.refresh(), 200);
+});
+
+window.refreshPowerStarAnimations = function() {
+    ScrollTrigger.refresh();
+    console.log('🔄 PowerStar animations refreshed');
+};
+// ========================================
+// COUNTER ANIMATION WITH DATA-TARGET
+// ========================================
 function initEnhancedCounter() {
     const statNumbers = document.querySelectorAll('.stat-number[data-target]');
-
-    statNumbers.forEach((stat) => {
+    
+    statNumbers.forEach(stat => {
         const target = parseFloat(stat.dataset.target);
         const isDecimal = stat.dataset.decimal === 'true';
-
+        
         ScrollTrigger.create({
             trigger: stat,
             start: 'top 80%',
@@ -1152,17 +943,7 @@ function initEnhancedCounter() {
     });
 }
 
-// ========================================
-// UTILITY
-// ========================================
-
-let resizeTimeout;
-window.addEventListener('resize', () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => ScrollTrigger.refresh(), 200);
+// Auto-initialize
+document.addEventListener('DOMContentLoaded', () => {
+    initEnhancedCounter();
 });
-
-window.refreshPowerStarAnimations = function() {
-    ScrollTrigger.refresh();
-    console.log('🔄 PowerStar animations refreshed');
-};
