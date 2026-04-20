@@ -13,11 +13,19 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
-    const mobileMenu = document.querySelector('.mobile-menu');
+    let mobileMenu = document.querySelector('.mobile-menu');
     const overlay = document.querySelector('.mobile-menu-overlay');
 
-    // Exit if elements don't exist
-    if (!hamburger || !mobileMenu) {
+    if (!hamburger) {
+        console.warn('Mobile nav elements not found');
+        return;
+    }
+
+    if (!mobileMenu) {
+        mobileMenu = createFallbackMobileMenu();
+    }
+
+    if (!mobileMenu) {
         console.warn('Mobile nav elements not found');
         return;
     }
@@ -49,6 +57,34 @@ document.addEventListener('DOMContentLoaded', function() {
             closeMenu();
         }
     });
+
+    function createFallbackMobileMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        if (!navLinks) {
+            return null;
+        }
+
+        const fallbackMenu = document.createElement('div');
+        fallbackMenu.className = 'mobile-menu';
+        fallbackMenu.setAttribute('aria-hidden', 'true');
+
+        const fallbackLinks = document.createElement('ul');
+        fallbackLinks.className = 'mobile-nav-links';
+
+        navLinks.querySelectorAll('a').forEach(function(link) {
+            const item = document.createElement('li');
+            item.appendChild(link.cloneNode(true));
+            fallbackLinks.appendChild(item);
+        });
+
+        if (fallbackLinks.children.length === 0) {
+            return null;
+        }
+
+        fallbackMenu.appendChild(fallbackLinks);
+        document.body.appendChild(fallbackMenu);
+        return fallbackMenu;
+    }
 
     /**
      * Toggle menu visibility

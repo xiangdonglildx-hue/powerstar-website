@@ -18,13 +18,19 @@ document.addEventListener('DOMContentLoaded', () => {
         console.warn('GSAP not loaded');
         return;
     }
-    
+
+    if (typeof ScrollTrigger === 'undefined') {
+        console.warn('ScrollTrigger not loaded - falling back to minimal animations');
+        initMinimalAnimations();
+        return;
+    }
+
     // Register plugins
     gsap.registerPlugin(ScrollTrigger);
-    
+
     // Check for reduced motion preference
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    
+
     if (prefersReducedMotion) {
         console.log('Reduced motion preference detected - animations minimized');
         initMinimalAnimations();

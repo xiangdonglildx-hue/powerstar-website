@@ -4,10 +4,17 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    if (typeof gsap !== 'undefined') {
-        gsap.registerPlugin(ScrollTrigger);
-        initAnimations();
+    if (typeof gsap === 'undefined') {
+        return;
     }
+
+    if (typeof ScrollTrigger === 'undefined') {
+        initMinimalAnimations();
+        return;
+    }
+
+    gsap.registerPlugin(ScrollTrigger);
+    initAnimations();
 });
 
 function initMinimalAnimations() {
