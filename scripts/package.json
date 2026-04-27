@@ -3,9 +3,22 @@
   "version": "1.0.0",
   "description": "SEO scripts for PowerStar website",
   "scripts": {
+    "gsc": "tsx gsc-collector.ts",
+    "detect-anomalies": "tsx detect-anomalies.ts",
+    "cleanup": "tsx cleanup-history.ts",
+    "geo": "tsx geo-query.ts",
     "index": "node submit-to-indexing-api.js"
   },
   "dependencies": {
-    "google-auth-library": "^9.0.0"
+    "commander": "^14.0.3",
+    "dotenv": "^17.4.2",
+    "fs-extra": "^11.3.4",
+    "google-auth-library": "^9.0.0",
+    "googleapis": "^171.4.0",
+    "xml2js": "^0.6.2",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.6"
   }
 }

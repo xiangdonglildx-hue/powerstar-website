@@ -144,66 +144,36 @@ This step grants your Service Account access to read data from your Search Conso
 ### 6.2 Install Dependencies
 
 ```bash
-npm install
+npm ci --legacy-peer-deps
 ```
 
-This will install:
+This installs the runtime used by the workflow, including:
 - `googleapis` - Google API client
 - `google-auth-library` - Authentication
 - `dotenv` - Environment variables
 - `fs-extra` - File operations
 - `zod` - Schema validation
 
-### 6.3 Test Authentication
+### 6.3 Test Authentication and Collector Access
 
-Create a test script to verify your setup:
+First verify the service account can see the configured property:
 
-```typescript
-// test-auth.ts
-import { google } from 'googleapis';
-import dotenv from 'dotenv';
-
-dotenv.config();
-
-async function testAuth() {
-  try {
-    const auth = new google.auth.GoogleAuth({
-      keyFile: process.env.GOOGLE_APPLICATION_CREDENTIALS,
-      scopes: ['https://www.googleapis.com/auth/webmasters.readonly'],
-    });
-
-    const searchconsole = google.searchconsole({ version: 'v1', auth });
-
-    // Test: List sites this account has access to
-    const sites = await searchconsole.sites.list();
-
-    console.log('Authentication successful!');
-    console.log('Accessible sites:');
-    sites.data.siteEntry?.forEach(site => {
-      console.log(`  - ${site.siteUrl}`);
-    });
-
-    return true;
-  } catch (error) {
-    console.error('Authentication failed:', error);
-    return false;
-  }
-}
-
-testAuth();
+```bash
+npx tsx -e "import { verifySiteAccess } from './lib/gsc-client.js'; import { config } from './lib/config.js'; verifySiteAccess(config.gsc.siteUrl).then(() => console.log('Property access OK')).catch((error) => { console.error(error.message); process.exit(1); });"
 ```
 
-Run the test:
+Then run the same scripts the GitHub Actions workflow uses:
+
 ```bash
-npx tsx test-auth.ts
+npm run gsc
+npm run detect-anomalies
+npm run cleanup
 ```
 
 **Expected output**:
-```
-Authentication successful!
-Accessible sites:
-  - https://powerstarapps.com/
-```
+- `npm run gsc` prints `Search Console property access verified` before collecting data
+- `npm run detect-anomalies` writes `data/anomalies.json`
+- `npm run cleanup` completes without removing current snapshots
 
 ---
 
@@ -219,9 +189,9 @@ Accessible sites:
 
 **Solutions**:
 1. Verify Service Account email is in Search Console > Settings > Users
-2. Check GSC_SITE_URL matches exactly (including protocol and trailing slash)
-   - For domain properties: `sc-domain:powerstarapps.com`
-   - For URL properties: `https://powerstarapps.com/`
+2. Check `GSC_SITE_URL` matches the exact property type shown in Search Console
+   - Domain property: `sc-domain:powerstarapps.com`
+   - URL-prefix property: `https://powerstarapps.com/`
 
 ### Error: 404 Not Found
 
@@ -255,7 +225,7 @@ Accessible sites:
 
 **Causes**: Dependencies not installed
 
-**Solution**: Run `npm install` in the scripts directory
+**Solution**: Run `npm ci --legacy-peer-deps` in the scripts directory
 
 ### Error: ENOENT: no such file or directory
 
@@ -300,16 +270,19 @@ Accessible sites:
    - Delete old `credentials.json` file securely
 
 4. **Use GitHub Secrets for CI/CD**:
-   - Store the JSON key content as a GitHub Secret
-   - Reference in GitHub Actions:
+   - Store the base64-encoded JSON key as `GOOGLE_APPLICATION_CREDENTIALS_CONTENT`
+   - Store the exact Search Console property identifier as `GSC_SITE_URL`
+   - Reference them in GitHub Actions:
      ```yaml
      env:
-       GOOGLE_APPLICATION_CREDENTIALS_JSON: ${{ secrets.GCP_SA_KEY }}
+       GOOGLE_APPLICATION_CREDENTIALS: ./credentials.json
+       GSC_SITE_URL: ${{ secrets.GSC_SITE_URL }}
+       GOOGLE_APPLICATION_CREDENTIALS_CONTENT: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_CONTENT }}
      ```
-   - Write to file at runtime:
+   - Write the credentials file at runtime:
      ```yaml
      - name: Setup credentials
-       run: echo '${{ secrets.GCP_SA_KEY }}' > scripts/credentials.json
+       run: echo "$GOOGLE_APPLICATION_CREDENTIALS_CONTENT" | base64 -d > credentials.json
      ```
 
 5. **Monitor API usage**:
@@ -337,9 +310,11 @@ Accessible sites:
 | Command | Purpose |
 |---------|---------|
 | `cp .env.example .env` | Create local environment file |
-| `npm install` | Install dependencies |
-| `npx tsx test-auth.ts` | Test authentication setup |
-| `npm run collect` | Run GSC data collector |
+| `npm ci --legacy-peer-deps` | Install workflow-compatible dependencies |
+| `npx tsx -e "import { verifySiteAccess } from './lib/gsc-client.js'; import { config } from './lib/config.js'; verifySiteAccess(config.gsc.siteUrl).then(() => console.log('Property access OK')).catch((error) => { console.error(error.message); process.exit(1); });"` | Verify Search Console property access |
+| `npm run gsc` | Run GSC data collector |
+| `npm run detect-anomalies` | Detect SEO anomalies from collected data |
+| `npm run cleanup` | Remove old history snapshots |
 
 ---
 

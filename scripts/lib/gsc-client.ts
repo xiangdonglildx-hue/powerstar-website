@@ -5,6 +5,9 @@ import fs from 'fs-extra';
 import path from 'path';
 import xml2js from 'xml2js';
 
+const PERMISSION_DENIED_PREFIX = 'Permission denied (403):';
+const SITE_NOT_FOUND_PREFIX = 'Site URL not found (404):';
+
 // Retry configuration
 const MAX_RETRIES = 3;
 const RETRY_DELAY_MS = 1000;
@@ -102,6 +105,27 @@ async function getServiceAccountEmail(): Promise<string> {
   }
 }
 
+export function isPropertyAccessError(error: unknown): boolean {
+  if (!(error instanceof Error)) {
+    return false;
+  }
+
+  return error.message.startsWith(PERMISSION_DENIED_PREFIX)
+    || error.message.startsWith(SITE_NOT_FOUND_PREFIX);
+}
+
+/**
+ * Verify the configured property is reachable before collection starts
+ */
+export async function verifySiteAccess(siteUrl: string): Promise<void> {
+  const searchconsole = await getSearchConsoleClient();
+
+  await withRetry(
+    () => searchconsole.sites.get({ siteUrl }),
+    `Verify Search Console access for ${siteUrl}`
+  );
+}
+
 /**
  * Parse sitemap.xml to extract URLs
  */
@@ -175,6 +199,10 @@ export async function fetchIndexedPages(siteUrl: string): Promise<IndexedPagesRe
       await sleep(100);
 
     } catch (error: any) {
+      if (isPropertyAccessError(error)) {
+        throw error;
+      }
+
       console.warn(`Warning: Could not inspect URL ${url}: ${error.message}`);
       unindexedUrls.push(url);
     }

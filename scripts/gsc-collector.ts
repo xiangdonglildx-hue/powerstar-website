@@ -22,6 +22,8 @@ import {
   fetchSearchMetrics,
   fetchCoverageErrors,
   fetchDailyMetrics,
+  verifySiteAccess,
+  isPropertyAccessError,
 } from './lib/gsc-client.js';
 import { GSCMetricsSchema, type SeoMetrics, type DailyTrend } from './lib/schemas.js';
 import fs from 'fs-extra';
@@ -82,6 +84,12 @@ async function cleanupHistory(): Promise<void> {
   }
 }
 
+function failOnPropertyAccessError(error: unknown): void {
+  if (isPropertyAccessError(error)) {
+    throw error;
+  }
+}
+
 /**
  * Main collector function
  */
@@ -104,8 +112,18 @@ async function main(): Promise<void> {
     process.exit(1);
   }
 
-  // Step 2: Calculate date ranges
-  log('\nStep 2: Calculating date ranges...', 'cyan');
+  // Step 2: Verify Search Console property access
+  log('\nStep 2: Verifying Search Console property access...', 'cyan');
+  try {
+    await verifySiteAccess(config.gsc.siteUrl);
+    log('  Search Console property access verified', 'green');
+  } catch (error: any) {
+    log(`Property access error: ${error.message}`, 'red');
+    process.exit(1);
+  }
+
+  // Step 3: Calculate date ranges
+  log('\nStep 3: Calculating date ranges...', 'cyan');
   const today = new Date();
   const endDate = today.toISOString().split('T')[0];
 
@@ -116,8 +134,8 @@ async function main(): Promise<void> {
   log(`  7-day range: ${range7d.startDate} to ${range7d.endDate}`, 'reset');
   log(`  30-day range: ${range30d.startDate} to ${range30d.endDate}`, 'reset');
 
-  // Step 3: Fetch indexed pages
-  log('\nStep 3: Fetching indexed pages...', 'cyan');
+  // Step 4: Fetch indexed pages
+  log('\nStep 4: Fetching indexed pages...', 'cyan');
   let indexedPagesData;
   try {
     indexedPagesData = await fetchIndexedPages(config.gsc.siteUrl);
@@ -126,12 +144,13 @@ async function main(): Promise<void> {
       log(`  Unindexed URLs (sample): ${indexedPagesData.unindexedUrls.slice(0, 3).join(', ')}`, 'yellow');
     }
   } catch (error: any) {
+    failOnPropertyAccessError(error);
     log(`  Error fetching indexed pages: ${error.message}`, 'red');
     indexedPagesData = { indexedCount: 0, totalSubmitted: 0, unindexedUrls: [] };
   }
 
-  // Step 4: Fetch top keywords
-  log('\nStep 4: Fetching top keywords...', 'cyan');
+  // Step 5: Fetch top keywords
+  log('\nStep 5: Fetching top keywords...', 'cyan');
   let topKeywords = [];
   try {
     topKeywords = await fetchTopKeywords(config.gsc.siteUrl, range30d.startDate, range30d.endDate, 50);
@@ -143,11 +162,12 @@ async function main(): Promise<void> {
       });
     }
   } catch (error: any) {
+    failOnPropertyAccessError(error);
     log(`  Error fetching keywords: ${error.message}`, 'red');
   }
 
-  // Step 5: Fetch search metrics
-  log('\nStep 5: Fetching search metrics...', 'cyan');
+  // Step 6: Fetch search metrics
+  log('\nStep 6: Fetching search metrics...', 'cyan');
   let metrics7d, metrics30d;
   try {
     metrics7d = await fetchSearchMetrics(config.gsc.siteUrl, range7d.startDate, range7d.endDate);
@@ -156,33 +176,36 @@ async function main(): Promise<void> {
     metrics30d = await fetchSearchMetrics(config.gsc.siteUrl, range30d.startDate, range30d.endDate);
     log(`  30-day: ${metrics30d.totalClicks} clicks, ${metrics30d.totalImpressions} impressions`, 'green');
   } catch (error: any) {
+    failOnPropertyAccessError(error);
     log(`  Error fetching search metrics: ${error.message}`, 'red');
     metrics7d = { totalClicks: 0, totalImpressions: 0, avgCTR: 0, avgPosition: 0 };
     metrics30d = { totalClicks: 0, totalImpressions: 0, avgCTR: 0, avgPosition: 0 };
   }
 
-  // Step 6: Fetch daily metrics for trends
-  log('\nStep 6: Fetching daily metrics for trends...', 'cyan');
+  // Step 7: Fetch daily metrics for trends
+  log('\nStep 7: Fetching daily metrics for trends...', 'cyan');
   let dailyMetrics = [];
   try {
     dailyMetrics = await fetchDailyMetrics(config.gsc.siteUrl, range30d.startDate, range30d.endDate);
     log(`  Retrieved ${dailyMetrics.length} days of data`, 'green');
   } catch (error: any) {
+    failOnPropertyAccessError(error);
     log(`  Error fetching daily metrics: ${error.message}`, 'yellow');
   }
 
-  // Step 7: Fetch coverage errors
-  log('\nStep 7: Fetching coverage errors...', 'cyan');
+  // Step 8: Fetch coverage errors
+  log('\nStep 8: Fetching coverage errors...', 'cyan');
   let coverageErrors = [];
   try {
     coverageErrors = await fetchCoverageErrors(config.gsc.siteUrl, range30d.startDate, range30d.endDate);
     log(`  Found ${coverageErrors.length} pages with potential issues`, coverageErrors.length > 0 ? 'yellow' : 'green');
   } catch (error: any) {
+    failOnPropertyAccessError(error);
     log(`  Error fetching coverage errors: ${error.message}`, 'yellow');
   }
 
-  // Step 8: Build GSC data object
-  log('\nStep 8: Building GSC data object...', 'cyan');
+  // Step 9: Build GSC data object
+  log('\nStep 9: Building GSC data object...', 'cyan');
   const gscData = {
     indexedPages: indexedPagesData.indexedCount,
     totalSubmitted: indexedPagesData.totalSubmitted,
@@ -212,8 +235,8 @@ async function main(): Promise<void> {
     log(`  Validation warning: ${error.message}`, 'yellow');
   }
 
-  // Step 9: Read existing data and merge
-  log('\nStep 9: Merging with existing data...', 'cyan');
+  // Step 10: Read existing data and merge
+  log('\nStep 10: Merging with existing data...', 'cyan');
   let existingData: SeoMetrics;
   try {
     existingData = await fs.readJson(config.output.dataPath);
@@ -238,8 +261,8 @@ async function main(): Promise<void> {
     gsc: gscData,
   };
 
-  // Step 10: Write main data file
-  log('\nStep 10: Writing data files...', 'cyan');
+  // Step 11: Write main data file
+  log('\nStep 11: Writing data files...', 'cyan');
   try {
     await fs.ensureDir(path.dirname(config.output.dataPath));
     await fs.writeJson(config.output.dataPath, updatedData, { spaces: 2 });
@@ -249,7 +272,7 @@ async function main(): Promise<void> {
     process.exit(1);
   }
 
-  // Step 11: Create historical snapshot
+  // Step 12: Create historical snapshot
   const historyFilename = `gsc-${endDate}.json`;
   const historyPath = path.join(config.output.historyPath, historyFilename);
 
@@ -265,8 +288,8 @@ async function main(): Promise<void> {
     log(`  Warning: Could not create history snapshot: ${error.message}`, 'yellow');
   }
 
-  // Step 12: Cleanup old history files
-  log('\nStep 12: Cleaning up old history files...', 'cyan');
+  // Step 13: Cleanup old history files
+  log('\nStep 13: Cleaning up old history files...', 'cyan');
   await cleanupHistory();
 
   // Summary
