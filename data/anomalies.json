@@ -1,15 +1,24 @@
 {
-  "detectedAt": "2026-04-12T07:12:04.094Z",
-  "totalAnomalies": 1,
+  "detectedAt": "2026-04-27T09:38:48.309Z",
+  "totalAnomalies": 2,
   "anomalies": [
     {
       "type": "indexing_drop",
       "severity": "P1",
       "metric": "indexedPages",
-      "change": 100,
+      "change": 76.5625,
       "threshold": 20,
-      "details": "Indexing gap: only 0 of 54 pages indexed (100.0% unindexed)",
-      "detectedAt": "2026-04-12T07:12:04.093Z"
+      "details": "Indexing gap: only 15 of 64 pages indexed (76.6% unindexed)",
+      "detectedAt": "2026-04-27T09:38:48.308Z"
+    },
+    {
+      "type": "position_drop",
+      "severity": "P2",
+      "metric": "topKeywords.best voice changer apps for android",
+      "change": 11,
+      "threshold": 5,
+      "details": "2 keywords dropped >5 positions. Worst: \"best voice changer apps for android\" from 8.0 to 19.0",
+      "detectedAt": "2026-04-27T09:38:48.308Z"
     }
   ],
   "thresholds": {
