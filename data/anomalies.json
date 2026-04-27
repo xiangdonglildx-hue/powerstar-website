@@ -1,5 +1,5 @@
 {
-  "detectedAt": "2026-04-27T09:38:48.309Z",
+  "detectedAt": "2026-04-27T09:50:54.163Z",
   "totalAnomalies": 2,
   "anomalies": [
     {
@@ -9,7 +9,7 @@
       "change": 76.5625,
       "threshold": 20,
       "details": "Indexing gap: only 15 of 64 pages indexed (76.6% unindexed)",
-      "detectedAt": "2026-04-27T09:38:48.308Z"
+      "detectedAt": "2026-04-27T09:50:54.162Z"
     },
     {
       "type": "position_drop",
@@ -18,7 +18,7 @@
       "change": 11,
       "threshold": 5,
       "details": "2 keywords dropped >5 positions. Worst: \"best voice changer apps for android\" from 8.0 to 19.0",
-      "detectedAt": "2026-04-27T09:38:48.308Z"
+      "detectedAt": "2026-04-27T09:50:54.163Z"
     }
   ],
   "thresholds": {
