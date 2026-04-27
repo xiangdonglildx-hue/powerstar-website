@@ -18,7 +18,7 @@ on:
       run_weekly_full:
         description: Run the weekly full GSC collection job
         required: false
-        default: true
+        default: false
         type: boolean
       run_monthly_geo:
         description: Run the monthly GEO citation job
@@ -31,8 +31,33 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  validate-dispatch-selection:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ensure only one manual writer job is selected
+        run: |
+          if [ "${{ github.event_name }}" != "workflow_dispatch" ]; then
+            exit 0
+          fi
+
+          selected_count=0
+          [ "${{ inputs.run_daily_check }}" = "true" ] && selected_count=$((selected_count + 1))
+          [ "${{ inputs.run_weekly_full }}" = "true" ] && selected_count=$((selected_count + 1))
+          [ "${{ inputs.run_monthly_geo }}" = "true" ] && selected_count=$((selected_count + 1))
+
+          if [ "$selected_count" -eq 0 ]; then
+            echo "Select one workflow_dispatch job to run."
+            exit 1
+          fi
+
+          if [ "$selected_count" -gt 1 ]; then
+            echo "Select only one workflow_dispatch job at a time to avoid data commit conflicts."
+            exit 1
+          fi
+
   daily-check:
     runs-on: ubuntu-latest
+    needs: validate-dispatch-selection
     permissions:
       contents: write
     if: github.event.schedule == '0 6 * * *' || (github.event_name == 'workflow_dispatch' && inputs.run_daily_check)
@@ -87,6 +112,7 @@ jobs:
 
   weekly-full:
     runs-on: ubuntu-latest
+    needs: validate-dispatch-selection
     permissions:
       contents: write
     if: github.event.schedule == '0 8 * * 1' || (github.event_name == 'workflow_dispatch' && inputs.run_weekly_full)
@@ -133,6 +159,7 @@ jobs:
 
   monthly-geo:
     runs-on: ubuntu-latest
+    needs: validate-dispatch-selection
     permissions:
       contents: write
     if: github.event.schedule == '0 6 1 * *' || (github.event_name == 'workflow_dispatch' && inputs.run_monthly_geo)
