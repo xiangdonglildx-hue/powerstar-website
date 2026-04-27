@@ -19,7 +19,7 @@ const openai = new OpenAI({
 });
 
 // Gemini client per CONTEXT.md decision D-02
-const geminiApiKey = process.env.GOOGLE_AI_API_KEY;
+const geminiApiKey = process.env.GOOGLE_AI_API_KEY || process.env.GEMINI_API_KEY;
 const gemini = geminiApiKey ? new GoogleGenerativeAI(geminiApiKey) : null;
 
 /**

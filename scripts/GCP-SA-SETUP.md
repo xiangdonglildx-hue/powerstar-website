@@ -272,6 +272,7 @@ npm run cleanup
 4. **Use GitHub Secrets for CI/CD**:
    - Store the base64-encoded JSON key as `GOOGLE_APPLICATION_CREDENTIALS_CONTENT`
    - Store the exact Search Console property identifier as `GSC_SITE_URL`
+   - For GEO runs, also store `OPENAI_API_KEY` and `GEMINI_API_KEY`
    - Reference them in GitHub Actions:
      ```yaml
      env:

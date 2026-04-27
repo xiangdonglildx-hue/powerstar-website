@@ -9,7 +9,22 @@ on:
     # Monthly on 1st at 6:00 UTC - GEO citation check
     - cron: '0 6 1 * *'
   workflow_dispatch:
-    # Manual trigger for testing
+    inputs:
+      run_daily_check:
+        description: Run the daily GSC collection job
+        required: false
+        default: true
+        type: boolean
+      run_weekly_full:
+        description: Run the weekly full GSC collection job
+        required: false
+        default: true
+        type: boolean
+      run_monthly_geo:
+        description: Run the monthly GEO citation job
+        required: false
+        default: false
+        type: boolean
 
 concurrency:
   group: seo-monitor
@@ -20,7 +35,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    if: github.event.schedule == '0 6 * * *' || github.event_name == 'workflow_dispatch'
+    if: github.event.schedule == '0 6 * * *' || (github.event_name == 'workflow_dispatch' && inputs.run_daily_check)
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -33,6 +48,14 @@ jobs:
       - name: Install dependencies
         working-directory: scripts
         run: npm ci --legacy-peer-deps
+
+      - name: Check GSC secrets
+        env:
+          GSC_SITE_URL: ${{ secrets.GSC_SITE_URL }}
+          GOOGLE_APPLICATION_CREDENTIALS_CONTENT: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_CONTENT }}
+        run: |
+          test -n "$GSC_SITE_URL" || { echo "Missing GitHub secret: GSC_SITE_URL"; exit 1; }
+          test -n "$GOOGLE_APPLICATION_CREDENTIALS_CONTENT" || { echo "Missing GitHub secret: GOOGLE_APPLICATION_CREDENTIALS_CONTENT"; exit 1; }
 
       - name: Run GSC collector
         working-directory: scripts
@@ -66,7 +89,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    if: github.event.schedule == '0 8 * * 1' || github.event_name == 'workflow_dispatch'
+    if: github.event.schedule == '0 8 * * 1' || (github.event_name == 'workflow_dispatch' && inputs.run_weekly_full)
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -79,6 +102,14 @@ jobs:
       - name: Install dependencies
         working-directory: scripts
         run: npm ci --legacy-peer-deps
+
+      - name: Check GSC secrets
+        env:
+          GSC_SITE_URL: ${{ secrets.GSC_SITE_URL }}
+          GOOGLE_APPLICATION_CREDENTIALS_CONTENT: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_CONTENT }}
+        run: |
+          test -n "$GSC_SITE_URL" || { echo "Missing GitHub secret: GSC_SITE_URL"; exit 1; }
+          test -n "$GOOGLE_APPLICATION_CREDENTIALS_CONTENT" || { echo "Missing GitHub secret: GOOGLE_APPLICATION_CREDENTIALS_CONTENT"; exit 1; }
 
       - name: Run GSC collector (full)
         working-directory: scripts
@@ -104,7 +135,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    if: github.event.schedule == '0 6 1 * *' || github.event_name == 'workflow_dispatch'
+    if: github.event.schedule == '0 6 1 * *' || (github.event_name == 'workflow_dispatch' && inputs.run_monthly_geo)
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -117,6 +148,14 @@ jobs:
       - name: Install dependencies
         working-directory: scripts
         run: npm ci --legacy-peer-deps
+
+      - name: Check GEO secrets
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          test -n "$OPENAI_API_KEY" || { echo "Missing GitHub secret: OPENAI_API_KEY"; exit 1; }
+          test -n "$GEMINI_API_KEY" || { echo "Missing GitHub secret: GEMINI_API_KEY"; exit 1; }
 
       - name: Run GEO query
         working-directory: scripts
