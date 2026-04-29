@@ -69,5 +69,18 @@ Before ending work:
 - record what was finished
 - record what should happen next
 
+## 7. GitHub Sync Rules
+- A local commit is enough when the work is still exploratory, still likely to change today, or only helps your own immediate execution.
+- Sync a branch to GitHub when the task is scoped, the diff is clean, the work passed its line-specific verification, and you want one of these outcomes:
+  - remote backup
+  - cross-device continuation
+  - shared review or PR
+  - a stable checkpoint before starting another branch
+- For planning-docs work, use this default:
+  - keep draft notes or same-day scratch edits local
+  - sync user-facing guidance once the document set reads cleanly end-to-end and represents a reusable workflow
+- Do not sync mixed-purpose branches.
+- Do not push unfinished cleanup just to "save it"; either keep it local or first split it into a clean scoped branch.
+
 Every future session must read this handbook first, then read `.planning/CURRENT-WORKBOARD.md` before making meaningful changes.
 
