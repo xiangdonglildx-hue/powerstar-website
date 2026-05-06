@@ -1,5 +1,6 @@
 {
-  "lastUpdated": "2026-05-06T08:30:07.972Z",
+  "snapshotDate": "2026-05-06",
+  "collectedAt": "2026-05-06T08:30:07.974Z",
   "gsc": {
     "indexedPages": 15,
     "totalSubmitted": 64,
@@ -644,32 +645,5 @@
         "clicks": 0
       }
     ]
-  },
-  "geo": {
-    "chatgpt": {
-      "cited": false,
-      "lastCheck": "2026-04-09",
-      "citations": [],
-      "response": "[Q: best thermometer app for Android] ...\n\n[Q: room temperature app for phone] ...\n\n[Q: indoor thermometer app] ...\n\n[Q: best microphone app for Android] ...\n\n[Q: voice recorder app for phone] ...\n\n[Q: voice changer app for Android] ...\n\n[Q: best voice modulator app] ...\n\n[Q: HD wallpapers for Android] ...\n\n[Q: best wallpaper app for phone] ...\n\n[Q: live wallpaper app] ...\n\n[Q: AI photo filter app] ...\n\n[Q: photo editing app with AI effects] ...\n\n[Q: cartoon photo filter app] ...\n\n[Q: anime photo filter] ...\n\n[Q: vintage photo editor app] ...",
-      "model": "gpt-4o"
-    },
-    "gemini": {
-      "cited": false,
-      "lastCheck": "2026-04-09",
-      "citations": [],
-      "response": "[Q: best thermometer app for Android] It's important to clarify a common misconception: **there is no reliable \"thermometer app\" that can accurately measure ambient room temperature or body temperature using only the sensors built into a ...\n\n[Q: room temperature app for phone] It's important to understand that **most smartphones do NOT have a dedicated sensor to accurately measure ambient room temperature.**\n\nHere's why and what apps claiming to do so are actually doing:\n\n1...\n\n[Q: indoor thermometer app] Unfortunately, **smartphones do not have a built-in sensor that can accurately measure the ambient room temperature.**\n\nHere's why and what your options are:\n\n1.  **Why your phone can't do it directly...\n\n[Q: best microphone app for Android] The \"best\" microphone app for Android really depends on what you want to use it for. Do you want to:\n\n1.  **Record audio (voice notes, interviews, music ideas)?**\n2.  **Use your phone as an external m...\n\n[Q: voice recorder app for phone] You're in luck! There are many excellent voice recorder apps available for both iPhone and Android, ranging from basic to feature-rich. The \"best\" one depends on your specific needs.\n\nHere's a breakdo...\n\n[Q: voice changer app for Android] Finding a good voice changer app for Android depends on whether you want to change your voice in **real-time** (during calls, gaming) or for **pre-recorded audio**. Real-time changing directly within ...\n\n[Q: best voice modulator app] The \"best\" voice modulator app really depends on your specific needs:\n\n*   **Are you looking for real-time modulation for gaming, streaming, or calls?** (This is mostly a PC thing, but some mobile app...\n\n[Q: HD wallpapers for Android] Finding high-quality HD (or even 4K) wallpapers for your Android phone is easy with so many great options available! Here's a breakdown of the best places and methods:\n\n## Top Wallpaper Apps for Andro...\n\n[Q: best wallpaper app for phone] The \"best\" wallpaper app depends heavily on what you're looking for: variety, quality, uniqueness, specific styles, or advanced features like live wallpapers or auto-changing.\n\nHere's a breakdown of t...\n\n[Q: live wallpaper app] Live wallpaper apps can bring your phone screen to life with dynamic, animated backgrounds. The options and capabilities vary significantly between Android and iOS due to their different operating sys...\n\n[Q: AI photo filter app] You're looking for apps that leverage Artificial Intelligence to apply creative, enhancing, or transformative filters to photos. These apps go beyond simple color adjustments, often using AI to unders...\n\n[Q: photo editing app with AI effects] The world of photo editing has been revolutionized by AI, making sophisticated effects and enhancements accessible to everyone. Here are some of the best photo editing apps with significant AI capabil...\n\n[Q: cartoon photo filter app] There are many fantastic cartoon photo filter apps available, each with its own unique style and features. Here are some of the most popular and highly-rated ones:\n\n**Top Recommendations:**\n\n1.  **Too...\n\n[Q: anime photo filter] Anime photo filters are tools, often powered by Artificial Intelligence (AI) and deep learning, that transform a real-life photograph into an image that resembles various styles of anime or manga art....\n\n[Q: vintage photo editor app] There are many fantastic vintage photo editor apps available, each with its own unique strengths and set of filters. The \"best\" one often depends on the specific vintage look you're going for and how ...",
-      "model": "gemini-pro"
-    }
-  },
-  "alerts": [
-    {
-      "type": "indexing_drop",
-      "severity": "P1",
-      "metric": "indexedPages",
-      "change": 76.5625,
-      "threshold": 20,
-      "details": "Indexing gap: only 15 of 64 pages indexed (76.6% unindexed)",
-      "detectedAt": "2026-05-06T08:30:08.537Z"
-    }
-  ]
+  }
 }
