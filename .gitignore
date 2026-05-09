@@ -4,6 +4,8 @@
 # Documentation (不部署到生产环境)
 *.md
 !README.md
+!CLAUDE.md
+!docs/powerstar-handbook.md
 !scripts/GCP-SA-SETUP.md
 !.planning/**/*.md
 
