@@ -63,6 +63,25 @@
     line-height: 1.7;
 }
 
+.product-hero-callout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.product-hero-callout span {
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 16px 36px rgba(0,0,0,0.14);
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 0.92rem;
+    font-weight: 500;
+    backdrop-filter: blur(12px);
+}
+
 .product-stats-hero {
     display: flex;
     gap: 32px;
@@ -828,11 +847,22 @@
         grid-template-columns: 1fr;
         gap: 40px;
     }
-    
+
     .product-mockup {
         order: -1;
     }
-    
+
+    .product-hero-callout {
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 24px;
+    }
+
+    .product-hero-callout span {
+        font-size: 0.84rem;
+        padding: 9px 12px;
+    }
+
     .quick-features-grid {
         flex-wrap: wrap;
         justify-content: center;

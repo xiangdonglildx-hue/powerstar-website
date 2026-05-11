@@ -1,6 +1,6 @@
 {
-  "snapshotDate": "2026-04-27",
-  "collectedAt": "2026-04-27T08:21:12.915Z",
+  "snapshotDate": "2026-04-23",
+  "collectedAt": "2026-04-23T05:58:28.705Z",
   "gsc": {
     "indexedPages": 15,
     "totalSubmitted": 64,
@@ -19,17 +19,17 @@
     "topKeywords": [
       {
         "query": "power star apps",
-        "impressions": 34,
-        "clicks": 5,
-        "ctr": 0.14705882352941177,
-        "position": 2.7058823529411766
+        "impressions": 30,
+        "clicks": 4,
+        "ctr": 0.13333333333333333,
+        "position": 2.7333333333333334
       },
       {
         "query": "power star app",
-        "impressions": 16,
+        "impressions": 15,
         "clicks": 2,
-        "ctr": 0.125,
-        "position": 3.875
+        "ctr": 0.13333333333333333,
+        "position": 3.7333333333333334
       },
       {
         "query": "4k backround",
@@ -40,10 +40,10 @@
       },
       {
         "query": "android voice changer app",
-        "impressions": 3,
+        "impressions": 2,
         "clicks": 0,
         "ctr": 0,
-        "position": 22.333333333333332
+        "position": 14.5
       },
       {
         "query": "app to check room temperature",
@@ -75,17 +75,17 @@
       },
       {
         "query": "barometer fishing",
-        "impressions": 15,
+        "impressions": 13,
         "clicks": 0,
         "ctr": 0,
-        "position": 60
+        "position": 59.46153846153846
       },
       {
         "query": "barometer for fishing",
-        "impressions": 4,
+        "impressions": 3,
         "clicks": 0,
         "ctr": 0,
-        "position": 52
+        "position": 47.333333333333336
       },
       {
         "query": "barometer reading for fishing",
@@ -121,13 +121,6 @@
         "clicks": 0,
         "ctr": 0,
         "position": 65
-      },
-      {
-        "query": "barometric pressure on fishing",
-        "impressions": 2,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 75.5
       },
       {
         "query": "best android voice changer",
@@ -187,10 +180,10 @@
       },
       {
         "query": "best voice changer app",
-        "impressions": 8,
+        "impressions": 7,
         "clicks": 0,
         "ctr": 0,
-        "position": 48.125
+        "position": 42.57142857142857
       },
       {
         "query": "best voice changer app android",
@@ -271,17 +264,17 @@
       },
       {
         "query": "com.lumiwall.wallpaper.background",
-        "impressions": 16,
+        "impressions": 15,
         "clicks": 0,
         "ctr": 0,
-        "position": 6.75
+        "position": 6.933333333333334
       },
       {
         "query": "fishing barometer",
-        "impressions": 10,
+        "impressions": 8,
         "clicks": 0,
         "ctr": 0,
-        "position": 65
+        "position": 65.25
       },
       {
         "query": "fishing barometers",
@@ -289,13 +282,6 @@
         "clicks": 0,
         "ctr": 0,
         "position": 51.5
-      },
-      {
-        "query": "fishing by barometer",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 65
       },
       {
         "query": "free indoor thermometer app",
@@ -362,15 +348,29 @@
       },
       {
         "query": "how to set 4k wallpaper on android",
-        "impressions": 259,
+        "impressions": 247,
         "clicks": 0,
         "ctr": 0,
-        "position": 10.362934362934363
+        "position": 10.31578947368421
+      },
+      {
+        "query": "indoor temperature app",
+        "impressions": 4,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 17.5
+      },
+      {
+        "query": "indoor temperature app for android",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 15
       }
     ],
     "clicks": {
       "last7Days": 5,
-      "last30Days": 17,
+      "last30Days": 14,
       "trend": [
         0,
         0,
@@ -394,14 +394,12 @@
         1,
         1,
         0,
-        2,
-        2,
-        1
+        2
       ]
     },
     "impressions": {
-      "last7Days": 229,
-      "last30Days": 1014,
+      "last7Days": 373,
+      "last30Days": 933,
       "trend": [
         0,
         4,
@@ -425,9 +423,7 @@
         49,
         56,
         98,
-        50,
-        41,
-        40
+        50
       ]
     },
     "dailyTrend": [
@@ -568,36 +564,24 @@
         "clicks": 2,
         "impressions": 50,
         "position": 12.96
-      },
-      {
-        "date": "2026-04-22",
-        "clicks": 2,
-        "impressions": 41,
-        "position": 20.097560975609756
-      },
-      {
-        "date": "2026-04-23",
-        "clicks": 1,
-        "impressions": 40,
-        "position": 13.75
       }
     ],
-    "avgPosition": 14.942800788954635,
-    "avgCTR": 0.016765285996055226,
+    "avgPosition": 14.767416934619506,
+    "avgCTR": 0.015005359056806002,
     "coverageErrors": [
       {
         "url": "https://powerstarapps.com/blog.html",
-        "impressions": 4,
+        "impressions": 3,
         "clicks": 0
       },
       {
         "url": "https://powerstarapps.com/blog/check-room-temperature-phone.html",
-        "impressions": 2,
+        "impressions": 1,
         "clicks": 0
       },
       {
         "url": "https://powerstarapps.com/blog/home-temperature-monitor-app.html",
-        "impressions": 3,
+        "impressions": 2,
         "clicks": 0
       },
       {
@@ -622,12 +606,12 @@
       },
       {
         "url": "https://powerstarapps.com/products/ai-photo.html",
-        "impressions": 6,
+        "impressions": 5,
         "clicks": 0
       },
       {
         "url": "https://powerstarapps.com/terms.html",
-        "impressions": 8,
+        "impressions": 6,
         "clicks": 0
       }
     ]

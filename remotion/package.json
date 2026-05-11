@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "remotion studio src/index.ts",
     "compositions": "remotion compositions src/index.ts",
-    "render:ai-photo-og": "remotion still src/index.ts AIPhotoOg ../images/og/og-ai-photo.png"
+    "render:ai-photo-og": "remotion still src/index.ts AIPhotoOg ../images/og/og-ai-photo.png",
+    "render:voice-changer-og": "remotion still src/index.ts VoiceChangerOg ../images/og/og-voice-changer.png"
   },
   "dependencies": {
     "react": "18.2.0",

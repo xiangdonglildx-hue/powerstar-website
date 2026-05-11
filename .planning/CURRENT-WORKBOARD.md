@@ -1,29 +1,30 @@
 # Current Workboard
 
 ## Current Objective
-- Goal: Define and record a fixed GitHub sync rule for scoped planning-docs work.
-- Primary line: planning-docs
-- Do Not Touch: Do not mix website, remotion, or seo-data cleanup into this rule-setting task.
+- Goal: Finish the remaining product search-entry clusters for Lumiwall / 4K Wallpaper and AI Photo.
+- Primary line: website
+- Do Not Touch: Do not mix remotion-sidecar, seo-data, automation, or unrelated product groups into each product task.
 
 ## In Progress
-- The backlink planning-docs cleanup is committed locally on `chore/backlink-docs-cleanup`.
-- Current follow-up task: decide when scoped work should stay local and when it should be synced to GitHub.
-- Keep the rule simple enough to apply across future sessions.
+- Lumiwall is next: implement only its hub page and 5 wallpaper landing pages in a clean isolated worktree.
+- AI Photo follows separately: implement only its hub page and 10 style/audience landing pages in a separate clean isolated worktree.
+- Priority is search-entry clarity, SEO field alignment, conservative claims, and hub-spoke internal links.
 
 ## Next Steps
-- Use the new handbook rule when deciding whether future scoped branches stay local or get synced to GitHub.
-- Keep planning-docs branches local until the document set reaches reusable user-facing quality.
-- After this rule task, return to choosing the next single-objective branch from remotion-sidecar or website.
+- Complete and locally commit the Lumiwall website search-entry cluster.
+- Complete and locally commit the AI Photo website search-entry cluster.
+- Summarize all 5 product clusters after fresh verification.
 
 ## Blockers
-- The working tree still contains mixed changes across multiple project lines.
+- The primary working tree still contains mixed changes across multiple project lines.
 - `visible-polish.test.mjs` and `.claude/worktrees/` still need an explicit keep / ignore / classify decision.
 
 ## Recently Completed
-- Committed the governance trunk in `7ef1c92 chore(governance): establish handbook workflow trunk`.
-- Committed the backlink planning-docs cleanup locally in `b6fa666 fix(planning): clarify backlink execution docs`.
-- Added the repo-local `CLAUDE.md` entrypoint and long-lived handbook.
-- Bucketed the current working tree into: planning-docs, website, seo-data, remotion-sidecar, and other.
+- Committed the backlink planning-docs cleanup in `b6fa666 fix(planning): clarify backlink execution docs`.
+- Added GitHub sync rules in `effdf52 chore(governance): define github sync rules`.
+- Opened PR #1 for planning-docs and governance cleanup.
+- Opened PR #2 for the Voice Changer website search-entry cluster.
+- Completed local Microphone search-entry cluster commit `0be9bbb fix(seo): clarify microphone search cluster`.
 
 ## Do Not Touch
 - Do not turn this file into a running history log.

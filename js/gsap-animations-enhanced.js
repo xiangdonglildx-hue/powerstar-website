@@ -250,7 +250,10 @@ function initHeroSplitText() {
             const wordSpan = document.createElement('span');
             wordSpan.className = 'hero-word';
             wordSpan.textContent = word;
-            wordSpan.style.cssText = 'display:inline-block; opacity:0; transform: translateY(46px) rotateX(-18deg); transform-origin: 50% 100%; will-change: transform, opacity;';
+            wordSpan.style.display = 'inline-block';
+            wordSpan.style.transform = 'translateY(46px) rotateX(-18deg)';
+            wordSpan.style.transformOrigin = '50% 100%';
+            wordSpan.style.willChange = 'transform, opacity';
             partWrapper.appendChild(wordSpan);
         });
 
@@ -266,15 +269,23 @@ function initHeroSplitText() {
     const titleParts = heroTitle.querySelectorAll('.hero-title-part');
     const wordSpans = heroTitle.querySelectorAll('.hero-word');
 
-    gsap.to(wordSpans, {
-        opacity: 1,
-        y: 0,
-        rotateX: 0,
-        duration: 0.9,
-        stagger: 0.06,
-        ease: 'power3.out',
-        delay: 0.24
-    });
+    gsap.fromTo(wordSpans,
+        {
+            opacity: 0,
+            y: 46,
+            rotateX: -18
+        },
+        {
+            opacity: 1,
+            y: 0,
+            rotateX: 0,
+            duration: 0.9,
+            stagger: 0.06,
+            ease: 'power3.out',
+            delay: 0.24,
+            clearProps: 'opacity,transform'
+        }
+    );
 
     titleParts.forEach((part, index) => {
         if (!part.classList.contains('highlight')) return;
@@ -325,81 +336,106 @@ function initHeroSplitText() {
 
     const subtitle = document.querySelector('.hero-subtitle');
     if (subtitle) {
-        gsap.from(subtitle, {
-            opacity: 0,
-            y: 28,
-            duration: 0.8,
-            ease: 'power2.out',
-            delay: 0.85
-        });
+        gsap.fromTo(subtitle,
+            {
+                y: 28
+            },
+            {
+                y: 0,
+                duration: 0.8,
+                ease: 'power2.out',
+                delay: 0.85,
+                clearProps: 'transform'
+            }
+        );
     }
 
     const proof = document.querySelector('.hero-proof');
     if (proof) {
-        gsap.from(proof, {
-            opacity: 0,
-            y: 22,
-            duration: 0.8,
-            ease: 'power2.out',
-            delay: 1
-        });
+        gsap.fromTo(proof,
+            {
+                y: 22
+            },
+            {
+                y: 0,
+                duration: 0.8,
+                ease: 'power2.out',
+                delay: 1,
+                clearProps: 'transform'
+            }
+        );
     }
 
     const heroIcons = document.querySelectorAll('.hero-apps .app-icon-item');
     if (heroIcons.length) {
-        gsap.from(heroIcons, {
-            opacity: 0,
-            y: 30,
-            scale: 0.86,
-            duration: 0.7,
-            stagger: 0.08,
-            ease: 'back.out(1.7)',
-            delay: 1.05
-        });
+        gsap.fromTo(heroIcons,
+            {
+                y: 30,
+                scale: 0.86
+            },
+            {
+                y: 0,
+                scale: 1,
+                duration: 0.7,
+                stagger: 0.08,
+                ease: 'back.out(1.7)',
+                delay: 1.05,
+                clearProps: 'transform'
+            }
+        );
     }
 
     const statBadges = document.querySelectorAll('.hero-stats-inline .stat-badge');
     if (statBadges.length) {
-        gsap.from(statBadges, {
-            opacity: 0,
-            y: 26,
-            scale: 0.92,
-            duration: 0.65,
-            stagger: 0.1,
-            ease: 'power2.out',
-            delay: 1.2
-        });
+        gsap.fromTo(statBadges,
+            {
+                y: 26,
+                scale: 0.92
+            },
+            {
+                y: 0,
+                scale: 1,
+                duration: 0.65,
+                stagger: 0.1,
+                ease: 'power2.out',
+                delay: 1.2,
+                clearProps: 'transform'
+            }
+        );
     }
 
     const trustStrip = document.querySelectorAll('.hero-trust-strip span');
     if (trustStrip.length) {
-        gsap.from(trustStrip, {
-            opacity: 0,
-            y: 18,
-            duration: 0.55,
-            stagger: 0.08,
-            ease: 'power2.out',
-            delay: 1.35
-        });
+        gsap.fromTo(trustStrip,
+            {
+                y: 18
+            },
+            {
+                y: 0,
+                duration: 0.55,
+                stagger: 0.08,
+                ease: 'power2.out',
+                delay: 1.35,
+                clearProps: 'transform'
+            }
+        );
     }
 
     const heroBtn = document.querySelector('.btn-hero-primary');
     if (heroBtn) {
         gsap.fromTo(heroBtn,
             {
-                opacity: 0,
                 scale: 0.9,
                 y: 24,
                 immediateRender: false
             },
             {
-                opacity: 1,
                 scale: 1,
                 y: 0,
                 duration: 0.7,
                 ease: 'back.out(1.8)',
                 delay: 1.1,
-                clearProps: 'opacity,transform'
+                clearProps: 'transform'
             }
         );
 
