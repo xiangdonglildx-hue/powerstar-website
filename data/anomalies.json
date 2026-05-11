@@ -1,16 +1,7 @@
 {
-  "detectedAt": "2026-05-10T08:11:18.076Z",
+  "detectedAt": "2026-05-11T09:42:04.063Z",
   "totalAnomalies": 2,
   "anomalies": [
-    {
-      "type": "traffic_drop",
-      "severity": "P1",
-      "metric": "clicks.last7Days",
-      "change": 33.33333333333333,
-      "threshold": 30,
-      "details": "Clicks dropped 33.3% (from 6 to 4)",
-      "detectedAt": "2026-05-10T08:11:18.075Z"
-    },
     {
       "type": "indexing_drop",
       "severity": "P1",
@@ -18,7 +9,16 @@
       "change": 76.5625,
       "threshold": 20,
       "details": "Indexing gap: only 15 of 64 pages indexed (76.6% unindexed)",
-      "detectedAt": "2026-05-10T08:11:18.075Z"
+      "detectedAt": "2026-05-11T09:42:04.062Z"
+    },
+    {
+      "type": "position_drop",
+      "severity": "P2",
+      "metric": "topKeywords.best voice changer app android",
+      "change": 19.416666666666664,
+      "threshold": 5,
+      "details": "1 keywords dropped >5 positions. Worst: \"best voice changer app android\" from 9.3 to 28.8",
+      "detectedAt": "2026-05-11T09:42:04.062Z"
     }
   ],
   "thresholds": {
