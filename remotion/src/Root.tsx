@@ -1,10 +1,19 @@
 import {Composition} from 'remotion';
 import {AIPhotoOg} from './compositions/AIPhotoOg';
 import {VoiceChangerOg} from './compositions/VoiceChangerOg';
+import {ProductVideo} from './compositions/ProductVideo';
+import {
+  voiceChangerVideo,
+  aiPhotoVideo,
+  lumiwallVideo,
+  thermometerVideo,
+  microphoneVideo,
+} from './data/product-video';
 
 export const Root = () => {
   return (
     <>
+      {/* OG Images */}
       <Composition
         id="AIPhotoOg"
         component={AIPhotoOg}
@@ -22,6 +31,53 @@ export const Root = () => {
         fps={30}
         durationInFrames={90}
         defaultProps={{}}
+      />
+
+      {/* Product Videos */}
+      <Composition
+        id="VoiceChangerVideo"
+        component={ProductVideo}
+        width={1280}
+        height={720}
+        fps={30}
+        durationInFrames={540}
+        defaultProps={{data: voiceChangerVideo}}
+      />
+      <Composition
+        id="AIPhotoVideo"
+        component={ProductVideo}
+        width={1280}
+        height={720}
+        fps={30}
+        durationInFrames={540}
+        defaultProps={{data: aiPhotoVideo}}
+      />
+      <Composition
+        id="LumiwallVideo"
+        component={ProductVideo}
+        width={1280}
+        height={720}
+        fps={30}
+        durationInFrames={540}
+        defaultProps={{data: lumiwallVideo}}
+      />
+      <Composition
+        id="ThermometerVideo"
+        component={ProductVideo}
+        width={1280}
+        height={720}
+        fps={30}
+        durationInFrames={540}
+        defaultProps={{data: thermometerVideo}}
+      />
+      <Composition
+        id="MicrophoneVideo"
+        component={ProductVideo}
+        width={1280}
+        height={720}
+        fps={30}
+        durationInFrames={540}
+        defaultProps={{data: microphoneVideo}}
       />
     </>
   );
