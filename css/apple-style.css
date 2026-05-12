@@ -1,15 +1,17 @@
 /* ========================================
-   Apple Style - Full Redesign
+   Apple Style - White Background Design
    ======================================== */
 
 /* CSS Variables */
 :root {
-    --apple-black: #000000;
-    --apple-dark: #111111;
+    --apple-white: #ffffff;
+    --apple-light-gray: #f5f5f7;
     --apple-gray: #86868b;
-    --apple-white: #f5f5f7;
-    --apple-blue: #2997ff;
-    --apple-green: #30d158;
+    --apple-dark-gray: #1d1d1f;
+    --apple-black: #000000;
+    --apple-blue: #0066cc;
+    --apple-blue-hover: #0077ed;
+    --apple-green: #34c759;
 }
 
 /* Global Apple Styles */
@@ -20,8 +22,8 @@
 }
 
 body {
-    background: var(--apple-black) !important;
-    color: var(--apple-white) !important;
+    background: var(--apple-white) !important;
+    color: var(--apple-dark-gray) !important;
     font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
@@ -75,10 +77,10 @@ h1, h2, h3, h4, h5, h6,
 
 /* ===== Navigation ===== */
 .navbar {
-    background: rgba(0, 0, 0, 0.9) !important;
+    background: rgba(255, 255, 255, 0.9) !important;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
     position: fixed;
     top: 0;
     left: 0;
@@ -95,7 +97,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .logo {
-    color: var(--apple-white) !important;
+    color: var(--apple-dark-gray) !important;
     font-size: 1.2rem;
     font-weight: 600;
     text-decoration: none;
@@ -108,19 +110,19 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .nav-links a {
-    color: var(--apple-gray) !important;
+    color: var(--apple-dark-gray) !important;
     text-decoration: none;
     font-size: 0.9rem;
     transition: color 0.3s;
 }
 
 .nav-links a:hover {
-    color: var(--apple-white) !important;
+    color: var(--apple-blue) !important;
 }
 
 /* ===== Hero Section ===== */
 .hero {
-    background: var(--apple-black) !important;
+    background: var(--apple-white) !important;
     padding: 200px 0 160px;
     text-align: center;
     min-height: 100vh;
@@ -150,7 +152,7 @@ h1, h2, h3, h4, h5, h6,
 .brand-name {
     font-size: 1.2rem;
     font-weight: 600;
-    color: var(--apple-white) !important;
+    color: var(--apple-dark-gray) !important;
 }
 
 .hero-eyebrow {
@@ -166,7 +168,7 @@ h1, h2, h3, h4, h5, h6,
     font-weight: 700;
     line-height: 1.1;
     margin-bottom: 24px;
-    color: var(--apple-white) !important;
+    color: var(--apple-dark-gray) !important;
 }
 
 .hero-title .highlight {
@@ -228,7 +230,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .btn-hero-primary:hover {
-    background: #1a8aff !important;
+    background: var(--apple-blue-hover) !important;
 }
 
 .hero-stats-inline {
@@ -245,7 +247,7 @@ h1, h2, h3, h4, h5, h6,
     display: block;
     font-size: 2rem;
     font-weight: 700;
-    color: var(--apple-white) !important;
+    color: var(--apple-dark-gray) !important;
 }
 
 .stat-text {
@@ -255,7 +257,7 @@ h1, h2, h3, h4, h5, h6,
 
 /* ===== Social Proof ===== */
 .social-proof {
-    background: var(--apple-black) !important;
+    background: var(--apple-light-gray) !important;
     padding: 120px 0;
     text-align: center;
 }
@@ -264,7 +266,7 @@ h1, h2, h3, h4, h5, h6,
     font-size: clamp(2rem, 4vw, 3rem) !important;
     font-weight: 700;
     margin-bottom: 48px;
-    color: var(--apple-white) !important;
+    color: var(--apple-dark-gray) !important;
 }
 
 .social-proof-stats {
@@ -282,7 +284,7 @@ h1, h2, h3, h4, h5, h6,
     display: block;
     font-size: clamp(3rem, 6vw, 5rem) !important;
     font-weight: 700;
-    color: var(--apple-white) !important;
+    color: var(--apple-dark-gray) !important;
     line-height: 1.1;
     margin-bottom: 8px;
 }
@@ -294,7 +296,7 @@ h1, h2, h3, h4, h5, h6,
 
 /* ===== Products Section ===== */
 .products-section {
-    background: var(--apple-dark) !important;
+    background: var(--apple-white) !important;
     padding: 160px 0;
 }
 
@@ -307,7 +309,7 @@ h1, h2, h3, h4, h5, h6,
     font-size: clamp(2.5rem, 5vw, 4rem) !important;
     font-weight: 700;
     margin-bottom: 16px;
-    color: var(--apple-white) !important;
+    color: var(--apple-dark-gray) !important;
 }
 
 .section-header p {
@@ -335,7 +337,7 @@ h1, h2, h3, h4, h5, h6,
     box-shadow: none !important;
     border-radius: 0 !important;
     text-decoration: none;
-    color: var(--apple-white) !important;
+    color: var(--apple-dark-gray) !important;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
@@ -345,7 +347,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .product-card-enhanced:hover {
-    background: rgba(255, 255, 255, 0.05) !important;
+    background: var(--apple-light-gray) !important;
 }
 
 .product-card-image-wrapper {
@@ -374,7 +376,7 @@ h1, h2, h3, h4, h5, h6,
     font-size: 2rem !important;
     font-weight: 700;
     margin-bottom: 12px;
-    color: var(--apple-white) !important;
+    color: var(--apple-dark-gray) !important;
 }
 
 .product-card-content p {
@@ -393,10 +395,10 @@ h1, h2, h3, h4, h5, h6,
 
 .tag {
     padding: 6px 12px;
-    background: rgba(255, 255, 255, 0.1) !important;
+    background: var(--apple-light-gray) !important;
     border-radius: 980px;
     font-size: 0.8rem;
-    color: var(--apple-white) !important;
+    color: var(--apple-dark-gray) !important;
 }
 
 .product-stats {
@@ -408,7 +410,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .product-stats strong {
-    color: var(--apple-white) !important;
+    color: var(--apple-dark-gray) !important;
     font-weight: 600;
 }
 
@@ -420,7 +422,7 @@ h1, h2, h3, h4, h5, h6,
 
 /* ===== Features Section ===== */
 .features-section {
-    background: var(--apple-dark) !important;
+    background: var(--apple-light-gray) !important;
     padding: 160px 0;
 }
 
@@ -439,7 +441,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .feature-card-large:hover {
-    background: rgba(255, 255, 255, 0.05) !important;
+    background: rgba(0, 0, 0, 0.05) !important;
 }
 
 .feature-icon-large {
@@ -451,7 +453,7 @@ h1, h2, h3, h4, h5, h6,
     font-size: 1.5rem !important;
     font-weight: 700;
     margin-bottom: 12px;
-    color: var(--apple-white) !important;
+    color: var(--apple-dark-gray) !important;
 }
 
 .feature-card-large p {
@@ -462,7 +464,7 @@ h1, h2, h3, h4, h5, h6,
 
 /* ===== Testimonials Section ===== */
 .testimonials-section {
-    background: var(--apple-black) !important;
+    background: var(--apple-white) !important;
     padding: 160px 0;
 }
 
@@ -473,20 +475,20 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .testimonial-card {
-    background: rgba(255, 255, 255, 0.05) !important;
+    background: var(--apple-light-gray) !important;
     border-radius: 20px;
     padding: 32px;
     transition: background 0.3s;
 }
 
 .testimonial-card:hover {
-    background: rgba(255, 255, 255, 0.1) !important;
+    background: rgba(0, 0, 0, 0.05) !important;
 }
 
 .testimonial-rating {
     font-size: 1.2rem;
     margin-bottom: 16px;
-    color: var(--apple-white) !important;
+    color: var(--apple-dark-gray) !important;
 }
 
 .testimonial-text {
@@ -504,7 +506,7 @@ h1, h2, h3, h4, h5, h6,
 
 .author-name {
     font-weight: 600;
-    color: var(--apple-white) !important;
+    color: var(--apple-dark-gray) !important;
 }
 
 .author-role {
@@ -514,7 +516,7 @@ h1, h2, h3, h4, h5, h6,
 
 /* ===== Blog Section ===== */
 .blog-preview-section {
-    background: var(--apple-dark) !important;
+    background: var(--apple-light-gray) !important;
     padding: 160px 0;
 }
 
@@ -531,12 +533,12 @@ h1, h2, h3, h4, h5, h6,
     border-radius: 20px;
     overflow: hidden;
     text-decoration: none;
-    color: var(--apple-white) !important;
+    color: var(--apple-dark-gray) !important;
     transition: background 0.3s;
 }
 
 .blog-preview-card:hover {
-    background: rgba(255, 255, 255, 0.05) !important;
+    background: rgba(0, 0, 0, 0.05) !important;
 }
 
 .blog-preview-image {
@@ -553,7 +555,7 @@ h1, h2, h3, h4, h5, h6,
     font-size: 1.2rem !important;
     font-weight: 700;
     margin-bottom: 8px;
-    color: var(--apple-white) !important;
+    color: var(--apple-dark-gray) !important;
 }
 
 .blog-preview-content p {
@@ -575,7 +577,7 @@ h1, h2, h3, h4, h5, h6,
 
 /* ===== FAQ Section ===== */
 .faq-section {
-    background: var(--apple-black) !important;
+    background: var(--apple-white) !important;
     padding: 160px 0;
 }
 
@@ -586,21 +588,21 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .faq-item {
-    background: rgba(255, 255, 255, 0.05) !important;
+    background: var(--apple-light-gray) !important;
     border-radius: 20px;
     padding: 32px;
     transition: background 0.3s;
 }
 
 .faq-item:hover {
-    background: rgba(255, 255, 255, 0.1) !important;
+    background: rgba(0, 0, 0, 0.05) !important;
 }
 
 .faq-item h3 {
     font-size: 1.2rem !important;
     font-weight: 700;
     margin-bottom: 12px;
-    color: var(--apple-white) !important;
+    color: var(--apple-dark-gray) !important;
 }
 
 .faq-item p {
@@ -616,7 +618,7 @@ h1, h2, h3, h4, h5, h6,
 
 /* ===== Bottom CTA ===== */
 .bottom-cta {
-    background: var(--apple-black) !important;
+    background: var(--apple-light-gray) !important;
     padding: 160px 0;
     text-align: center;
 }
@@ -630,7 +632,7 @@ h1, h2, h3, h4, h5, h6,
     font-size: clamp(2.5rem, 5vw, 4rem) !important;
     font-weight: 700;
     margin-bottom: 32px;
-    color: var(--apple-white) !important;
+    color: var(--apple-dark-gray) !important;
 }
 
 .bottom-cta .btn-download {
@@ -649,7 +651,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .bottom-cta .btn-download:hover {
-    background: #1a8aff !important;
+    background: var(--apple-blue-hover) !important;
 }
 
 .bottom-cta-trust {
@@ -663,9 +665,9 @@ h1, h2, h3, h4, h5, h6,
 
 /* ===== Footer ===== */
 .footer {
-    background: var(--apple-dark) !important;
+    background: var(--apple-white) !important;
     padding: 80px 0 40px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
 }
 
 .footer-content {
@@ -699,7 +701,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .footer-social a:hover {
-    color: var(--apple-white) !important;
+    color: var(--apple-dark-gray) !important;
 }
 
 .footer-links {
@@ -717,7 +719,7 @@ h1, h2, h3, h4, h5, h6,
 .footer-column h4 {
     font-size: 0.9rem;
     font-weight: 600;
-    color: var(--apple-white) !important;
+    color: var(--apple-dark-gray) !important;
     margin-bottom: 4px;
 }
 
@@ -729,7 +731,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .footer-column a:hover {
-    color: var(--apple-white) !important;
+    color: var(--apple-dark-gray) !important;
 }
 
 .footer-bottom {
@@ -737,7 +739,7 @@ h1, h2, h3, h4, h5, h6,
     justify-content: space-between;
     align-items: center;
     padding-top: 40px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
 }
 
 .footer-bottom p {
@@ -773,7 +775,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .btn-download.primary:hover {
-    background: #1a8aff !important;
+    background: var(--apple-blue-hover) !important;
 }
 
 /* ===== Responsive ===== */
