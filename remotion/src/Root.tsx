@@ -2,6 +2,7 @@ import {Composition} from 'remotion';
 import {AIPhotoOg} from './compositions/AIPhotoOg';
 import {VoiceChangerOg} from './compositions/VoiceChangerOg';
 import {ProductVideo} from './compositions/ProductVideo';
+import {LumiwallVideo} from './compositions/LumiwallVideo';
 import {
   voiceChangerVideo,
   aiPhotoVideo,
@@ -54,12 +55,12 @@ export const Root = () => {
       />
       <Composition
         id="LumiwallVideo"
-        component={ProductVideo}
+        component={LumiwallVideo}
         width={1280}
         height={720}
         fps={30}
-        durationInFrames={540}
-        defaultProps={{data: lumiwallVideo}}
+        durationInFrames={480}
+        defaultProps={{}}
       />
       <Composition
         id="ThermometerVideo"
