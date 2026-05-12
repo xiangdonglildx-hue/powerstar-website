@@ -20,8 +20,8 @@
 }
 
 body {
-    background: var(--apple-black);
-    color: var(--apple-white);
+    background: var(--apple-black) !important;
+    color: var(--apple-white) !important;
     font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
@@ -36,10 +36,10 @@ body {
 
 /* ===== Navigation ===== */
 .navbar {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.9) !important;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
     position: fixed;
     top: 0;
     left: 0;
@@ -56,7 +56,7 @@ body {
 }
 
 .logo {
-    color: var(--apple-white);
+    color: var(--apple-white) !important;
     font-size: 1.2rem;
     font-weight: 600;
     text-decoration: none;
@@ -69,19 +69,19 @@ body {
 }
 
 .nav-links a {
-    color: var(--apple-gray);
+    color: var(--apple-gray) !important;
     text-decoration: none;
     font-size: 0.9rem;
     transition: color 0.3s;
 }
 
 .nav-links a:hover {
-    color: var(--apple-white);
+    color: var(--apple-white) !important;
 }
 
 /* ===== Hero Section ===== */
 .hero {
-    background: var(--apple-black);
+    background: var(--apple-black) !important;
     padding: 200px 0 160px;
     text-align: center;
     min-height: 100vh;
@@ -105,29 +105,29 @@ body {
 
 .logo-star {
     font-size: 2rem;
-    color: var(--apple-blue);
+    color: var(--apple-blue) !important;
 }
 
 .brand-name {
     font-size: 1.2rem;
     font-weight: 600;
-    color: var(--apple-white);
+    color: var(--apple-white) !important;
 }
 
 .hero-eyebrow {
     font-size: 1rem;
-    color: var(--apple-gray);
+    color: var(--apple-gray) !important;
     margin-bottom: 16px;
     text-transform: uppercase;
     letter-spacing: 0.1em;
 }
 
 .hero-title {
-    font-size: clamp(3rem, 8vw, 6rem);
+    font-size: clamp(3rem, 8vw, 6rem) !important;
     font-weight: 700;
     line-height: 1.1;
     margin-bottom: 24px;
-    color: var(--apple-white);
+    color: var(--apple-white) !important;
 }
 
 .hero-title .highlight {
@@ -138,8 +138,8 @@ body {
 }
 
 .hero-subtitle {
-    font-size: 1.2rem;
-    color: var(--apple-gray);
+    font-size: 1.2rem !important;
+    color: var(--apple-gray) !important;
     max-width: 600px;
     margin: 0 auto 32px;
     line-height: 1.6;
@@ -179,8 +179,8 @@ body {
     align-items: center;
     gap: 8px;
     padding: 16px 32px;
-    background: var(--apple-blue);
-    color: white;
+    background: var(--apple-blue) !important;
+    color: white !important;
     text-decoration: none;
     border-radius: 980px;
     font-size: 1rem;
@@ -189,7 +189,7 @@ body {
 }
 
 .btn-hero-primary:hover {
-    background: #1a8aff;
+    background: #1a8aff !important;
 }
 
 .hero-stats-inline {
@@ -206,26 +206,26 @@ body {
     display: block;
     font-size: 2rem;
     font-weight: 700;
-    color: var(--apple-white);
+    color: var(--apple-white) !important;
 }
 
 .stat-text {
     font-size: 0.9rem;
-    color: var(--apple-gray);
+    color: var(--apple-gray) !important;
 }
 
 /* ===== Social Proof ===== */
 .social-proof {
-    background: var(--apple-black);
+    background: var(--apple-black) !important;
     padding: 120px 0;
     text-align: center;
 }
 
 .social-proof-header h2 {
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(2rem, 4vw, 3rem) !important;
     font-weight: 700;
     margin-bottom: 48px;
-    color: var(--apple-white);
+    color: var(--apple-white) !important;
 }
 
 .social-proof-stats {
@@ -241,21 +241,21 @@ body {
 
 .social-stat-value {
     display: block;
-    font-size: clamp(3rem, 6vw, 5rem);
+    font-size: clamp(3rem, 6vw, 5rem) !important;
     font-weight: 700;
-    color: var(--apple-white);
+    color: var(--apple-white) !important;
     line-height: 1.1;
     margin-bottom: 8px;
 }
 
 .social-stat-label {
     font-size: 1rem;
-    color: var(--apple-gray);
+    color: var(--apple-gray) !important;
 }
 
 /* ===== Products Section ===== */
 .products-section {
-    background: var(--apple-dark);
+    background: var(--apple-dark) !important;
     padding: 160px 0;
 }
 
@@ -265,15 +265,15 @@ body {
 }
 
 .section-header h2 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: clamp(2.5rem, 5vw, 4rem) !important;
     font-weight: 700;
     margin-bottom: 16px;
-    color: var(--apple-white);
+    color: var(--apple-white) !important;
 }
 
 .section-header p {
     font-size: 1.2rem;
-    color: var(--apple-gray);
+    color: var(--apple-gray) !important;
     max-width: 600px;
     margin: 0 auto;
 }
@@ -291,12 +291,12 @@ body {
 }
 
 .product-card-enhanced {
-    background: transparent;
-    border: none;
-    box-shadow: none;
-    border-radius: 0;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
     text-decoration: none;
-    color: var(--apple-white);
+    color: var(--apple-white) !important;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
@@ -306,7 +306,7 @@ body {
 }
 
 .product-card-enhanced:hover {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.05) !important;
 }
 
 .product-card-image-wrapper {
@@ -332,15 +332,15 @@ body {
 }
 
 .product-card-content h3 {
-    font-size: 2rem;
+    font-size: 2rem !important;
     font-weight: 700;
     margin-bottom: 12px;
-    color: var(--apple-white);
+    color: var(--apple-white) !important;
 }
 
 .product-card-content p {
     font-size: 1rem;
-    color: var(--apple-gray);
+    color: var(--apple-gray) !important;
     line-height: 1.6;
     margin-bottom: 16px;
 }
@@ -354,10 +354,10 @@ body {
 
 .tag {
     padding: 6px 12px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1) !important;
     border-radius: 980px;
     font-size: 0.8rem;
-    color: var(--apple-white);
+    color: var(--apple-white) !important;
 }
 
 .product-stats {
@@ -365,23 +365,23 @@ body {
     gap: 16px;
     margin-bottom: 16px;
     font-size: 0.9rem;
-    color: var(--apple-gray);
+    color: var(--apple-gray) !important;
 }
 
 .product-stats strong {
-    color: var(--apple-white);
+    color: var(--apple-white) !important;
     font-weight: 600;
 }
 
 .btn-card {
-    color: var(--apple-blue);
+    color: var(--apple-blue) !important;
     font-weight: 600;
     font-size: 1rem;
 }
 
 /* ===== Features Section ===== */
 .features-section {
-    background: var(--apple-dark);
+    background: var(--apple-dark) !important;
     padding: 160px 0;
 }
 
@@ -392,15 +392,15 @@ body {
 }
 
 .feature-card-large {
-    background: transparent;
-    border: none;
-    box-shadow: none;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
     padding: 40px;
     transition: background 0.3s;
 }
 
 .feature-card-large:hover {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.05) !important;
 }
 
 .feature-icon-large {
@@ -409,21 +409,21 @@ body {
 }
 
 .feature-card-large h3 {
-    font-size: 1.5rem;
+    font-size: 1.5rem !important;
     font-weight: 700;
     margin-bottom: 12px;
-    color: var(--apple-white);
+    color: var(--apple-white) !important;
 }
 
 .feature-card-large p {
     font-size: 1rem;
-    color: var(--apple-gray);
+    color: var(--apple-gray) !important;
     line-height: 1.6;
 }
 
 /* ===== Testimonials Section ===== */
 .testimonials-section {
-    background: var(--apple-black);
+    background: var(--apple-black) !important;
     padding: 160px 0;
 }
 
@@ -434,25 +434,25 @@ body {
 }
 
 .testimonial-card {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.05) !important;
     border-radius: 20px;
     padding: 32px;
     transition: background 0.3s;
 }
 
 .testimonial-card:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1) !important;
 }
 
 .testimonial-rating {
     font-size: 1.2rem;
     margin-bottom: 16px;
-    color: var(--apple-white);
+    color: var(--apple-white) !important;
 }
 
 .testimonial-text {
     font-size: 1rem;
-    color: var(--apple-gray);
+    color: var(--apple-gray) !important;
     line-height: 1.6;
     margin-bottom: 16px;
 }
@@ -465,17 +465,17 @@ body {
 
 .author-name {
     font-weight: 600;
-    color: var(--apple-white);
+    color: var(--apple-white) !important;
 }
 
 .author-role {
     font-size: 0.9rem;
-    color: var(--apple-gray);
+    color: var(--apple-gray) !important;
 }
 
 /* ===== Blog Section ===== */
 .blog-preview-section {
-    background: var(--apple-dark);
+    background: var(--apple-dark) !important;
     padding: 160px 0;
 }
 
@@ -486,18 +486,18 @@ body {
 }
 
 .blog-preview-card {
-    background: transparent;
-    border: none;
-    box-shadow: none;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
     border-radius: 20px;
     overflow: hidden;
     text-decoration: none;
-    color: var(--apple-white);
+    color: var(--apple-white) !important;
     transition: background 0.3s;
 }
 
 .blog-preview-card:hover {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.05) !important;
 }
 
 .blog-preview-image {
@@ -511,22 +511,22 @@ body {
 }
 
 .blog-preview-content h3 {
-    font-size: 1.2rem;
+    font-size: 1.2rem !important;
     font-weight: 700;
     margin-bottom: 8px;
-    color: var(--apple-white);
+    color: var(--apple-white) !important;
 }
 
 .blog-preview-content p {
     font-size: 0.9rem;
-    color: var(--apple-gray);
+    color: var(--apple-gray) !important;
     line-height: 1.6;
     margin-bottom: 8px;
 }
 
 .blog-preview-date {
     font-size: 0.8rem;
-    color: var(--apple-gray);
+    color: var(--apple-gray) !important;
 }
 
 .blog-cta {
@@ -536,7 +536,7 @@ body {
 
 /* ===== FAQ Section ===== */
 .faq-section {
-    background: var(--apple-black);
+    background: var(--apple-black) !important;
     padding: 160px 0;
 }
 
@@ -547,26 +547,26 @@ body {
 }
 
 .faq-item {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.05) !important;
     border-radius: 20px;
     padding: 32px;
     transition: background 0.3s;
 }
 
 .faq-item:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1) !important;
 }
 
 .faq-item h3 {
-    font-size: 1.2rem;
+    font-size: 1.2rem !important;
     font-weight: 700;
     margin-bottom: 12px;
-    color: var(--apple-white);
+    color: var(--apple-white) !important;
 }
 
 .faq-item p {
     font-size: 1rem;
-    color: var(--apple-gray);
+    color: var(--apple-gray) !important;
     line-height: 1.6;
 }
 
@@ -577,7 +577,7 @@ body {
 
 /* ===== Bottom CTA ===== */
 .bottom-cta {
-    background: var(--apple-black);
+    background: var(--apple-black) !important;
     padding: 160px 0;
     text-align: center;
 }
@@ -588,10 +588,10 @@ body {
 }
 
 .bottom-cta h2 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: clamp(2.5rem, 5vw, 4rem) !important;
     font-weight: 700;
     margin-bottom: 32px;
-    color: var(--apple-white);
+    color: var(--apple-white) !important;
 }
 
 .bottom-cta .btn-download {
@@ -599,8 +599,8 @@ body {
     align-items: center;
     gap: 8px;
     padding: 16px 32px;
-    background: var(--apple-blue);
-    color: white;
+    background: var(--apple-blue) !important;
+    color: white !important;
     text-decoration: none;
     border-radius: 980px;
     font-size: 1rem;
@@ -610,7 +610,7 @@ body {
 }
 
 .bottom-cta .btn-download:hover {
-    background: #1a8aff;
+    background: #1a8aff !important;
 }
 
 .bottom-cta-trust {
@@ -618,15 +618,15 @@ body {
     justify-content: center;
     gap: 16px;
     flex-wrap: wrap;
-    color: var(--apple-gray);
+    color: var(--apple-gray) !important;
     font-size: 0.9rem;
 }
 
 /* ===== Footer ===== */
 .footer {
-    background: var(--apple-dark);
+    background: var(--apple-dark) !important;
     padding: 80px 0 40px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
 .footer-content {
@@ -643,7 +643,7 @@ body {
 }
 
 .footer-brand p {
-    color: var(--apple-gray);
+    color: var(--apple-gray) !important;
     font-size: 0.9rem;
 }
 
@@ -653,14 +653,14 @@ body {
 }
 
 .footer-social a {
-    color: var(--apple-gray);
+    color: var(--apple-gray) !important;
     text-decoration: none;
     font-size: 0.9rem;
     transition: color 0.3s;
 }
 
 .footer-social a:hover {
-    color: var(--apple-white);
+    color: var(--apple-white) !important;
 }
 
 .footer-links {
@@ -678,19 +678,19 @@ body {
 .footer-column h4 {
     font-size: 0.9rem;
     font-weight: 600;
-    color: var(--apple-white);
+    color: var(--apple-white) !important;
     margin-bottom: 4px;
 }
 
 .footer-column a {
-    color: var(--apple-gray);
+    color: var(--apple-gray) !important;
     text-decoration: none;
     font-size: 0.9rem;
     transition: color 0.3s;
 }
 
 .footer-column a:hover {
-    color: var(--apple-white);
+    color: var(--apple-white) !important;
 }
 
 .footer-bottom {
@@ -698,11 +698,11 @@ body {
     justify-content: space-between;
     align-items: center;
     padding-top: 40px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
 .footer-bottom p {
-    color: var(--apple-gray);
+    color: var(--apple-gray) !important;
     font-size: 0.8rem;
 }
 
@@ -713,28 +713,28 @@ body {
     gap: 8px;
     padding: 12px 24px;
     background: transparent;
-    color: var(--apple-blue);
+    color: var(--apple-blue) !important;
     text-decoration: none;
     border-radius: 980px;
     font-size: 1rem;
     font-weight: 600;
-    border: 1px solid var(--apple-blue);
+    border: 1px solid var(--apple-blue) !important;
     transition: background 0.3s, color 0.3s;
 }
 
 .btn-download:hover {
-    background: var(--apple-blue);
-    color: white;
+    background: var(--apple-blue) !important;
+    color: white !important;
 }
 
 .btn-download.primary {
-    background: var(--apple-blue);
-    color: white;
-    border: none;
+    background: var(--apple-blue) !important;
+    color: white !important;
+    border: none !important;
 }
 
 .btn-download.primary:hover {
-    background: #1a8aff;
+    background: #1a8aff !important;
 }
 
 /* ===== Responsive ===== */
@@ -770,7 +770,7 @@ body {
     }
 
     .hero-title {
-        font-size: clamp(2.5rem, 6vw, 4rem);
+        font-size: clamp(2.5rem, 6vw, 4rem) !important;
     }
 
     .hero-apps {
