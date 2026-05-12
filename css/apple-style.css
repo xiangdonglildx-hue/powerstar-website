@@ -22,10 +22,49 @@
 body {
     background: var(--apple-black) !important;
     color: var(--apple-white) !important;
-    font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+/* Override all font-family declarations */
+h1, h2, h3, h4, h5, h6,
+.hero-title,
+.hero-subtitle,
+.hero-eyebrow,
+.brand-name,
+.section-header h2,
+.section-header p,
+.product-card-content h3,
+.product-card-content p,
+.feature-card-large h3,
+.feature-card-large p,
+.testimonial-text,
+.testimonial-rating,
+.author-name,
+.author-role,
+.blog-preview-content h3,
+.blog-preview-content p,
+.blog-preview-date,
+.faq-item h3,
+.faq-item p,
+.bottom-cta h2,
+.bottom-cta-trust,
+.social-stat-value,
+.social-stat-label,
+.stat-value,
+.stat-text,
+.tag,
+.btn-card,
+.btn-download,
+.btn-hero-primary,
+.nav-links a,
+.footer-brand p,
+.footer-column h4,
+.footer-column a,
+.footer-bottom p {
+    font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
 }
 
 .container {
