@@ -947,3 +947,332 @@
         box-shadow: 0 0 40px var(--theme-glow);
     }
 }
+
+/* ===== Redesigned Sections ===== */
+
+/* Hero Section Updates */
+.product-hero-grid {
+    grid-template-columns: 1fr 1.2fr;
+}
+
+.product-info h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+.product-info h1::after {
+    width: 60px;
+    height: 3px;
+}
+
+.product-subtitle {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    max-width: 500px;
+}
+
+.product-stats-hero {
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.stat-badge {
+    padding: 12px 20px;
+}
+
+/* Features Grid */
+.features-grid-enhanced {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.feature-card-large {
+    padding: 32px;
+    background: var(--black-card, #111111);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card-large:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.feature-icon-large {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+}
+
+.feature-card-large h3 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+}
+
+.feature-card-large p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.feature-benefits {
+    list-style: none;
+    padding: 0;
+}
+
+.feature-benefits li {
+    padding: 6px 0;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.feature-benefits li::before {
+    content: '\2713';
+    color: var(--theme, #a78bfa);
+    margin-right: 8px;
+    font-weight: 600;
+}
+
+/* Social Proof Section */
+.social-proof {
+    padding: 80px 0;
+    background: linear-gradient(180deg, transparent 0%, var(--black-elevated, #0a0a0a) 100%);
+}
+
+.social-proof-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.social-proof-header h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 16px;
+}
+
+.social-proof-stats {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+}
+
+.social-stat {
+    text-align: center;
+}
+
+.social-stat-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--white, #ffffff);
+    display: block;
+}
+
+.social-stat-label {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 800px;
+    margin: 0 auto 32px;
+}
+
+.review-card {
+    padding: 24px;
+    background: var(--black-card, #111111);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.review-stars {
+    color: #fbbf24;
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+}
+
+.review-text {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin-bottom: 12px;
+    font-style: italic;
+}
+
+.review-author {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.reviews-link {
+    text-align: center;
+}
+
+.reviews-link a {
+    color: var(--theme, #a78bfa);
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.3s;
+}
+
+.reviews-link a:hover {
+    opacity: 0.8;
+}
+
+/* Carousel */
+.screenshot-carousel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    padding: 20px;
+}
+
+.carousel-slide img {
+    max-height: 500px;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 16px;
+    pointer-events: none;
+}
+
+.carousel-prev,
+.carousel-next {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.carousel-dot.active {
+    background: var(--theme, #a78bfa);
+}
+
+/* Bottom CTA */
+.bottom-cta {
+    padding: 100px 0;
+    background: linear-gradient(180deg, var(--black-elevated, #0a0a0a) 0%, var(--black, #000000) 100%);
+    text-align: center;
+}
+
+.bottom-cta-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.bottom-cta h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: 24px;
+}
+
+.bottom-cta .btn-download {
+    margin-bottom: 24px;
+}
+
+.bottom-cta-trust {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .product-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .product-info h1::after {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .product-stats-hero {
+        justify-content: center;
+    }
+
+    .product-actions {
+        justify-content: center;
+    }
+
+    .features-grid-enhanced {
+        grid-template-columns: 1fr;
+    }
+
+    .social-proof-stats {
+        gap: 24px;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .carousel-slide {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .carousel-slide img {
+        max-height: 400px;
+    }
+}
