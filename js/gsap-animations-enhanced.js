@@ -195,14 +195,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (scrollY > 50) {
                     navbar.classList.add('scrolled');
                     gsap.to(navbar, {
-                        backgroundColor: 'rgba(0, 0, 0, 0.9)',
-                        boxShadow: '0 4px 30px rgba(0,0,0,0.3)',
+                        backgroundColor: 'rgba(255, 255, 255, 0.98)',
+                        boxShadow: '0 2px 20px rgba(0,0,0,0.08)',
                         duration: 0.3
                     });
                 } else {
                     navbar.classList.remove('scrolled');
                     gsap.to(navbar, {
-                        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                        backgroundColor: 'rgba(255, 255, 255, 0.95)',
                         boxShadow: 'none',
                         duration: 0.3
                     });
