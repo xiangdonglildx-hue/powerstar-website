@@ -7,7 +7,7 @@ import {CTAScene} from './scenes/CTAScene';
 
 const INTRO_DURATION = 60;   // 2 seconds
 const FEATURE_DURATION = 120; // 4 seconds per feature
-const CTA_DURATION = 90;      // 3 seconds
+const CTA_DURATION = 120;      // 4 seconds
 
 export const ProductVideo: React.FC<{data: ProductVideoData}> = ({data}) => {
   return (
