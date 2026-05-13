@@ -18,6 +18,12 @@
     --apple-yellow: #ffcc00;
     --apple-purple: #af52de;
     --apple-pink: #ff2d55;
+
+    /* Legacy variables for blog/about pages */
+    --orange: #ff4d00;
+    --orange-glow: rgba(255, 77, 0, 0.15);
+    --gray-bg: #f5f5f7;
+    --dark-light: #1d1d1f;
 }
 
 /* Reset and Base */
@@ -1413,6 +1419,79 @@ h1, h2, h3, h4, h5, h6,
 .faq-cta {
     text-align: center;
     margin-top: 40px;
+}
+
+/* ===== FAQ Page Specific ===== */
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.faq-question {
+    background: var(--apple-light-gray) !important;
+    border-radius: 12px;
+    padding: 20px 24px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.2s;
+}
+
+.faq-question:hover {
+    background: rgba(0, 0, 0, 0.06) !important;
+}
+
+.faq-question h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--apple-dark-gray) !important;
+}
+
+.faq-answer {
+    padding: 0 24px 20px;
+    color: var(--apple-gray) !important;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* ===== Help Page Specific ===== */
+.help-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.help-card {
+    background: var(--apple-light-gray) !important;
+    border-radius: 16px;
+    padding: 32px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.help-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+.help-card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+}
+
+.help-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--apple-dark-gray) !important;
+}
+
+.help-card p {
+    font-size: 0.9rem;
+    color: var(--apple-gray) !important;
+    line-height: 1.6;
 }
 
 /* ===== Bottom CTA ===== */
