@@ -1494,6 +1494,51 @@ h1, h2, h3, h4, h5, h6,
     line-height: 1.6;
 }
 
+/* ===== Uninstall Page Specific ===== */
+.uninstall-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.uninstall-step {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    background: var(--apple-light-gray) !important;
+    border-radius: 16px;
+    padding: 24px;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: var(--apple-blue) !important;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.step-content h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--apple-dark-gray) !important;
+}
+
+.step-content p {
+    font-size: 0.95rem;
+    color: var(--apple-gray) !important;
+    line-height: 1.6;
+}
+
 /* ===== Bottom CTA ===== */
 .bottom-cta {
     background: var(--apple-dark-gray) !important;
