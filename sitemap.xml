@@ -1,19 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Homepage -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Homepage - English -->
   <url>
     <loc>https://powerstarapps.com/</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerstarapps.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://powerstarapps.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://powerstarapps.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://powerstarapps.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://powerstarapps.com/"/>
+  </url>
+  <!-- Homepage - Spanish -->
+  <url>
+    <loc>https://powerstarapps.com/es/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerstarapps.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://powerstarapps.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://powerstarapps.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://powerstarapps.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://powerstarapps.com/"/>
+  </url>
+  <!-- Homepage - Portuguese -->
+  <url>
+    <loc>https://powerstarapps.com/pt/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerstarapps.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://powerstarapps.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://powerstarapps.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://powerstarapps.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://powerstarapps.com/"/>
+  </url>
+  <!-- Homepage - Japanese -->
+  <url>
+    <loc>https://powerstarapps.com/ja/</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerstarapps.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://powerstarapps.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://powerstarapps.com/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://powerstarapps.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://powerstarapps.com/"/>
   </url>
   
   <!-- Product Pages -->
+  <!-- Thermometer - English -->
   <url>
     <loc>https://powerstarapps.com/products/thermometer.html</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerstarapps.com/products/thermometer.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://powerstarapps.com/es/products/thermometer.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://powerstarapps.com/ja/products/thermometer.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://powerstarapps.com/products/thermometer.html"/>
+  </url>
+  <!-- Thermometer - Spanish -->
+  <url>
+    <loc>https://powerstarapps.com/es/products/thermometer.html</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerstarapps.com/products/thermometer.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://powerstarapps.com/es/products/thermometer.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://powerstarapps.com/ja/products/thermometer.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://powerstarapps.com/products/thermometer.html"/>
+  </url>
+  <!-- Thermometer - Japanese -->
+  <url>
+    <loc>https://powerstarapps.com/ja/products/thermometer.html</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerstarapps.com/products/thermometer.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://powerstarapps.com/es/products/thermometer.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://powerstarapps.com/ja/products/thermometer.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://powerstarapps.com/products/thermometer.html"/>
   </url>
   <!-- Thermometer Landing Pages -->
   <url>
@@ -46,11 +115,53 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <!-- Microphone - English -->
   <url>
     <loc>https://powerstarapps.com/products/microphone.html</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerstarapps.com/products/microphone.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://powerstarapps.com/es/products/microphone.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://powerstarapps.com/pt/products/microphone.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://powerstarapps.com/ja/products/microphone.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://powerstarapps.com/products/microphone.html"/>
+  </url>
+  <!-- Microphone - Spanish -->
+  <url>
+    <loc>https://powerstarapps.com/es/products/microphone.html</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerstarapps.com/products/microphone.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://powerstarapps.com/es/products/microphone.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://powerstarapps.com/pt/products/microphone.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://powerstarapps.com/ja/products/microphone.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://powerstarapps.com/products/microphone.html"/>
+  </url>
+  <!-- Microphone - Portuguese -->
+  <url>
+    <loc>https://powerstarapps.com/pt/products/microphone.html</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerstarapps.com/products/microphone.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://powerstarapps.com/es/products/microphone.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://powerstarapps.com/pt/products/microphone.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://powerstarapps.com/ja/products/microphone.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://powerstarapps.com/products/microphone.html"/>
+  </url>
+  <!-- Microphone - Japanese -->
+  <url>
+    <loc>https://powerstarapps.com/ja/products/microphone.html</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerstarapps.com/products/microphone.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://powerstarapps.com/es/products/microphone.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://powerstarapps.com/pt/products/microphone.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://powerstarapps.com/ja/products/microphone.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://powerstarapps.com/products/microphone.html"/>
   </url>
   <!-- Microphone Landing Pages -->
   <url>
@@ -83,11 +194,38 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <!-- Voice Changer - English -->
   <url>
     <loc>https://powerstarapps.com/products/voice-changer.html</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerstarapps.com/products/voice-changer.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://powerstarapps.com/es/products/voice-changer.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://powerstarapps.com/pt/products/voice-changer.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://powerstarapps.com/products/voice-changer.html"/>
+  </url>
+  <!-- Voice Changer - Spanish -->
+  <url>
+    <loc>https://powerstarapps.com/es/products/voice-changer.html</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerstarapps.com/products/voice-changer.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://powerstarapps.com/es/products/voice-changer.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://powerstarapps.com/pt/products/voice-changer.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://powerstarapps.com/products/voice-changer.html"/>
+  </url>
+  <!-- Voice Changer - Portuguese -->
+  <url>
+    <loc>https://powerstarapps.com/pt/products/voice-changer.html</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://powerstarapps.com/products/voice-changer.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://powerstarapps.com/es/products/voice-changer.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://powerstarapps.com/pt/products/voice-changer.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://powerstarapps.com/products/voice-changer.html"/>
   </url>
   <!-- Voice Changer Landing Pages -->
   <url>

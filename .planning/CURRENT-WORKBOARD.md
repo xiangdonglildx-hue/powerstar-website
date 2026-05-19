@@ -1,33 +1,29 @@
 # Current Workboard
 
 ## Current Objective
-- Goal: Define and record a fixed GitHub sync rule for scoped planning-docs work.
-- Primary line: planning-docs
-- Do Not Touch: Do not mix website, remotion, or seo-data cleanup into this rule-setting task.
+- Goal: [多语言 SEO 翻译全部完成 — 待部署]
+- Primary line: website + seo-data
+- Do Not Touch: remotion/, scripts/, .github/
 
 ## In Progress
-- The backlink planning-docs cleanup is committed locally on `chore/backlink-docs-cleanup`.
-- Current follow-up task: decide when scoped work should stay local and when it should be synced to GitHub.
-- Keep the rule simple enough to apply across future sessions.
+- 本地验证 + 部署
 
 ## Next Steps
-- Use the new handbook rule when deciding whether future scoped branches stay local or get synced to GitHub.
-- Keep planning-docs branches local until the document set reaches reusable user-facing quality.
-- After this rule task, return to choosing the next single-objective branch from remotion-sidecar or website.
-
-## Blockers
-- The working tree still contains mixed changes across multiple project lines.
-- `visible-polish.test.mjs` and `.claude/worktrees/` still need an explicit keep / ignore / classify decision.
+- 本地验证页面加载
+- 提交并部署到 Cloud Run
 
 ## Recently Completed
-- Committed the governance trunk in `7ef1c92 chore(governance): establish handbook workflow trunk`.
-- Committed the backlink planning-docs cleanup locally in `b6fa666 fix(planning): clarify backlink execution docs`.
-- Added the repo-local `CLAUDE.md` entrypoint and long-lived handbook.
-- Bucketed the current working tree into: planning-docs, website, seo-data, remotion-sidecar, and other.
+- 全部翻译完成（May 12）
+  - 西班牙语 4 页、葡萄牙语 3 页、日语 3 页，共 10 个多语言页面
+  - 所有 SEO 元数据、Schema.org JSON-LD、页面内容、FAQ 已翻译
+  - 无 TODO 占位符残留
+- 多语言 SEO 框架搭建（May 12）
+  - 创建 11 个 HTML 文件（es/pt/ja 首页 + 产品页）
+  - 添加 hreflang 标记到英文原版（index + 3 产品页）
+  - 更新 sitemap.xml 添加多语言 URL 和 hreflang
 
 ## Do Not Touch
 - Do not turn this file into a running history log.
 - Do not keep more than 1-3 items in In Progress.
 - Do not keep more than 1-5 items in Next Steps.
 - Do not keep more than 3-5 bullets in Recently Completed.
-- Do not start a new feature task until the mixed working tree is triaged.

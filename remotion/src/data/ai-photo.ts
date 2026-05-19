@@ -1,4 +1,6 @@
-export const aiPhotoData = {
+import {ProductOgData} from './product-og';
+
+export const aiPhotoData: ProductOgData = {
   eyebrow: 'Power Star Apps · AI Photo',
   title: 'AI Photo & Video Filters',
   subtitle:
@@ -22,4 +24,7 @@ export const aiPhotoData = {
   iconSrc: '/ai-photo/ai-photo-icon.png',
   mockupSrc: '/ai-photo/mockup-ai-photo-1.png',
   accentMockupSrc: '/ai-photo/mockup-ai-photo-2.png',
+  calloutEyebrow: 'Android creative toolkit',
+  calloutText: 'Holiday looks, pro styles, one-tap edits',
 };
+

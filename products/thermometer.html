@@ -17,7 +17,13 @@
     <meta name="keywords" content="thermometer app, temperature app, hygrometer, barometer app, room temperature, humidity checker, weather thermometer, android thermometer, fishing barometer, discomfort index">
     <meta name="author" content="Power Star Apps">
     <link rel="canonical" href="https://powerstarapps.com/products/thermometer.html">
-    
+
+    <!-- hreflang tags for multilingual SEO -->
+    <link rel="alternate" hreflang="en" href="https://powerstarapps.com/products/thermometer.html">
+    <link rel="alternate" hreflang="es" href="https://powerstarapps.com/es/products/thermometer.html">
+    <link rel="alternate" hreflang="ja" href="https://powerstarapps.com/ja/products/thermometer.html">
+    <link rel="alternate" hreflang="x-default" href="https://powerstarapps.com/products/thermometer.html">
+
     <!-- Open Graph -->
     <meta property="og:type" content="product">
     <meta property="og:url" content="https://powerstarapps.com/products/thermometer.html">
@@ -35,9 +41,8 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="../images/favicon.png">
     
-    <link rel="stylesheet" href="../css/product.css">
-    <link rel="stylesheet" href="../css/product-enhanced.css">
     <link rel="stylesheet" href="../css/mobile-nav.css">
+    <link rel="stylesheet" href="../css/apple-style.css">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -178,10 +183,9 @@
                     <div class="product-icon">
                         <img src="../picture/logo/thermometer.png" alt="Thermometer Icon" loading="lazy" decoding="async">
                     </div>
-                    <h1>Thermometer App</h1>
-                    <p class="product-subtitle">Use Thermometer on Android as a local weather-based reference for temperature, humidity, air pressure, and comfort conditions. It helps with daily planning, home comfort checks, and outdoor condition awareness.</p>
-                    <p class="hero-note" style="margin-top: 1rem; color: #666; font-size: 0.95rem;">Readings are based on your location and nearby weather data. Use dedicated indoor, smart-home, medical, or professional weather instruments when you need device-specific readings.</p>
-                    
+                    <h1>Thermometer - Hygrometer</h1>
+                    <p class="product-subtitle">Check temperature, humidity, and air pressure on your phone</p>
+
                     <!-- Stats -->
                     <div class="product-stats-hero">
                         <div class="stat-badge">
@@ -209,7 +213,6 @@
                             </svg>
                             Download on Google Play
                         </a>
-                        <a href="#features" class="btn-download">Learn More</a>
                     </div>
                 </div>
                 <div class="product-mockup">
@@ -247,16 +250,68 @@
         </div>
     </section>
 
+    <!-- Social Proof -->
+    <section class="social-proof">
+        <div class="container">
+            <div class="social-proof-header">
+                <h2>Trusted by Millions</h2>
+            </div>
+            <div class="social-proof-stats">
+                <div class="social-stat">
+                    <span class="social-stat-value">3.8</span>
+                    <span class="social-stat-label">Rating</span>
+                </div>
+                <div class="social-stat">
+                    <span class="social-stat-value">1M+</span>
+                    <span class="social-stat-label">Downloads</span>
+                </div>
+                <div class="social-stat">
+                    <span class="social-stat-value">15K+</span>
+                    <span class="social-stat-label">Reviews</span>
+                </div>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Great for checking weather conditions before going outside. Simple and reliable."</p>
+                    <span class="review-author">- WeatherFan</span>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★☆</div>
+                    <p class="review-text">"Useful for gardening and outdoor planning. Love the humidity display."</p>
+                    <span class="review-author">- Gardener</span>
+                </div>
+            </div>
+            <div class="reviews-link">
+                <a href="https://play.google.com/store/apps/details?id=com.firefly.thermometer" target="_blank">See All Reviews on Google Play →</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Screenshots -->
     <section class="content-section dark">
         <div class="container">
             <h2>App Screenshots</h2>
-            <p class="section-subtitle">See how Thermometer presents local temperature, humidity, and pressure information</p>
-            <div class="screenshot-grid">
-                <img src="../picture/screen/thermometer/mockup-thermometer-1.png" alt="Thermometer Main Screen" loading="lazy" decoding="async">
-                <img src="../picture/screen/thermometer/mockup-thermometer-2.png" alt="Temperature Display" loading="lazy" decoding="async">
-                <img src="../picture/screen/thermometer/mockup-thermometer-3.png" alt="Weather Data" loading="lazy" decoding="async">
-                <img src="../picture/screen/thermometer/mockup-thermometer-4.png" alt="Settings" loading="lazy" decoding="async">
+            <p class="section-subtitle">See how Thermometer presents local weather information</p>
+            <div class="screenshot-carousel">
+                <div class="carousel-track">
+                    <div class="carousel-slide">
+                        <img src="../picture/screen/thermometer/mockup-thermometer-1.png" alt="Thermometer Main Screen" loading="lazy" decoding="async">
+                        <img src="../picture/screen/thermometer/mockup-thermometer-2.png" alt="Temperature Display" loading="lazy" decoding="async">
+                        <img src="../picture/screen/thermometer/mockup-thermometer-3.png" alt="Weather Data" loading="lazy" decoding="async">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="../picture/screen/thermometer/mockup-thermometer-4.png" alt="Settings" loading="lazy" decoding="async">
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-prev">&#8249;</button>
+                    <button class="carousel-next">&#8250;</button>
+                </div>
+                <div class="carousel-dots">
+                    <span class="carousel-dot active"></span>
+                    <span class="carousel-dot"></span>
+                </div>
             </div>
         </div>
     </section>
@@ -265,51 +320,31 @@
     <section class="content-section" id="features">
         <div class="container">
             <h2>Key Features</h2>
-            <p class="section-subtitle">Helpful weather-based tools for temperature, humidity, and air-pressure reference</p>
-            
+            <p class="section-subtitle">Everything you need for weather awareness</p>
+
             <div class="features-grid-enhanced">
                 <div class="feature-card-large">
                     <div class="feature-icon-large">🌡️</div>
-                    <h3>Temperature Reference</h3>
-                    <p>Check local temperature using your GPS location and nearby weather data. View readings in Celsius or Fahrenheit for everyday planning and quick condition checks.</p>
-                    <ul class="feature-benefits">
-                        <li>✓ Location-based readings</li>
-                        <li>✓ Celsius & Fahrenheit</li>
-                        <li>✓ Quick reference</li>
-                    </ul>
+                    <h3>Temperature Display</h3>
+                    <p>Check local temperature using GPS-based weather data in Celsius or Fahrenheit.</p>
                 </div>
-                
+
                 <div class="feature-card-large">
                     <div class="feature-icon-large">💧</div>
-                    <h3>Humidity Display</h3>
-                    <p>See local humidity alongside temperature and pressure so you can better judge comfort, ventilation, and changing conditions around you.</p>
-                    <ul class="feature-benefits">
-                        <li>✓ Humidity percentage</li>
-                        <li>✓ Comfort context</li>
-                        <li>✓ Combined weather view</li>
-                    </ul>
+                    <h3>Humidity Monitor</h3>
+                    <p>See local humidity levels alongside temperature for comfort awareness.</p>
                 </div>
-                
+
                 <div class="feature-card-large">
                     <div class="feature-icon-large">📊</div>
-                    <h3>Air Pressure Trends</h3>
-                    <p>View air-pressure readings and trend changes for outdoor planning, weather awareness, and other condition-based activities.</p>
-                    <ul class="feature-benefits">
-                        <li>✓ Pressure in hPa/mbar</li>
-                        <li>✓ Trend indicators</li>
-                        <li>✓ Outdoor planning reference</li>
-                    </ul>
+                    <h3>Barometer</h3>
+                    <p>View air pressure trends for outdoor planning and weather awareness.</p>
                 </div>
-                
+
                 <div class="feature-card-large">
                     <div class="feature-icon-large">😊</div>
-                    <h3>Discomfort Index</h3>
-                    <p>Get a simple comfort reference based on temperature and humidity, so you can quickly judge whether conditions may feel comfortable, muggy, or warm.</p>
-                    <ul class="feature-benefits">
-                        <li>✓ Comfort score</li>
-                        <li>✓ Daily planning aid</li>
-                        <li>✓ Easy-to-read summary</li>
-                    </ul>
+                    <h3>Comfort Index</h3>
+                    <p>Quick comfort score based on temperature and humidity for daily planning.</p>
                 </div>
             </div>
         </div>
@@ -710,18 +745,24 @@
         </div>
     </section>
 
-    <!-- Download CTA -->
-    <section class="cta-section">
+    <!-- Bottom CTA -->
+    <section class="bottom-cta">
         <div class="container">
-            <h2>Ready to Check Local Conditions?</h2>
-            <p>Download Thermometer to view local temperature, humidity, air pressure, and comfort conditions with GPS-based weather data. Use it as a quick reference for planning, home comfort awareness, and outdoor conditions.</p>
-            <a href="https://play.google.com/store/apps/details?id=com.firefly.thermometer" class="btn-download primary" target="_blank">
-                Download on Google Play
-            </a>
-            <div class="cta-benefits">
-                <span>✓ Free Download</span>
-                <span>✓ No Account Required</span>
-                <span>✓ Weather-Based Readings</span>
+            <div class="bottom-cta-content">
+                <h2>Ready to check local conditions?</h2>
+                <a href="https://play.google.com/store/apps/details?id=com.firefly.thermometer" class="btn-download primary" target="_blank">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                        <path d="M3 20.5v-17c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v17c0 .83-.67 1.5-1.5 1.5S3 21.33 3 20.5zm5.5-15c-.83 0-1.5.67-1.5 1.5v11c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V7c0-.83-.67-1.5-1.5-1.5zm5 3c-.83 0-1.5.67-1.5 1.5v8c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-8c0-.83-.67-1.5-1.5-1.5zm5-3c-.83 0-1.5.67-1.5 1.5v11c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V7c0-.83-.67-1.5-1.5-1.5z"/>
+                    </svg>
+                    Download on Google Play
+                </a>
+                <div class="bottom-cta-trust">
+                    <span>Free</span>
+                    <span>·</span>
+                    <span>No ads</span>
+                    <span>·</span>
+                    <span>1M+ users</span>
+                </div>
             </div>
         </div>
     </section>
@@ -762,6 +803,8 @@
         </div>
     </footer>
     
+    <script src="../js/carousel.js"></script>
+
     <!-- Enhanced GSAP Animations -->
     <script src="../js/gsap-animations-enhanced.js"></script>
 

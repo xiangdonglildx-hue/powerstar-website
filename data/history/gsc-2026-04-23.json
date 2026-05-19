@@ -1,0 +1,619 @@
+{
+  "snapshotDate": "2026-04-23",
+  "collectedAt": "2026-04-23T05:58:28.705Z",
+  "gsc": {
+    "indexedPages": 15,
+    "totalSubmitted": 64,
+    "unindexedUrls": [
+      "https://powerstarapps.com/products/thermometer-landing/indoor-thermometer-app.html",
+      "https://powerstarapps.com/products/thermometer-landing/room-temperature-app.html",
+      "https://powerstarapps.com/products/thermometer-landing/barometer-for-fishing.html",
+      "https://powerstarapps.com/products/thermometer-landing/hygrometer-app.html",
+      "https://powerstarapps.com/products/thermometer-landing/fever-thermometer-app.html",
+      "https://powerstarapps.com/products/microphone.html",
+      "https://powerstarapps.com/products/microphone-landing/microphone-for-presentations.html",
+      "https://powerstarapps.com/products/microphone-landing/voice-amplifier-app.html",
+      "https://powerstarapps.com/products/microphone-landing/karaoke-microphone-app.html",
+      "https://powerstarapps.com/products/microphone-landing/bluetooth-microphone.html"
+    ],
+    "topKeywords": [
+      {
+        "query": "power star apps",
+        "impressions": 30,
+        "clicks": 4,
+        "ctr": 0.13333333333333333,
+        "position": 2.7333333333333334
+      },
+      {
+        "query": "power star app",
+        "impressions": 15,
+        "clicks": 2,
+        "ctr": 0.13333333333333333,
+        "position": 3.7333333333333334
+      },
+      {
+        "query": "4k backround",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 11
+      },
+      {
+        "query": "android voice changer app",
+        "impressions": 2,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 14.5
+      },
+      {
+        "query": "app to check room temperature",
+        "impressions": 3,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 14.666666666666666
+      },
+      {
+        "query": "apps for voice changer",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 59
+      },
+      {
+        "query": "barometer and fishing",
+        "impressions": 4,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 64.75
+      },
+      {
+        "query": "barometer fish",
+        "impressions": 2,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 58
+      },
+      {
+        "query": "barometer fishing",
+        "impressions": 13,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 59.46153846153846
+      },
+      {
+        "query": "barometer for fishing",
+        "impressions": 3,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 47.333333333333336
+      },
+      {
+        "query": "barometer reading for fishing",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 41
+      },
+      {
+        "query": "barometric pressure and fish activity",
+        "impressions": 2,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 52.5
+      },
+      {
+        "query": "barometric pressure and fishing chart",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 78
+      },
+      {
+        "query": "barometric pressure fishing cheat sheet",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 64
+      },
+      {
+        "query": "barometric pressure fishing guide",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 65
+      },
+      {
+        "query": "best android voice changer",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 36
+      },
+      {
+        "query": "best app for voice changer",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "query": "best barometer for fishing",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 58
+      },
+      {
+        "query": "best barometer reading for fishing",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 52
+      },
+      {
+        "query": "best free voice changer app for android",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 98
+      },
+      {
+        "query": "best indoor thermometer app",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 63
+      },
+      {
+        "query": "best time to fish barometric pressure",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 64
+      },
+      {
+        "query": "best voice changer android",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "query": "best voice changer app",
+        "impressions": 7,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 42.57142857142857
+      },
+      {
+        "query": "best voice changer app android",
+        "impressions": 3,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 9.333333333333334
+      },
+      {
+        "query": "best voice changer app for android",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 30
+      },
+      {
+        "query": "best voice changer apps",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 68
+      },
+      {
+        "query": "best voice changer apps android",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "query": "best voice changer apps android play store 2026",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "query": "best voice changer apps for android",
+        "impressions": 4,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 19
+      },
+      {
+        "query": "best voice changer apps for android 2025",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 15
+      },
+      {
+        "query": "best voice changer apps for android 2026",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 18
+      },
+      {
+        "query": "best voice changer for android",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 82
+      },
+      {
+        "query": "best voice modifier app",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 82
+      },
+      {
+        "query": "best voice modulation app",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 48
+      },
+      {
+        "query": "com.lumiwall.wallpaper.background",
+        "impressions": 15,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 6.933333333333334
+      },
+      {
+        "query": "fishing barometer",
+        "impressions": 8,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 65.25
+      },
+      {
+        "query": "fishing barometers",
+        "impressions": 2,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 51.5
+      },
+      {
+        "query": "free indoor thermometer app",
+        "impressions": 3,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 13
+      },
+      {
+        "query": "free room temperature app for android",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 17
+      },
+      {
+        "query": "good barometer for fishing",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 52
+      },
+      {
+        "query": "good voice changer apps",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 39
+      },
+      {
+        "query": "home temperature monitor app",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 17
+      },
+      {
+        "query": "how does barometric pressure affect fish",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 77
+      },
+      {
+        "query": "how does the barometer affect fishing",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 56
+      },
+      {
+        "query": "how to read a barometer for fishing",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 49
+      },
+      {
+        "query": "how to read barometric pressure for fishing",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 53
+      },
+      {
+        "query": "how to set 4k wallpaper on android",
+        "impressions": 247,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 10.31578947368421
+      },
+      {
+        "query": "indoor temperature app",
+        "impressions": 4,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 17.5
+      },
+      {
+        "query": "indoor temperature app for android",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 15
+      }
+    ],
+    "clicks": {
+      "last7Days": 5,
+      "last30Days": 14,
+      "trend": [
+        0,
+        0,
+        1,
+        0,
+        3,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        2
+      ]
+    },
+    "impressions": {
+      "last7Days": 373,
+      "last30Days": 933,
+      "trend": [
+        0,
+        4,
+        8,
+        12,
+        21,
+        19,
+        60,
+        27,
+        6,
+        15,
+        22,
+        71,
+        72,
+        45,
+        60,
+        62,
+        56,
+        60,
+        60,
+        49,
+        56,
+        98,
+        50
+      ]
+    },
+    "dailyTrend": [
+      {
+        "date": "2026-03-30",
+        "clicks": 0,
+        "impressions": 0,
+        "position": 0
+      },
+      {
+        "date": "2026-03-31",
+        "clicks": 0,
+        "impressions": 4,
+        "position": 3
+      },
+      {
+        "date": "2026-04-01",
+        "clicks": 1,
+        "impressions": 8,
+        "position": 6
+      },
+      {
+        "date": "2026-04-02",
+        "clicks": 0,
+        "impressions": 12,
+        "position": 4.083333333333334
+      },
+      {
+        "date": "2026-04-03",
+        "clicks": 3,
+        "impressions": 21,
+        "position": 3.4761904761904763
+      },
+      {
+        "date": "2026-04-04",
+        "clicks": 0,
+        "impressions": 19,
+        "position": 8.736842105263158
+      },
+      {
+        "date": "2026-04-05",
+        "clicks": 1,
+        "impressions": 60,
+        "position": 16.933333333333334
+      },
+      {
+        "date": "2026-04-06",
+        "clicks": 0,
+        "impressions": 27,
+        "position": 12.185185185185185
+      },
+      {
+        "date": "2026-04-07",
+        "clicks": 0,
+        "impressions": 6,
+        "position": 5.666666666666667
+      },
+      {
+        "date": "2026-04-08",
+        "clicks": 1,
+        "impressions": 15,
+        "position": 4.666666666666666
+      },
+      {
+        "date": "2026-04-09",
+        "clicks": 1,
+        "impressions": 22,
+        "position": 12
+      },
+      {
+        "date": "2026-04-10",
+        "clicks": 0,
+        "impressions": 71,
+        "position": 13.774647887323944
+      },
+      {
+        "date": "2026-04-11",
+        "clicks": 2,
+        "impressions": 72,
+        "position": 19.11111111111111
+      },
+      {
+        "date": "2026-04-12",
+        "clicks": 0,
+        "impressions": 45,
+        "position": 27.866666666666667
+      },
+      {
+        "date": "2026-04-13",
+        "clicks": 0,
+        "impressions": 60,
+        "position": 17.783333333333335
+      },
+      {
+        "date": "2026-04-14",
+        "clicks": 0,
+        "impressions": 62,
+        "position": 19.887096774193548
+      },
+      {
+        "date": "2026-04-15",
+        "clicks": 0,
+        "impressions": 56,
+        "position": 15.375
+      },
+      {
+        "date": "2026-04-16",
+        "clicks": 1,
+        "impressions": 60,
+        "position": 15.85
+      },
+      {
+        "date": "2026-04-17",
+        "clicks": 0,
+        "impressions": 60,
+        "position": 10.95
+      },
+      {
+        "date": "2026-04-18",
+        "clicks": 1,
+        "impressions": 49,
+        "position": 13.959183673469388
+      },
+      {
+        "date": "2026-04-19",
+        "clicks": 1,
+        "impressions": 56,
+        "position": 16.57142857142857
+      },
+      {
+        "date": "2026-04-20",
+        "clicks": 0,
+        "impressions": 98,
+        "position": 11.020408163265307
+      },
+      {
+        "date": "2026-04-21",
+        "clicks": 2,
+        "impressions": 50,
+        "position": 12.96
+      }
+    ],
+    "avgPosition": 14.767416934619506,
+    "avgCTR": 0.015005359056806002,
+    "coverageErrors": [
+      {
+        "url": "https://powerstarapps.com/blog.html",
+        "impressions": 3,
+        "clicks": 0
+      },
+      {
+        "url": "https://powerstarapps.com/blog/check-room-temperature-phone.html",
+        "impressions": 1,
+        "clicks": 0
+      },
+      {
+        "url": "https://powerstarapps.com/blog/home-temperature-monitor-app.html",
+        "impressions": 2,
+        "clicks": 0
+      },
+      {
+        "url": "https://powerstarapps.com/faq.html",
+        "impressions": 1,
+        "clicks": 0
+      },
+      {
+        "url": "https://powerstarapps.com/help.html",
+        "impressions": 1,
+        "clicks": 0
+      },
+      {
+        "url": "https://powerstarapps.com/picture/logo/voice%20change.png",
+        "impressions": 1,
+        "clicks": 0
+      },
+      {
+        "url": "https://powerstarapps.com/picture/screen/voice%20change/mockup-voice-changer-2.png",
+        "impressions": 1,
+        "clicks": 0
+      },
+      {
+        "url": "https://powerstarapps.com/products/ai-photo.html",
+        "impressions": 5,
+        "clicks": 0
+      },
+      {
+        "url": "https://powerstarapps.com/terms.html",
+        "impressions": 6,
+        "clicks": 0
+      }
+    ]
+  }
+}

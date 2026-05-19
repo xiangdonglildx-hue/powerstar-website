@@ -5,7 +5,14 @@
   "scripts": {
     "dev": "remotion studio src/index.ts",
     "compositions": "remotion compositions src/index.ts",
-    "render:ai-photo-og": "remotion still src/index.ts AIPhotoOg ../images/og/og-ai-photo.png"
+    "render:ai-photo-og": "remotion still src/index.ts AIPhotoOg ../images/og/og-ai-photo.png",
+    "render:voice-changer-og": "remotion still src/index.ts VoiceChangerOg ../images/og/og-voice-changer.png",
+    "render:voice-changer-video": "remotion render src/index.ts VoiceChangerVideo ../videos/voice-changer.mp4",
+    "render:ai-photo-video": "remotion render src/index.ts AIPhotoVideo ../videos/ai-photo.mp4",
+    "render:lumiwall-video": "remotion render src/index.ts LumiwallVideo ../videos/lumiwall.mp4",
+    "render:thermometer-video": "remotion render src/index.ts ThermometerVideo ../videos/thermometer.mp4",
+    "render:microphone-video": "remotion render src/index.ts MicrophoneVideo ../videos/microphone.mp4",
+    "render:all-videos": "npm run render:voice-changer-video && npm run render:ai-photo-video && npm run render:lumiwall-video && npm run render:thermometer-video && npm run render:microphone-video"
   },
   "dependencies": {
     "react": "18.2.0",

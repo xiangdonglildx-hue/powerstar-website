@@ -17,7 +17,14 @@
     <meta name="keywords" content="Android apps, thermometer app, microphone app, voice changer, wallpapers, AI photo filters, Power Star Apps, voice amplifier, temperature monitor">
     <meta name="author" content="Power Star Apps">
     <link rel="canonical" href="https://powerstarapps.com/">
-    
+
+    <!-- hreflang tags for multilingual SEO -->
+    <link rel="alternate" hreflang="en" href="https://powerstarapps.com/">
+    <link rel="alternate" hreflang="es" href="https://powerstarapps.com/es/">
+    <link rel="alternate" hreflang="pt" href="https://powerstarapps.com/pt/">
+    <link rel="alternate" hreflang="ja" href="https://powerstarapps.com/ja/">
+    <link rel="alternate" hreflang="x-default" href="https://powerstarapps.com/">
+
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://powerstarapps.com/">
@@ -35,10 +42,8 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/favicon.png">
     
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/enhanced.css">
-    <link rel="stylesheet" href="css/hero-new.css">
     <link rel="stylesheet" href="css/mobile-nav.css">
+    <link rel="stylesheet" href="css/apple-style.css">
 
     <!-- Google Fonts - Optimized -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -206,12 +211,6 @@
                     <span class="stat-text">Countries</span>
                 </div>
             </div>
-
-            <div class="hero-trust-strip" aria-label="Power Star Apps trust signals">
-                <span>Fast install</span>
-                <span>Privacy-first utilities</span>
-                <span>Global Android users</span>
-            </div>
         </div>
         
         <!-- Animated Background -->
@@ -236,6 +235,11 @@
                 <span class="section-kicker">Product ecosystem</span>
                 <h2>Our Products</h2>
                 <p>Discover our suite of practical Android apps trusted by millions worldwide</p>
+            </div>
+            <div class="products-spotlight-bar" aria-label="Product section highlights">
+                <span>5 Android-first experiences</span>
+                <span>10M+ installs across categories</span>
+                <span>Utility, audio, weather, wallpapers, AI edits</span>
             </div>
 
             <div class="products-grid-full">
@@ -365,6 +369,29 @@
         </div>
     </section>
 
+    <!-- Social Proof -->
+    <section class="social-proof">
+        <div class="container">
+            <div class="social-proof-header">
+                <h2>Trusted by Millions</h2>
+            </div>
+            <div class="social-proof-stats">
+                <div class="social-stat">
+                    <span class="social-stat-value">10M+</span>
+                    <span class="social-stat-label">Downloads</span>
+                </div>
+                <div class="social-stat">
+                    <span class="social-stat-value">4.0+</span>
+                    <span class="social-stat-label">Rating</span>
+                </div>
+                <div class="social-stat">
+                    <span class="social-stat-value">200+</span>
+                    <span class="social-stat-label">Countries</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Features Section -->
     <section class="features-section">
         <div class="container">
@@ -374,45 +401,25 @@
             </div>
             
             <div class="features-grid-enhanced">
-                <div class="feature-card-enhanced">
-                    <div class="feature-icon">🚀</div>
+                <div class="feature-card-large">
+                    <div class="feature-icon-large">🚀</div>
                     <h3>Fast & Lightweight</h3>
                     <p>Optimized for performance with minimal battery usage. Apps run smoothly even on older devices.</p>
-                    <ul class="feature-list">
-                        <li>✓ Quick launch in under 2 seconds</li>
-                        <li>✓ Minimal RAM usage</li>
-                        <li>✓ Battery-efficient algorithms</li>
-                    </ul>
                 </div>
-                <div class="feature-card-enhanced">
-                    <div class="feature-icon">🔒</div>
+                <div class="feature-card-large">
+                    <div class="feature-icon-large">🔒</div>
                     <h3>Privacy First</h3>
                     <p>No unnecessary data collection. Your privacy matters to us.</p>
-                    <ul class="feature-list">
-                        <li>✓ No account required</li>
-                        <li>✓ Data stays on your device</li>
-                        <li>✓ GDPR compliant</li>
-                    </ul>
                 </div>
-                <div class="feature-card-enhanced">
-                    <div class="feature-icon">💰</div>
+                <div class="feature-card-large">
+                    <div class="feature-icon-large">💰</div>
                     <h3>Free to Use</h3>
                     <p>All core features free, optional premium upgrades available.</p>
-                    <ul class="feature-list">
-                        <li>✓ Free download</li>
-                        <li>✓ No subscription required</li>
-                        <li>✓ Optional premium features</li>
-                    </ul>
                 </div>
-                <div class="feature-card-enhanced">
-                    <div class="feature-icon">🌍</div>
+                <div class="feature-card-large">
+                    <div class="feature-icon-large">🌍</div>
                     <h3>Global Users</h3>
                     <p>Trusted by millions across 200+ countries worldwide.</p>
-                    <ul class="feature-list">
-                        <li>✓ 10M+ total downloads</li>
-                        <li>✓ 20+ language support</li>
-                        <li>✓ Global community</li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -491,7 +498,7 @@
                 <h2>Latest from Our Blog</h2>
                 <p>Tips, tutorials, and app updates</p>
             </div>
-            
+
             <div class="blog-preview-grid">
                 <a href="blog.html" class="blog-preview-card">
                     <img src="images/blog/covers/cover-voice-recording.png" alt="Voice Recording Tips" class="blog-preview-image" loading="lazy" decoding="async">
@@ -501,7 +508,7 @@
                         <span class="blog-preview-date">March 20, 2026</span>
                     </div>
                 </a>
-                
+
                 <a href="blog.html" class="blog-preview-card">
                     <img src="images/blog/covers/cover-ai-photo.png" alt="AI Photo Editing" class="blog-preview-image" loading="lazy" decoding="async">
                     <div class="blog-preview-content">
@@ -510,7 +517,7 @@
                         <span class="blog-preview-date">March 15, 2026</span>
                     </div>
                 </a>
-                
+
                 <a href="blog.html" class="blog-preview-card">
                     <img src="images/blog/covers/cover-voice-changer.png" alt="Voice Changer Tips" class="blog-preview-image" loading="lazy" decoding="async">
                     <div class="blog-preview-content">
@@ -520,9 +527,48 @@
                     </div>
                 </a>
             </div>
-            
+
             <div class="blog-cta">
                 <a href="blog.html" class="btn-download">View All Articles →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Guides Section -->
+    <section class="blog-preview-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Popular Guides</h2>
+                <p>Start with the topics people search for most</p>
+            </div>
+
+            <div class="blog-preview-grid">
+                <a href="blog/how-to-set-4k-wallpaper-android.html" class="blog-preview-card">
+                    <img src="images/blog/covers/cover-lumiwall.png" alt="How to Set 4K Wallpaper on Android" class="blog-preview-image" loading="lazy" decoding="async">
+                    <div class="blog-preview-content">
+                        <h3>How to Set 4K Wallpaper on Android</h3>
+                        <p>Step-by-step guide for Samsung, Pixel, Xiaomi, and other Android phones.</p>
+                        <span class="blog-preview-date">Popular 4K Guide</span>
+                    </div>
+                </a>
+
+                <a href="products/thermometer-landing/indoor-thermometer-app.html" class="blog-preview-card">
+                    <img src="images/blog/covers/cover-thermometer.png" alt="Indoor Thermometer App" class="blog-preview-image" loading="lazy" decoding="async">
+                    <div class="blog-preview-content">
+                        <h3>Indoor Thermometer App</h3>
+                        <p>Check local temperature, humidity, and pressure for everyday home comfort decisions.</p>
+                        <span class="blog-preview-date">Home Comfort</span>
+                    </div>
+                </a>
+
+                <a href="products/microphone-landing/bluetooth-microphone.html" class="blog-preview-card">
+                    <img src="images/blog/covers/cover-voice-recording.png" alt="Bluetooth Microphone" class="blog-preview-image" loading="lazy" decoding="async">
+                    <div class="blog-preview-content">
+                        <h3>Bluetooth Microphone</h3>
+                        <p>Use your phone with compatible Bluetooth speakers and headsets for simple audio setups.</p>
+                        <span class="blog-preview-date">Audio Setup</span>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
@@ -583,19 +629,24 @@
         </div>
     </section>
 
-    <!-- Download CTA Section -->
-    <section class="cta-section-enhanced">
+    <!-- Bottom CTA -->
+    <section class="bottom-cta">
         <div class="container">
-            <h2>Ready to Get Started?</h2>
-            <p>Download our apps on Google Play and start enjoying practical tools today. All apps are free with optional premium features.</p>
-            <div class="cta-buttons">
-                <a href="#products" class="btn-download primary">Browse All Apps</a>
-                <a href="https://play.google.com/store/apps/dev?id=PowerStarApps" class="btn-download secondary" target="_blank">View on Google Play</a>
-            </div>
-            <div class="cta-stats">
-                <span>✓ Free Download</span>
-                <span>✓ No Account Required</span>
-                <span>✓ Instant Setup</span>
+            <div class="bottom-cta-content">
+                <h2>Ready to get started?</h2>
+                <a href="#products" class="btn-download primary" target="_blank">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                        <path d="M3 20.5v-17c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v17c0 .83-.67 1.5-1.5 1.5S3 21.33 3 20.5zm5.5-15c-.83 0-1.5.67-1.5 1.5v11c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V7c0-.83-.67-1.5-1.5-1.5zm5 3c-.83 0-1.5.67-1.5 1.5v8c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-8c0-.83-.67-1.5-1.5-1.5zm5-3c-.83 0-1.5.67-1.5 1.5v11c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V7c0-.83-.67-1.5-1.5-1.5z"/>
+                    </svg>
+                    Browse All Apps
+                </a>
+                <div class="bottom-cta-trust">
+                    <span>Free</span>
+                    <span>·</span>
+                    <span>No ads</span>
+                    <span>·</span>
+                    <span>10M+ users</span>
+                </div>
             </div>
         </div>
     </section>
