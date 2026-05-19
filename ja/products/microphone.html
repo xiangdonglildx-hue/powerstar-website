@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HRVN6H8K26"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HRVN6H8K26');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Android用マイクアプリ | 音声増幅、Bluetooth音声、スピーキングサポート | Power Star Apps</title>
+    <meta name="description" content="AndroidでMicrophoneをシンプルな音声増幅器、Bluetooth音声ツール、スピーキングサポートアプリとして活用。プレゼンテーション、教育、カラオケ練習、日常のスピーキングセットアップに対応。">
+    <meta name="keywords" content="マイクアプリ, 音声増幅, Bluetoothマイク, 音声増幅器, ワイヤレスマイク, 音声レコーダー, Androidマイク, プレゼン用マイク, 会議マイク, スピーキングサポートアプリ">
+    <meta name="author" content="Power Star Apps">
+    <link rel="canonical" href="https://powerstarapps.com/ja/products/microphone.html">
+
+    <!-- hreflang tags -->
+    <link rel="alternate" hreflang="en" href="https://powerstarapps.com/products/microphone.html">
+    <link rel="alternate" hreflang="es" href="https://powerstarapps.com/es/products/microphone.html">
+    <link rel="alternate" hreflang="pt" href="https://powerstarapps.com/pt/products/microphone.html">
+    <link rel="alternate" hreflang="ja" href="https://powerstarapps.com/ja/products/microphone.html">
+    <link rel="alternate" hreflang="x-default" href="https://powerstarapps.com/products/microphone.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="product">
+    <meta property="og:url" content="https://powerstarapps.com/ja/products/microphone.html">
+    <meta property="og:title" content="Android用マイクアプリ | スピーキングサポートツール">
+    <meta property="og:description" content="対応スピーカーやヘッドフォンに音声をルーティング。Bluetooth音声、プレゼンテーション、教育、カラオケ練習、日常のスピーキングサポートに。">
+    <meta property="og:image" content="https://powerstarapps.com/images/og/og-microphone.png">
+    <meta property="og:site_name" content="Power Star Apps">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Android用マイクアプリ">
+    <meta name="twitter:description" content="シンプルな音声増幅器、Bluetooth音声、Android用スピーキングサポートツール。">
+    <meta name="twitter:image" content="https://powerstarapps.com/images/og/og-microphone.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../../images/favicon.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css/mobile-nav.css">
+    <link rel="stylesheet" href="../../css/apple-style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Product Theme Color -->
+    <style>
+        :root {
+            --theme: #a78bfa;
+            --theme-glow: rgba(167, 139, 250, 0.4);
+            --theme-light: rgba(167, 139, 250, 0.1);
+        }
+    </style>
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MobileApplication",
+      "name": "Microphone - 音声増幅",
+      "description": "日常の場面でシンプルな音声増幅器、Bluetooth音声ツール、スピーキングサポートパートナーとして電話を使用するAndroidアプリ。",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Android",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "aggregateRating": {"@type": "AggregateRating", "ratingValue": "3.3", "ratingCount": "21700", "bestRating": "5"},
+      "numberOfDownloads": "5M+",
+      "dateModified": "2026-01-26",
+      "author": {"@type": "Organization", "name": "Power Star Apps"},
+      "downloadUrl": "https://play.google.com/store/apps/details?id=com.microphone.bbmic.lite",
+      "featureList": ["シンプルなスピーキングサポート", "Bluetooth音声サポート", "カラオケ練習", "プレゼンスピーキングサポート", "教育スピーキングサポート", "内蔵音声録音", "調整可能なコントロール"]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Microphoneはプロの機材の代わりになりますか？", "acceptedAnswer": {"@type": "Answer", "text": "いいえ。Microphoneは対応するスピーカーやヘッドフォンを使ったシンプルなスピーキングサポート用です。結果はお使いのデバイス、部屋、接続、音声出力セットアップによって異なります。"}},
+        {"@type": "Question", "name": "Bluetoothスピーカーやヘッドフォンで使えますか？", "acceptedAnswer": {"@type": "Answer", "text": "はい、お使いのAndroidデバイスとBluetooth音声出力が互換性がある場合に使用できます。Bluetoothの遅延と品質は接続とデバイスの設定によって異なります。"}},
+        {"@type": "Question", "name": "Microphoneはどのような場面で役立ちますか？", "acceptedAnswer": {"@type": "Answer", "text": "日常のスピーキングサポート、プレゼンテーション、教育、カラオケ練習、アナウンス、シンプルな音声増幅セットアップに役立ちます。"}}
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://powerstarapps.com/ja/"},
+        {"@type": "ListItem", "position": 2, "name": "製品", "item": "https://powerstarapps.com/ja/"},
+        {"@type": "ListItem", "position": 3, "name": "Microphone", "item": "https://powerstarapps.com/ja/products/microphone.html"}
+      ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <span class="logo-star">★</span> Power Star Apps
+            </a>
+            <button class="hamburger" aria-label="ナビゲーションメニューを開く" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">製品 ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="thermometer.html">Thermometer</a></li>
+                        <li><a href="microphone.html">Microphone</a></li>
+                        <li><a href="voice-changer.html">Voice Changer</a></li>
+                        <li><a href="lumiwall.html">Lumiwall</a></li>
+                        <li><a href="ai-photo.html">AI Photo & Video Filters</a></li>
+                    </ul>
+                </li>
+                <li><a href="../../about.html">会社概要</a></li>
+                <li><a href="../../help.html">ヘルプセンター</a></li>
+                <li><a href="../../blog.html">ブログ</a></li>
+                <li><a href="../../faq.html">よくある質問</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-menu-overlay"></div>
+    <div class="mobile-menu" aria-hidden="true">
+        <ul class="mobile-nav-links">
+            <li class="mobile-dropdown">
+                <a href="#">製品</a>
+                <ul class="dropdown-menu">
+                    <li><a href="thermometer.html">Thermometer</a></li>
+                    <li><a href="microphone.html">Microphone</a></li>
+                    <li><a href="voice-changer.html">Voice Changer</a></li>
+                    <li><a href="lumiwall.html">Lumiwall</a></li>
+                    <li><a href="ai-photo.html">AI Photo Filters</a></li>
+                </ul>
+            </li>
+            <li><a href="../../about.html">会社概要</a></li>
+            <li><a href="../../help.html">ヘルプセンター</a></li>
+            <li><a href="../../blog.html">ブログ</a></li>
+            <li><a href="../../faq.html">よくある質問</a></li>
+        </ul>
+    </div>
+
+    <!-- Product Hero -->
+    <section class="page-header">
+        <div class="container">
+            <div class="product-hero-grid">
+                <div class="product-info">
+                    <div class="product-icon">
+                        <img src="../../picture/logo/microphone.png" alt="Microphoneアイコン" loading="lazy" decoding="async">
+                    </div>
+                    <h1>Microphone</h1>
+                    <p class="product-subtitle">Microphoneはシンプルなスピーキングサポート、Bluetooth音声ルーティング、カラオケ練習、プレゼンテーション、教育、日常の音声増幅のためのAndroidマイクアプリです。結果はお使いのスマートフォン、スピーカーまたはヘッドフォンのセットアップ、Bluetooth接続、部屋、音声出力デバイスによって異なります。</p>
+
+                    <!-- Stats -->
+                    <div class="product-stats-hero">
+                        <div class="stat-badge">
+                            <span class="stat-value">5M+</span>
+                            <span class="stat-label">ダウンロード</span>
+                        </div>
+                        <div class="stat-badge">
+                            <span class="stat-value">3.3</span>
+                            <span class="stat-label">評価</span>
+                        </div>
+                        <div class="stat-badge">
+                            <span class="stat-value">21K+</span>
+                            <span class="stat-label">レビュー</span>
+                        </div>
+                        <div class="stat-badge">
+                            <span class="stat-value">無料</span>
+                            <span class="stat-label">ダウンロード</span>
+                        </div>
+                    </div>
+
+                    <div class="product-actions">
+                        <a href="https://play.google.com/store/apps/details?id=com.microphone.bbmic.lite" class="btn-download primary" target="_blank">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                                <path d="M3 20.5v-17c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v17c0 .83-.67 1.5-1.5 1.5S3 21.33 3 20.5zm5.5-15c-.83 0-1.5.67-1.5 1.5v11c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V7c0-.83-.67-1.5-1.5-1.5zm5 3c-.83 0-1.5.67-1.5 1.5v8c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-8c0-.83-.67-1.5-1.5-1.5zm5-3c-.83 0-1.5.67-1.5 1.5v11c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V7c0-.83-.67-1.5-1.5-1.5z"/>
+                            </svg>
+                            Google Playでダウンロード
+                        </a>
+                        <a href="#features" class="btn-download">詳しく見る</a>
+                    </div>
+                </div>
+                <div class="product-mockup">
+                    <img src="../../picture/screen/microphone/mockup-microphone-1.png" alt="Microphoneアプリ スクリーンショット" loading="lazy" decoding="async">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Features Bar -->
+    <section class="quick-features">
+        <div class="container">
+            <div class="quick-features-grid">
+                <div class="quick-feature">
+                    <span class="feature-icon">🎤</span>
+                    <span class="feature-text">スピーキングサポート</span>
+                </div>
+                <div class="quick-feature">
+                    <span class="feature-icon">📶</span>
+                    <span class="feature-text">Bluetooth音声</span>
+                </div>
+                <div class="quick-feature">
+                    <span class="feature-icon">🎵</span>
+                    <span class="feature-text">カラオケ練習</span>
+                </div>
+                <div class="quick-feature">
+                    <span class="feature-icon">👨‍🏫</span>
+                    <span class="feature-text">教育サポート</span>
+                </div>
+                <div class="quick-feature">
+                    <span class="feature-icon">🎙️</span>
+                    <span class="feature-text">音声録音</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section class="content-section dark">
+        <div class="container">
+            <h2>アプリスクリーンショット</h2>
+            <p class="section-subtitle">日常のスピーキングセットアップでMicrophoneを確認</p>
+            <div class="screenshot-carousel">
+                <div class="carousel-track">
+                    <div class="carousel-slide">
+                        <img src="../../picture/screen/microphone/mockup-microphone-1.png" alt="Microphone メイン画面" loading="lazy" decoding="async">
+                        <img src="../../picture/screen/microphone/mockup-microphone-2.png" alt="音声増幅" loading="lazy" decoding="async">
+                        <img src="../../picture/screen/microphone/mockup-microphone-3.png" alt="設定" loading="lazy" decoding="async">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="../../picture/screen/microphone/mockup-microphone-4.png" alt="録音" loading="lazy" decoding="async">
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-prev">‹</button>
+                    <button class="carousel-next">›</button>
+                </div>
+                <div class="carousel-dots">
+                    <span class="carousel-dot active"></span>
+                    <span class="carousel-dot"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="content-section" id="features">
+        <div class="container">
+            <h2>主な機能</h2>
+            <p class="section-subtitle">スピーキングサポートと音声録音のための日常的なコントロール</p>
+
+            <div class="features-grid-enhanced">
+                <div class="feature-card-large">
+                    <div class="feature-icon-large">🎤</div>
+                    <h3>リアルタイム音声増幅</h3>
+                    <p>スマートフォンに向かって話すと、対応するスピーカーを通じてリアルタイムで音声をルーティング。調整可能なボリュームコントロールでより大きな音声セットアップをサポートし、結果は部屋やセットアップによって異なります。</p>
+                    <ul class="feature-benefits">
+                        <li>✓ リアルタイム音声処理</li>
+                        <li>✓ 調整可能なボリュームコントロール</li>
+                        <li>✓ 低遅延伝送</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card-large">
+                    <div class="feature-icon-large">📶</div>
+                    <h3>Bluetoothサポート</h3>
+                    <p>対応するBluetoothスピーカーやヘッドセットに接続してワイヤレス音声伝送。部屋の異なる場所からリモートマイクとして使用可能。範囲と品質は接続とデバイスのセットアップによって異なります。</p>
+                    <ul class="feature-benefits">
+                        <li>✓ 対応Bluetooth出力サポート</li>
+                        <li>✓ 安定した接続</li>
+                        <li>✓ 複数デバイスペアリング</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card-large">
+                    <div class="feature-icon-large">🔇</div>
+                    <h3>ノイズ低減</h3>
+                    <p>内蔵ノイズ低減技術がバックグラウンドノイズをフィルタリングし、よりクリアな音声出力を実現。オフィス、教室、屋外イベントなどの騒がしい環境に最適です。</p>
+                    <ul class="feature-benefits">
+                        <li>✓ AI搭載ノイズフィルタリング</li>
+                        <li>✓ バックグラウンドノイズ除去</li>
+                        <li>✓ クリアな音声出力</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card-large">
+                    <div class="feature-icon-large">⚙️</div>
+                    <h3>調整可能な音声コントロール</h3>
+                    <p>調整可能なコントロールで日常のスピーキング場面に合わせた音声出力の微調整。環境に応じて対応するスピーカーやヘッドフォンでより大きな音声セットアップを構築。</p>
+                    <ul class="feature-benefits">
+                        <li>✓ 調整可能な出力コントロール</li>
+                        <li>✓ 柔軟な日常セットアップ</li>
+                        <li>✓ 対応スピーカー/ヘッドフォン出力</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="content-section dark">
+        <div class="container">
+            <h2>日常のユースケース</h2>
+            <p class="section-subtitle">日常のスピーキングセットアップでMicrophoneを使う一般的な方法</p>
+            <div class="use-cases-grid">
+                <div class="use-case-card">
+                    <span class="use-case-icon">📢</span>
+                    <h3>プレゼンテーション</h3>
+                    <p>会議、ワークショップ、ビジネスプレゼンテーションで対応スピーカーを通じて音声をルーティング。</p>
+                </div>
+                <div class="use-case-card">
+                    <span class="use-case-icon">🏠</span>
+                    <h3>家庭内アナウンス</h3>
+                    <p>対応する音声出力で家族へのアナウンスやカジュアルな集まりにシンプルなスピーキングセットアップを活用。</p>
+                </div>
+                <div class="use-case-card">
+                    <span class="use-case-icon">🎵</span>
+                    <h3>カラオケ＆イベント</h3>
+                    <p>パーティー、カラオケナイト、ソーシャルギャザリングでスマートフォンをワイヤレスマイクに。</p>
+                </div>
+                <div class="use-case-card">
+                    <span class="use-case-icon">👨‍🏫</span>
+                    <h3>教育</h3>
+                    <p>対応スピーカーで教室でのスピーキングをサポートし、より快適に声が届くように。</p>
+                </div>
+                <div class="use-case-card">
+                    <span class="use-case-icon">🎥</span>
+                    <h3>動画録画</h3>
+                    <p>接続に依存する音声結果で、動画録画用の外部マイクオプションとして使用。</p>
+                </div>
+                <div class="use-case-card">
+                    <span class="use-case-icon">🎤</span>
+                    <h3>ライブ配信</h3>
+                    <p>対応する出力デバイスでモバイル配信セッションのバックアップマイクとして使用。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Specs -->
+    <section class="content-section">
+        <div class="container">
+            <h2>技術仕様</h2>
+            <p class="section-subtitle">アプリの詳細と要件</p>
+
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <h3>アプリ情報</h3>
+                    <table class="specs-table">
+                        <tr><td>バージョン</td><td>最新版</td></tr>
+                        <tr><td>サイズ</td><td>約15 MB</td></tr>
+                        <tr><td>カテゴリー</td><td>ユーティリティ / ツール</td></tr>
+                        <tr><td>最終更新</td><td>2026年1月</td></tr>
+                    </table>
+                </div>
+
+                <div class="spec-card">
+                    <h3>要件</h3>
+                    <table class="specs-table">
+                        <tr><td>Android</td><td>5.0+（Lollipop）</td></tr>
+                        <tr><td>権限</td><td>マイク、Bluetooth</td></tr>
+                        <tr><td>インターネット</td><td>オプション（広告用）</td></tr>
+                        <tr><td>ストレージ</td><td>20 MB推奨</td></tr>
+                    </table>
+                </div>
+
+                <div class="spec-card">
+                    <h3>音声仕様</h3>
+                    <table class="specs-table">
+                        <tr><td>サンプルレート</td><td>44.1 kHz</td></tr>
+                        <tr><td>ビット深度</td><td>16-bit</td></tr>
+                        <tr><td>遅延</td><td>&lt;50ms（最適化済み）</td></tr>
+                        <tr><td>Bluetooth範囲</td><td>最大10m</td></tr>
+                    </table>
+                </div>
+
+                <div class="spec-card">
+                    <h3>機能</h3>
+                    <table class="specs-table">
+                        <tr><td>録音</td><td>✓ 内蔵</td></tr>
+                        <tr><td>ノイズ低減</td><td>✓ AI搭載</td></tr>
+                        <tr><td>バックグラウンド再生</td><td>✓ 対応</td></tr>
+                        <tr><td>カスタムテーマ</td><td>✓ プレミアム</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Explore Features - Landing Pages -->
+    <section class="content-section">
+        <div class="container">
+            <h2>Microphoneユースケースハブ</h2>
+            <p class="section-subtitle">スピーキングセットアップとシナリオに基づいてランディングページを選択してください。</p>
+
+            <div class="features-grid-enhanced">
+                <div class="feature-card-large">
+                    <h3><a href="microphone-landing/bluetooth-microphone.html">Bluetoothマイクアプリ</a></h3>
+                    <p>対応するBluetoothスピーカーやヘッドフォンを通じて音声をルーティング。</p>
+                </div>
+
+                <div class="feature-card-large">
+                    <h3><a href="microphone-landing/karaoke-microphone-app.html">カラオケマイクアプリ</a></h3>
+                    <p>カジュアルな歌や練習のためのカラオケスタイルのセットアップ。</p>
+                </div>
+
+                <div class="feature-card-large">
+                    <h3><a href="microphone-landing/microphone-for-presentations.html">プレゼンテーション用マイク</a></h3>
+                    <p>会議やワークショップのためのシンプルなスピーキングセットアップをサポート。</p>
+                </div>
+
+                <div class="feature-card-large">
+                    <h3><a href="microphone-landing/microphone-for-teaching.html">教育用マイク</a></h3>
+                    <p>教室でのスピーキングサポートに対応するスピーカーを活用。</p>
+                </div>
+
+                <div class="feature-card-large">
+                    <h3><a href="microphone-landing/voice-amplifier-app.html">音声増幅アプリ</a></h3>
+                    <p>対応する音声出力で日常のスピーキングセットアップをより簡単に。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison -->
+    <section class="content-section dark">
+        <div class="container">
+            <h2>Microphoneを選ぶ理由</h2>
+            <p class="section-subtitle">他のマイクアプリとの比較</p>
+
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>機能</th>
+                            <th class="highlight">Power Star<br>Microphone</th>
+                            <th>競合A</th>
+                            <th>競合B</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>無料ダウンロード</td>
+                            <td class="highlight"><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td>Bluetoothサポート</td>
+                            <td class="highlight"><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>ノイズ低減</td>
+                            <td class="highlight"><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>調整可能なコントロール</td>
+                            <td class="highlight"><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="cross">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td>内蔵録音</td>
+                            <td class="highlight"><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td>アカウント不要</td>
+                            <td class="highlight"><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="cross">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td>低遅延</td>
+                            <td class="highlight"><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>ダウンロード数</td>
+                            <td class="highlight"><strong>5M+</strong></td>
+                            <td>2M+</td>
+                            <td>1M+</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="content-section">
+        <div class="container">
+            <h2>ユーザーの声</h2>
+            <p class="section-subtitle">Google Playからのリアルなレビュー</p>
+
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-rating">★★★★★</div>
+                    <p class="review-text">"プレゼンテーションに最適です！別途マイクを買う必要がなくなりました。Bluetoothスピーカーとの接続も問題なし。"</p>
+                    <div class="review-author">
+                        <span class="author-name">Michael T.</span>
+                        <span class="author-role">ビジネスプロフェッショナル</span>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-rating">★★★★★</div>
+                    <p class="review-text">"家族の集まりや家庭内アナウンスに便利です。インターフェースがシンプルで、スピーカーとのセットアップも簡単。"</p>
+                    <div class="review-author">
+                        <span class="author-name">Lisa K.</span>
+                        <span class="author-role">ファミリーユーザー</span>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-rating">★★★★☆</div>
+                    <p class="review-text">"カラオケナイトに最高です！サウンドシステムに接続して、ケーブルなしでみんなで歌えます。"</p>
+                    <div class="review-author">
+                        <span class="author-name">John D.</span>
+                        <span class="author-role">パーティー主催者</span>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-rating">★★★★★</div>
+                    <p class="review-text">"教師として、このアプリは声を守ってくれます。叫ばなくても教室の生徒全員に声が届きます。"</p>
+                    <div class="review-author">
+                        <span class="author-name">Sarah M.</span>
+                        <span class="author-role">教師</span>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-rating">★★★★☆</div>
+                    <p class="review-text">"ノイズ低減機能が素晴らしいです！騒がしいカフェでもビデオ通話に問題なく使えます。"</p>
+                    <div class="review-author">
+                        <span class="author-name">Alex R.</span>
+                        <span class="author-role">リモートワーカー</span>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-rating">★★★★★</div>
+                    <p class="review-text">"配信セットアップのバックアップマイクとして最適。セットアップが簡単で、毎回安定した接続。"</p>
+                    <div class="review-author">
+                        <span class="author-name">Chris P.</span>
+                        <span class="author-role">コンテンツクリエイター</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reviews-cta">
+                <a href="https://play.google.com/store/apps/details?id=com.microphone.bbmic.lite" class="btn-download" target="_blank">Google Playですべてのレビューを見る →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="content-section dark">
+        <div class="container">
+            <h2>よくある質問</h2>
+            <p class="section-subtitle">Microphoneアプリに関するよくあるご質問</p>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Microphoneはプロの機材の代わりになりますか？</h3>
+                    <p>いいえ。Microphoneは対応するスピーカーやヘッドフォンを使ったシンプルなスピーキングサポート用です。結果はお使いのデバイス、部屋、接続、音声出力セットアップによって異なります。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Bluetoothスピーカーやヘッドフォンで使えますか？</h3>
+                    <p>はい、お使いのAndroidデバイスとBluetooth音声出力が互換性がある場合に使用できます。Bluetoothの遅延と品質は接続とデバイスの設定によって異なります。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Microphoneはどのような場面で役立ちますか？</h3>
+                    <p>日常のスピーキングサポート、プレゼンテーション、教育、カラオケ練習、アナウンス、シンプルな音声増幅セットアップに役立ちます。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How-To Guides -->
+    <section class="content-section">
+        <div class="container">
+            <h2>使い方ガイド</h2>
+            <p class="section-subtitle">マイクを最大限に活用する方法を学ぶ</p>
+
+            <div class="guides-grid">
+                <a href="../../blog/microphone-app-for-presentations.html" class="guide-card" style="text-decoration: none; color: inherit;">
+                    <div class="guide-icon">🎤</div>
+                    <h3>プレゼンテーション用マイク</h3>
+                    <p>スマートフォンをワイヤレスプレゼンマイクに。スピーカーに接続して声を増幅。</p>
+                    <span class="learn-more">ガイドを読む →</span>
+                </a>
+
+                <a href="../../blog/karaoke-microphone-app.html" class="guide-card" style="text-decoration: none; color: inherit;">
+                    <div class="guide-icon">🎵</div>
+                    <h3>カラオケマイクアプリ</h3>
+                    <p>Androidをパーティー用カラオケマイクとして活用。Bluetoothスピーカー対応、ボイスエフェクト付き。</p>
+                    <span class="learn-more">ガイドを読む →</span>
+                </a>
+
+                <a href="../../blog/best-microphone-app-android.html" class="guide-card" style="text-decoration: none; color: inherit;">
+                    <div class="guide-icon">📱</div>
+                    <h3>Android向けベストマイクアプリ</h3>
+                    <p>トップAndroidマイクアプリを比較。音声増幅のための機能、評価、ユースケース。</p>
+                    <span class="learn-more">ガイドを読む →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="content-section">
+        <div class="container">
+            <h2>おすすめのアプリ</h2>
+            <p class="section-subtitle">Power Star Appsの他のアプリもぜひ</p>
+            <div class="related-products-grid">
+                <a href="thermometer.html" class="related-product-card">
+                    <img src="../../picture/logo/thermometer.png" alt="Thermometer" loading="lazy" decoding="async">
+                    <h3>Thermometer</h3>
+                    <p>温度モニター</p>
+                    <span class="downloads">1M+ ダウンロード</span>
+                </a>
+                <a href="voice-changer.html" class="related-product-card">
+                    <img src="../../picture/logo/voice change.png" alt="Voice Changer" loading="lazy" decoding="async">
+                    <h3>Voice Changer</h3>
+                    <p>100+ボイスエフェクト</p>
+                    <span class="downloads">3M+ ダウンロード</span>
+                </a>
+                <a href="lumiwall.html" class="related-product-card">
+                    <img src="../../picture/logo/wallpaper.png" alt="Lumiwall" loading="lazy" decoding="async">
+                    <h3>Lumiwall</h3>
+                    <p>HD壁紙</p>
+                    <span class="downloads">500K+ ダウンロード</span>
+                </a>
+                <a href="ai-photo.html" class="related-product-card">
+                    <img src="../../picture/logo/ai photo.png" alt="AI Photo" loading="lazy" decoding="async">
+                    <h3>AI Photo Filters</h3>
+                    <p>34+ AIフィルター</p>
+                    <span class="downloads">2M+ ダウンロード</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="bottom-cta">
+        <div class="container">
+            <div class="bottom-cta-content">
+                <h2>シンプルなスピーキングサポートはいかがですか？</h2>
+                <a href="https://play.google.com/store/apps/details?id=com.microphone.bbmic.lite" class="btn-download primary" target="_blank">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                        <path d="M3 20.5v-17c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v17c0 .83-.67 1.5-1.5 1.5S3 21.33 3 20.5zm5.5-15c-.83 0-1.5.67-1.5 1.5v11c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V7c0-.83-.67-1.5-1.5-1.5zm5 3c-.83 0-1.5.67-1.5 1.5v8c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-8c0-.83-.67-1.5-1.5-1.5zm5-3c-.83 0-1.5.67-1.5 1.5v11c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V7c0-.83-.67-1.5-1.5-1.5z"/>
+                    </svg>
+                    Google Playでダウンロード
+                </a>
+                <div class="bottom-cta-trust">
+                    <span>無料</span>
+                    <span>·</span>
+                    <span>広告なし</span>
+                    <span>·</span>
+                    <span>500万+ユーザー</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-star">★</span> Power Star Apps
+                    <p>毎日の暮らしを支える実用ツール</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>製品</h4>
+                        <a href="thermometer.html">Thermometer</a>
+                        <a href="microphone.html">Microphone</a>
+                        <a href="voice-changer.html">Voice Changer</a>
+                        <a href="lumiwall.html">Lumiwall</a>
+                        <a href="ai-photo.html">AI Photo Filters</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>リソース</h4>
+                        <a href="../../help.html">ヘルプセンター</a>
+                        <a href="../../faq.html">よくある質問</a>
+                        <a href="../../blog.html">ブログ</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>法的情報</h4>
+                        <a href="../../privacy.html">プライバシーポリシー</a>
+                        <a href="../../terms.html">利用規約</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Power Star Apps. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Enhanced GSAP Animations -->
+    <script src="../../js/gsap-animations-enhanced.js"></script>
+
+    <!-- Mobile Navigation -->
+    <script src="../../js/mobile-nav.js"></script>
+
+</body>
+</html>

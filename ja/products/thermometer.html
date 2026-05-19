@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HRVN6H8K26"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HRVN6H8K26');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Android用温度計アプリ | 温度、湿度、気圧参照 | Power Star Apps</title>
+    <meta name="description" content="AndroidでThermometerを使用して、天気ベースのデータでローカルの温度、湿度、気圧、快適条件をチェック。室温、室内温度計、湿度計、釣り用気圧計、体温ログページを探索。">
+    <meta name="keywords" content="温度計アプリ, 温度アプリ, 湿度計, 気圧アプリ, 室温, 湿度チェッカー, 天気温度計, Android温度計, 釣り用気圧計, 不快指数">
+    <meta name="author" content="Power Star Apps">
+    <link rel="canonical" href="https://powerstarapps.com/ja/products/thermometer.html">
+
+    <!-- hreflang tags -->
+    <link rel="alternate" hreflang="en" href="https://powerstarapps.com/products/thermometer.html">
+    <link rel="alternate" hreflang="es" href="https://powerstarapps.com/es/products/thermometer.html">
+    <link rel="alternate" hreflang="ja" href="https://powerstarapps.com/ja/products/thermometer.html">
+    <link rel="alternate" hreflang="x-default" href="https://powerstarapps.com/products/thermometer.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="product">
+    <meta property="og:url" content="https://powerstarapps.com/ja/products/thermometer.html">
+    <meta property="og:title" content="Android用温度計アプリ | 温度、湿度、気圧参照">
+    <meta property="og:description" content="天気ベースのデータでローカルの温度、湿度、気圧、快適条件をAndroidでチェック。">
+    <meta property="og:image" content="https://powerstarapps.com/images/og/og-thermometer.png">
+    <meta property="og:site_name" content="Power Star Apps">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Android用温度計アプリ">
+    <meta name="twitter:description" content="天気ベースのローカル温度、湿度、気圧をAndroidで簡単な参照として使用。">
+    <meta name="twitter:image" content="https://powerstarapps.com/images/og/og-thermometer.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../../images/favicon.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css/mobile-nav.css">
+    <link rel="stylesheet" href="../../css/apple-style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Product Theme Color -->
+    <style>
+        :root {
+            --theme: #ff6b6b;
+            --theme-glow: rgba(255, 107, 107, 0.4);
+            --theme-light: rgba(255, 107, 107, 0.1);
+        }
+    </style>
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MobileApplication",
+      "name": "Thermometer - Hygrometer",
+      "description": "GPSベースの天気データを使用してローカルの温度、湿度、気圧、快適条件を確認するAndroid天気アプリ。",
+      "applicationCategory": "WeatherApplication",
+      "operatingSystem": "Android",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "aggregateRating": {"@type": "AggregateRating", "ratingValue": "3.8", "ratingCount": "15000", "bestRating": "5"},
+      "numberOfDownloads": "1M+",
+      "dateModified": "2026-03-28",
+      "author": {"@type": "Organization", "name": "Power Star Apps"},
+      "downloadUrl": "https://play.google.com/store/apps/details?id=com.firefly.thermometer",
+      "featureList": ["ローカル温度参照", "湿度表示", "気圧表示", "天気予報", "不快指数", "GPSベース天気データ"]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Thermometer - Hygrometerとは何ですか？", "acceptedAnswer": {"@type": "Answer", "text": "Thermometer - HygrometerはGPSベースの天気データを使用してローカルの温度、湿度、気圧を表示するAndroid天気アプリです。利用可能な読み取り値はお使いのデバイスの位置接続付近のデータソースによって異なります。"}},
+        {"@type": "Question", "name": "Thermometerアプリの精度はどのくらいですか？", "acceptedAnswer": {"@type": "Answer", "text": "アプリはGPS測位を使用して付近の天気データを取得します。精度はお使いのデバイスの位置信号、インターネット接続、付近の気象ステーションデータの品質によって異なります。"}},
+        {"@type": "Question", "name": "室内温度計の代わりになりますか？", "acceptedAnswer": {"@type": "Answer", "text": "いいえ。ThermometerはGPS位置と付近の天気データを使用してAndroid上で一般的な環境参照を提供します。デバイス固有の読み取り値が必要な場合は、専用の室内、スマートホーム、医療、またはプロの気象計器をご使用ください。"}},
+        {"@type": "Question", "name": "Thermometerアプリは無料ですか？", "acceptedAnswer": {"@type": "Answer", "text": "はい、Thermometer - Hygrometerは広告付きで無料でダウンロードできます。拡張予報や位置履歴などのプレミアム機能にはオプションのアプリ内課金が利用可能です。"}},
+        {"@type": "Question", "name": "アプリはオフラインで動作しますか？", "acceptedAnswer": {"@type": "Answer", "text": "天気データを更新するにはインターネット接続が必要で、GPSは位置ベースの読み取りに使用されます。デバイスがオフラインの場合、利用可能性が異なる場合があります。"}},
+        {"@type": "Question", "name": "対応するAndroidバージョンは？", "acceptedAnswer": {"@type": "Answer", "text": "ThermometerアプリはAndroid 5.0（Lollipop）以降が必要です。"}},
+        {"@type": "Question", "name": "不快指数とは何ですか？", "acceptedAnswer": {"@type": "Answer", "text": "不快指数は温度と湿度に基づいたシンプルな快適さの参照を提供し、日常のプランニングや服装の決定に役立ちます。"}},
+        {"@type": "Question", "name": "釣りに使えますか？", "acceptedAnswer": {"@type": "Answer", "text": "釣り旅行を計画する際の参照として気圧の傾向を使う方もいます。アプリは気圧の変化を確認できますが、釣りのコンディションは天気、場所、季節、その他多くの要因にも左右されます。"}}
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://powerstarapps.com/ja/"},
+        {"@type": "ListItem", "position": 2, "name": "製品", "item": "https://powerstarapps.com/ja/"},
+        {"@type": "ListItem", "position": 3, "name": "Thermometer", "item": "https://powerstarapps.com/ja/products/thermometer.html"}
+      ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <span class="logo-star">★</span> Power Star Apps
+            </a>
+            <button class="hamburger" aria-label="ナビゲーションメニューを開く" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">製品 ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="thermometer.html">Thermometer</a></li>
+                        <li><a href="microphone.html">Microphone</a></li>
+                        <li><a href="voice-changer.html">Voice Changer</a></li>
+                        <li><a href="lumiwall.html">Lumiwall</a></li>
+                        <li><a href="ai-photo.html">AI Photo & Video Filters</a></li>
+                    </ul>
+                </li>
+                <li><a href="../../about.html">会社概要</a></li>
+                <li><a href="../../help.html">ヘルプセンター</a></li>
+                <li><a href="../../blog.html">ブログ</a></li>
+                <li><a href="../../faq.html">よくある質問</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-menu-overlay"></div>
+    <div class="mobile-menu" aria-hidden="true">
+        <ul class="mobile-nav-links">
+            <li class="mobile-dropdown">
+                <a href="#">製品</a>
+                <ul class="dropdown-menu">
+                    <li><a href="thermometer.html">Thermometer</a></li>
+                    <li><a href="microphone.html">Microphone</a></li>
+                    <li><a href="voice-changer.html">Voice Changer</a></li>
+                    <li><a href="lumiwall.html">Lumiwall</a></li>
+                    <li><a href="ai-photo.html">AI Photo Filters</a></li>
+                </ul>
+            </li>
+            <li><a href="../../about.html">会社概要</a></li>
+            <li><a href="../../help.html">ヘルプセンター</a></li>
+            <li><a href="../../blog.html">ブログ</a></li>
+            <li><a href="../../faq.html">よくある質問</a></li>
+        </ul>
+    </div>
+
+    <!-- Product Hero -->
+    <section class="page-header">
+        <div class="container">
+            <div class="product-hero-grid">
+                <div class="product-info">
+                    <div class="product-icon">
+                        <img src="../../picture/logo/thermometer.png" alt="Thermometerアイコン" loading="lazy" decoding="async">
+                    </div>
+                    <h1>Thermometerアプリ</h1>
+                    <p class="product-subtitle">AndroidでThermometerをローカルの天気ベース参照として活用し、温度、湿度、気圧、快適条件をチェック。毎日のプランニング、家庭の快適さチェック、屋外コンディションの把握に役立ちます。</p>
+                    <p class="hero-note" style="margin-top: 1rem; color: #666; font-size: 0.95rem;">読み取り値はお使いのデバイスの位置と付近の天気データに基づいています。デバイス固有の読み取り値が必要な場合は、専用の室内、スマートホーム、医療、またはプロの気象計器をご使用ください。</p>
+
+                    <!-- Stats -->
+                    <div class="product-stats-hero">
+                        <div class="stat-badge">
+                            <span class="stat-value">1M+</span>
+                            <span class="stat-label">ダウンロード</span>
+                        </div>
+                        <div class="stat-badge">
+                            <span class="stat-value">3.8</span>
+                            <span class="stat-label">評価</span>
+                        </div>
+                        <div class="stat-badge">
+                            <span class="stat-value">15K+</span>
+                            <span class="stat-label">レビュー</span>
+                        </div>
+                        <div class="stat-badge">
+                            <span class="stat-value">無料</span>
+                            <span class="stat-label">ダウンロード</span>
+                        </div>
+                    </div>
+
+                    <div class="product-actions">
+                        <a href="https://play.google.com/store/apps/details?id=com.firefly.thermometer" class="btn-download primary" target="_blank">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                                <path d="M3 20.5v-17c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v17c0 .83-.67 1.5-1.5 1.5S3 21.33 3 20.5zm5.5-15c-.83 0-1.5.67-1.5 1.5v11c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V7c0-.83-.67-1.5-1.5-1.5zm5 3c-.83 0-1.5.67-1.5 1.5v8c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-8c0-.83-.67-1.5-1.5-1.5zm5-3c-.83 0-1.5.67-1.5 1.5v11c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V7c0-.83-.67-1.5-1.5-1.5z"/>
+                            </svg>
+                            Google Playでダウンロード
+                        </a>
+                        <a href="#features" class="btn-download">詳しく見る</a>
+                    </div>
+                </div>
+                <div class="product-mockup">
+                    <img src="../../picture/screen/thermometer/mockup-thermometer-1.png" alt="Thermometerアプリ スクリーンショット" loading="lazy" decoding="async">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Features Bar -->
+    <section class="quick-features">
+        <div class="container">
+            <div class="quick-features-grid">
+                <div class="quick-feature">
+                    <span class="feature-icon">🌡️</span>
+                    <span class="feature-text">温度</span>
+                </div>
+                <div class="quick-feature">
+                    <span class="feature-icon">💧</span>
+                    <span class="feature-text">湿度</span>
+                </div>
+                <div class="quick-feature">
+                    <span class="feature-icon">📊</span>
+                    <span class="feature-text">気圧計</span>
+                </div>
+                <div class="quick-feature">
+                    <span class="feature-icon">☀️</span>
+                    <span class="feature-text">天気予報</span>
+                </div>
+                <div class="quick-feature">
+                    <span class="feature-icon">😊</span>
+                    <span class="feature-text">不快指数</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section class="content-section dark">
+        <div class="container">
+            <h2>アプリスクリーンショット</h2>
+            <p class="section-subtitle">Thermometerがローカルの温度、湿度、気圧情報をどのように表示するかをご覧ください</p>
+            <div class="screenshot-carousel">
+                <div class="carousel-track">
+                    <div class="carousel-slide">
+                        <img src="../../picture/screen/thermometer/mockup-thermometer-1.png" alt="Thermometer メイン画面" loading="lazy" decoding="async">
+                        <img src="../../picture/screen/thermometer/mockup-thermometer-2.png" alt="温度表示" loading="lazy" decoding="async">
+                        <img src="../../picture/screen/thermometer/mockup-thermometer-3.png" alt="天気データ" loading="lazy" decoding="async">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="../../picture/screen/thermometer/mockup-thermometer-4.png" alt="設定" loading="lazy" decoding="async">
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-prev">‹</button>
+                    <button class="carousel-next">›</button>
+                </div>
+                <div class="carousel-dots">
+                    <span class="carousel-dot active"></span>
+                    <span class="carousel-dot"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="content-section" id="features">
+        <div class="container">
+            <h2>主な機能</h2>
+            <p class="section-subtitle">温度、湿度、気圧の参照に役立つ天気ベースツール</p>
+
+            <div class="features-grid-enhanced">
+                <div class="feature-card-large">
+                    <div class="feature-icon-large">🌡️</div>
+                    <h3>温度参照</h3>
+                    <p>GPS位置と付近の天気データを使用してローカルの温度をチェック。日常のプランニングや素早いコンディション確認のために、摂氏または華氏で読み取り値を表示。</p>
+                    <ul class="feature-benefits">
+                        <li>✓ 位置ベースの読み取り</li>
+                        <li>✓ 摂氏＆華氏</li>
+                        <li>✓ クイックリファレンス</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card-large">
+                    <div class="feature-icon-large">💧</div>
+                    <h3>湿度表示</h3>
+                    <p>温度や気圧とともにローカルの湿度を確認し、快適さ、換気、周囲のコンディションの変化をより適切に判断。</p>
+                    <ul class="feature-benefits">
+                        <li>✓ 湿度パーセンテージ</li>
+                        <li>✓ 快適さコンテキスト</li>
+                        <li>✓ 統合天気ビュー</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card-large">
+                    <div class="feature-icon-large">📊</div>
+                    <h3>気圧トレンド</h3>
+                    <p>屋外プランニング、天気認識、その他のコンディションベースの活動のために、気圧の読み取り値とトレンドの変化を確認。</p>
+                    <ul class="feature-benefits">
+                        <li>✓ hPa/mbarで気圧表示</li>
+                        <li>✓ トレンドインジケーター</li>
+                        <li>✓ 屋外プランニング参照</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card-large">
+                    <div class="feature-icon-large">😊</div>
+                    <h3>不快指数</h3>
+                    <p>温度と湿度に基づいたシンプルな快適さの参照を取得し、コンディションが快適、蒸し暑い、暖かいのいずれかを素早く判断。</p>
+                    <ul class="feature-benefits">
+                        <li>✓ 快適スコア</li>
+                        <li>✓ 日次プランニング補助</li>
+                        <li>✓ 読みやすいサマリー</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="content-section dark">
+        <div class="container">
+            <h2>一般的な使い方</h2>
+            <p class="section-subtitle">日常の場面でThermometerを使う方法</p>
+            <div class="use-cases-grid">
+                <div class="use-case-card">
+                    <span class="use-case-icon">🏠</span>
+                    <h3>家庭の快適さ</h3>
+                    <p>暖房、冷房、換気を調整するかどうかの判断時の参照として、ローカルの温度、湿度、気圧を活用。</p>
+                </div>
+                <div class="use-case-card">
+                    <span class="use-case-icon">🏃</span>
+                    <h3>屋外アクティビティ</h3>
+                    <p>散歩、ジョギング、ハイキング、その他の屋外出かけ前に現在のコンディションをチェック。</p>
+                </div>
+                <div class="use-case-card">
+                    <span class="use-case-icon">❤️</span>
+                    <h3>快適さ認識</h3>
+                    <p>自分や家族のために素早く快適さのスナップショットが必要な時に、湿度と温度のコンディションを確認。</p>
+                </div>
+                <div class="use-case-card">
+                    <span class="use-case-icon">🎣</span>
+                    <h3>釣りプランニング</h3>
+                    <p>天気、季節、場所とともに、釣り旅行を計画する際の入力の一つとして気圧の傾向をチェックする方も。</p>
+                </div>
+                <div class="use-case-card">
+                    <span class="use-case-icon">👨‍🌾</span>
+                    <h3>ガーデニング</h3>
+                    <p>水やり、植え付け、その他の屋外作業を計画する際の一般的な参照としてローカルの天気コンディションを確認。</p>
+                </div>
+                <div class="use-case-card">
+                    <span class="use-case-icon">📱</span>
+                    <h3>日次プランニング</h3>
+                    <p>服装選び、お使い、日々の天気認識に温度と予報情報を活用。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Specs -->
+    <section class="content-section">
+        <div class="container">
+            <h2>技術仕様</h2>
+            <p class="section-subtitle">アプリの詳細と要件</p>
+
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <h3>アプリ情報</h3>
+                    <table class="specs-table">
+                        <tr><td>バージョン</td><td>最新版</td></tr>
+                        <tr><td>サイズ</td><td>約12 MB</td></tr>
+                        <tr><td>カテゴリー</td><td>天気 / ツール</td></tr>
+                        <tr><td>最終更新</td><td>2026年3月</td></tr>
+                    </table>
+                </div>
+
+                <div class="spec-card">
+                    <h3>要件</h3>
+                    <table class="specs-table">
+                        <tr><td>Android</td><td>5.0+（Lollipop）</td></tr>
+                        <tr><td>権限</td><td>GPS、インターネット</td></tr>
+                        <tr><td>インターネット</td><td>必須</td></tr>
+                        <tr><td>ストレージ</td><td>15 MB推奨</td></tr>
+                    </table>
+                </div>
+
+                <div class="spec-card">
+                    <h3>天気データ</h3>
+                    <table class="specs-table">
+                        <tr><td>温度</td><td>°C / °F</td></tr>
+                        <tr><td>湿度</td><td>パーセンテージ %</td></tr>
+                        <tr><td>気圧</td><td>hPa / mbar</td></tr>
+                        <tr><td>更新頻度</td><td>10分ごと</td></tr>
+                    </table>
+                </div>
+
+                <div class="spec-card">
+                    <h3>機能</h3>
+                    <table class="specs-table">
+                        <tr><td>予報</td><td>✓ 7日間</td></tr>
+                        <tr><td>不快指数</td><td>✓ 計算済み</td></tr>
+                        <tr><td>複数単位</td><td>✓ 対応</td></tr>
+                        <tr><td>位置履歴</td><td>✓ プレミアム</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Explore Features - Landing Pages -->
+    <section class="content-section">
+        <div class="container">
+            <h2>温度計検索トピックを選択</h2>
+            <p class="section-subtitle">Thermometerのメインページから始めるか、温度、湿度、気圧、体温ログの検索に合ったページを開いてください。</p>
+
+            <div class="features-grid-enhanced">
+                <a href="thermometer-landing/indoor-thermometer-app.html" class="feature-card-large" style="text-decoration: none; color: inherit;">
+                    <div class="feature-icon-large">🏠</div>
+                    <h3>室内温度計アプリ</h3>
+                    <p>部屋ごとのセンサーではなく、家庭の快適さの参照としてローカルの温度、湿度、快適コンディションをチェック。</p>
+                    <span class="learn-more">詳しく見る →</span>
+                </a>
+
+                <a href="thermometer-landing/room-temperature-app.html" class="feature-card-large" style="text-decoration: none; color: inherit;">
+                    <div class="feature-icon-large">🌡️</div>
+                    <h3>室温アプリ</h3>
+                    <p>Android上で天気ベースの温度と湿度を素早い室温の快適さ参照として活用。</p>
+                    <span class="learn-more">詳しく見る →</span>
+                </a>
+
+                <a href="thermometer-landing/barometer-for-fishing.html" class="feature-card-large" style="text-decoration: none; color: inherit;">
+                    <div class="feature-icon-large">🎣</div>
+                    <h3>釣り用気圧計</h3>
+                    <p>天気、季節、場所とともに、釣りプランニングの参照としてローカルの気圧トレンドを確認。</p>
+                    <span class="learn-more">詳しく見る →</span>
+                </a>
+
+                <a href="thermometer-landing/hygrometer-app.html" class="feature-card-large" style="text-decoration: none; color: inherit;">
+                    <div class="feature-icon-large">💧</div>
+                    <h3>湿度計アプリ</h3>
+                    <p>日常の空気の快適さ認識のために、温度と気圧のコンテキストとともにローカルの湿度をチェック。</p>
+                    <span class="learn-more">詳しく見る →</span>
+                </a>
+
+                <a href="thermometer-landing/fever-thermometer-app.html" class="feature-card-large" style="text-decoration: none; color: inherit;">
+                    <div class="feature-icon-large">🤒</div>
+                    <h3>体温計アプリ</h3>
+                    <p>医療用体温計で測定した体温の読み取り値を記録し、発熱の記録を時系列で確認。</p>
+                    <span class="learn-more">詳しく見る →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison -->
+    <section class="content-section dark">
+        <div class="container">
+            <h2>Thermometerを選ぶ理由</h2>
+            <p class="section-subtitle">一般的なアプリ機能の簡単な比較</p>
+
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>機能</th>
+                            <th class="highlight">Power Star<br>Thermometer</th>
+                            <th>競合A</th>
+                            <th>競合B</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>無料ダウンロード</td>
+                            <td class="highlight"><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td>湿度表示</td>
+                            <td class="highlight"><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td>気圧計</td>
+                            <td class="highlight"><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>不快指数</td>
+                            <td class="highlight"><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="cross">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td>天気予報</td>
+                            <td class="highlight"><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td>釣り用気圧計</td>
+                            <td class="highlight"><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="cross">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td>アカウント不要</td>
+                            <td class="highlight"><span class="check">✓</span></td>
+                            <td><span class="cross">✗</span></td>
+                            <td><span class="cross">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td>ダウンロード数</td>
+                            <td class="highlight"><strong>1M+</strong></td>
+                            <td>500K+</td>
+                            <td>200K+</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="content-section">
+        <div class="container">
+            <h2>ユーザーの声</h2>
+            <p class="section-subtitle">アプリの使い方を語るユーザーの声</p>
+
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-rating">★★★★★</div>
+                    <p class="review-text">"釣りに出かける前に気圧の傾向をチェックするのが気に入っています。天気全体と一緒に使える便利な参照です。"</p>
+                    <div class="review-author">
+                        <span class="author-name">Mike R.</span>
+                        <span class="author-role">釣り愛好家</span>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-rating">★★★★☆</div>
+                    <p class="review-text">"家の周りの湿度と温度を素早く把握して、ファンをつけたり窓を開けたりする判断に役立ちます。"</p>
+                    <div class="review-author">
+                        <span class="author-name">Jennifer L.</span>
+                        <span class="author-role">親</span>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-rating">★★★★★</div>
+                    <p class="review-text">"ランニング前に快適指数で素早くサマリーが得られます。シンプルなプランニングチェックとして使っています。"</p>
+                    <div class="review-author">
+                        <span class="author-name">David K.</span>
+                        <span class="author-role">ランナー</span>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-rating">★★★★☆</div>
+                    <p class="review-text">"ガーデニングの日の一般的な天気参照として使っています。特に温度と湿度を一緒に比較したい時に便利です。"</p>
+                    <div class="review-author">
+                        <span class="author-name">Susan M.</span>
+                        <span class="author-role">ガーデナー</span>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-rating">★★★★★</div>
+                    <p class="review-text">"家族と外出の時間を計画する際に、予報と気圧の表示が便利です。"</p>
+                    <div class="review-author">
+                        <span class="author-name">Tom H.</span>
+                        <span class="author-role">ファミリープランナー</span>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-rating">★★★★☆</div>
+                    <p class="review-text">"ハイキング前に気圧の変化をチェックするのに便利です。より広い天気予報と比較していますが、手軽です。"</p>
+                    <div class="review-author">
+                        <span class="author-name">Chris W.</span>
+                        <span class="author-role">ハイカー</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reviews-cta">
+                <a href="https://play.google.com/store/apps/details?id=com.firefly.thermometer" class="btn-download" target="_blank">Google Playですべてのレビューを見る →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="content-section dark">
+        <div class="container">
+            <h2>よくある質問</h2>
+            <p class="section-subtitle">Thermometerアプリに関するよくあるご質問</p>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Thermometer - Hygrometerとは何ですか？</h3>
+                    <p>Thermometer - HygrometerはGPSベースの天気データを使用してローカルの温度、湿度、気圧を表示するAndroid天気アプリです。利用可能な読み取り値はお使いのデバイスの位置接続付近のデータソースによって異なります。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Thermometerアプリの精度はどのくらいですか？</h3>
+                    <p>アプリはGPS測位を使用して付近の天気データを取得します。精度はお使いのデバイスの位置信号、インターネット接続、付近の気象ステーションデータの品質によって異なります。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>室内温度計の代わりになりますか？</h3>
+                    <p>いいえ。ThermometerはGPS位置と付近の天気データを使用してAndroid上で一般的な環境参照を提供します。デバイス固有の読み取り値が必要な場合は、専用の室内、スマートホーム、医療、またはプロの気象計器をご使用ください。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Thermometerアプリは無料ですか？</h3>
+                    <p>はい、Thermometer - Hygrometerは広告付きで無料でダウンロードできます。拡張予報や位置履歴などのプレミアム機能にはオプションのアプリ内課金が利用可能です。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>アプリはオフラインで動作しますか？</h3>
+                    <p>天気データを更新するにはインターネット接続が必要で、GPSは位置ベースの読み取りに使用されます。デバイスがオフラインの場合、利用可能性が異なる場合があります。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>対応するAndroidバージョンは？</h3>
+                    <p>ThermometerアプリはAndroid 5.0（Lollipop）以降が必要です。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>不快指数とは何ですか？</h3>
+                    <p>不快指数は温度と湿度に基づいたシンプルな快適さの参照を提供し、日常のプランニングや服装の決定に役立ちます。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>釣りに使えますか？</h3>
+                    <p>釣り旅行を計画する際の参照として気圧の傾向を使う方もいます。アプリは気圧の変化を確認できますが、釣りのコンディションは天気、場所、季節、その他多くの要因にも左右されます。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How-To Guides -->
+    <section class="content-section">
+        <div class="container">
+            <h2>使い方ガイド</h2>
+            <p class="section-subtitle">温度計を最大限に活用する方法を学ぶ</p>
+
+            <div class="guides-grid">
+                <a href="../../blog/how-to-use-barometer-for-fishing.html" class="guide-card" style="text-decoration: none; color: inherit;">
+                    <div class="guide-icon">🎣</div>
+                    <h3>釣りに気圧計を使う方法</h3>
+                    <p>一部のアングラーが天気、季節、場所のコンディションとともに、プランニングの参照として気圧の傾向をどのように使っているかを学びましょう。</p>
+                    <span class="learn-more">ガイドを読む →</span>
+                </a>
+
+                <a href="../../blog/barometric-pressure-fishing-cheat-sheet.html" class="guide-card" style="text-decoration: none; color: inherit;">
+                    <div class="guide-icon">📊</div>
+                    <h3>釣りのための気圧チートシート</h3>
+                    <p>より広い天気コンディションやローカルコンテキストとともに確認する一般的な釣り用気圧範囲のクイックリファレンス。</p>
+                    <span class="learn-more">ガイドを読む →</span>
+                </a>
+
+                <a href="../../blog/check-room-temperature-phone.html" class="guide-card" style="text-decoration: none; color: inherit;">
+                    <div class="guide-icon">📱</div>
+                    <h3>室温のチェック方法</h3>
+                    <p>Androidスマートフォンで室内の温度と湿度をモニターするステップバイステップガイド。</p>
+                    <span class="learn-more">ガイドを読む →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Searches -->
+    <section class="content-section dark">
+        <div class="container">
+            <h2>人気の温度計検索</h2>
+            <p class="section-subtitle">温度、湿度、気圧、体温ログの検索に合ったThermometerページを探索</p>
+            <div class="guides-grid">
+                <a href="thermometer-landing/room-temperature-app.html" class="guide-card" style="text-decoration: none; color: inherit;">
+                    <div class="guide-icon">🌡️</div>
+                    <h3>室温アプリ</h3>
+                    <p>日常の室内チェックのためのシンプルな室温参照として天気ベースの読み取り値を活用。</p>
+                    <span class="learn-more">ページを見る →</span>
+                </a>
+                <a href="thermometer-landing/indoor-thermometer-app.html" class="guide-card" style="text-decoration: none; color: inherit;">
+                    <div class="guide-icon">🏠</div>
+                    <h3>室内温度計アプリ</h3>
+                    <p>Android上で素早い家庭の快適さの参照としてローカルの温度、湿度、気圧をチェック。</p>
+                    <span class="learn-more">ページを見る →</span>
+                </a>
+                <a href="thermometer-landing/hygrometer-app.html" class="guide-card" style="text-decoration: none; color: inherit;">
+                    <div class="guide-icon">💧</div>
+                    <h3>湿度計アプリ</h3>
+                    <p>ローカルの天気ベースのデータでAndroid上で湿度と快適コンディションを追跡。</p>
+                    <span class="learn-more">ページを見る →</span>
+                </a>
+                <a href="thermometer-landing/barometer-for-fishing.html" class="guide-card" style="text-decoration: none; color: inherit;">
+                    <div class="guide-icon">🎣</div>
+                    <h3>釣り用気圧計</h3>
+                    <p>季節、天気、ローカルコンディションとともに一部のアングラーが確認する気圧トレンドを表示。</p>
+                    <span class="learn-more">ページを見る →</span>
+                </a>
+                <a href="thermometer-landing/fever-thermometer-app.html" class="guide-card" style="text-decoration: none; color: inherit;">
+                    <div class="guide-icon">📝</div>
+                    <h3>体温計アプリ</h3>
+                    <p>個人の参照のために温度エントリーと発熱関連の記録を一か所に記録。</p>
+                    <span class="learn-more">ページを見る →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="bottom-cta">
+        <div class="container">
+            <div class="bottom-cta-content">
+                <h2>ローカルのコンディションをチェックしますか？</h2>
+                <a href="https://play.google.com/store/apps/details?id=com.firefly.thermometer" class="btn-download primary" target="_blank">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                        <path d="M3 20.5v-17c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v17c0 .83-.67 1.5-1.5 1.5S3 21.33 3 20.5zm5.5-15c-.83 0-1.5.67-1.5 1.5v11c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V7c0-.83-.67-1.5-1.5-1.5zm5 3c-.83 0-1.5.67-1.5 1.5v8c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-8c0-.83-.67-1.5-1.5-1.5zm5-3c-.83 0-1.5.67-1.5 1.5v11c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V7c0-.83-.67-1.5-1.5-1.5z"/>
+                    </svg>
+                    Google Playでダウンロード
+                </a>
+                <div class="bottom-cta-trust">
+                    <span>無料</span>
+                    <span>·</span>
+                    <span>広告なし</span>
+                    <span>·</span>
+                    <span>100万+ユーザー</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-star">★</span> Power Star Apps
+                    <p>毎日の暮らしを支える実用ツール</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>製品</h4>
+                        <a href="thermometer.html">Thermometer</a>
+                        <a href="microphone.html">Microphone</a>
+                        <a href="voice-changer.html">Voice Changer</a>
+                        <a href="lumiwall.html">Lumiwall</a>
+                        <a href="ai-photo.html">AI Photo Filters</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>リソース</h4>
+                        <a href="../../help.html">ヘルプセンター</a>
+                        <a href="../../faq.html">よくある質問</a>
+                        <a href="../../blog.html">ブログ</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>法的情報</h4>
+                        <a href="../../privacy.html">プライバシーポリシー</a>
+                        <a href="../../terms.html">利用規約</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Power Star Apps. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Enhanced GSAP Animations -->
+    <script src="../../js/gsap-animations-enhanced.js"></script>
+
+    <!-- Mobile Navigation -->
+    <script src="../../js/mobile-nav.js"></script>
+
+</body>
+</html>
