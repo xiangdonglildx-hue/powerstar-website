@@ -89,9 +89,7 @@ h1, h2, h3, h4, h5, h6,
 
 /* ===== Navigation ===== */
 .navbar {
-    background: rgba(255, 255, 255, 0.95) !important;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.98) !important;
     border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
     position: fixed;
     top: 4px;
@@ -317,6 +315,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .highlight {
+    color: var(--apple-blue); /* Fallback for iOS Safari */
     background: linear-gradient(90deg, var(--apple-blue), var(--apple-green));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

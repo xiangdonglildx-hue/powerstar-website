@@ -231,60 +231,34 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ===== Parallax Effect for Hero =====
+    // ===== Subtle Parallax for Hero =====
     const hero = document.querySelector('.hero');
     if (hero) {
-        gsap.to('.hero-content', {
-            y: 100,
-            opacity: 0.5,
+        gsap.to('.hero-mockup', {
+            y: 40,
             scrollTrigger: {
                 trigger: hero,
                 start: 'top top',
                 end: 'bottom top',
-                scrub: true
+                scrub: 1
             }
         });
     }
 
-    // ===== Counter Animation for Stats =====
+    // ===== Stats Fade In =====
     const statValues = document.querySelectorAll('.stat-value, .social-stat-value');
-    statValues.forEach(stat => {
-        const text = stat.textContent;
-        const hasPlus = text.includes('+');
-        const hasM = text.includes('M');
-        const hasK = text.includes('K');
-
-        let target = parseFloat(text);
-
-        if (hasM) {
-            target = parseFloat(text) * 1000000;
-        } else if (hasK) {
-            target = parseFloat(text) * 1000;
-        }
-
-        if (!isNaN(target)) {
-            gsap.from(stat, {
-                textContent: 0,
-                duration: 2,
-                ease: 'power1.out',
-                snap: { textContent: 1 },
-                scrollTrigger: {
-                    trigger: stat,
-                    start: 'top 80%',
-                    toggleActions: 'play none none reverse'
-                },
-                onUpdate: function () {
-                    const current = Math.ceil(parseFloat(stat.textContent));
-                    if (hasM) {
-                        stat.textContent = (current / 1000000).toFixed(0) + 'M+';
-                    } else if (hasK) {
-                        stat.textContent = (current / 1000).toFixed(0) + 'K+';
-                    } else {
-                        stat.textContent = current + (hasPlus ? '+' : '');
-                    }
-                }
-            });
-        }
+    statValues.forEach((stat, index) => {
+        gsap.from(stat, {
+            opacity: 0,
+            y: 20,
+            duration: 0.8,
+            delay: index * 0.15,
+            scrollTrigger: {
+                trigger: stat,
+                start: 'top 85%',
+                once: true
+            }
+        });
     });
 
     // ===== Hover Effects for Cards =====
