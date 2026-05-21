@@ -1,24 +1,24 @@
 {
-  "detectedAt": "2026-05-20T09:34:24.123Z",
+  "detectedAt": "2026-05-21T09:42:42.603Z",
   "totalAnomalies": 2,
   "anomalies": [
     {
       "type": "indexing_drop",
       "severity": "P1",
       "metric": "indexedPages",
-      "change": 86.48648648648648,
+      "change": 83.78378378378379,
       "threshold": 20,
-      "details": "Indexing gap: only 10 of 74 pages indexed (86.5% unindexed)",
-      "detectedAt": "2026-05-20T09:34:24.122Z"
+      "details": "Indexing gap: only 12 of 74 pages indexed (83.8% unindexed)",
+      "detectedAt": "2026-05-21T09:42:42.602Z"
     },
     {
       "type": "position_drop",
       "severity": "P2",
-      "metric": "topKeywords.best voice changer for android",
-      "change": 15.5,
+      "metric": "topKeywords.barometer for fishing",
+      "change": 12.5,
       "threshold": 5,
-      "details": "1 keywords dropped >5 positions. Worst: \"best voice changer for android\" from 18.0 to 33.5",
-      "detectedAt": "2026-05-20T09:34:24.122Z"
+      "details": "1 keywords dropped >5 positions. Worst: \"barometer for fishing\" from 53.5 to 66.0",
+      "detectedAt": "2026-05-21T09:42:42.603Z"
     }
   ],
   "thresholds": {
