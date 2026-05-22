@@ -1,6 +1,6 @@
 {
-  "detectedAt": "2026-05-21T09:42:42.603Z",
-  "totalAnomalies": 2,
+  "detectedAt": "2026-05-22T09:04:15.613Z",
+  "totalAnomalies": 1,
   "anomalies": [
     {
       "type": "indexing_drop",
@@ -9,16 +9,7 @@
       "change": 83.78378378378379,
       "threshold": 20,
       "details": "Indexing gap: only 12 of 74 pages indexed (83.8% unindexed)",
-      "detectedAt": "2026-05-21T09:42:42.602Z"
-    },
-    {
-      "type": "position_drop",
-      "severity": "P2",
-      "metric": "topKeywords.barometer for fishing",
-      "change": 12.5,
-      "threshold": 5,
-      "details": "1 keywords dropped >5 positions. Worst: \"barometer for fishing\" from 53.5 to 66.0",
-      "detectedAt": "2026-05-21T09:42:42.603Z"
+      "detectedAt": "2026-05-22T09:04:15.613Z"
     }
   ],
   "thresholds": {
