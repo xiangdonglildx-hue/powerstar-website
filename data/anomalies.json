@@ -1,7 +1,16 @@
 {
-  "detectedAt": "2026-05-28T10:04:11.125Z",
-  "totalAnomalies": 2,
+  "detectedAt": "2026-05-29T09:56:55.720Z",
+  "totalAnomalies": 3,
   "anomalies": [
+    {
+      "type": "traffic_drop",
+      "severity": "P1",
+      "metric": "clicks.last7Days",
+      "change": 40,
+      "threshold": 30,
+      "details": "Clicks dropped 40.0% (from 5 to 3)",
+      "detectedAt": "2026-05-29T09:56:55.719Z"
+    },
     {
       "type": "indexing_drop",
       "severity": "P1",
@@ -9,16 +18,16 @@
       "change": 83.78378378378379,
       "threshold": 20,
       "details": "Indexing gap: only 12 of 74 pages indexed (83.8% unindexed)",
-      "detectedAt": "2026-05-28T10:04:11.124Z"
+      "detectedAt": "2026-05-29T09:56:55.719Z"
     },
     {
       "type": "position_drop",
       "severity": "P2",
-      "metric": "topKeywords.best room temperature app for android",
-      "change": 5.166666666666666,
+      "metric": "topKeywords.best voice changer apps for android",
+      "change": 8.916666666666666,
       "threshold": 5,
-      "details": "1 keywords dropped >5 positions. Worst: \"best room temperature app for android\" from 5.5 to 10.7",
-      "detectedAt": "2026-05-28T10:04:11.125Z"
+      "details": "1 keywords dropped >5 positions. Worst: \"best voice changer apps for android\" from 11.3 to 20.3",
+      "detectedAt": "2026-05-29T09:56:55.719Z"
     }
   ],
   "thresholds": {
