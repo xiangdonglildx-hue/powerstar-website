@@ -1,6 +1,6 @@
 {
-  "detectedAt": "2026-05-30T08:31:17.179Z",
-  "totalAnomalies": 2,
+  "detectedAt": "2026-05-31T08:48:15.893Z",
+  "totalAnomalies": 1,
   "anomalies": [
     {
       "type": "indexing_drop",
@@ -9,16 +9,7 @@
       "change": 83.78378378378379,
       "threshold": 20,
       "details": "Indexing gap: only 12 of 74 pages indexed (83.8% unindexed)",
-      "detectedAt": "2026-05-30T08:31:17.179Z"
-    },
-    {
-      "type": "position_drop",
-      "severity": "P2",
-      "metric": "topKeywords.best app voice changer",
-      "change": 7.5,
-      "threshold": 5,
-      "details": "1 keywords dropped >5 positions. Worst: \"best app voice changer\" from 24.5 to 32.0",
-      "detectedAt": "2026-05-30T08:31:17.179Z"
+      "detectedAt": "2026-05-31T08:48:15.892Z"
     }
   ],
   "thresholds": {
