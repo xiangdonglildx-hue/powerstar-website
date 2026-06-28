@@ -1,5 +1,6 @@
 {
-  "lastUpdated": "2026-06-28T08:54:10.543Z",
+  "snapshotDate": "2026-06-28",
+  "collectedAt": "2026-06-28T08:54:10.545Z",
   "gsc": {
     "indexedPages": 13,
     "totalSubmitted": 74,
@@ -637,32 +638,5 @@
         "clicks": 0
       }
     ]
-  },
-  "geo": {
-    "chatgpt": {
-      "cited": false,
-      "lastCheck": "2026-04-27",
-      "citations": [],
-      "response": "[Q: best thermometer app for Android] If you mean an app to measure your **body temperature/fever**, most Android phones **cannot do this accurately by themselves**. Apps that claim to turn your phone into a medical thermometer are genera...\n\n[Q: room temperature app for phone] Do you want:\n\n1. **An app idea/spec** for a phone app that estimates room temperature, or  \n2. **Code** for a mobile app?\n\nImportant note: **phones usually do not have a true ambient room temperature ...\n\n[Q: indoor thermometer app] Do you want an **indoor thermometer app idea**, or do you want me to **build/prototype one**?\n\nA few important notes first:\n\n- A phone usually **cannot measure room temperature accurately** with its b...\n\n[Q: best microphone app for Android] If you mean an app to **use your Android phone as a microphone**, the best options are:\n\n### Best overall\n**WO Mic**\n- Turns your Android phone into a mic for PC\n- Works via **USB, Wi‑Fi, Bluetooth**\n...\n\n[Q: voice recorder app for phone] If you want a **voice recorder app for a phone**, here are the best options depending on what you need:\n\n### Simple built-in options\n- **iPhone:** **Voice Memos**\n  - Preinstalled on iPhone\n  - Easy r...\n\n[Q: voice changer app for Android] If you want a **voice changer app for Android**, here are good options depending on what you need:\n\n### Popular Android voice changer apps\n1. **Voice Changer with Effects**\n   - Very popular\n   - Lots...\n\n[Q: best voice modulator app] The “best” voice modulator app depends on what you want it for. Top options:\n\n### For live voice changing during calls/streaming\n- **Voicemod** (Windows, popular)\n  - Best for gaming, Discord, streami...\n\n[Q: HD wallpapers for Android] If you want **HD wallpapers for Android**, here are the best options depending on what you need:\n\n### Best wallpaper apps\n1. **Walli** – artistic, high-quality wallpapers  \n2. **ZEDGE** – huge collect...\n\n[Q: best wallpaper app for phone] If you want the **best wallpaper app for your phone**, the top picks are:\n\n### Best overall\n- **Walli** – High-quality, artistic wallpapers, lots of unique designs.\n\n### Best for AMOLED / dark wallpap...\n\n[Q: live wallpaper app] Do you want to **build a live wallpaper app**, or are you looking for a **live wallpaper app recommendation**?\n\nIf you mean **build one**, tell me your platform:\n\n- **Android**\n- **iPhone / iOS**\n- **...\n\n[Q: AI photo filter app] Do you want help **building** an AI photo filter app, **naming/branding** it, or creating a **business plan** for it?\n\nIf you mean building it, here’s a simple app concept:\n\n## AI Photo Filter App Ide...\n\n[Q: photo editing app with AI effects] If you want to build a **photo editing app with AI effects**, here’s a solid feature and tech plan.\n\n## Core app idea\nA mobile or web app where users:\n- Upload or capture a photo\n- Apply AI-powered ef...\n\n[Q: cartoon photo filter app] If you want a **cartoon photo filter app**, here are good options depending on what you mean:\n\n### Best apps for cartoon effects\n- **ToonMe** — very popular, easy selfies-to-cartoon\n- **Prisma** — art...\n\n[Q: anime photo filter] If you want an **anime photo filter**, here are the fastest options depending on what you mean:\n\n### 1. Turn a real photo into anime style\nUse apps/tools like:\n- **CapCut** – AI anime filters/effects\n...\n\n[Q: vintage photo editor app] A **vintage photo editor app** can mean a few different things. Here are some directions depending on what you want:\n\n### If you want an app idea\nA vintage photo editor app could include:\n- Sepia, fad...",
-      "model": "gpt-4o"
-    },
-    "gemini": {
-      "cited": false,
-      "lastCheck": "2026-04-27",
-      "citations": [],
-      "response": "[Q: best thermometer app for Android] It's crucial to understand a fundamental limitation:\n\n**Smartphones DO NOT have built-in medical-grade thermometers or precise ambient temperature sensors capable of measuring body temperature or accu...\n\n[Q: room temperature app for phone] Unfortunately, **standard smartphones do not have a built-in ambient air thermometer** that can accurately measure the room temperature around them.\n\nHere's why and what your options are:\n\n**Why Your ...\n\n[Q: indoor thermometer app] Unfortunately, there isn't a true \"indoor thermometer app\" for your smartphone that can directly measure the ambient room temperature *using just your phone*.\n\nHere's why and what your options are:\n\n1...\n\n[Q: best microphone app for Android] The \"best\" microphone app for Android really depends on what you need it for! Do you want something simple for voice notes, a powerful tool for professional recording, or an app to turn your phone int...\n\n[Q: voice recorder app for phone] Okay, there are many great voice recorder apps available for phones, both built-in and third-party. The best one for you will depend on your phone's operating system (iOS or Android) and what features...\n\n[Q: voice changer app for Android] Okay, there are many excellent voice changer apps available for Android, catering to different needs (real-time, recording, in-call, etc.).\n\nHere are some of the most popular and highly-rated options:...\n\n[Q: best voice modulator app] The \"best\" voice modulator app really depends on your specific needs and what platform you're using it on.\n\nHere's a breakdown by common use cases and platforms:\n\n---\n\n### Key Factors to Consider:\n\n1....\n\n[Q: HD wallpapers for Android] Finding high-definition (HD), QHD, or even 4K wallpapers for your Android phone is easy with so many great sources available! Here's a breakdown of the best places to look:\n\n## Top Android Wallpaper A...\n\n[Q: best wallpaper app for phone] Choosing the \"best\" wallpaper app depends on your preferences for content, features, and platform (iOS vs. Android). However, here are some of the most highly-regarded and popular options, each with i...\n\n[Q: live wallpaper app] Great choice! Live wallpapers can add a lot of personality and dynamism to your device. The best app for you will depend on your device (Android, iOS, or Desktop) and what kind of live wallpaper you'r...\n\n[Q: AI photo filter app] An **AI photo filter app** is a software application that uses Artificial Intelligence (AI) and machine learning (ML) algorithms to analyze, understand, and then modify digital images in a variety of ...\n\n[Q: photo editing app with AI effects] Many photo editing apps now integrate powerful AI features to help users achieve impressive results with minimal effort. Here are some of the best photo editing apps with AI effects, catering to diffe...\n\n[Q: cartoon photo filter app] There are many great cartoon photo filter apps available for both iOS and Android that use AI to transform your photos into various cartoon and artistic styles. Here are some of the most popular and h...\n\n[Q: anime photo filter] An \"anime photo filter\" is a tool or application that uses artificial intelligence (AI) and machine learning to transform a regular photograph into an image that resembles an anime or manga drawing. T...\n\n[Q: vintage photo editor app] There are tons of fantastic vintage photo editor apps that can give your pictures that nostalgic, analog, or retro feel. The \"best\" one depends on the specific vintage look you're going for (e.g., dis...",
-      "model": "gemini-pro"
-    }
-  },
-  "alerts": [
-    {
-      "type": "indexing_drop",
-      "severity": "P1",
-      "metric": "indexedPages",
-      "change": 82.43243243243244,
-      "threshold": 20,
-      "details": "Indexing gap: only 13 of 74 pages indexed (82.4% unindexed)",
-      "detectedAt": "2026-06-28T08:54:11.130Z"
-    }
-  ]
+  }
 }
