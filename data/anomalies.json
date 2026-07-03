@@ -1,16 +1,7 @@
 {
-  "detectedAt": "2026-07-02T08:58:11.570Z",
-  "totalAnomalies": 2,
+  "detectedAt": "2026-07-03T09:20:08.210Z",
+  "totalAnomalies": 1,
   "anomalies": [
-    {
-      "type": "traffic_drop",
-      "severity": "P1",
-      "metric": "clicks.last7Days",
-      "change": 36.36363636363637,
-      "threshold": 30,
-      "details": "Clicks dropped 36.4% (from 11 to 7)",
-      "detectedAt": "2026-07-02T08:58:11.569Z"
-    },
     {
       "type": "indexing_drop",
       "severity": "P1",
@@ -18,7 +9,7 @@
       "change": 82.43243243243244,
       "threshold": 20,
       "details": "Indexing gap: only 13 of 74 pages indexed (82.4% unindexed)",
-      "detectedAt": "2026-07-02T08:58:11.569Z"
+      "detectedAt": "2026-07-03T09:20:08.209Z"
     }
   ],
   "thresholds": {
