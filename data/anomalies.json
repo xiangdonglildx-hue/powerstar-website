@@ -1,5 +1,5 @@
 {
-  "detectedAt": "2026-07-21T08:29:41.204Z",
+  "detectedAt": "2026-07-22T08:30:14.615Z",
   "totalAnomalies": 1,
   "anomalies": [
     {
@@ -9,7 +9,7 @@
       "change": 75.67567567567568,
       "threshold": 20,
       "details": "Indexing gap: only 18 of 74 pages indexed (75.7% unindexed)",
-      "detectedAt": "2026-07-21T08:29:41.203Z"
+      "detectedAt": "2026-07-22T08:30:14.615Z"
     }
   ],
   "thresholds": {
