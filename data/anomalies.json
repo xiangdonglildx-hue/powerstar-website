@@ -1,6 +1,6 @@
 {
-  "detectedAt": "2026-08-07T07:16:58.273Z",
-  "totalAnomalies": 1,
+  "detectedAt": "2026-08-08T06:54:12.053Z",
+  "totalAnomalies": 2,
   "anomalies": [
     {
       "type": "indexing_drop",
@@ -9,7 +9,16 @@
       "change": 75.67567567567568,
       "threshold": 20,
       "details": "Indexing gap: only 18 of 74 pages indexed (75.7% unindexed)",
-      "detectedAt": "2026-08-07T07:16:58.272Z"
+      "detectedAt": "2026-08-08T06:54:12.052Z"
+    },
+    {
+      "type": "position_drop",
+      "severity": "P2",
+      "metric": "topKeywords.app to measure air temperature",
+      "change": 9,
+      "threshold": 5,
+      "details": "1 keywords dropped >5 positions. Worst: \"app to measure air temperature\" from 10.0 to 19.0",
+      "detectedAt": "2026-08-08T06:54:12.053Z"
     }
   ],
   "thresholds": {
