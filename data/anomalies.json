@@ -1,6 +1,6 @@
 {
-  "detectedAt": "2026-08-16T06:40:59.710Z",
-  "totalAnomalies": 1,
+  "detectedAt": "2026-08-17T06:56:32.949Z",
+  "totalAnomalies": 2,
   "anomalies": [
     {
       "type": "indexing_drop",
@@ -9,7 +9,16 @@
       "change": 74.32432432432432,
       "threshold": 20,
       "details": "Indexing gap: only 19 of 74 pages indexed (74.3% unindexed)",
-      "detectedAt": "2026-08-16T06:40:59.709Z"
+      "detectedAt": "2026-08-17T06:56:32.947Z"
+    },
+    {
+      "type": "position_drop",
+      "severity": "P2",
+      "metric": "topKeywords.app for inside temperature",
+      "change": 10.5,
+      "threshold": 5,
+      "details": "1 keywords dropped >5 positions. Worst: \"app for inside temperature\" from 7.0 to 17.5",
+      "detectedAt": "2026-08-17T06:56:32.947Z"
     }
   ],
   "thresholds": {
