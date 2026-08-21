@@ -1,15 +1,15 @@
 {
-  "detectedAt": "2026-08-20T06:45:44.168Z",
+  "detectedAt": "2026-08-21T06:46:32.421Z",
   "totalAnomalies": 1,
   "anomalies": [
     {
       "type": "indexing_drop",
       "severity": "P1",
       "metric": "indexedPages",
-      "change": 74.32432432432432,
+      "change": 70.27027027027027,
       "threshold": 20,
-      "details": "Indexing gap: only 19 of 74 pages indexed (74.3% unindexed)",
-      "detectedAt": "2026-08-20T06:45:44.167Z"
+      "details": "Indexing gap: only 22 of 74 pages indexed (70.3% unindexed)",
+      "detectedAt": "2026-08-21T06:46:32.420Z"
     }
   ],
   "thresholds": {
