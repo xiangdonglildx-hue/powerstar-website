@@ -1,6 +1,6 @@
 {
-  "detectedAt": "2026-08-22T06:40:53.450Z",
-  "totalAnomalies": 1,
+  "detectedAt": "2026-08-23T06:42:03.056Z",
+  "totalAnomalies": 2,
   "anomalies": [
     {
       "type": "indexing_drop",
@@ -9,7 +9,16 @@
       "change": 70.27027027027027,
       "threshold": 20,
       "details": "Indexing gap: only 22 of 74 pages indexed (70.3% unindexed)",
-      "detectedAt": "2026-08-22T06:40:53.449Z"
+      "detectedAt": "2026-08-23T06:42:03.055Z"
+    },
+    {
+      "type": "position_drop",
+      "severity": "P2",
+      "metric": "topKeywords.android temperature sensor app",
+      "change": 6.75,
+      "threshold": 5,
+      "details": "1 keywords dropped >5 positions. Worst: \"android temperature sensor app\" from 8.0 to 14.8",
+      "detectedAt": "2026-08-23T06:42:03.055Z"
     }
   ],
   "thresholds": {
