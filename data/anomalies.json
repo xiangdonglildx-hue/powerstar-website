@@ -1,6 +1,6 @@
 {
-  "detectedAt": "2026-08-26T06:48:51.283Z",
-  "totalAnomalies": 1,
+  "detectedAt": "2026-08-27T17:24:50.140Z",
+  "totalAnomalies": 2,
   "anomalies": [
     {
       "type": "indexing_drop",
@@ -9,7 +9,16 @@
       "change": 70.27027027027027,
       "threshold": 20,
       "details": "Indexing gap: only 22 of 74 pages indexed (70.3% unindexed)",
-      "detectedAt": "2026-08-26T06:48:51.282Z"
+      "detectedAt": "2026-08-27T17:24:50.140Z"
+    },
+    {
+      "type": "position_drop",
+      "severity": "P2",
+      "metric": "topKeywords.app that tells room temperature",
+      "change": 10.5,
+      "threshold": 5,
+      "details": "1 keywords dropped >5 positions. Worst: \"app that tells room temperature\" from 1.0 to 11.5",
+      "detectedAt": "2026-08-27T17:24:50.140Z"
     }
   ],
   "thresholds": {
