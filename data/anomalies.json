@@ -1,6 +1,6 @@
 {
-  "detectedAt": "2026-10-07T12:44:36.397Z",
-  "totalAnomalies": 2,
+  "detectedAt": "2026-10-08T12:54:24.678Z",
+  "totalAnomalies": 1,
   "anomalies": [
     {
       "type": "indexing_drop",
@@ -9,16 +9,7 @@
       "change": 67.56756756756756,
       "threshold": 20,
       "details": "Indexing gap: only 24 of 74 pages indexed (67.6% unindexed)",
-      "detectedAt": "2026-10-07T12:44:36.397Z"
-    },
-    {
-      "type": "position_drop",
-      "severity": "P2",
-      "metric": "topKeywords.android thermometer",
-      "change": 6.666666666666668,
-      "threshold": 5,
-      "details": "1 keywords dropped >5 positions. Worst: \"android thermometer\" from 19.3 to 26.0",
-      "detectedAt": "2026-10-07T12:44:36.397Z"
+      "detectedAt": "2026-10-08T12:54:24.678Z"
     }
   ],
   "thresholds": {
