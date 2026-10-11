@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-10T12:00:12.076Z",
+  "lastUpdated": "2026-10-11T12:11:53.770Z",
   "gsc": {
     "indexedPages": 24,
     "totalSubmitted": 74,
@@ -32,24 +32,24 @@
       },
       {
         "query": "free thermometer app",
-        "impressions": 67,
+        "impressions": 62,
         "clicks": 1,
-        "ctr": 0.014925373134328358,
-        "position": 9.805970149253731
+        "ctr": 0.016129032258064516,
+        "position": 9.838709677419354
       },
       {
         "query": "lumiwall",
-        "impressions": 8,
+        "impressions": 7,
         "clicks": 1,
-        "ctr": 0.125,
-        "position": 10.125
+        "ctr": 0.14285714285714285,
+        "position": 10.142857142857142
       },
       {
         "query": "thermometer app for android",
-        "impressions": 107,
+        "impressions": 101,
         "clicks": 1,
-        "ctr": 0.009345794392523364,
-        "position": 9.16822429906542
+        "ctr": 0.009900990099009901,
+        "position": 9.158415841584159
       },
       {
         "query": "air thermometer app",
@@ -67,17 +67,17 @@
       },
       {
         "query": "ambient temperature app android",
-        "impressions": 8,
+        "impressions": 7,
         "clicks": 0,
         "ctr": 0,
-        "position": 10.125
+        "position": 9.142857142857142
       },
       {
         "query": "android app thermometer",
-        "impressions": 2,
+        "impressions": 1,
         "clicks": 0,
         "ctr": 0,
-        "position": 8.5
+        "position": 9
       },
       {
         "query": "android room temperature app",
@@ -206,6 +206,13 @@
         "position": 24
       },
       {
+        "query": "app voice changer",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 28
+      },
+      {
         "query": "best android thermometer app",
         "impressions": 1,
         "clicks": 0,
@@ -214,17 +221,17 @@
       },
       {
         "query": "best app for room temperature",
-        "impressions": 10,
+        "impressions": 9,
         "clicks": 0,
         "ctr": 0,
-        "position": 8.6
+        "position": 8.444444444444445
       },
       {
         "query": "best free room temperature app",
-        "impressions": 5,
+        "impressions": 4,
         "clicks": 0,
         "ctr": 0,
-        "position": 8.4
+        "position": 8.5
       },
       {
         "query": "best free temperature app",
@@ -249,31 +256,24 @@
       },
       {
         "query": "best indoor thermometer app",
-        "impressions": 16,
+        "impressions": 15,
         "clicks": 0,
         "ctr": 0,
-        "position": 8.25
-      },
-      {
-        "query": "best phone temperature app",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 21
+        "position": 8.466666666666667
       },
       {
         "query": "best room temperature app",
-        "impressions": 33,
+        "impressions": 31,
         "clicks": 0,
         "ctr": 0,
-        "position": 7.636363636363637
+        "position": 7.741935483870968
       },
       {
         "query": "best room temperature app for android",
-        "impressions": 25,
+        "impressions": 21,
         "clicks": 0,
         "ctr": 0,
-        "position": 6.32
+        "position": 6.428571428571429
       },
       {
         "query": "best room thermometer app",
@@ -312,10 +312,10 @@
       },
       {
         "query": "beste thermometer app android",
-        "impressions": 5,
+        "impressions": 4,
         "clicks": 0,
         "ctr": 0,
-        "position": 11.6
+        "position": 12.25
       },
       {
         "query": "current phone temperature",
@@ -333,17 +333,17 @@
       },
       {
         "query": "free app for room temperature",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "query": "free indoor temperature app",
         "impressions": 2,
         "clicks": 0,
         "ctr": 0,
         "position": 10.5
-      },
-      {
-        "query": "free indoor temperature app",
-        "impressions": 3,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 10
       },
       {
         "query": "free indoor thermometer app",
@@ -354,10 +354,10 @@
       },
       {
         "query": "free room temp app",
-        "impressions": 5,
+        "impressions": 3,
         "clicks": 0,
         "ctr": 0,
-        "position": 10.4
+        "position": 10.666666666666666
       },
       {
         "query": "free room temperature app",
@@ -368,10 +368,9 @@
       }
     ],
     "clicks": {
-      "last7Days": 3,
+      "last7Days": 2,
       "last30Days": 26,
       "trend": [
-        0,
         0,
         2,
         2,
@@ -397,14 +396,15 @@
         1,
         0,
         1,
-        1
+        1,
+        0,
+        0
       ]
     },
     "impressions": {
-      "last7Days": 45,
-      "last30Days": 3090,
+      "last7Days": 60,
+      "last30Days": 2926,
       "trend": [
-        187,
         190,
         167,
         150,
@@ -430,16 +430,12 @@
         8,
         18,
         11,
-        8
+        8,
+        11,
+        12
       ]
     },
     "dailyTrend": [
-      {
-        "date": "2026-09-10",
-        "clicks": 0,
-        "impressions": 187,
-        "position": 9.529411764705882
-      },
       {
         "date": "2026-09-11",
         "clicks": 0,
@@ -595,10 +591,22 @@
         "clicks": 1,
         "impressions": 8,
         "position": 9.375
+      },
+      {
+        "date": "2026-10-07",
+        "clicks": 0,
+        "impressions": 11,
+        "position": 8.727272727272727
+      },
+      {
+        "date": "2026-10-08",
+        "clicks": 0,
+        "impressions": 12,
+        "position": 8
       }
     ],
-    "avgPosition": 9.863430420711975,
-    "avgCTR": 0.008414239482200648,
+    "avgPosition": 9.872863978127135,
+    "avgCTR": 0.00888585099111415,
     "coverageErrors": [
       {
         "url": "https://powerstarapps.com/ja/",
@@ -612,17 +620,12 @@
       },
       {
         "url": "https://powerstarapps.com/blog/best-voice-changer-apps-for-android.html",
-        "impressions": 7,
+        "impressions": 9,
         "clicks": 0
       },
       {
         "url": "https://powerstarapps.com/es/",
-        "impressions": 6,
-        "clicks": 0
-      },
-      {
-        "url": "https://powerstarapps.com/es/products/voice-changer.html",
-        "impressions": 9,
+        "impressions": 7,
         "clicks": 0
       },
       {
@@ -646,13 +649,8 @@
         "clicks": 0
       },
       {
-        "url": "https://powerstarapps.com/products/ai-photo.html",
-        "impressions": 1,
-        "clicks": 0
-      },
-      {
         "url": "https://powerstarapps.com/pt/",
-        "impressions": 3,
+        "impressions": 4,
         "clicks": 0
       }
     ]
@@ -675,13 +673,22 @@
   },
   "alerts": [
     {
+      "type": "traffic_drop",
+      "severity": "P1",
+      "metric": "clicks.last7Days",
+      "change": 33.33333333333333,
+      "threshold": 30,
+      "details": "Clicks dropped 33.3% (from 3 to 2)",
+      "detectedAt": "2026-10-11T12:11:54.367Z"
+    },
+    {
       "type": "indexing_drop",
       "severity": "P1",
       "metric": "indexedPages",
       "change": 67.56756756756756,
       "threshold": 20,
       "details": "Indexing gap: only 24 of 74 pages indexed (67.6% unindexed)",
-      "detectedAt": "2026-10-10T12:00:12.669Z"
+      "detectedAt": "2026-10-11T12:11:54.367Z"
     }
   ]
 }
