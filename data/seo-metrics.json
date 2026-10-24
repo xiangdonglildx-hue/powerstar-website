@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-23T11:05:49.996Z",
+  "lastUpdated": "2026-10-24T10:22:32.704Z",
   "gsc": {
     "indexedPages": 24,
     "totalSubmitted": 74,
@@ -25,31 +25,31 @@
       },
       {
         "query": "best temperature app for android",
-        "impressions": 6,
+        "impressions": 5,
         "clicks": 1,
-        "ctr": 0.16666666666666666,
-        "position": 4.666666666666666
+        "ctr": 0.2,
+        "position": 4
       },
       {
         "query": "free thermometer app",
-        "impressions": 26,
+        "impressions": 24,
         "clicks": 1,
-        "ctr": 0.038461538461538464,
-        "position": 9.615384615384615
+        "ctr": 0.041666666666666664,
+        "position": 9.5
       },
       {
         "query": "lumiwall",
-        "impressions": 15,
+        "impressions": 18,
         "clicks": 1,
-        "ctr": 0.06666666666666667,
-        "position": 12.266666666666667
+        "ctr": 0.05555555555555555,
+        "position": 11.555555555555555
       },
       {
         "query": "thermometer app for android",
-        "impressions": 25,
+        "impressions": 24,
         "clicks": 1,
-        "ctr": 0.04,
-        "position": 8.440000000000001
+        "ctr": 0.041666666666666664,
+        "position": 8.541666666666668
       },
       {
         "query": "air thermometer app",
@@ -165,17 +165,17 @@
       },
       {
         "query": "best room temperature app",
-        "impressions": 11,
+        "impressions": 8,
         "clicks": 0,
         "ctr": 0,
-        "position": 7.454545454545454
+        "position": 7.625
       },
       {
         "query": "best room temperature app for android",
-        "impressions": 10,
+        "impressions": 9,
         "clicks": 0,
         "ctr": 0,
-        "position": 5.8
+        "position": 6.111111111111111
       },
       {
         "query": "best room thermometer app",
@@ -186,10 +186,10 @@
       },
       {
         "query": "best temperature app",
-        "impressions": 5,
+        "impressions": 4,
         "clicks": 0,
         "ctr": 0,
-        "position": 10
+        "position": 10.5
       },
       {
         "query": "best thermometer app",
@@ -220,39 +220,25 @@
         "position": 10
       },
       {
-        "query": "free ambient temperature app",
-        "impressions": 2,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 10
-      },
-      {
-        "query": "free indoor temperature app",
+        "query": "free fire mein voice change kaise karen",
         "impressions": 1,
         "clicks": 0,
         "ctr": 0,
-        "position": 11
+        "position": 31
       },
       {
         "query": "free indoor thermometer app",
-        "impressions": 7,
+        "impressions": 5,
         "clicks": 0,
         "ctr": 0,
-        "position": 9.571428571428571
-      },
-      {
-        "query": "free room temp app",
-        "impressions": 2,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 10.5
+        "position": 9.4
       },
       {
         "query": "free room temperature app",
-        "impressions": 4,
+        "impressions": 3,
         "clicks": 0,
         "ctr": 0,
-        "position": 14.5
+        "position": 16
       },
       {
         "query": "free room temperature app for android",
@@ -263,10 +249,10 @@
       },
       {
         "query": "free room thermometer app",
-        "impressions": 12,
+        "impressions": 10,
         "clicks": 0,
         "ctr": 0,
-        "position": 10.75
+        "position": 11.1
       },
       {
         "query": "free temperature app",
@@ -284,10 +270,10 @@
       },
       {
         "query": "free thermometer app for android",
-        "impressions": 11,
+        "impressions": 9,
         "clicks": 0,
         "ctr": 0,
-        "position": 7.909090909090909
+        "position": 7.222222222222222
       },
       {
         "query": "how to measure room temperature",
@@ -326,17 +312,17 @@
       },
       {
         "query": "indoor thermometer app",
-        "impressions": 16,
+        "impressions": 14,
         "clicks": 0,
         "ctr": 0,
-        "position": 10.25
+        "position": 9.928571428571429
       },
       {
         "query": "indoor thermometer app for android",
-        "impressions": 3,
+        "impressions": 2,
         "clicks": 0,
         "ctr": 0,
-        "position": 9
+        "position": 8.5
       },
       {
         "query": "indoor thermometer app free",
@@ -353,25 +339,38 @@
         "position": 11
       },
       {
-        "query": "inside thermometer app free",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 10
-      },
-      {
         "query": "is there a room temperature app",
         "impressions": 1,
         "clicks": 0,
         "ctr": 0,
         "position": 21
+      },
+      {
+        "query": "is there a temperature app for android",
+        "impressions": 6,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 6.666666666666667
+      },
+      {
+        "query": "is there a thermometer app",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 11
+      },
+      {
+        "query": "is there a thermometer app for android",
+        "impressions": 5,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 9.8
       }
     ],
     "clicks": {
       "last7Days": 1,
       "last30Days": 22,
       "trend": [
-        0,
         3,
         0,
         2,
@@ -399,14 +398,14 @@
         0,
         0,
         1,
+        0,
         0
       ]
     },
     "impressions": {
-      "last7Days": 108,
-      "last30Days": 1351,
+      "last7Days": 104,
+      "last30Days": 1238,
       "trend": [
-        132,
         159,
         200,
         144,
@@ -434,16 +433,11 @@
         15,
         13,
         16,
+        19,
         19
       ]
     },
     "dailyTrend": [
-      {
-        "date": "2026-09-23",
-        "clicks": 0,
-        "impressions": 132,
-        "position": 11.022727272727273
-      },
       {
         "date": "2026-09-24",
         "clicks": 3,
@@ -611,10 +605,16 @@
         "clicks": 0,
         "impressions": 19,
         "position": 12.736842105263158
+      },
+      {
+        "date": "2026-10-22",
+        "clicks": 0,
+        "impressions": 19,
+        "position": 11.31578947368421
       }
     ],
-    "avgPosition": 9.774241302738712,
-    "avgCTR": 0.01628423390081421,
+    "avgPosition": 9.664781906300485,
+    "avgCTR": 0.017770597738287562,
     "coverageErrors": [
       {
         "url": "https://powerstarapps.com/ja/",
@@ -627,13 +627,8 @@
         "clicks": 0
       },
       {
-        "url": "https://powerstarapps.com/es/",
-        "impressions": 9,
-        "clicks": 0
-      },
-      {
         "url": "https://powerstarapps.com/es/products/voice-changer.html",
-        "impressions": 6,
+        "impressions": 5,
         "clicks": 0
       },
       {
@@ -652,11 +647,6 @@
         "clicks": 0
       },
       {
-        "url": "https://powerstarapps.com/products/ai-photo-landing/for-selfies.html",
-        "impressions": 1,
-        "clicks": 0
-      },
-      {
         "url": "https://powerstarapps.com/products/ai-photo.html",
         "impressions": 1,
         "clicks": 0
@@ -668,7 +658,7 @@
       },
       {
         "url": "https://powerstarapps.com/pt/products/voice-changer.html",
-        "impressions": 8,
+        "impressions": 7,
         "clicks": 0
       },
       {
@@ -696,22 +686,13 @@
   },
   "alerts": [
     {
-      "type": "traffic_drop",
-      "severity": "P1",
-      "metric": "clicks.last7Days",
-      "change": 50,
-      "threshold": 30,
-      "details": "Clicks dropped 50.0% (from 2 to 1)",
-      "detectedAt": "2026-10-23T11:05:50.570Z"
-    },
-    {
       "type": "indexing_drop",
       "severity": "P1",
       "metric": "indexedPages",
       "change": 67.56756756756756,
       "threshold": 20,
       "details": "Indexing gap: only 24 of 74 pages indexed (67.6% unindexed)",
-      "detectedAt": "2026-10-23T11:05:50.570Z"
+      "detectedAt": "2026-10-24T10:22:33.147Z"
     }
   ]
 }
