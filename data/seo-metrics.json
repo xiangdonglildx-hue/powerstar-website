@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-24T10:22:32.704Z",
+  "lastUpdated": "2026-10-25T10:48:42.191Z",
   "gsc": {
     "indexedPages": 24,
     "totalSubmitted": 74,
@@ -31,25 +31,11 @@
         "position": 4
       },
       {
-        "query": "free thermometer app",
-        "impressions": 24,
-        "clicks": 1,
-        "ctr": 0.041666666666666664,
-        "position": 9.5
-      },
-      {
-        "query": "lumiwall",
-        "impressions": 18,
-        "clicks": 1,
-        "ctr": 0.05555555555555555,
-        "position": 11.555555555555555
-      },
-      {
         "query": "thermometer app for android",
-        "impressions": 24,
+        "impressions": 20,
         "clicks": 1,
-        "ctr": 0.041666666666666664,
-        "position": 8.541666666666668
+        "ctr": 0.05,
+        "position": 8.8
       },
       {
         "query": "air thermometer app",
@@ -59,18 +45,11 @@
         "position": 6
       },
       {
-        "query": "android room temperature app",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 11
-      },
-      {
         "query": "android thermometer app",
-        "impressions": 7,
+        "impressions": 6,
         "clicks": 0,
         "ctr": 0,
-        "position": 9.142857142857142
+        "position": 8.833333333333332
       },
       {
         "query": "app that reads temperature",
@@ -109,13 +88,6 @@
       },
       {
         "query": "app to know room temperature",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 23
-      },
-      {
-        "query": "app to measure indoor temperature",
         "impressions": 1,
         "clicks": 0,
         "ctr": 0,
@@ -165,17 +137,17 @@
       },
       {
         "query": "best room temperature app",
-        "impressions": 8,
+        "impressions": 5,
         "clicks": 0,
         "ctr": 0,
-        "position": 7.625
+        "position": 8.4
       },
       {
         "query": "best room temperature app for android",
-        "impressions": 9,
+        "impressions": 5,
         "clicks": 0,
         "ctr": 0,
-        "position": 6.111111111111111
+        "position": 6
       },
       {
         "query": "best room thermometer app",
@@ -235,10 +207,10 @@
       },
       {
         "query": "free room temperature app",
-        "impressions": 3,
+        "impressions": 2,
         "clicks": 0,
         "ctr": 0,
-        "position": 16
+        "position": 19
       },
       {
         "query": "free room temperature app for android",
@@ -249,10 +221,10 @@
       },
       {
         "query": "free room thermometer app",
-        "impressions": 10,
+        "impressions": 9,
         "clicks": 0,
         "ctr": 0,
-        "position": 11.1
+        "position": 11.222222222222221
       },
       {
         "query": "free temperature app",
@@ -263,10 +235,17 @@
       },
       {
         "query": "free temperature app for android",
-        "impressions": 4,
+        "impressions": 2,
         "clicks": 0,
         "ctr": 0,
-        "position": 7.5
+        "position": 9
+      },
+      {
+        "query": "free thermometer app",
+        "impressions": 18,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 9.666666666666666
       },
       {
         "query": "free thermometer app for android",
@@ -298,10 +277,10 @@
       },
       {
         "query": "indoor temperature app for android",
-        "impressions": 4,
+        "impressions": 3,
         "clicks": 0,
         "ctr": 0,
-        "position": 8.5
+        "position": 8.666666666666668
       },
       {
         "query": "indoor temperature app free",
@@ -312,10 +291,10 @@
       },
       {
         "query": "indoor thermometer app",
-        "impressions": 14,
+        "impressions": 11,
         "clicks": 0,
         "ctr": 0,
-        "position": 9.928571428571429
+        "position": 9.727272727272727
       },
       {
         "query": "indoor thermometer app for android",
@@ -323,13 +302,6 @@
         "clicks": 0,
         "ctr": 0,
         "position": 8.5
-      },
-      {
-        "query": "indoor thermometer app free",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 10
       },
       {
         "query": "inside thermometer app",
@@ -347,10 +319,10 @@
       },
       {
         "query": "is there a temperature app for android",
-        "impressions": 6,
+        "impressions": 5,
         "clicks": 0,
         "ctr": 0,
-        "position": 6.666666666666667
+        "position": 6
       },
       {
         "query": "is there a thermometer app",
@@ -361,17 +333,44 @@
       },
       {
         "query": "is there a thermometer app for android",
-        "impressions": 5,
+        "impressions": 4,
         "clicks": 0,
         "ctr": 0,
-        "position": 9.8
+        "position": 9.5
+      },
+      {
+        "query": "is there an app to check room temperature",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 5
+      },
+      {
+        "query": "is there an app to measure indoor temperature",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 23
+      },
+      {
+        "query": "istar voice changer",
+        "impressions": 7,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "query": "luftfuktighetsmätare app",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 7
       }
     ],
     "clicks": {
       "last7Days": 1,
-      "last30Days": 22,
+      "last30Days": 19,
       "trend": [
-        3,
         0,
         2,
         5,
@@ -399,14 +398,14 @@
         0,
         1,
         0,
+        0,
         0
       ]
     },
     "impressions": {
-      "last7Days": 104,
-      "last30Days": 1238,
+      "last7Days": 95,
+      "last30Days": 1092,
       "trend": [
-        159,
         200,
         144,
         176,
@@ -434,16 +433,11 @@
         13,
         16,
         19,
-        19
+        19,
+        13
       ]
     },
     "dailyTrend": [
-      {
-        "date": "2026-09-24",
-        "clicks": 3,
-        "impressions": 159,
-        "position": 9.572327044025156
-      },
       {
         "date": "2026-09-25",
         "clicks": 0,
@@ -611,19 +605,25 @@
         "clicks": 0,
         "impressions": 19,
         "position": 11.31578947368421
+      },
+      {
+        "date": "2026-10-23",
+        "clicks": 0,
+        "impressions": 13,
+        "position": 10.23076923076923
       }
     ],
-    "avgPosition": 9.664781906300485,
-    "avgCTR": 0.017770597738287562,
+    "avgPosition": 9.684981684981684,
+    "avgCTR": 0.0173992673992674,
     "coverageErrors": [
-      {
-        "url": "https://powerstarapps.com/ja/",
-        "impressions": 9,
-        "clicks": 3
-      },
       {
         "url": "https://powerstarapps.com/blog.html",
         "impressions": 4,
+        "clicks": 0
+      },
+      {
+        "url": "https://powerstarapps.com/blog/is-there-a-thermometer-app.html",
+        "impressions": 7,
         "clicks": 0
       },
       {
@@ -638,7 +638,7 @@
       },
       {
         "url": "https://powerstarapps.com/privacy.html",
-        "impressions": 4,
+        "impressions": 3,
         "clicks": 0
       },
       {
@@ -692,7 +692,7 @@
       "change": 67.56756756756756,
       "threshold": 20,
       "details": "Indexing gap: only 24 of 74 pages indexed (67.6% unindexed)",
-      "detectedAt": "2026-10-24T10:22:33.147Z"
+      "detectedAt": "2026-10-25T10:48:42.770Z"
     }
   ]
 }
