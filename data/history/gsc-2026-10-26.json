@@ -1,0 +1,672 @@
+{
+  "snapshotDate": "2026-10-26",
+  "collectedAt": "2026-10-26T12:20:57.173Z",
+  "gsc": {
+    "indexedPages": 24,
+    "totalSubmitted": 74,
+    "unindexedUrls": [
+      "https://powerstarapps.com/es/products/thermometer.html",
+      "https://powerstarapps.com/ja/products/thermometer.html",
+      "https://powerstarapps.com/products/thermometer-landing/indoor-thermometer-app.html",
+      "https://powerstarapps.com/products/thermometer-landing/room-temperature-app.html",
+      "https://powerstarapps.com/products/thermometer-landing/barometer-for-fishing.html",
+      "https://powerstarapps.com/products/thermometer-landing/fever-thermometer-app.html",
+      "https://powerstarapps.com/products/microphone.html",
+      "https://powerstarapps.com/es/products/microphone.html",
+      "https://powerstarapps.com/pt/products/microphone.html",
+      "https://powerstarapps.com/ja/products/microphone.html"
+    ],
+    "topKeywords": [
+      {
+        "query": "power star apps",
+        "impressions": 8,
+        "clicks": 2,
+        "ctr": 0.25,
+        "position": 2
+      },
+      {
+        "query": "best temperature app for android",
+        "impressions": 4,
+        "clicks": 1,
+        "ctr": 0.25,
+        "position": 3
+      },
+      {
+        "query": "thermometer app for android",
+        "impressions": 14,
+        "clicks": 1,
+        "ctr": 0.07142857142857142,
+        "position": 8.5
+      },
+      {
+        "query": "air thermometer app",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 6
+      },
+      {
+        "query": "android thermometer app",
+        "impressions": 4,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 9.25
+      },
+      {
+        "query": "app thermometer android",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 11
+      },
+      {
+        "query": "app to check indoor temperature",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 22
+      },
+      {
+        "query": "app to check room temperature",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 4
+      },
+      {
+        "query": "app to find room temperature",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 21
+      },
+      {
+        "query": "app to know room temperature",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 23
+      },
+      {
+        "query": "app to read room temperature",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 20
+      },
+      {
+        "query": "app voice changer",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 28
+      },
+      {
+        "query": "best app for room temperature",
+        "impressions": 3,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 7.333333333333333
+      },
+      {
+        "query": "best free room temperature app",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "query": "best free voice changer for android",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 36
+      },
+      {
+        "query": "best indoor thermometer app",
+        "impressions": 4,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 9.25
+      },
+      {
+        "query": "best room temperature app",
+        "impressions": 5,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 8.4
+      },
+      {
+        "query": "best room temperature app for android",
+        "impressions": 4,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 6.25
+      },
+      {
+        "query": "best room thermometer app",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 6
+      },
+      {
+        "query": "best temperature app",
+        "impressions": 4,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 10.5
+      },
+      {
+        "query": "best thermometer app",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 11
+      },
+      {
+        "query": "best thermometer app for android",
+        "impressions": 5,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 7.4
+      },
+      {
+        "query": "can you have a voice changer on mobile",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 29
+      },
+      {
+        "query": "current phone temperature",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "query": "free fire mein voice change kaise karen",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 31
+      },
+      {
+        "query": "free indoor thermometer app",
+        "impressions": 5,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 9.4
+      },
+      {
+        "query": "free room temperature app",
+        "impressions": 2,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 19
+      },
+      {
+        "query": "free room temperature app for android",
+        "impressions": 2,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "query": "free room thermometer app",
+        "impressions": 8,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 11.25
+      },
+      {
+        "query": "free temperature app",
+        "impressions": 4,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 9.25
+      },
+      {
+        "query": "free temperature app for android",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "query": "free thermometer app",
+        "impressions": 13,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 10.692307692307692
+      },
+      {
+        "query": "free thermometer app for android",
+        "impressions": 6,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 8.666666666666668
+      },
+      {
+        "query": "how to measure room temperature",
+        "impressions": 6,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 8.333333333333332
+      },
+      {
+        "query": "hygrometer app",
+        "impressions": 3,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 23.333333333333332
+      },
+      {
+        "query": "indoor temperature app for android",
+        "impressions": 2,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "query": "indoor temperature app free",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 11
+      },
+      {
+        "query": "indoor thermometer app",
+        "impressions": 9,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 9.444444444444445
+      },
+      {
+        "query": "indoor thermometer app for android",
+        "impressions": 2,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 8.5
+      },
+      {
+        "query": "is there a room temperature app",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 21
+      },
+      {
+        "query": "is there a temperature app for android",
+        "impressions": 4,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 5.25
+      },
+      {
+        "query": "is there a thermometer app for android",
+        "impressions": 3,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 9.666666666666666
+      },
+      {
+        "query": "is there an app to check room temperature",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 5
+      },
+      {
+        "query": "is there an app to measure indoor temperature",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 23
+      },
+      {
+        "query": "istar voice changer",
+        "impressions": 7,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "query": "luftfuktighetsmätare app",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 7
+      },
+      {
+        "query": "lumi wallpaper",
+        "impressions": 2,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 13.5
+      },
+      {
+        "query": "lumiwall",
+        "impressions": 18,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 11.666666666666666
+      },
+      {
+        "query": "phone app temperature",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 38
+      },
+      {
+        "query": "phone thermometer",
+        "impressions": 2,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 14
+      }
+    ],
+    "clicks": {
+      "last7Days": 1,
+      "last30Days": 19,
+      "trend": [
+        2,
+        5,
+        2,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        3,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "impressions": {
+      "last7Days": 94,
+      "last30Days": 906,
+      "trend": [
+        144,
+        176,
+        174,
+        43,
+        10,
+        29,
+        13,
+        8,
+        18,
+        11,
+        8,
+        11,
+        12,
+        14,
+        6,
+        16,
+        11,
+        20,
+        11,
+        17,
+        23,
+        22,
+        15,
+        13,
+        16,
+        19,
+        19,
+        13,
+        14
+      ]
+    },
+    "dailyTrend": [
+      {
+        "date": "2026-09-26",
+        "clicks": 2,
+        "impressions": 144,
+        "position": 9.4375
+      },
+      {
+        "date": "2026-09-27",
+        "clicks": 5,
+        "impressions": 176,
+        "position": 9.454545454545455
+      },
+      {
+        "date": "2026-09-28",
+        "clicks": 2,
+        "impressions": 174,
+        "position": 9.298850574712644
+      },
+      {
+        "date": "2026-09-29",
+        "clicks": 0,
+        "impressions": 43,
+        "position": 9.511627906976743
+      },
+      {
+        "date": "2026-09-30",
+        "clicks": 0,
+        "impressions": 10,
+        "position": 8.7
+      },
+      {
+        "date": "2026-10-01",
+        "clicks": 0,
+        "impressions": 29,
+        "position": 8.344827586206897
+      },
+      {
+        "date": "2026-10-02",
+        "clicks": 0,
+        "impressions": 13,
+        "position": 8.76923076923077
+      },
+      {
+        "date": "2026-10-03",
+        "clicks": 1,
+        "impressions": 8,
+        "position": 8.625
+      },
+      {
+        "date": "2026-10-04",
+        "clicks": 0,
+        "impressions": 18,
+        "position": 7.833333333333333
+      },
+      {
+        "date": "2026-10-05",
+        "clicks": 1,
+        "impressions": 11,
+        "position": 11.727272727272727
+      },
+      {
+        "date": "2026-10-06",
+        "clicks": 1,
+        "impressions": 8,
+        "position": 9.375
+      },
+      {
+        "date": "2026-10-07",
+        "clicks": 0,
+        "impressions": 11,
+        "position": 8.727272727272727
+      },
+      {
+        "date": "2026-10-08",
+        "clicks": 0,
+        "impressions": 12,
+        "position": 8
+      },
+      {
+        "date": "2026-10-09",
+        "clicks": 1,
+        "impressions": 14,
+        "position": 8.5
+      },
+      {
+        "date": "2026-10-10",
+        "clicks": 0,
+        "impressions": 6,
+        "position": 12
+      },
+      {
+        "date": "2026-10-11",
+        "clicks": 3,
+        "impressions": 16,
+        "position": 4.875
+      },
+      {
+        "date": "2026-10-12",
+        "clicks": 0,
+        "impressions": 11,
+        "position": 10.181818181818182
+      },
+      {
+        "date": "2026-10-13",
+        "clicks": 1,
+        "impressions": 20,
+        "position": 11.6
+      },
+      {
+        "date": "2026-10-14",
+        "clicks": 0,
+        "impressions": 11,
+        "position": 13.454545454545455
+      },
+      {
+        "date": "2026-10-15",
+        "clicks": 1,
+        "impressions": 17,
+        "position": 13.941176470588236
+      },
+      {
+        "date": "2026-10-16",
+        "clicks": 0,
+        "impressions": 23,
+        "position": 10.173913043478262
+      },
+      {
+        "date": "2026-10-17",
+        "clicks": 0,
+        "impressions": 22,
+        "position": 9.5
+      },
+      {
+        "date": "2026-10-18",
+        "clicks": 0,
+        "impressions": 15,
+        "position": 22.866666666666667
+      },
+      {
+        "date": "2026-10-19",
+        "clicks": 0,
+        "impressions": 13,
+        "position": 6.384615384615385
+      },
+      {
+        "date": "2026-10-20",
+        "clicks": 1,
+        "impressions": 16,
+        "position": 11.5
+      },
+      {
+        "date": "2026-10-21",
+        "clicks": 0,
+        "impressions": 19,
+        "position": 12.736842105263158
+      },
+      {
+        "date": "2026-10-22",
+        "clicks": 0,
+        "impressions": 19,
+        "position": 11.31578947368421
+      },
+      {
+        "date": "2026-10-23",
+        "clicks": 0,
+        "impressions": 13,
+        "position": 10.23076923076923
+      },
+      {
+        "date": "2026-10-24",
+        "clicks": 0,
+        "impressions": 14,
+        "position": 6.571428571428571
+      }
+    ],
+    "avgPosition": 9.748344370860927,
+    "avgCTR": 0.02097130242825607,
+    "coverageErrors": [
+      {
+        "url": "https://powerstarapps.com/blog.html",
+        "impressions": 4,
+        "clicks": 0
+      },
+      {
+        "url": "https://powerstarapps.com/blog/is-there-a-thermometer-app.html",
+        "impressions": 4,
+        "clicks": 0
+      },
+      {
+        "url": "https://powerstarapps.com/es/products/voice-changer.html",
+        "impressions": 6,
+        "clicks": 0
+      },
+      {
+        "url": "https://powerstarapps.com/help.html",
+        "impressions": 1,
+        "clicks": 0
+      },
+      {
+        "url": "https://powerstarapps.com/privacy.html",
+        "impressions": 3,
+        "clicks": 0
+      },
+      {
+        "url": "https://powerstarapps.com/products/ai-photo-landing/for-pets.html",
+        "impressions": 1,
+        "clicks": 0
+      },
+      {
+        "url": "https://powerstarapps.com/products/ai-photo.html",
+        "impressions": 2,
+        "clicks": 0
+      },
+      {
+        "url": "https://powerstarapps.com/pt/",
+        "impressions": 5,
+        "clicks": 0
+      },
+      {
+        "url": "https://powerstarapps.com/pt/products/voice-changer.html",
+        "impressions": 7,
+        "clicks": 0
+      },
+      {
+        "url": "https://powerstarapps.com/terms.html",
+        "impressions": 4,
+        "clicks": 0
+      }
+    ]
+  }
+}
