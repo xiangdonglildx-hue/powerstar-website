@@ -1,16 +1,7 @@
 {
-  "detectedAt": "2026-10-28T12:12:13.965Z",
+  "detectedAt": "2026-10-29T12:22:37.021Z",
   "totalAnomalies": 2,
   "anomalies": [
-    {
-      "type": "traffic_drop",
-      "severity": "P1",
-      "metric": "clicks.last7Days",
-      "change": 100,
-      "threshold": 30,
-      "details": "Clicks dropped 100.0% (from 1 to 0)",
-      "detectedAt": "2026-10-28T12:12:13.964Z"
-    },
     {
       "type": "indexing_drop",
       "severity": "P1",
@@ -18,7 +9,16 @@
       "change": 67.56756756756756,
       "threshold": 20,
       "details": "Indexing gap: only 24 of 74 pages indexed (67.6% unindexed)",
-      "detectedAt": "2026-10-28T12:12:13.964Z"
+      "detectedAt": "2026-10-29T12:22:37.021Z"
+    },
+    {
+      "type": "position_drop",
+      "severity": "P2",
+      "metric": "topKeywords.how to measure room temperature",
+      "change": 17,
+      "threshold": 5,
+      "details": "1 keywords dropped >5 positions. Worst: \"how to measure room temperature\" from 9.0 to 26.0",
+      "detectedAt": "2026-10-29T12:22:37.021Z"
     }
   ],
   "thresholds": {
