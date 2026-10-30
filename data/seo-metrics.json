@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-29T12:22:36.516Z",
+  "lastUpdated": "2026-10-30T12:13:27.634Z",
   "gsc": {
     "indexedPages": 24,
     "totalSubmitted": 74,
@@ -24,20 +24,6 @@
         "position": 2
       },
       {
-        "query": "air thermometer app",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 6
-      },
-      {
-        "query": "app to check room temperature",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 4
-      },
-      {
         "query": "app voice changer",
         "impressions": 1,
         "clicks": 0,
@@ -50,20 +36,6 @@
         "clicks": 0,
         "ctr": 0,
         "position": 36
-      },
-      {
-        "query": "best indoor thermometer app",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 9
-      },
-      {
-        "query": "best room thermometer app",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 6
       },
       {
         "query": "best voice changer app for android",
@@ -94,13 +66,6 @@
         "position": 29
       },
       {
-        "query": "current phone temperature",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 10
-      },
-      {
         "query": "free fire mein voice change kaise karen",
         "impressions": 1,
         "clicks": 0,
@@ -108,67 +73,11 @@
         "position": 31
       },
       {
-        "query": "free indoor thermometer app",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 7
-      },
-      {
-        "query": "free room temperature app",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 25
-      },
-      {
-        "query": "free room thermometer app",
-        "impressions": 2,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 11
-      },
-      {
-        "query": "how to measure room temperature",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 26
-      },
-      {
         "query": "hygrometer app",
         "impressions": 3,
         "clicks": 0,
         "ctr": 0,
         "position": 23.333333333333332
-      },
-      {
-        "query": "indoor temperature app for android",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 7
-      },
-      {
-        "query": "indoor thermometer app for android",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 8
-      },
-      {
-        "query": "is there a thermometer app for android",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 9
-      },
-      {
-        "query": "is there an app to check room temperature",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 5
       },
       {
         "query": "istar voice changer",
@@ -186,24 +95,10 @@
       },
       {
         "query": "lumiwall",
-        "impressions": 17,
+        "impressions": 18,
         "clicks": 0,
         "ctr": 0,
-        "position": 11.823529411764707
-      },
-      {
-        "query": "phone app temperature",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 38
-      },
-      {
-        "query": "phone thermometer",
-        "impressions": 2,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 14
+        "position": 11.666666666666666
       },
       {
         "query": "power star",
@@ -214,10 +109,10 @@
       },
       {
         "query": "power star app",
-        "impressions": 6,
+        "impressions": 5,
         "clicks": 0,
         "ctr": 0,
-        "position": 3
+        "position": 3.2
       },
       {
         "query": "power star appu",
@@ -235,10 +130,10 @@
       },
       {
         "query": "power stars app",
-        "impressions": 51,
+        "impressions": 50,
         "clicks": 0,
         "ctr": 0,
-        "position": 4.450980392156863
+        "position": 4.32
       },
       {
         "query": "power stars download",
@@ -267,13 +162,6 @@
         "clicks": 0,
         "ctr": 0,
         "position": 24
-      },
-      {
-        "query": "room thermometer app",
-        "impressions": 2,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 7
       },
       {
         "query": "si",
@@ -312,10 +200,10 @@
       },
       {
         "query": "temperature apps for android",
-        "impressions": 2,
+        "impressions": 1,
         "clicks": 0,
         "ctr": 0,
-        "position": 23.5
+        "position": 37
       },
       {
         "query": "temperature measure apps",
@@ -325,32 +213,11 @@
         "position": 93
       },
       {
-        "query": "temperature measurement app for android",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 1
-      },
-      {
         "query": "temperature meter app",
         "impressions": 1,
         "clicks": 0,
         "ctr": 0,
         "position": 68
-      },
-      {
-        "query": "temperature mobile app",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 39
-      },
-      {
-        "query": "thermometer app android",
-        "impressions": 2,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 12
       },
       {
         "query": "thermometer hygrometer app",
@@ -365,13 +232,40 @@
         "clicks": 0,
         "ctr": 0,
         "position": 45
+      },
+      {
+        "query": "voice changer apps",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 27
+      },
+      {
+        "query": "voice filter apps",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 33
+      },
+      {
+        "query": "weather thermometer app",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 16
+      },
+      {
+        "query": "which voice changer is best for android",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 22
       }
     ],
     "clicks": {
       "last7Days": 0,
       "last30Days": 10,
       "trend": [
-        0,
         0,
         0,
         0,
@@ -399,14 +293,14 @@
         0,
         0,
         0,
+        0,
         0
       ]
     },
     "impressions": {
-      "last7Days": 93,
-      "last30Days": 459,
+      "last7Days": 84,
+      "last30Days": 426,
       "trend": [
-        43,
         10,
         29,
         13,
@@ -434,16 +328,11 @@
         14,
         12,
         18,
-        17
+        17,
+        10
       ]
     },
     "dailyTrend": [
-      {
-        "date": "2026-09-29",
-        "clicks": 0,
-        "impressions": 43,
-        "position": 9.511627906976743
-      },
       {
         "date": "2026-09-30",
         "clicks": 0,
@@ -611,10 +500,16 @@
         "clicks": 0,
         "impressions": 17,
         "position": 8.882352941176471
+      },
+      {
+        "date": "2026-10-28",
+        "clicks": 0,
+        "impressions": 10,
+        "position": 8.4
       }
     ],
-    "avgPosition": 10.276688453159041,
-    "avgCTR": 0.02178649237472767,
+    "avgPosition": 10.309859154929578,
+    "avgCTR": 0.023474178403755867,
     "coverageErrors": [
       {
         "url": "https://powerstarapps.com/blog.html",
@@ -622,8 +517,13 @@
         "clicks": 0
       },
       {
+        "url": "https://powerstarapps.com/blog/best-free-thermometer-apps-android.html",
+        "impressions": 1,
+        "clicks": 0
+      },
+      {
         "url": "https://powerstarapps.com/blog/room-temp-app.html",
-        "impressions": 5,
+        "impressions": 3,
         "clicks": 0
       },
       {
@@ -692,16 +592,16 @@
       "change": 67.56756756756756,
       "threshold": 20,
       "details": "Indexing gap: only 24 of 74 pages indexed (67.6% unindexed)",
-      "detectedAt": "2026-10-29T12:22:37.021Z"
+      "detectedAt": "2026-10-30T12:13:28.221Z"
     },
     {
       "type": "position_drop",
       "severity": "P2",
-      "metric": "topKeywords.how to measure room temperature",
-      "change": 17,
+      "metric": "topKeywords.temperature apps for android",
+      "change": 13.5,
       "threshold": 5,
-      "details": "1 keywords dropped >5 positions. Worst: \"how to measure room temperature\" from 9.0 to 26.0",
-      "detectedAt": "2026-10-29T12:22:37.021Z"
+      "details": "1 keywords dropped >5 positions. Worst: \"temperature apps for android\" from 23.5 to 37.0",
+      "detectedAt": "2026-10-30T12:13:28.222Z"
     }
   ]
 }
