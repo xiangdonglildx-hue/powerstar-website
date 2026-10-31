@@ -1,6 +1,6 @@
 {
-  "detectedAt": "2026-10-30T12:13:28.222Z",
-  "totalAnomalies": 2,
+  "detectedAt": "2026-10-31T11:46:20.128Z",
+  "totalAnomalies": 1,
   "anomalies": [
     {
       "type": "indexing_drop",
@@ -9,16 +9,7 @@
       "change": 67.56756756756756,
       "threshold": 20,
       "details": "Indexing gap: only 24 of 74 pages indexed (67.6% unindexed)",
-      "detectedAt": "2026-10-30T12:13:28.221Z"
-    },
-    {
-      "type": "position_drop",
-      "severity": "P2",
-      "metric": "topKeywords.temperature apps for android",
-      "change": 13.5,
-      "threshold": 5,
-      "details": "1 keywords dropped >5 positions. Worst: \"temperature apps for android\" from 23.5 to 37.0",
-      "detectedAt": "2026-10-30T12:13:28.222Z"
+      "detectedAt": "2026-10-31T11:46:20.127Z"
     }
   ],
   "thresholds": {
