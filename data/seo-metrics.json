@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-31T11:46:19.567Z",
+  "lastUpdated": "2026-11-01T12:45:57.189Z",
   "gsc": {
     "indexedPages": 24,
     "totalSubmitted": 74,
@@ -87,13 +87,6 @@
         "position": 23.333333333333332
       },
       {
-        "query": "istar voice changer",
-        "impressions": 4,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 9
-      },
-      {
         "query": "lumi wallpaper",
         "impressions": 2,
         "clicks": 0,
@@ -137,14 +130,14 @@
       },
       {
         "query": "power stars app",
-        "impressions": 50,
+        "impressions": 49,
         "clicks": 0,
         "ctr": 0,
-        "position": 4.32
+        "position": 4.551020408163265
       },
       {
         "query": "power stars download",
-        "impressions": 26,
+        "impressions": 23,
         "clicks": 0,
         "ctr": 0,
         "position": 8
@@ -155,13 +148,6 @@
         "clicks": 0,
         "ctr": 0,
         "position": 8
-      },
-      {
-        "query": "questa?",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 29
       },
       {
         "query": "real time voice changer android",
@@ -270,10 +256,9 @@
       }
     ],
     "clicks": {
-      "last7Days": 0,
-      "last30Days": 10,
+      "last7Days": 1,
+      "last30Days": 11,
       "trend": [
-        0,
         0,
         1,
         0,
@@ -301,14 +286,14 @@
         0,
         0,
         0,
-        0
+        0,
+        1
       ]
     },
     "impressions": {
-      "last7Days": 82,
-      "last30Days": 427,
+      "last7Days": 84,
+      "last30Days": 414,
       "trend": [
-        29,
         13,
         8,
         18,
@@ -336,16 +321,11 @@
         18,
         17,
         10,
-        11
+        11,
+        16
       ]
     },
     "dailyTrend": [
-      {
-        "date": "2026-10-01",
-        "clicks": 0,
-        "impressions": 29,
-        "position": 8.344827586206897
-      },
       {
         "date": "2026-10-02",
         "clicks": 0,
@@ -513,19 +493,20 @@
         "clicks": 0,
         "impressions": 11,
         "position": 8.363636363636363
+      },
+      {
+        "date": "2026-10-30",
+        "clicks": 1,
+        "impressions": 16,
+        "position": 7.625
       }
     ],
-    "avgPosition": 10.297423887587822,
-    "avgCTR": 0.0234192037470726,
+    "avgPosition": 10.330917874396135,
+    "avgCTR": 0.026570048309178744,
     "coverageErrors": [
       {
         "url": "https://powerstarapps.com/blog.html",
-        "impressions": 5,
-        "clicks": 0
-      },
-      {
-        "url": "https://powerstarapps.com/blog/best-free-thermometer-apps-android.html",
-        "impressions": 1,
+        "impressions": 4,
         "clicks": 0
       },
       {
@@ -540,12 +521,12 @@
       },
       {
         "url": "https://powerstarapps.com/help.html",
-        "impressions": 2,
+        "impressions": 1,
         "clicks": 0
       },
       {
         "url": "https://powerstarapps.com/privacy.html",
-        "impressions": 4,
+        "impressions": 3,
         "clicks": 0
       },
       {
@@ -565,12 +546,12 @@
       },
       {
         "url": "https://powerstarapps.com/pt/products/voice-changer.html",
-        "impressions": 7,
+        "impressions": 8,
         "clicks": 0
       },
       {
         "url": "https://powerstarapps.com/terms.html",
-        "impressions": 4,
+        "impressions": 3,
         "clicks": 0
       }
     ]
@@ -593,13 +574,22 @@
   },
   "alerts": [
     {
+      "type": "traffic_drop",
+      "severity": "P1",
+      "metric": "clicks.last7Days",
+      "change": 100,
+      "threshold": 30,
+      "details": "Clicks dropped 100.0% (from 0 to 1)",
+      "detectedAt": "2026-11-01T12:45:57.776Z"
+    },
+    {
       "type": "indexing_drop",
       "severity": "P1",
       "metric": "indexedPages",
       "change": 67.56756756756756,
       "threshold": 20,
       "details": "Indexing gap: only 24 of 74 pages indexed (67.6% unindexed)",
-      "detectedAt": "2026-10-31T11:46:20.127Z"
+      "detectedAt": "2026-11-01T12:45:57.777Z"
     }
   ]
 }
