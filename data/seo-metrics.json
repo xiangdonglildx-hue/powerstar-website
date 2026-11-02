@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-01T12:45:57.189Z",
+  "lastUpdated": "2026-11-02T14:50:57.105Z",
   "gsc": {
     "indexedPages": 24,
     "totalSubmitted": 74,
@@ -95,10 +95,10 @@
       },
       {
         "query": "lumiwall",
-        "impressions": 19,
+        "impressions": 18,
         "clicks": 0,
         "ctr": 0,
-        "position": 10.631578947368421
+        "position": 10.11111111111111
       },
       {
         "query": "power star",
@@ -130,14 +130,14 @@
       },
       {
         "query": "power stars app",
-        "impressions": 49,
+        "impressions": 48,
         "clicks": 0,
         "ctr": 0,
-        "position": 4.551020408163265
+        "position": 4.395833333333334
       },
       {
         "query": "power stars download",
-        "impressions": 23,
+        "impressions": 22,
         "clicks": 0,
         "ctr": 0,
         "position": 8
@@ -165,10 +165,10 @@
       },
       {
         "query": "star power app",
-        "impressions": 2,
+        "impressions": 3,
         "clicks": 0,
         "ctr": 0,
-        "position": 20.5
+        "position": 16.666666666666664
       },
       {
         "query": "starpower app",
@@ -253,13 +253,19 @@
         "clicks": 0,
         "ctr": 0,
         "position": 21
+      },
+      {
+        "query": "تحميل",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 16
       }
     ],
     "clicks": {
       "last7Days": 1,
       "last30Days": 11,
       "trend": [
-        0,
         1,
         0,
         1,
@@ -287,14 +293,14 @@
         0,
         0,
         0,
-        1
+        1,
+        0
       ]
     },
     "impressions": {
-      "last7Days": 84,
-      "last30Days": 414,
+      "last7Days": 81,
+      "last30Days": 410,
       "trend": [
-        13,
         8,
         18,
         11,
@@ -322,16 +328,11 @@
         17,
         10,
         11,
-        16
+        16,
+        9
       ]
     },
     "dailyTrend": [
-      {
-        "date": "2026-10-02",
-        "clicks": 0,
-        "impressions": 13,
-        "position": 8.76923076923077
-      },
       {
         "date": "2026-10-03",
         "clicks": 1,
@@ -499,10 +500,16 @@
         "clicks": 1,
         "impressions": 16,
         "position": 7.625
+      },
+      {
+        "date": "2026-10-31",
+        "clicks": 0,
+        "impressions": 9,
+        "position": 8.11111111111111
       }
     ],
-    "avgPosition": 10.330917874396135,
-    "avgCTR": 0.026570048309178744,
+    "avgPosition": 10.331707317073171,
+    "avgCTR": 0.026829268292682926,
     "coverageErrors": [
       {
         "url": "https://powerstarapps.com/blog.html",
@@ -574,22 +581,13 @@
   },
   "alerts": [
     {
-      "type": "traffic_drop",
-      "severity": "P1",
-      "metric": "clicks.last7Days",
-      "change": 100,
-      "threshold": 30,
-      "details": "Clicks dropped 100.0% (from 0 to 1)",
-      "detectedAt": "2026-11-01T12:45:57.776Z"
-    },
-    {
       "type": "indexing_drop",
       "severity": "P1",
       "metric": "indexedPages",
       "change": 67.56756756756756,
       "threshold": 20,
       "details": "Indexing gap: only 24 of 74 pages indexed (67.6% unindexed)",
-      "detectedAt": "2026-11-01T12:45:57.777Z"
+      "detectedAt": "2026-11-02T14:50:57.586Z"
     }
   ]
 }
