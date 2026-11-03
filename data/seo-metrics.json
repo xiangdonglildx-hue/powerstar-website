@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-02T17:42:50.701Z",
+  "lastUpdated": "2026-11-03T13:43:31.606Z",
   "gsc": {
     "indexedPages": 24,
     "totalSubmitted": 74,
@@ -87,6 +87,13 @@
         "position": 23.333333333333332
       },
       {
+        "query": "indoor thermometer app",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 23
+      },
+      {
         "query": "lumi wallpaper",
         "impressions": 2,
         "clicks": 0,
@@ -109,10 +116,10 @@
       },
       {
         "query": "power star app",
-        "impressions": 5,
+        "impressions": 4,
         "clicks": 0,
         "ctr": 0,
-        "position": 3.2
+        "position": 3
       },
       {
         "query": "power star appu",
@@ -130,14 +137,14 @@
       },
       {
         "query": "power stars app",
-        "impressions": 48,
+        "impressions": 47,
         "clicks": 0,
         "ctr": 0,
-        "position": 4.395833333333334
+        "position": 4.042553191489361
       },
       {
         "query": "power stars download",
-        "impressions": 22,
+        "impressions": 21,
         "clicks": 0,
         "ctr": 0,
         "position": 8
@@ -165,10 +172,10 @@
       },
       {
         "query": "star power app",
-        "impressions": 3,
+        "impressions": 6,
         "clicks": 0,
         "ctr": 0,
-        "position": 16.666666666666664
+        "position": 12.5
       },
       {
         "query": "starpower app",
@@ -264,9 +271,8 @@
     ],
     "clicks": {
       "last7Days": 1,
-      "last30Days": 11,
+      "last30Days": 10,
       "trend": [
-        1,
         0,
         1,
         1,
@@ -294,14 +300,14 @@
         0,
         0,
         1,
+        0,
         0
       ]
     },
     "impressions": {
-      "last7Days": 81,
-      "last30Days": 410,
+      "last7Days": 83,
+      "last30Days": 422,
       "trend": [
-        8,
         18,
         11,
         8,
@@ -329,16 +335,11 @@
         10,
         11,
         16,
-        9
+        9,
+        20
       ]
     },
     "dailyTrend": [
-      {
-        "date": "2026-10-03",
-        "clicks": 1,
-        "impressions": 8,
-        "position": 8.625
-      },
       {
         "date": "2026-10-04",
         "clicks": 0,
@@ -506,10 +507,16 @@
         "clicks": 0,
         "impressions": 9,
         "position": 8.11111111111111
+      },
+      {
+        "date": "2026-11-01",
+        "clicks": 0,
+        "impressions": 20,
+        "position": 11.7
       }
     ],
-    "avgPosition": 10.331707317073171,
-    "avgCTR": 0.026829268292682926,
+    "avgPosition": 10.428909952606634,
+    "avgCTR": 0.023696682464454975,
     "coverageErrors": [
       {
         "url": "https://powerstarapps.com/blog.html",
@@ -518,7 +525,7 @@
       },
       {
         "url": "https://powerstarapps.com/blog/room-temp-app.html",
-        "impressions": 3,
+        "impressions": 2,
         "clicks": 0
       },
       {
@@ -558,7 +565,7 @@
       },
       {
         "url": "https://powerstarapps.com/terms.html",
-        "impressions": 3,
+        "impressions": 2,
         "clicks": 0
       }
     ]
@@ -587,7 +594,7 @@
       "change": 67.56756756756756,
       "threshold": 20,
       "details": "Indexing gap: only 24 of 74 pages indexed (67.6% unindexed)",
-      "detectedAt": "2026-11-02T14:50:57.586Z"
+      "detectedAt": "2026-11-03T13:43:32.189Z"
     }
   ]
 }
