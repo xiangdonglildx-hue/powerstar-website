@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-03T13:43:31.606Z",
+  "lastUpdated": "2026-11-04T13:51:46.507Z",
   "gsc": {
     "indexedPages": 24,
     "totalSubmitted": 74,
@@ -81,10 +81,17 @@
       },
       {
         "query": "hygrometer app",
-        "impressions": 3,
+        "impressions": 5,
         "clicks": 0,
         "ctr": 0,
-        "position": 23.333333333333332
+        "position": 25.2
+      },
+      {
+        "query": "indoor outdoor thermometer app",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 84
       },
       {
         "query": "indoor thermometer app",
@@ -140,7 +147,7 @@
         "impressions": 47,
         "clicks": 0,
         "ctr": 0,
-        "position": 4.042553191489361
+        "position": 3.8297872340425534
       },
       {
         "query": "power stars download",
@@ -178,6 +185,13 @@
         "position": 12.5
       },
       {
+        "query": "star power app download",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 20
+      },
+      {
         "query": "starpower app",
         "impressions": 1,
         "clicks": 0,
@@ -190,13 +204,6 @@
         "clicks": 0,
         "ctr": 0,
         "position": 44
-      },
-      {
-        "query": "temperature application for android",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 27
       },
       {
         "query": "temperature apps for android",
@@ -273,7 +280,6 @@
       "last7Days": 1,
       "last30Days": 10,
       "trend": [
-        0,
         1,
         1,
         0,
@@ -301,14 +307,14 @@
         0,
         1,
         0,
+        0,
         0
       ]
     },
     "impressions": {
-      "last7Days": 83,
-      "last30Days": 422,
+      "last7Days": 99,
+      "last30Days": 437,
       "trend": [
-        18,
         11,
         8,
         11,
@@ -336,16 +342,11 @@
         11,
         16,
         9,
-        20
+        20,
+        33
       ]
     },
     "dailyTrend": [
-      {
-        "date": "2026-10-04",
-        "clicks": 0,
-        "impressions": 18,
-        "position": 7.833333333333333
-      },
       {
         "date": "2026-10-05",
         "clicks": 1,
@@ -513,19 +514,35 @@
         "clicks": 0,
         "impressions": 20,
         "position": 11.7
+      },
+      {
+        "date": "2026-11-02",
+        "clicks": 0,
+        "impressions": 33,
+        "position": 17.333333333333332
       }
     ],
-    "avgPosition": 10.428909952606634,
-    "avgCTR": 0.023696682464454975,
+    "avgPosition": 11.05720823798627,
+    "avgCTR": 0.02288329519450801,
     "coverageErrors": [
       {
+        "url": "https://powerstarapps.com/ja/",
+        "impressions": 9,
+        "clicks": 2
+      },
+      {
         "url": "https://powerstarapps.com/blog.html",
-        "impressions": 4,
+        "impressions": 7,
         "clicks": 0
       },
       {
         "url": "https://powerstarapps.com/blog/room-temp-app.html",
-        "impressions": 2,
+        "impressions": 1,
+        "clicks": 0
+      },
+      {
+        "url": "https://powerstarapps.com/es/",
+        "impressions": 8,
         "clicks": 0
       },
       {
@@ -535,16 +552,21 @@
       },
       {
         "url": "https://powerstarapps.com/help.html",
-        "impressions": 1,
-        "clicks": 0
-      },
-      {
-        "url": "https://powerstarapps.com/privacy.html",
         "impressions": 3,
         "clicks": 0
       },
       {
+        "url": "https://powerstarapps.com/privacy.html",
+        "impressions": 2,
+        "clicks": 0
+      },
+      {
         "url": "https://powerstarapps.com/products/ai-photo-landing/for-pets.html",
+        "impressions": 2,
+        "clicks": 0
+      },
+      {
+        "url": "https://powerstarapps.com/products/ai-photo-landing/for-selfies.html",
         "impressions": 1,
         "clicks": 0
       },
@@ -555,17 +577,17 @@
       },
       {
         "url": "https://powerstarapps.com/pt/",
-        "impressions": 6,
+        "impressions": 5,
         "clicks": 0
       },
       {
         "url": "https://powerstarapps.com/pt/products/voice-changer.html",
-        "impressions": 8,
+        "impressions": 7,
         "clicks": 0
       },
       {
         "url": "https://powerstarapps.com/terms.html",
-        "impressions": 2,
+        "impressions": 1,
         "clicks": 0
       }
     ]
@@ -594,7 +616,7 @@
       "change": 67.56756756756756,
       "threshold": 20,
       "details": "Indexing gap: only 24 of 74 pages indexed (67.6% unindexed)",
-      "detectedAt": "2026-11-03T13:43:32.189Z"
+      "detectedAt": "2026-11-04T13:51:47.133Z"
     }
   ]
 }
