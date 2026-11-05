@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-11-04T13:51:46.507Z",
+  "lastUpdated": "2026-11-05T14:04:13.914Z",
   "gsc": {
-    "indexedPages": 24,
+    "indexedPages": 25,
     "totalSubmitted": 74,
     "unindexedUrls": [
       "https://powerstarapps.com/es/products/thermometer.html",
@@ -50,6 +50,13 @@
         "clicks": 0,
         "ctr": 0,
         "position": 25
+      },
+      {
+        "query": "best voice changer apps for android",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 11
       },
       {
         "query": "best voice changer for android",
@@ -147,11 +154,11 @@
         "impressions": 47,
         "clicks": 0,
         "ctr": 0,
-        "position": 3.8297872340425534
+        "position": 4.042553191489361
       },
       {
         "query": "power stars download",
-        "impressions": 21,
+        "impressions": 20,
         "clicks": 0,
         "ctr": 0,
         "position": 8
@@ -179,10 +186,10 @@
       },
       {
         "query": "star power app",
-        "impressions": 6,
+        "impressions": 7,
         "clicks": 0,
         "ctr": 0,
-        "position": 12.5
+        "position": 15.428571428571429
       },
       {
         "query": "star power app download",
@@ -248,13 +255,6 @@
         "position": 27
       },
       {
-        "query": "voice filter apps",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 33
-      },
-      {
         "query": "weather thermometer app",
         "impressions": 1,
         "clicks": 0,
@@ -278,9 +278,8 @@
     ],
     "clicks": {
       "last7Days": 1,
-      "last30Days": 10,
+      "last30Days": 9,
       "trend": [
-        1,
         1,
         0,
         0,
@@ -308,14 +307,14 @@
         1,
         0,
         0,
+        0,
         0
       ]
     },
     "impressions": {
-      "last7Days": 99,
-      "last30Days": 437,
+      "last7Days": 102,
+      "last30Days": 439,
       "trend": [
-        11,
         8,
         11,
         12,
@@ -343,16 +342,11 @@
         16,
         9,
         20,
-        33
+        33,
+        13
       ]
     },
     "dailyTrend": [
-      {
-        "date": "2026-10-05",
-        "clicks": 1,
-        "impressions": 11,
-        "position": 11.727272727272727
-      },
       {
         "date": "2026-10-06",
         "clicks": 1,
@@ -520,15 +514,21 @@
         "clicks": 0,
         "impressions": 33,
         "position": 17.333333333333332
+      },
+      {
+        "date": "2026-11-03",
+        "clicks": 0,
+        "impressions": 13,
+        "position": 13.923076923076923
       }
     ],
-    "avgPosition": 11.05720823798627,
-    "avgCTR": 0.02288329519450801,
+    "avgPosition": 11.125284738041003,
+    "avgCTR": 0.02050113895216401,
     "coverageErrors": [
       {
         "url": "https://powerstarapps.com/ja/",
-        "impressions": 9,
-        "clicks": 2
+        "impressions": 6,
+        "clicks": 1
       },
       {
         "url": "https://powerstarapps.com/blog.html",
@@ -613,10 +613,10 @@
       "type": "indexing_drop",
       "severity": "P1",
       "metric": "indexedPages",
-      "change": 67.56756756756756,
+      "change": 66.21621621621621,
       "threshold": 20,
-      "details": "Indexing gap: only 24 of 74 pages indexed (67.6% unindexed)",
-      "detectedAt": "2026-11-04T13:51:47.133Z"
+      "details": "Indexing gap: only 25 of 74 pages indexed (66.2% unindexed)",
+      "detectedAt": "2026-11-05T14:04:14.387Z"
     }
   ]
 }
