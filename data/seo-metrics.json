@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-05T14:04:13.914Z",
+  "lastUpdated": "2026-11-06T13:49:36.829Z",
   "gsc": {
     "indexedPages": 25,
     "totalSubmitted": 74,
@@ -151,14 +151,14 @@
       },
       {
         "query": "power stars app",
-        "impressions": 47,
+        "impressions": 45,
         "clicks": 0,
         "ctr": 0,
-        "position": 4.042553191489361
+        "position": 3.488888888888889
       },
       {
         "query": "power stars download",
-        "impressions": 20,
+        "impressions": 19,
         "clicks": 0,
         "ctr": 0,
         "position": 8
@@ -278,9 +278,8 @@
     ],
     "clicks": {
       "last7Days": 1,
-      "last30Days": 9,
+      "last30Days": 8,
       "trend": [
-        1,
         0,
         0,
         1,
@@ -312,10 +311,9 @@
       ]
     },
     "impressions": {
-      "last7Days": 102,
-      "last30Days": 439,
+      "last7Days": 91,
+      "last30Days": 431,
       "trend": [
-        8,
         11,
         12,
         14,
@@ -347,12 +345,6 @@
       ]
     },
     "dailyTrend": [
-      {
-        "date": "2026-10-06",
-        "clicks": 1,
-        "impressions": 8,
-        "position": 9.375
-      },
       {
         "date": "2026-10-07",
         "clicks": 0,
@@ -522,14 +514,9 @@
         "position": 13.923076923076923
       }
     ],
-    "avgPosition": 11.125284738041003,
-    "avgCTR": 0.02050113895216401,
+    "avgPosition": 11.157772621809745,
+    "avgCTR": 0.018561484918793503,
     "coverageErrors": [
-      {
-        "url": "https://powerstarapps.com/ja/",
-        "impressions": 6,
-        "clicks": 1
-      },
       {
         "url": "https://powerstarapps.com/blog.html",
         "impressions": 7,
@@ -553,6 +540,11 @@
       {
         "url": "https://powerstarapps.com/help.html",
         "impressions": 3,
+        "clicks": 0
+      },
+      {
+        "url": "https://powerstarapps.com/ja/",
+        "impressions": 5,
         "clicks": 0
       },
       {
@@ -616,7 +608,7 @@
       "change": 66.21621621621621,
       "threshold": 20,
       "details": "Indexing gap: only 25 of 74 pages indexed (66.2% unindexed)",
-      "detectedAt": "2026-11-05T14:04:14.387Z"
+      "detectedAt": "2026-11-06T13:49:37.444Z"
     }
   ]
 }
