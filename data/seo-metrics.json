@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-07T12:32:56.291Z",
+  "lastUpdated": "2026-11-08T12:50:44.044Z",
   "gsc": {
     "indexedPages": 25,
     "totalSubmitted": 74,
@@ -22,13 +22,6 @@
         "clicks": 2,
         "ctr": 0.25,
         "position": 2
-      },
-      {
-        "query": "app voice changer",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 28
       },
       {
         "query": "best free voice changer for android",
@@ -60,10 +53,10 @@
       },
       {
         "query": "best voice changer for android",
-        "impressions": 1,
+        "impressions": 2,
         "clicks": 0,
         "ctr": 0,
-        "position": 19
+        "position": 14.5
       },
       {
         "query": "best voice filter app",
@@ -137,10 +130,10 @@
       },
       {
         "query": "power star app",
-        "impressions": 3,
+        "impressions": 2,
         "clicks": 0,
         "ctr": 0,
-        "position": 3
+        "position": 2.5
       },
       {
         "query": "power star appu",
@@ -158,10 +151,10 @@
       },
       {
         "query": "power stars app",
-        "impressions": 43,
+        "impressions": 42,
         "clicks": 0,
         "ctr": 0,
-        "position": 3.302325581395349
+        "position": 3.3095238095238093
       },
       {
         "query": "power stars download",
@@ -287,7 +280,6 @@
       "last7Days": 0,
       "last30Days": 8,
       "trend": [
-        0,
         1,
         0,
         3,
@@ -314,14 +306,15 @@
         0,
         0,
         0,
+        0,
+        0,
         0
       ]
     },
     "impressions": {
-      "last7Days": 83,
-      "last30Days": 428,
+      "last7Days": 90,
+      "last30Days": 432,
       "trend": [
-        12,
         14,
         6,
         16,
@@ -348,16 +341,12 @@
         20,
         33,
         13,
-        8
+        8,
+        7,
+        9
       ]
     },
     "dailyTrend": [
-      {
-        "date": "2026-10-08",
-        "clicks": 0,
-        "impressions": 12,
-        "position": 8
-      },
       {
         "date": "2026-10-09",
         "clicks": 1,
@@ -519,10 +508,22 @@
         "clicks": 0,
         "impressions": 8,
         "position": 10.125
+      },
+      {
+        "date": "2026-11-05",
+        "clicks": 0,
+        "impressions": 7,
+        "position": 6.857142857142857
+      },
+      {
+        "date": "2026-11-06",
+        "clicks": 0,
+        "impressions": 9,
+        "position": 8
       }
     ],
-    "avgPosition": 11.200934579439252,
-    "avgCTR": 0.018691588785046728,
+    "avgPosition": 11.152777777777779,
+    "avgCTR": 0.018518518518518517,
     "coverageErrors": [
       {
         "url": "https://powerstarapps.com/blog.html",
@@ -536,7 +537,7 @@
       },
       {
         "url": "https://powerstarapps.com/es/products/voice-changer.html",
-        "impressions": 8,
+        "impressions": 7,
         "clicks": 0
       },
       {
@@ -566,12 +567,12 @@
       },
       {
         "url": "https://powerstarapps.com/products/ai-photo.html",
-        "impressions": 3,
+        "impressions": 4,
         "clicks": 0
       },
       {
         "url": "https://powerstarapps.com/pt/",
-        "impressions": 5,
+        "impressions": 4,
         "clicks": 0
       },
       {
@@ -604,22 +605,13 @@
   },
   "alerts": [
     {
-      "type": "traffic_drop",
-      "severity": "P1",
-      "metric": "clicks.last7Days",
-      "change": 100,
-      "threshold": 30,
-      "details": "Clicks dropped 100.0% (from 1 to 0)",
-      "detectedAt": "2026-11-07T12:32:56.760Z"
-    },
-    {
       "type": "indexing_drop",
       "severity": "P1",
       "metric": "indexedPages",
       "change": 66.21621621621621,
       "threshold": 20,
       "details": "Indexing gap: only 25 of 74 pages indexed (66.2% unindexed)",
-      "detectedAt": "2026-11-07T12:32:56.760Z"
+      "detectedAt": "2026-11-08T12:50:44.486Z"
     }
   ]
 }
