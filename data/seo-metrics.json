@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-08T12:50:44.044Z",
+  "lastUpdated": "2026-11-09T15:15:51.638Z",
   "gsc": {
     "indexedPages": 25,
     "totalSubmitted": 74,
@@ -18,9 +18,9 @@
     "topKeywords": [
       {
         "query": "power star apps",
-        "impressions": 8,
-        "clicks": 2,
-        "ctr": 0.25,
+        "impressions": 6,
+        "clicks": 1,
+        "ctr": 0.16666666666666666,
         "position": 2
       },
       {
@@ -71,13 +71,6 @@
         "clicks": 0,
         "ctr": 0,
         "position": 43
-      },
-      {
-        "query": "can you have a voice changer on mobile",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 29
       },
       {
         "query": "free fire mein voice change kaise karen",
@@ -158,7 +151,7 @@
       },
       {
         "query": "power stars download",
-        "impressions": 19,
+        "impressions": 18,
         "clicks": 0,
         "ctr": 0,
         "position": 8
@@ -234,6 +227,13 @@
         "position": 68
       },
       {
+        "query": "thermometer app",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 84
+      },
+      {
         "query": "thermometer hygrometer app",
         "impressions": 2,
         "clicks": 0,
@@ -246,13 +246,6 @@
         "clicks": 0,
         "ctr": 0,
         "position": 45
-      },
-      {
-        "query": "voice changer apps",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 27
       },
       {
         "query": "weather thermometer app",
@@ -278,9 +271,8 @@
     ],
     "clicks": {
       "last7Days": 0,
-      "last30Days": 8,
+      "last30Days": 7,
       "trend": [
-        1,
         0,
         3,
         0,
@@ -308,14 +300,14 @@
         0,
         0,
         0,
+        0,
         0
       ]
     },
     "impressions": {
-      "last7Days": 90,
-      "last30Days": 432,
+      "last7Days": 80,
+      "last30Days": 428,
       "trend": [
-        14,
         6,
         16,
         11,
@@ -343,16 +335,11 @@
         13,
         8,
         7,
-        9
+        9,
+        10
       ]
     },
     "dailyTrend": [
-      {
-        "date": "2026-10-09",
-        "clicks": 1,
-        "impressions": 14,
-        "position": 8.5
-      },
       {
         "date": "2026-10-10",
         "clicks": 0,
@@ -520,21 +507,17 @@
         "clicks": 0,
         "impressions": 9,
         "position": 8
+      },
+      {
+        "date": "2026-11-07",
+        "clicks": 0,
+        "impressions": 10,
+        "position": 26.6
       }
     ],
-    "avgPosition": 11.152777777777779,
-    "avgCTR": 0.018518518518518517,
+    "avgPosition": 11.600467289719626,
+    "avgCTR": 0.016355140186915886,
     "coverageErrors": [
-      {
-        "url": "https://powerstarapps.com/blog.html",
-        "impressions": 7,
-        "clicks": 0
-      },
-      {
-        "url": "https://powerstarapps.com/es/",
-        "impressions": 8,
-        "clicks": 0
-      },
       {
         "url": "https://powerstarapps.com/es/products/voice-changer.html",
         "impressions": 7,
@@ -547,12 +530,12 @@
       },
       {
         "url": "https://powerstarapps.com/ja/",
-        "impressions": 5,
+        "impressions": 8,
         "clicks": 0
       },
       {
         "url": "https://powerstarapps.com/privacy.html",
-        "impressions": 2,
+        "impressions": 5,
         "clicks": 0
       },
       {
@@ -572,7 +555,7 @@
       },
       {
         "url": "https://powerstarapps.com/pt/",
-        "impressions": 4,
+        "impressions": 7,
         "clicks": 0
       },
       {
@@ -582,7 +565,7 @@
       },
       {
         "url": "https://powerstarapps.com/terms.html",
-        "impressions": 1,
+        "impressions": 4,
         "clicks": 0
       }
     ]
@@ -611,7 +594,7 @@
       "change": 66.21621621621621,
       "threshold": 20,
       "details": "Indexing gap: only 25 of 74 pages indexed (66.2% unindexed)",
-      "detectedAt": "2026-11-08T12:50:44.486Z"
+      "detectedAt": "2026-11-09T15:15:52.190Z"
     }
   ]
 }
