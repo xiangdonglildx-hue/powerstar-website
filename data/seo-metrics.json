@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-11-09T18:09:25.620Z",
+  "lastUpdated": "2026-11-10T14:25:16.495Z",
   "gsc": {
-    "indexedPages": 25,
+    "indexedPages": 24,
     "totalSubmitted": 74,
     "unindexedUrls": [
       "https://powerstarapps.com/es/products/thermometer.html",
@@ -9,11 +9,11 @@
       "https://powerstarapps.com/products/thermometer-landing/indoor-thermometer-app.html",
       "https://powerstarapps.com/products/thermometer-landing/room-temperature-app.html",
       "https://powerstarapps.com/products/thermometer-landing/barometer-for-fishing.html",
+      "https://powerstarapps.com/products/thermometer-landing/hygrometer-app.html",
       "https://powerstarapps.com/products/thermometer-landing/fever-thermometer-app.html",
       "https://powerstarapps.com/products/microphone.html",
       "https://powerstarapps.com/es/products/microphone.html",
-      "https://powerstarapps.com/pt/products/microphone.html",
-      "https://powerstarapps.com/ja/products/microphone.html"
+      "https://powerstarapps.com/pt/products/microphone.html"
     ],
     "topKeywords": [
       {
@@ -144,14 +144,14 @@
       },
       {
         "query": "power stars app",
-        "impressions": 42,
+        "impressions": 41,
         "clicks": 0,
         "ctr": 0,
-        "position": 3.3095238095238093
+        "position": 3.341463414634146
       },
       {
         "query": "power stars download",
-        "impressions": 18,
+        "impressions": 17,
         "clicks": 0,
         "ctr": 0,
         "position": 8
@@ -241,13 +241,6 @@
         "position": 24.5
       },
       {
-        "query": "voice changer android",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 45
-      },
-      {
         "query": "weather thermometer app",
         "impressions": 1,
         "clicks": 0,
@@ -273,7 +266,6 @@
       "last7Days": 0,
       "last30Days": 7,
       "trend": [
-        0,
         3,
         0,
         1,
@@ -301,14 +293,14 @@
         0,
         0,
         0,
+        0,
         0
       ]
     },
     "impressions": {
-      "last7Days": 80,
-      "last30Days": 428,
+      "last7Days": 50,
+      "last30Days": 425,
       "trend": [
-        6,
         16,
         11,
         20,
@@ -336,16 +328,11 @@
         8,
         7,
         9,
-        10
+        10,
+        3
       ]
     },
     "dailyTrend": [
-      {
-        "date": "2026-10-10",
-        "clicks": 0,
-        "impressions": 6,
-        "position": 12
-      },
       {
         "date": "2026-10-11",
         "clicks": 3,
@@ -513,10 +500,16 @@
         "clicks": 0,
         "impressions": 10,
         "position": 26.6
+      },
+      {
+        "date": "2026-11-08",
+        "clicks": 0,
+        "impressions": 3,
+        "position": 15
       }
     ],
-    "avgPosition": 11.600467289719626,
-    "avgCTR": 0.016355140186915886,
+    "avgPosition": 11.618823529411765,
+    "avgCTR": 0.01647058823529412,
     "coverageErrors": [
       {
         "url": "https://powerstarapps.com/es/products/voice-changer.html",
@@ -591,10 +584,10 @@
       "type": "indexing_drop",
       "severity": "P1",
       "metric": "indexedPages",
-      "change": 66.21621621621621,
+      "change": 67.56756756756756,
       "threshold": 20,
-      "details": "Indexing gap: only 25 of 74 pages indexed (66.2% unindexed)",
-      "detectedAt": "2026-11-09T15:15:52.190Z"
+      "details": "Indexing gap: only 24 of 74 pages indexed (67.6% unindexed)",
+      "detectedAt": "2026-11-10T14:25:17.083Z"
     }
   ]
 }
