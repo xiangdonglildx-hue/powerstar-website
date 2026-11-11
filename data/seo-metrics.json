@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-11-10T14:25:16.495Z",
+  "lastUpdated": "2026-11-11T13:38:35.693Z",
   "gsc": {
-    "indexedPages": 24,
+    "indexedPages": 22,
     "totalSubmitted": 74,
     "unindexedUrls": [
       "https://powerstarapps.com/es/products/thermometer.html",
@@ -144,14 +144,14 @@
       },
       {
         "query": "power stars app",
-        "impressions": 41,
+        "impressions": 40,
         "clicks": 0,
         "ctr": 0,
-        "position": 3.341463414634146
+        "position": 3.35
       },
       {
         "query": "power stars download",
-        "impressions": 17,
+        "impressions": 16,
         "clicks": 0,
         "ctr": 0,
         "position": 8
@@ -263,10 +263,9 @@
       }
     ],
     "clicks": {
-      "last7Days": 0,
-      "last30Days": 7,
+      "last7Days": 1,
+      "last30Days": 5,
       "trend": [
-        3,
         0,
         1,
         0,
@@ -294,14 +293,14 @@
         0,
         0,
         0,
-        0
+        0,
+        1
       ]
     },
     "impressions": {
-      "last7Days": 50,
+      "last7Days": 53,
       "last30Days": 425,
       "trend": [
-        16,
         11,
         20,
         11,
@@ -329,16 +328,11 @@
         7,
         9,
         10,
-        3
+        3,
+        16
       ]
     },
     "dailyTrend": [
-      {
-        "date": "2026-10-11",
-        "clicks": 3,
-        "impressions": 16,
-        "position": 4.875
-      },
       {
         "date": "2026-10-12",
         "clicks": 0,
@@ -506,14 +500,20 @@
         "clicks": 0,
         "impressions": 3,
         "position": 15
+      },
+      {
+        "date": "2026-11-09",
+        "clicks": 1,
+        "impressions": 16,
+        "position": 14.875
       }
     ],
-    "avgPosition": 11.618823529411765,
-    "avgCTR": 0.01647058823529412,
+    "avgPosition": 11.99529411764706,
+    "avgCTR": 0.011764705882352941,
     "coverageErrors": [
       {
         "url": "https://powerstarapps.com/es/products/voice-changer.html",
-        "impressions": 7,
+        "impressions": 8,
         "clicks": 0
       },
       {
@@ -523,7 +523,7 @@
       },
       {
         "url": "https://powerstarapps.com/ja/",
-        "impressions": 8,
+        "impressions": 7,
         "clicks": 0
       },
       {
@@ -543,12 +543,12 @@
       },
       {
         "url": "https://powerstarapps.com/products/ai-photo.html",
-        "impressions": 4,
+        "impressions": 5,
         "clicks": 0
       },
       {
         "url": "https://powerstarapps.com/pt/",
-        "impressions": 7,
+        "impressions": 8,
         "clicks": 0
       },
       {
@@ -581,13 +581,22 @@
   },
   "alerts": [
     {
+      "type": "traffic_drop",
+      "severity": "P1",
+      "metric": "clicks.last7Days",
+      "change": 100,
+      "threshold": 30,
+      "details": "Clicks dropped 100.0% (from 0 to 1)",
+      "detectedAt": "2026-11-11T13:38:36.271Z"
+    },
+    {
       "type": "indexing_drop",
       "severity": "P1",
       "metric": "indexedPages",
-      "change": 67.56756756756756,
+      "change": 70.27027027027027,
       "threshold": 20,
-      "details": "Indexing gap: only 24 of 74 pages indexed (67.6% unindexed)",
-      "detectedAt": "2026-11-10T14:25:17.083Z"
+      "details": "Indexing gap: only 22 of 74 pages indexed (70.3% unindexed)",
+      "detectedAt": "2026-11-11T13:38:36.271Z"
     }
   ]
 }
