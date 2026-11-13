@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-12T14:43:12.642Z",
+  "lastUpdated": "2026-11-13T14:00:53.554Z",
   "gsc": {
     "indexedPages": 21,
     "totalSubmitted": 74,
@@ -18,9 +18,9 @@
     "topKeywords": [
       {
         "query": "power star apps",
-        "impressions": 6,
+        "impressions": 5,
         "clicks": 1,
-        "ctr": 0.16666666666666666,
+        "ctr": 0.2,
         "position": 2
       },
       {
@@ -115,13 +115,6 @@
         "position": 23
       },
       {
-        "query": "lumi wallpaper",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 9
-      },
-      {
         "query": "lumiwall",
         "impressions": 18,
         "clicks": 0,
@@ -150,13 +143,6 @@
         "position": 7
       },
       {
-        "query": "power stare",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 8
-      },
-      {
         "query": "power stars app",
         "impressions": 40,
         "clicks": 0,
@@ -166,13 +152,6 @@
       {
         "query": "power stars download",
         "impressions": 15,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 8
-      },
-      {
-        "query": "powerster",
-        "impressions": 2,
         "clicks": 0,
         "ctr": 0,
         "position": 8
@@ -264,9 +243,8 @@
     ],
     "clicks": {
       "last7Days": 2,
-      "last30Days": 6,
+      "last30Days": 5,
       "trend": [
-        1,
         0,
         1,
         0,
@@ -298,10 +276,9 @@
       ]
     },
     "impressions": {
-      "last7Days": 59,
-      "last30Days": 428,
+      "last7Days": 52,
+      "last30Days": 408,
       "trend": [
-        20,
         11,
         17,
         23,
@@ -333,12 +310,6 @@
       ]
     },
     "dailyTrend": [
-      {
-        "date": "2026-10-13",
-        "clicks": 1,
-        "impressions": 20,
-        "position": 11.6
-      },
       {
         "date": "2026-10-14",
         "clicks": 0,
@@ -508,8 +479,8 @@
         "position": 16.92857142857143
       }
     ],
-    "avgPosition": 12.203271028037383,
-    "avgCTR": 0.014018691588785047,
+    "avgPosition": 12.232843137254902,
+    "avgCTR": 0.012254901960784314,
     "coverageErrors": [
       {
         "url": "https://powerstarapps.com/es/products/voice-changer.html",
@@ -548,12 +519,12 @@
       },
       {
         "url": "https://powerstarapps.com/pt/",
-        "impressions": 8,
+        "impressions": 6,
         "clicks": 0
       },
       {
         "url": "https://powerstarapps.com/pt/products/voice-changer.html",
-        "impressions": 6,
+        "impressions": 5,
         "clicks": 0
       },
       {
@@ -587,7 +558,7 @@
       "change": 71.62162162162163,
       "threshold": 20,
       "details": "Indexing gap: only 21 of 74 pages indexed (71.6% unindexed)",
-      "detectedAt": "2026-11-12T14:43:13.015Z"
+      "detectedAt": "2026-11-13T14:00:53.922Z"
     }
   ]
 }

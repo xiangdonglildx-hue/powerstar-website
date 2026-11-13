@@ -1,0 +1,538 @@
+{
+  "snapshotDate": "2026-11-13",
+  "collectedAt": "2026-11-13T14:00:53.555Z",
+  "gsc": {
+    "indexedPages": 21,
+    "totalSubmitted": 74,
+    "unindexedUrls": [
+      "https://powerstarapps.com/es/products/thermometer.html",
+      "https://powerstarapps.com/ja/products/thermometer.html",
+      "https://powerstarapps.com/products/thermometer-landing/indoor-thermometer-app.html",
+      "https://powerstarapps.com/products/thermometer-landing/room-temperature-app.html",
+      "https://powerstarapps.com/products/thermometer-landing/barometer-for-fishing.html",
+      "https://powerstarapps.com/products/thermometer-landing/hygrometer-app.html",
+      "https://powerstarapps.com/products/thermometer-landing/fever-thermometer-app.html",
+      "https://powerstarapps.com/products/microphone.html",
+      "https://powerstarapps.com/es/products/microphone.html",
+      "https://powerstarapps.com/pt/products/microphone.html"
+    ],
+    "topKeywords": [
+      {
+        "query": "power star apps",
+        "impressions": 5,
+        "clicks": 1,
+        "ctr": 0.2,
+        "position": 2
+      },
+      {
+        "query": "ambient temp app",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 73
+      },
+      {
+        "query": "ambient temperature app",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 70
+      },
+      {
+        "query": "best free voice changer for android",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 36
+      },
+      {
+        "query": "best voice changer android",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 23
+      },
+      {
+        "query": "best voice changer app for android",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 25
+      },
+      {
+        "query": "best voice changer apps for android",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 11
+      },
+      {
+        "query": "best voice changer for android",
+        "impressions": 2,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 14.5
+      },
+      {
+        "query": "best voice filter app",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 27
+      },
+      {
+        "query": "can i use a smartphone app to monitor indoor humidity accurately?",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 43
+      },
+      {
+        "query": "free fire mein voice change kaise karen",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 31
+      },
+      {
+        "query": "hygrometer app",
+        "impressions": 5,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 25.2
+      },
+      {
+        "query": "indoor outdoor thermometer app",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 84
+      },
+      {
+        "query": "indoor thermometer app",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 23
+      },
+      {
+        "query": "lumiwall",
+        "impressions": 18,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 10.11111111111111
+      },
+      {
+        "query": "power star",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 9
+      },
+      {
+        "query": "power star app",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 3
+      },
+      {
+        "query": "power star appu",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 7
+      },
+      {
+        "query": "power stars app",
+        "impressions": 40,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 4.075
+      },
+      {
+        "query": "power stars download",
+        "impressions": 15,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "query": "real time voice changer android",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 24
+      },
+      {
+        "query": "star power app",
+        "impressions": 7,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 15.428571428571429
+      },
+      {
+        "query": "star power app download",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 20
+      },
+      {
+        "query": "starpower app",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 49
+      },
+      {
+        "query": "temperature apps for android",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 37
+      },
+      {
+        "query": "temperature measure apps",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 93
+      },
+      {
+        "query": "temperature meter app",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 68
+      },
+      {
+        "query": "thermometer app",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 84
+      },
+      {
+        "query": "thermometer hygrometer app",
+        "impressions": 2,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 24.5
+      },
+      {
+        "query": "weather thermometer app",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 16
+      },
+      {
+        "query": "which voice changer is best for android",
+        "impressions": 2,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 21
+      },
+      {
+        "query": "تحميل",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 16
+      }
+    ],
+    "clicks": {
+      "last7Days": 2,
+      "last30Days": 5,
+      "trend": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    "impressions": {
+      "last7Days": 52,
+      "last30Days": 408,
+      "trend": [
+        11,
+        17,
+        23,
+        22,
+        15,
+        13,
+        16,
+        19,
+        19,
+        13,
+        14,
+        12,
+        18,
+        17,
+        10,
+        11,
+        16,
+        9,
+        20,
+        33,
+        13,
+        8,
+        7,
+        9,
+        10,
+        3,
+        16,
+        14
+      ]
+    },
+    "dailyTrend": [
+      {
+        "date": "2026-10-14",
+        "clicks": 0,
+        "impressions": 11,
+        "position": 13.454545454545455
+      },
+      {
+        "date": "2026-10-15",
+        "clicks": 1,
+        "impressions": 17,
+        "position": 13.941176470588236
+      },
+      {
+        "date": "2026-10-16",
+        "clicks": 0,
+        "impressions": 23,
+        "position": 10.173913043478262
+      },
+      {
+        "date": "2026-10-17",
+        "clicks": 0,
+        "impressions": 22,
+        "position": 9.5
+      },
+      {
+        "date": "2026-10-18",
+        "clicks": 0,
+        "impressions": 15,
+        "position": 22.866666666666667
+      },
+      {
+        "date": "2026-10-19",
+        "clicks": 0,
+        "impressions": 13,
+        "position": 6.384615384615385
+      },
+      {
+        "date": "2026-10-20",
+        "clicks": 1,
+        "impressions": 16,
+        "position": 11.5
+      },
+      {
+        "date": "2026-10-21",
+        "clicks": 0,
+        "impressions": 19,
+        "position": 12.736842105263158
+      },
+      {
+        "date": "2026-10-22",
+        "clicks": 0,
+        "impressions": 19,
+        "position": 11.31578947368421
+      },
+      {
+        "date": "2026-10-23",
+        "clicks": 0,
+        "impressions": 13,
+        "position": 10.23076923076923
+      },
+      {
+        "date": "2026-10-24",
+        "clicks": 0,
+        "impressions": 14,
+        "position": 6.571428571428571
+      },
+      {
+        "date": "2026-10-25",
+        "clicks": 0,
+        "impressions": 12,
+        "position": 5.833333333333333
+      },
+      {
+        "date": "2026-10-26",
+        "clicks": 0,
+        "impressions": 18,
+        "position": 16.944444444444443
+      },
+      {
+        "date": "2026-10-27",
+        "clicks": 0,
+        "impressions": 17,
+        "position": 8.882352941176471
+      },
+      {
+        "date": "2026-10-28",
+        "clicks": 0,
+        "impressions": 10,
+        "position": 8.4
+      },
+      {
+        "date": "2026-10-29",
+        "clicks": 0,
+        "impressions": 11,
+        "position": 8.363636363636363
+      },
+      {
+        "date": "2026-10-30",
+        "clicks": 1,
+        "impressions": 16,
+        "position": 7.625
+      },
+      {
+        "date": "2026-10-31",
+        "clicks": 0,
+        "impressions": 9,
+        "position": 8.11111111111111
+      },
+      {
+        "date": "2026-11-01",
+        "clicks": 0,
+        "impressions": 20,
+        "position": 11.7
+      },
+      {
+        "date": "2026-11-02",
+        "clicks": 0,
+        "impressions": 33,
+        "position": 17.333333333333332
+      },
+      {
+        "date": "2026-11-03",
+        "clicks": 0,
+        "impressions": 13,
+        "position": 13.923076923076923
+      },
+      {
+        "date": "2026-11-04",
+        "clicks": 0,
+        "impressions": 8,
+        "position": 10.125
+      },
+      {
+        "date": "2026-11-05",
+        "clicks": 0,
+        "impressions": 7,
+        "position": 6.857142857142857
+      },
+      {
+        "date": "2026-11-06",
+        "clicks": 0,
+        "impressions": 9,
+        "position": 8
+      },
+      {
+        "date": "2026-11-07",
+        "clicks": 0,
+        "impressions": 10,
+        "position": 26.6
+      },
+      {
+        "date": "2026-11-08",
+        "clicks": 0,
+        "impressions": 3,
+        "position": 15
+      },
+      {
+        "date": "2026-11-09",
+        "clicks": 1,
+        "impressions": 16,
+        "position": 14.875
+      },
+      {
+        "date": "2026-11-10",
+        "clicks": 1,
+        "impressions": 14,
+        "position": 16.92857142857143
+      }
+    ],
+    "avgPosition": 12.232843137254902,
+    "avgCTR": 0.012254901960784314,
+    "coverageErrors": [
+      {
+        "url": "https://powerstarapps.com/es/products/voice-changer.html",
+        "impressions": 7,
+        "clicks": 0
+      },
+      {
+        "url": "https://powerstarapps.com/help.html",
+        "impressions": 3,
+        "clicks": 0
+      },
+      {
+        "url": "https://powerstarapps.com/ja/",
+        "impressions": 7,
+        "clicks": 0
+      },
+      {
+        "url": "https://powerstarapps.com/privacy.html",
+        "impressions": 7,
+        "clicks": 0
+      },
+      {
+        "url": "https://powerstarapps.com/products/ai-photo-landing/for-pets.html",
+        "impressions": 2,
+        "clicks": 0
+      },
+      {
+        "url": "https://powerstarapps.com/products/ai-photo-landing/for-selfies.html",
+        "impressions": 1,
+        "clicks": 0
+      },
+      {
+        "url": "https://powerstarapps.com/products/ai-photo.html",
+        "impressions": 5,
+        "clicks": 0
+      },
+      {
+        "url": "https://powerstarapps.com/pt/",
+        "impressions": 6,
+        "clicks": 0
+      },
+      {
+        "url": "https://powerstarapps.com/pt/products/voice-changer.html",
+        "impressions": 5,
+        "clicks": 0
+      },
+      {
+        "url": "https://powerstarapps.com/terms.html",
+        "impressions": 4,
+        "clicks": 0
+      }
+    ]
+  }
+}
