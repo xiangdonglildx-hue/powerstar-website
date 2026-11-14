@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-13T14:00:53.554Z",
+  "lastUpdated": "2026-11-14T13:03:13.612Z",
   "gsc": {
     "indexedPages": 21,
     "totalSubmitted": 74,
@@ -116,10 +116,10 @@
       },
       {
         "query": "lumiwall",
-        "impressions": 18,
+        "impressions": 17,
         "clicks": 0,
         "ctr": 0,
-        "position": 10.11111111111111
+        "position": 9.882352941176471
       },
       {
         "query": "power star",
@@ -144,10 +144,10 @@
       },
       {
         "query": "power stars app",
-        "impressions": 40,
+        "impressions": 38,
         "clicks": 0,
         "ctr": 0,
-        "position": 4.075
+        "position": 4.210526315789474
       },
       {
         "query": "power stars download",
@@ -183,13 +183,6 @@
         "clicks": 0,
         "ctr": 0,
         "position": 49
-      },
-      {
-        "query": "temperature apps for android",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 37
       },
       {
         "query": "temperature measure apps",
@@ -245,7 +238,6 @@
       "last7Days": 2,
       "last30Days": 5,
       "trend": [
-        0,
         1,
         0,
         0,
@@ -276,10 +268,9 @@
       ]
     },
     "impressions": {
-      "last7Days": 52,
-      "last30Days": 408,
+      "last7Days": 43,
+      "last30Days": 397,
       "trend": [
-        11,
         17,
         23,
         22,
@@ -310,12 +301,6 @@
       ]
     },
     "dailyTrend": [
-      {
-        "date": "2026-10-14",
-        "clicks": 0,
-        "impressions": 11,
-        "position": 13.454545454545455
-      },
       {
         "date": "2026-10-15",
         "clicks": 1,
@@ -479,12 +464,12 @@
         "position": 16.92857142857143
       }
     ],
-    "avgPosition": 12.232843137254902,
-    "avgCTR": 0.012254901960784314,
+    "avgPosition": 12.198992443324936,
+    "avgCTR": 0.012594458438287154,
     "coverageErrors": [
       {
         "url": "https://powerstarapps.com/es/products/voice-changer.html",
-        "impressions": 7,
+        "impressions": 6,
         "clicks": 0
       },
       {
@@ -558,7 +543,7 @@
       "change": 71.62162162162163,
       "threshold": 20,
       "details": "Indexing gap: only 21 of 74 pages indexed (71.6% unindexed)",
-      "detectedAt": "2026-11-13T14:00:53.922Z"
+      "detectedAt": "2026-11-14T13:03:14.012Z"
     }
   ]
 }
