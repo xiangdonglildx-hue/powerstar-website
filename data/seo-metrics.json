@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-14T13:03:13.612Z",
+  "lastUpdated": "2026-11-15T13:31:29.227Z",
   "gsc": {
     "indexedPages": 21,
     "totalSubmitted": 74,
@@ -16,13 +16,6 @@
       "https://powerstarapps.com/pt/products/microphone.html"
     ],
     "topKeywords": [
-      {
-        "query": "power star apps",
-        "impressions": 5,
-        "clicks": 1,
-        "ctr": 0.2,
-        "position": 2
-      },
       {
         "query": "ambient temp app",
         "impressions": 1,
@@ -98,7 +91,7 @@
         "impressions": 5,
         "clicks": 0,
         "ctr": 0,
-        "position": 25.2
+        "position": 25.4
       },
       {
         "query": "indoor outdoor thermometer app",
@@ -119,7 +112,7 @@
         "impressions": 17,
         "clicks": 0,
         "ctr": 0,
-        "position": 9.882352941176471
+        "position": 9.588235294117647
       },
       {
         "query": "power star",
@@ -136,6 +129,13 @@
         "position": 3
       },
       {
+        "query": "power star apps",
+        "impressions": 3,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 2
+      },
+      {
         "query": "power star appu",
         "impressions": 1,
         "clicks": 0,
@@ -144,24 +144,24 @@
       },
       {
         "query": "power stars app",
-        "impressions": 38,
+        "impressions": 49,
         "clicks": 0,
         "ctr": 0,
-        "position": 4.210526315789474
+        "position": 4.571428571428571
       },
       {
         "query": "power stars download",
-        "impressions": 15,
+        "impressions": 16,
         "clicks": 0,
         "ctr": 0,
-        "position": 8
+        "position": 8.3125
       },
       {
-        "query": "real time voice changer android",
-        "impressions": 1,
+        "query": "room humidity app",
+        "impressions": 2,
         "clicks": 0,
         "ctr": 0,
-        "position": 24
+        "position": 40
       },
       {
         "query": "star power app",
@@ -221,10 +221,10 @@
       },
       {
         "query": "which voice changer is best for android",
-        "impressions": 2,
+        "impressions": 3,
         "clicks": 0,
         "ctr": 0,
-        "position": 21
+        "position": 19.333333333333332
       },
       {
         "query": "تحميل",
@@ -235,10 +235,9 @@
       }
     ],
     "clicks": {
-      "last7Days": 2,
+      "last7Days": 3,
       "last30Days": 5,
       "trend": [
-        1,
         0,
         0,
         0,
@@ -264,14 +263,16 @@
         0,
         0,
         1,
-        1
+        1,
+        0,
+        1,
+        0
       ]
     },
     "impressions": {
-      "last7Days": 43,
-      "last30Days": 397,
+      "last7Days": 86,
+      "last30Days": 433,
       "trend": [
-        17,
         23,
         22,
         15,
@@ -297,16 +298,13 @@
         10,
         3,
         16,
-        14
+        14,
+        29,
+        8,
+        16
       ]
     },
     "dailyTrend": [
-      {
-        "date": "2026-10-15",
-        "clicks": 1,
-        "impressions": 17,
-        "position": 13.941176470588236
-      },
       {
         "date": "2026-10-16",
         "clicks": 0,
@@ -462,11 +460,34 @@
         "clicks": 1,
         "impressions": 14,
         "position": 16.92857142857143
+      },
+      {
+        "date": "2026-11-11",
+        "clicks": 0,
+        "impressions": 29,
+        "position": 12.206896551724139
+      },
+      {
+        "date": "2026-11-12",
+        "clicks": 1,
+        "impressions": 8,
+        "position": 8
+      },
+      {
+        "date": "2026-11-13",
+        "clicks": 0,
+        "impressions": 16,
+        "position": 11.1875
       }
     ],
-    "avgPosition": 12.198992443324936,
-    "avgCTR": 0.012594458438287154,
+    "avgPosition": 12.016166281755197,
+    "avgCTR": 0.011547344110854504,
     "coverageErrors": [
+      {
+        "url": "https://powerstarapps.com/blog.html",
+        "impressions": 9,
+        "clicks": 0
+      },
       {
         "url": "https://powerstarapps.com/es/products/voice-changer.html",
         "impressions": 6,
@@ -503,13 +524,18 @@
         "clicks": 0
       },
       {
+        "url": "https://powerstarapps.com/products/microphone-landing/voice-amplifier-app.html",
+        "impressions": 1,
+        "clicks": 0
+      },
+      {
         "url": "https://powerstarapps.com/pt/",
-        "impressions": 6,
+        "impressions": 7,
         "clicks": 0
       },
       {
         "url": "https://powerstarapps.com/pt/products/voice-changer.html",
-        "impressions": 5,
+        "impressions": 6,
         "clicks": 0
       },
       {
@@ -543,7 +569,7 @@
       "change": 71.62162162162163,
       "threshold": 20,
       "details": "Indexing gap: only 21 of 74 pages indexed (71.6% unindexed)",
-      "detectedAt": "2026-11-14T13:03:14.012Z"
+      "detectedAt": "2026-11-15T13:31:29.630Z"
     }
   ]
 }
