@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-15T13:31:29.227Z",
+  "lastUpdated": "2026-11-16T14:52:30.572Z",
   "gsc": {
     "indexedPages": 21,
     "totalSubmitted": 74,
@@ -29,13 +29,6 @@
         "clicks": 0,
         "ctr": 0,
         "position": 70
-      },
-      {
-        "query": "best free voice changer for android",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 36
       },
       {
         "query": "best voice changer android",
@@ -109,28 +102,14 @@
       },
       {
         "query": "lumiwall",
-        "impressions": 17,
+        "impressions": 16,
         "clicks": 0,
         "ctr": 0,
-        "position": 9.588235294117647
-      },
-      {
-        "query": "power star",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 9
-      },
-      {
-        "query": "power star app",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 3
+        "position": 9.3125
       },
       {
         "query": "power star apps",
-        "impressions": 3,
+        "impressions": 2,
         "clicks": 0,
         "ctr": 0,
         "position": 2
@@ -147,14 +126,14 @@
         "impressions": 49,
         "clicks": 0,
         "ctr": 0,
-        "position": 4.571428571428571
+        "position": 4.612244897959183
       },
       {
         "query": "power stars download",
-        "impressions": 16,
+        "impressions": 15,
         "clicks": 0,
         "ctr": 0,
-        "position": 8.3125
+        "position": 8.333333333333332
       },
       {
         "query": "room humidity app",
@@ -221,10 +200,10 @@
       },
       {
         "query": "which voice changer is best for android",
-        "impressions": 3,
+        "impressions": 4,
         "clicks": 0,
         "ctr": 0,
-        "position": 19.333333333333332
+        "position": 19.5
       },
       {
         "query": "تحميل",
@@ -241,7 +220,6 @@
         0,
         0,
         0,
-        0,
         1,
         0,
         0,
@@ -266,14 +244,14 @@
         1,
         0,
         1,
+        0,
         0
       ]
     },
     "impressions": {
-      "last7Days": 86,
-      "last30Days": 433,
+      "last7Days": 99,
+      "last30Days": 426,
       "trend": [
-        23,
         22,
         15,
         13,
@@ -301,16 +279,11 @@
         14,
         29,
         8,
+        16,
         16
       ]
     },
     "dailyTrend": [
-      {
-        "date": "2026-10-16",
-        "clicks": 0,
-        "impressions": 23,
-        "position": 10.173913043478262
-      },
       {
         "date": "2026-10-17",
         "clicks": 0,
@@ -478,14 +451,20 @@
         "clicks": 0,
         "impressions": 16,
         "position": 11.1875
+      },
+      {
+        "date": "2026-11-14",
+        "clicks": 0,
+        "impressions": 16,
+        "position": 7.625
       }
     ],
-    "avgPosition": 12.016166281755197,
-    "avgCTR": 0.011547344110854504,
+    "avgPosition": 11.950704225352112,
+    "avgCTR": 0.011737089201877934,
     "coverageErrors": [
       {
         "url": "https://powerstarapps.com/blog.html",
-        "impressions": 9,
+        "impressions": 8,
         "clicks": 0
       },
       {
@@ -500,12 +479,12 @@
       },
       {
         "url": "https://powerstarapps.com/ja/",
-        "impressions": 7,
+        "impressions": 6,
         "clicks": 0
       },
       {
         "url": "https://powerstarapps.com/privacy.html",
-        "impressions": 7,
+        "impressions": 6,
         "clicks": 0
       },
       {
@@ -525,12 +504,12 @@
       },
       {
         "url": "https://powerstarapps.com/products/microphone-landing/voice-amplifier-app.html",
-        "impressions": 1,
+        "impressions": 2,
         "clicks": 0
       },
       {
         "url": "https://powerstarapps.com/pt/",
-        "impressions": 7,
+        "impressions": 6,
         "clicks": 0
       },
       {
@@ -540,7 +519,7 @@
       },
       {
         "url": "https://powerstarapps.com/terms.html",
-        "impressions": 4,
+        "impressions": 3,
         "clicks": 0
       }
     ]
@@ -569,7 +548,7 @@
       "change": 71.62162162162163,
       "threshold": 20,
       "details": "Indexing gap: only 21 of 74 pages indexed (71.6% unindexed)",
-      "detectedAt": "2026-11-15T13:31:29.630Z"
+      "detectedAt": "2026-11-16T14:52:31.176Z"
     }
   ]
 }
