@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-16T17:48:57.673Z",
+  "lastUpdated": "2026-11-17T15:34:48.582Z",
   "gsc": {
     "indexedPages": 21,
     "totalSubmitted": 74,
@@ -81,10 +81,10 @@
       },
       {
         "query": "hygrometer app",
-        "impressions": 5,
+        "impressions": 4,
         "clicks": 0,
         "ctr": 0,
-        "position": 25.4
+        "position": 30
       },
       {
         "query": "indoor outdoor thermometer app",
@@ -105,11 +105,11 @@
         "impressions": 16,
         "clicks": 0,
         "ctr": 0,
-        "position": 9.3125
+        "position": 9.0625
       },
       {
         "query": "power star apps",
-        "impressions": 2,
+        "impressions": 1,
         "clicks": 0,
         "ctr": 0,
         "position": 2
@@ -123,17 +123,17 @@
       },
       {
         "query": "power stars app",
-        "impressions": 49,
+        "impressions": 50,
         "clicks": 0,
         "ctr": 0,
-        "position": 4.612244897959183
+        "position": 5.6
       },
       {
         "query": "power stars download",
-        "impressions": 15,
+        "impressions": 14,
         "clicks": 0,
         "ctr": 0,
-        "position": 8.333333333333332
+        "position": 8.357142857142858
       },
       {
         "query": "room humidity app",
@@ -144,10 +144,10 @@
       },
       {
         "query": "star power app",
-        "impressions": 7,
+        "impressions": 6,
         "clicks": 0,
         "ctr": 0,
-        "position": 15.428571428571429
+        "position": 12.666666666666666
       },
       {
         "query": "star power app download",
@@ -155,13 +155,6 @@
         "clicks": 0,
         "ctr": 0,
         "position": 20
-      },
-      {
-        "query": "starpower app",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 49
       },
       {
         "query": "temperature measure apps",
@@ -214,12 +207,11 @@
       }
     ],
     "clicks": {
-      "last7Days": 3,
-      "last30Days": 5,
+      "last7Days": 4,
+      "last30Days": 7,
       "trend": [
         0,
         0,
-        0,
         1,
         0,
         0,
@@ -245,14 +237,14 @@
         0,
         1,
         0,
-        0
+        0,
+        2
       ]
     },
     "impressions": {
-      "last7Days": 99,
-      "last30Days": 426,
+      "last7Days": 96,
+      "last30Days": 417,
       "trend": [
-        22,
         15,
         13,
         16,
@@ -280,16 +272,11 @@
         29,
         8,
         16,
-        16
+        16,
+        13
       ]
     },
     "dailyTrend": [
-      {
-        "date": "2026-10-17",
-        "clicks": 0,
-        "impressions": 22,
-        "position": 9.5
-      },
       {
         "date": "2026-10-18",
         "clicks": 0,
@@ -457,14 +444,25 @@
         "clicks": 0,
         "impressions": 16,
         "position": 7.625
+      },
+      {
+        "date": "2026-11-15",
+        "clicks": 2,
+        "impressions": 13,
+        "position": 10.23076923076923
       }
     ],
-    "avgPosition": 11.950704225352112,
-    "avgCTR": 0.011737089201877934,
+    "avgPosition": 12.026378896882495,
+    "avgCTR": 0.016786570743405275,
     "coverageErrors": [
       {
+        "url": "https://powerstarapps.com/products/microphone-landing/voice-amplifier-app.html",
+        "impressions": 5,
+        "clicks": 2
+      },
+      {
         "url": "https://powerstarapps.com/blog.html",
-        "impressions": 8,
+        "impressions": 9,
         "clicks": 0
       },
       {
@@ -489,7 +487,7 @@
       },
       {
         "url": "https://powerstarapps.com/products/ai-photo-landing/for-pets.html",
-        "impressions": 2,
+        "impressions": 1,
         "clicks": 0
       },
       {
@@ -499,12 +497,7 @@
       },
       {
         "url": "https://powerstarapps.com/products/ai-photo.html",
-        "impressions": 5,
-        "clicks": 0
-      },
-      {
-        "url": "https://powerstarapps.com/products/microphone-landing/voice-amplifier-app.html",
-        "impressions": 2,
+        "impressions": 4,
         "clicks": 0
       },
       {
@@ -548,7 +541,7 @@
       "change": 71.62162162162163,
       "threshold": 20,
       "details": "Indexing gap: only 21 of 74 pages indexed (71.6% unindexed)",
-      "detectedAt": "2026-11-16T14:52:31.176Z"
+      "detectedAt": "2026-11-17T15:34:49.159Z"
     }
   ]
 }
