@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-17T15:34:48.582Z",
+  "lastUpdated": "2026-11-18T15:11:31.615Z",
   "gsc": {
     "indexedPages": 21,
     "totalSubmitted": 74,
@@ -102,10 +102,10 @@
       },
       {
         "query": "lumiwall",
-        "impressions": 16,
+        "impressions": 14,
         "clicks": 0,
         "ctr": 0,
-        "position": 9.0625
+        "position": 8.642857142857142
       },
       {
         "query": "power star apps",
@@ -123,17 +123,17 @@
       },
       {
         "query": "power stars app",
-        "impressions": 50,
+        "impressions": 51,
         "clicks": 0,
         "ctr": 0,
-        "position": 5.6
+        "position": 5.784313725490196
       },
       {
         "query": "power stars download",
-        "impressions": 14,
+        "impressions": 13,
         "clicks": 0,
         "ctr": 0,
-        "position": 8.357142857142858
+        "position": 8.384615384615385
       },
       {
         "query": "room humidity app",
@@ -193,10 +193,10 @@
       },
       {
         "query": "which voice changer is best for android",
-        "impressions": 4,
+        "impressions": 5,
         "clicks": 0,
         "ctr": 0,
-        "position": 19.5
+        "position": 19.6
       },
       {
         "query": "تحميل",
@@ -207,11 +207,10 @@
       }
     ],
     "clicks": {
-      "last7Days": 4,
+      "last7Days": 3,
       "last30Days": 7,
       "trend": [
         0,
-        0,
         1,
         0,
         0,
@@ -238,14 +237,14 @@
         1,
         0,
         0,
-        2
+        2,
+        0
       ]
     },
     "impressions": {
-      "last7Days": 96,
-      "last30Days": 417,
+      "last7Days": 98,
+      "last30Days": 418,
       "trend": [
-        15,
         13,
         16,
         19,
@@ -273,16 +272,11 @@
         8,
         16,
         16,
-        13
+        13,
+        16
       ]
     },
     "dailyTrend": [
-      {
-        "date": "2026-10-18",
-        "clicks": 0,
-        "impressions": 15,
-        "position": 22.866666666666667
-      },
       {
         "date": "2026-10-19",
         "clicks": 0,
@@ -450,10 +444,16 @@
         "clicks": 2,
         "impressions": 13,
         "position": 10.23076923076923
+      },
+      {
+        "date": "2026-11-16",
+        "clicks": 0,
+        "impressions": 16,
+        "position": 24.1875
       }
     ],
-    "avgPosition": 12.026378896882495,
-    "avgCTR": 0.016786570743405275,
+    "avgPosition": 12.102870813397129,
+    "avgCTR": 0.01674641148325359,
     "coverageErrors": [
       {
         "url": "https://powerstarapps.com/products/microphone-landing/voice-amplifier-app.html",
@@ -467,7 +467,7 @@
       },
       {
         "url": "https://powerstarapps.com/es/products/voice-changer.html",
-        "impressions": 6,
+        "impressions": 7,
         "clicks": 0
       },
       {
@@ -541,7 +541,7 @@
       "change": 71.62162162162163,
       "threshold": 20,
       "details": "Indexing gap: only 21 of 74 pages indexed (71.6% unindexed)",
-      "detectedAt": "2026-11-17T15:34:49.159Z"
+      "detectedAt": "2026-11-18T15:11:31.999Z"
     }
   ]
 }
