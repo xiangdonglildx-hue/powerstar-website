@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-11-19T15:20:39.278Z",
+  "lastUpdated": "2026-11-20T15:09:27.892Z",
   "gsc": {
-    "indexedPages": 21,
+    "indexedPages": 19,
     "totalSubmitted": 74,
     "unindexedUrls": [
       "https://powerstarapps.com/es/products/thermometer.html",
@@ -105,7 +105,7 @@
         "impressions": 16,
         "clicks": 0,
         "ctr": 0,
-        "position": 8.6875
+        "position": 8.5
       },
       {
         "query": "power star",
@@ -126,14 +126,14 @@
         "impressions": 49,
         "clicks": 0,
         "ctr": 0,
-        "position": 6
+        "position": 6.081632653061225
       },
       {
         "query": "power stars download",
-        "impressions": 12,
+        "impressions": 10,
         "clicks": 0,
         "ctr": 0,
-        "position": 8.416666666666668
+        "position": 8.5
       },
       {
         "query": "room humidity app",
@@ -207,10 +207,9 @@
       }
     ],
     "clicks": {
-      "last7Days": 3,
-      "last30Days": 7,
+      "last7Days": 2,
+      "last30Days": 6,
       "trend": [
-        1,
         0,
         0,
         0,
@@ -238,14 +237,14 @@
         0,
         2,
         0,
+        0,
         0
       ]
     },
     "impressions": {
-      "last7Days": 88,
-      "last30Days": 424,
+      "last7Days": 91,
+      "last30Days": 419,
       "trend": [
-        16,
         19,
         19,
         13,
@@ -273,16 +272,11 @@
         16,
         13,
         16,
-        19
+        19,
+        11
       ]
     },
     "dailyTrend": [
-      {
-        "date": "2026-10-20",
-        "clicks": 1,
-        "impressions": 16,
-        "position": 11.5
-      },
       {
         "date": "2026-10-21",
         "clicks": 0,
@@ -450,20 +444,21 @@
         "clicks": 0,
         "impressions": 19,
         "position": 11.736842105263158
+      },
+      {
+        "date": "2026-11-18",
+        "clicks": 0,
+        "impressions": 11,
+        "position": 4.363636363636363
       }
     ],
-    "avgPosition": 12.26179245283019,
-    "avgCTR": 0.01650943396226415,
+    "avgPosition": 12.083532219570406,
+    "avgCTR": 0.014319809069212411,
     "coverageErrors": [
       {
         "url": "https://powerstarapps.com/products/microphone-landing/voice-amplifier-app.html",
         "impressions": 5,
         "clicks": 2
-      },
-      {
-        "url": "https://powerstarapps.com/blog.html",
-        "impressions": 9,
-        "clicks": 0
       },
       {
         "url": "https://powerstarapps.com/es/products/voice-changer.html",
@@ -477,12 +472,12 @@
       },
       {
         "url": "https://powerstarapps.com/ja/",
-        "impressions": 6,
+        "impressions": 7,
         "clicks": 0
       },
       {
         "url": "https://powerstarapps.com/privacy.html",
-        "impressions": 6,
+        "impressions": 7,
         "clicks": 0
       },
       {
@@ -502,17 +497,17 @@
       },
       {
         "url": "https://powerstarapps.com/pt/",
-        "impressions": 7,
+        "impressions": 8,
         "clicks": 0
       },
       {
         "url": "https://powerstarapps.com/pt/products/voice-changer.html",
-        "impressions": 3,
+        "impressions": 4,
         "clicks": 0
       },
       {
         "url": "https://powerstarapps.com/terms.html",
-        "impressions": 3,
+        "impressions": 4,
         "clicks": 0
       }
     ]
@@ -535,13 +530,22 @@
   },
   "alerts": [
     {
+      "type": "traffic_drop",
+      "severity": "P1",
+      "metric": "clicks.last7Days",
+      "change": 33.33333333333333,
+      "threshold": 30,
+      "details": "Clicks dropped 33.3% (from 3 to 2)",
+      "detectedAt": "2026-11-20T15:09:28.338Z"
+    },
+    {
       "type": "indexing_drop",
       "severity": "P1",
       "metric": "indexedPages",
-      "change": 71.62162162162163,
+      "change": 74.32432432432432,
       "threshold": 20,
-      "details": "Indexing gap: only 21 of 74 pages indexed (71.6% unindexed)",
-      "detectedAt": "2026-11-19T15:20:39.815Z"
+      "details": "Indexing gap: only 19 of 74 pages indexed (74.3% unindexed)",
+      "detectedAt": "2026-11-20T15:09:28.338Z"
     }
   ]
 }
