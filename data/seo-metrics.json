@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-21T14:18:13.339Z",
+  "lastUpdated": "2026-11-22T14:07:25.941Z",
   "gsc": {
     "indexedPages": 21,
     "totalSubmitted": 74,
@@ -17,6 +17,13 @@
     ],
     "topKeywords": [
       {
+        "query": "4k wallpapers for android",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 22
+      },
+      {
         "query": "ambient temp app",
         "impressions": 1,
         "clicks": 0,
@@ -29,6 +36,13 @@
         "clicks": 0,
         "ctr": 0,
         "position": 70
+      },
+      {
+        "query": "android wallpaper 4k",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 22
       },
       {
         "query": "best voice changer android",
@@ -73,13 +87,6 @@
         "position": 43
       },
       {
-        "query": "free fire mein voice change kaise karen",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 31
-      },
-      {
         "query": "hygrometer app",
         "impressions": 3,
         "clicks": 0,
@@ -102,10 +109,10 @@
       },
       {
         "query": "lumiwall",
-        "impressions": 15,
+        "impressions": 12,
         "clicks": 0,
         "ctr": 0,
-        "position": 8.133333333333333
+        "position": 8.083333333333332
       },
       {
         "query": "power star",
@@ -123,17 +130,17 @@
       },
       {
         "query": "power stars app",
-        "impressions": 48,
+        "impressions": 45,
         "clicks": 0,
         "ctr": 0,
-        "position": 6.166666666666667
+        "position": 6.4222222222222225
       },
       {
         "query": "power stars download",
-        "impressions": 10,
+        "impressions": 9,
         "clicks": 0,
         "ctr": 0,
-        "position": 10.9
+        "position": 11.222222222222221
       },
       {
         "query": "procesador star audio app",
@@ -151,10 +158,10 @@
       },
       {
         "query": "star power app",
-        "impressions": 7,
+        "impressions": 8,
         "clicks": 0,
         "ctr": 0,
-        "position": 12.285714285714286
+        "position": 12
       },
       {
         "query": "star power app download",
@@ -185,13 +192,6 @@
         "position": 84
       },
       {
-        "query": "thermometer hygrometer app",
-        "impressions": 2,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 24.5
-      },
-      {
         "query": "which voice changer is best for android",
         "impressions": 5,
         "clicks": 0,
@@ -210,7 +210,6 @@
       "last7Days": 2,
       "last30Days": 6,
       "trend": [
-        0,
         0,
         0,
         0,
@@ -238,14 +237,14 @@
         0,
         0,
         0,
+        0,
         0
       ]
     },
     "impressions": {
-      "last7Days": 89,
-      "last30Days": 414,
+      "last7Days": 83,
+      "last30Days": 405,
       "trend": [
-        19,
         13,
         14,
         12,
@@ -273,16 +272,11 @@
         16,
         19,
         11,
-        14
+        14,
+        10
       ]
     },
     "dailyTrend": [
-      {
-        "date": "2026-10-22",
-        "clicks": 0,
-        "impressions": 19,
-        "position": 11.31578947368421
-      },
       {
         "date": "2026-10-23",
         "clicks": 0,
@@ -450,15 +444,26 @@
         "clicks": 0,
         "impressions": 14,
         "position": 9.071428571428571
+      },
+      {
+        "date": "2026-11-20",
+        "clicks": 0,
+        "impressions": 10,
+        "position": 8.6
       }
     ],
-    "avgPosition": 11.951690821256038,
-    "avgCTR": 0.014492753623188406,
+    "avgPosition": 11.898765432098765,
+    "avgCTR": 0.014814814814814815,
     "coverageErrors": [
       {
         "url": "https://powerstarapps.com/products/microphone-landing/voice-amplifier-app.html",
         "impressions": 5,
         "clicks": 2
+      },
+      {
+        "url": "https://powerstarapps.com/blog/4k-wallpapers-for-android.html",
+        "impressions": 2,
+        "clicks": 0
       },
       {
         "url": "https://powerstarapps.com/es/products/voice-changer.html",
@@ -541,7 +546,7 @@
       "change": 71.62162162162163,
       "threshold": 20,
       "details": "Indexing gap: only 21 of 74 pages indexed (71.6% unindexed)",
-      "detectedAt": "2026-11-21T14:18:13.678Z"
+      "detectedAt": "2026-11-22T14:07:26.412Z"
     }
   ]
 }
