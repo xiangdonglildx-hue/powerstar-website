@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-22T14:07:25.941Z",
+  "lastUpdated": "2026-11-23T17:29:08.385Z",
   "gsc": {
     "indexedPages": 21,
     "totalSubmitted": 74,
@@ -39,10 +39,10 @@
       },
       {
         "query": "android wallpaper 4k",
-        "impressions": 1,
+        "impressions": 2,
         "clicks": 0,
         "ctr": 0,
-        "position": 22
+        "position": 14
       },
       {
         "query": "best voice changer android",
@@ -87,6 +87,13 @@
         "position": 43
       },
       {
+        "query": "how to set 4k wallpaper on android",
+        "impressions": 2,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 9
+      },
+      {
         "query": "hygrometer app",
         "impressions": 3,
         "clicks": 0,
@@ -112,7 +119,7 @@
         "impressions": 12,
         "clicks": 0,
         "ctr": 0,
-        "position": 8.083333333333332
+        "position": 8.25
       },
       {
         "query": "power star",
@@ -130,17 +137,17 @@
       },
       {
         "query": "power stars app",
-        "impressions": 45,
+        "impressions": 43,
         "clicks": 0,
         "ctr": 0,
-        "position": 6.4222222222222225
+        "position": 6.906976744186046
       },
       {
         "query": "power stars download",
-        "impressions": 9,
+        "impressions": 8,
         "clicks": 0,
         "ctr": 0,
-        "position": 11.222222222222221
+        "position": 11.625
       },
       {
         "query": "procesador star audio app",
@@ -178,18 +185,18 @@
         "position": 93
       },
       {
-        "query": "temperature meter app",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 68
-      },
-      {
         "query": "thermometer app",
         "impressions": 1,
         "clicks": 0,
         "ctr": 0,
         "position": 84
+      },
+      {
+        "query": "thermometer app android",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 17
       },
       {
         "query": "which voice changer is best for android",
@@ -207,10 +214,9 @@
       }
     ],
     "clicks": {
-      "last7Days": 2,
-      "last30Days": 6,
+      "last7Days": 1,
+      "last30Days": 7,
       "trend": [
-        0,
         0,
         0,
         0,
@@ -238,14 +244,14 @@
         0,
         0,
         0,
-        0
+        0,
+        1
       ]
     },
     "impressions": {
-      "last7Days": 83,
-      "last30Days": 405,
+      "last7Days": 96,
+      "last30Days": 418,
       "trend": [
-        13,
         14,
         12,
         18,
@@ -273,16 +279,11 @@
         19,
         11,
         14,
-        10
+        10,
+        26
       ]
     },
     "dailyTrend": [
-      {
-        "date": "2026-10-23",
-        "clicks": 0,
-        "impressions": 13,
-        "position": 10.23076923076923
-      },
       {
         "date": "2026-10-24",
         "clicks": 0,
@@ -450,10 +451,16 @@
         "clicks": 0,
         "impressions": 10,
         "position": 8.6
+      },
+      {
+        "date": "2026-11-21",
+        "clicks": 1,
+        "impressions": 26,
+        "position": 7.846153846153846
       }
     ],
-    "avgPosition": 11.898765432098765,
-    "avgCTR": 0.014814814814814815,
+    "avgPosition": 11.698564593301436,
+    "avgCTR": 0.01674641148325359,
     "coverageErrors": [
       {
         "url": "https://powerstarapps.com/products/microphone-landing/voice-amplifier-app.html",
@@ -462,7 +469,7 @@
       },
       {
         "url": "https://powerstarapps.com/blog/4k-wallpapers-for-android.html",
-        "impressions": 2,
+        "impressions": 7,
         "clicks": 0
       },
       {
@@ -482,7 +489,7 @@
       },
       {
         "url": "https://powerstarapps.com/ja/",
-        "impressions": 7,
+        "impressions": 5,
         "clicks": 0
       },
       {
@@ -540,13 +547,22 @@
   },
   "alerts": [
     {
+      "type": "traffic_drop",
+      "severity": "P1",
+      "metric": "clicks.last7Days",
+      "change": 50,
+      "threshold": 30,
+      "details": "Clicks dropped 50.0% (from 2 to 1)",
+      "detectedAt": "2026-11-23T17:29:08.839Z"
+    },
+    {
       "type": "indexing_drop",
       "severity": "P1",
       "metric": "indexedPages",
       "change": 71.62162162162163,
       "threshold": 20,
       "details": "Indexing gap: only 21 of 74 pages indexed (71.6% unindexed)",
-      "detectedAt": "2026-11-22T14:07:26.412Z"
+      "detectedAt": "2026-11-23T17:29:08.839Z"
     }
   ]
 }
