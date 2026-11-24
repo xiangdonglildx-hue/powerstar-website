@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-23T19:47:23.878Z",
+  "lastUpdated": "2026-11-24T17:02:55.656Z",
   "gsc": {
     "indexedPages": 21,
     "totalSubmitted": 74,
@@ -16,6 +16,13 @@
       "https://powerstarapps.com/pt/products/microphone.html"
     ],
     "topKeywords": [
+      {
+        "query": "4k wallpaper android",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 18
+      },
       {
         "query": "4k wallpapers for android",
         "impressions": 1,
@@ -116,10 +123,10 @@
       },
       {
         "query": "lumiwall",
-        "impressions": 12,
+        "impressions": 18,
         "clicks": 0,
         "ctr": 0,
-        "position": 8.25
+        "position": 8.444444444444445
       },
       {
         "query": "power star",
@@ -137,17 +144,17 @@
       },
       {
         "query": "power stars app",
-        "impressions": 43,
+        "impressions": 44,
         "clicks": 0,
         "ctr": 0,
-        "position": 6.906976744186046
+        "position": 6.931818181818182
       },
       {
         "query": "power stars download",
-        "impressions": 8,
+        "impressions": 7,
         "clicks": 0,
         "ctr": 0,
-        "position": 11.625
+        "position": 12.142857142857142
       },
       {
         "query": "procesador star audio app",
@@ -222,7 +229,6 @@
         0,
         0,
         0,
-        0,
         1,
         0,
         0,
@@ -245,14 +251,14 @@
         0,
         0,
         0,
-        1
+        1,
+        0
       ]
     },
     "impressions": {
-      "last7Days": 96,
-      "last30Days": 418,
+      "last7Days": 100,
+      "last30Days": 424,
       "trend": [
-        14,
         12,
         18,
         17,
@@ -280,16 +286,11 @@
         11,
         14,
         10,
-        26
+        26,
+        20
       ]
     },
     "dailyTrend": [
-      {
-        "date": "2026-10-24",
-        "clicks": 0,
-        "impressions": 14,
-        "position": 6.571428571428571
-      },
       {
         "date": "2026-10-25",
         "clicks": 0,
@@ -457,24 +458,30 @@
         "clicks": 1,
         "impressions": 26,
         "position": 7.846153846153846
+      },
+      {
+        "date": "2026-11-22",
+        "clicks": 0,
+        "impressions": 20,
+        "position": 6.65
       }
     ],
-    "avgPosition": 11.698564593301436,
-    "avgCTR": 0.01674641148325359,
+    "avgPosition": 11.629716981132075,
+    "avgCTR": 0.01650943396226415,
     "coverageErrors": [
       {
         "url": "https://powerstarapps.com/products/microphone-landing/voice-amplifier-app.html",
-        "impressions": 5,
+        "impressions": 7,
         "clicks": 2
       },
       {
         "url": "https://powerstarapps.com/blog/4k-wallpapers-for-android.html",
-        "impressions": 7,
+        "impressions": 9,
         "clicks": 0
       },
       {
         "url": "https://powerstarapps.com/es/products/voice-changer.html",
-        "impressions": 7,
+        "impressions": 6,
         "clicks": 0
       },
       {
@@ -509,12 +516,12 @@
       },
       {
         "url": "https://powerstarapps.com/products/ai-photo.html",
-        "impressions": 4,
+        "impressions": 3,
         "clicks": 0
       },
       {
         "url": "https://powerstarapps.com/pt/",
-        "impressions": 8,
+        "impressions": 9,
         "clicks": 0
       },
       {
@@ -547,22 +554,13 @@
   },
   "alerts": [
     {
-      "type": "traffic_drop",
-      "severity": "P1",
-      "metric": "clicks.last7Days",
-      "change": 50,
-      "threshold": 30,
-      "details": "Clicks dropped 50.0% (from 2 to 1)",
-      "detectedAt": "2026-11-23T17:29:08.839Z"
-    },
-    {
       "type": "indexing_drop",
       "severity": "P1",
       "metric": "indexedPages",
       "change": 71.62162162162163,
       "threshold": 20,
       "details": "Indexing gap: only 21 of 74 pages indexed (71.6% unindexed)",
-      "detectedAt": "2026-11-23T17:29:08.839Z"
+      "detectedAt": "2026-11-24T17:02:56.116Z"
     }
   ]
 }
