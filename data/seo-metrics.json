@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-25T16:52:29.940Z",
+  "lastUpdated": "2026-11-26T16:28:45.544Z",
   "gsc": {
     "indexedPages": 21,
     "totalSubmitted": 74,
@@ -87,13 +87,6 @@
         "position": 27
       },
       {
-        "query": "can i use a smartphone app to monitor indoor humidity accurately?",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 43
-      },
-      {
         "query": "how to set 4k wallpaper on android",
         "impressions": 2,
         "clicks": 0,
@@ -123,10 +116,17 @@
       },
       {
         "query": "lumiwall",
-        "impressions": 18,
+        "impressions": 19,
         "clicks": 0,
         "ctr": 0,
-        "position": 8.444444444444445
+        "position": 8.526315789473685
+      },
+      {
+        "query": "police wallpaper hd 4k for mobile",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 8
       },
       {
         "query": "power star",
@@ -136,32 +136,25 @@
         "position": 1
       },
       {
-        "query": "power star appu",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 7
-      },
-      {
         "query": "power stars app",
-        "impressions": 45,
+        "impressions": 48,
         "clicks": 0,
         "ctr": 0,
-        "position": 6.911111111111111
+        "position": 6.291666666666667
       },
       {
         "query": "power stars download",
-        "impressions": 7,
+        "impressions": 5,
         "clicks": 0,
         "ctr": 0,
-        "position": 11.571428571428571
+        "position": 13
       },
       {
         "query": "procesador star audio app",
-        "impressions": 1,
+        "impressions": 2,
         "clicks": 0,
         "ctr": 0,
-        "position": 36
+        "position": 33
       },
       {
         "query": "room humidity app",
@@ -172,10 +165,10 @@
       },
       {
         "query": "star power app",
-        "impressions": 7,
+        "impressions": 8,
         "clicks": 0,
         "ctr": 0,
-        "position": 12.428571428571429
+        "position": 12
       },
       {
         "query": "star power app download",
@@ -183,13 +176,6 @@
         "clicks": 0,
         "ctr": 0,
         "position": 20
-      },
-      {
-        "query": "temperature measure apps",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 93
       },
       {
         "query": "thermometer app",
@@ -234,7 +220,6 @@
         0,
         0,
         0,
-        0,
         1,
         0,
         0,
@@ -259,14 +244,14 @@
         0,
         1,
         0,
-        1
+        1,
+        0
       ]
     },
     "impressions": {
-      "last7Days": 99,
-      "last30Days": 430,
+      "last7Days": 101,
+      "last30Days": 425,
       "trend": [
-        18,
         17,
         10,
         11,
@@ -294,16 +279,11 @@
         10,
         26,
         20,
-        18
+        18,
+        13
       ]
     },
     "dailyTrend": [
-      {
-        "date": "2026-10-26",
-        "clicks": 0,
-        "impressions": 18,
-        "position": 16.944444444444443
-      },
       {
         "date": "2026-10-27",
         "clicks": 0,
@@ -471,10 +451,16 @@
         "clicks": 1,
         "impressions": 18,
         "position": 13.444444444444445
+      },
+      {
+        "date": "2026-11-24",
+        "clicks": 0,
+        "impressions": 13,
+        "position": 13.538461538461538
       }
     ],
-    "avgPosition": 11.867441860465116,
-    "avgCTR": 0.018604651162790697,
+    "avgPosition": 11.703529411764706,
+    "avgCTR": 0.018823529411764704,
     "coverageErrors": [
       {
         "url": "https://powerstarapps.com/products/microphone-landing/voice-amplifier-app.html",
@@ -518,7 +504,7 @@
       },
       {
         "url": "https://powerstarapps.com/products/ai-photo.html",
-        "impressions": 3,
+        "impressions": 2,
         "clicks": 0
       },
       {
@@ -528,7 +514,7 @@
       },
       {
         "url": "https://powerstarapps.com/pt/products/voice-changer.html",
-        "impressions": 4,
+        "impressions": 3,
         "clicks": 0
       },
       {
@@ -562,7 +548,7 @@
       "change": 71.62162162162163,
       "threshold": 20,
       "details": "Indexing gap: only 21 of 74 pages indexed (71.6% unindexed)",
-      "detectedAt": "2026-11-25T16:52:30.534Z"
+      "detectedAt": "2026-11-26T16:28:46.100Z"
     }
   ]
 }
