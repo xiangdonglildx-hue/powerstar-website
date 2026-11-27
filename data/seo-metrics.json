@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-26T16:28:45.544Z",
+  "lastUpdated": "2026-11-27T16:13:26.024Z",
   "gsc": {
     "indexedPages": 21,
     "totalSubmitted": 74,
@@ -52,18 +52,18 @@
         "position": 14
       },
       {
+        "query": "android wallpapers 4k",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 8
+      },
+      {
         "query": "best voice changer android",
         "impressions": 1,
         "clicks": 0,
         "ctr": 0,
         "position": 23
-      },
-      {
-        "query": "best voice changer app for android",
-        "impressions": 1,
-        "clicks": 0,
-        "ctr": 0,
-        "position": 25
       },
       {
         "query": "best voice changer apps for android",
@@ -74,10 +74,10 @@
       },
       {
         "query": "best voice changer for android",
-        "impressions": 2,
+        "impressions": 1,
         "clicks": 0,
         "ctr": 0,
-        "position": 14.5
+        "position": 10
       },
       {
         "query": "best voice filter app",
@@ -137,17 +137,24 @@
       },
       {
         "query": "power stars app",
-        "impressions": 48,
+        "impressions": 52,
         "clicks": 0,
         "ctr": 0,
-        "position": 6.291666666666667
+        "position": 6.153846153846154
       },
       {
         "query": "power stars download",
-        "impressions": 5,
+        "impressions": 4,
         "clicks": 0,
         "ctr": 0,
-        "position": 13
+        "position": 14.25
+      },
+      {
+        "query": "powerstar",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 11
       },
       {
         "query": "procesador star audio app",
@@ -199,6 +206,20 @@
         "position": 89
       },
       {
+        "query": "voice disguiser app",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 10
+      },
+      {
+        "query": "wallpaper 4k ultra hd android",
+        "impressions": 1,
+        "clicks": 0,
+        "ctr": 0,
+        "position": 3
+      },
+      {
         "query": "which voice changer is best for android",
         "impressions": 5,
         "clicks": 0,
@@ -217,7 +238,6 @@
       "last7Days": 2,
       "last30Days": 8,
       "trend": [
-        0,
         0,
         0,
         1,
@@ -245,14 +265,14 @@
         1,
         0,
         1,
+        0,
         0
       ]
     },
     "impressions": {
-      "last7Days": 101,
-      "last30Days": 425,
+      "last7Days": 113,
+      "last30Days": 434,
       "trend": [
-        17,
         10,
         11,
         16,
@@ -280,16 +300,11 @@
         26,
         20,
         18,
-        13
+        13,
+        26
       ]
     },
     "dailyTrend": [
-      {
-        "date": "2026-10-27",
-        "clicks": 0,
-        "impressions": 17,
-        "position": 8.882352941176471
-      },
       {
         "date": "2026-10-28",
         "clicks": 0,
@@ -457,19 +472,25 @@
         "clicks": 0,
         "impressions": 13,
         "position": 13.538461538461538
+      },
+      {
+        "date": "2026-11-25",
+        "clicks": 0,
+        "impressions": 26,
+        "position": 6.769230769230769
       }
     ],
-    "avgPosition": 11.703529411764706,
-    "avgCTR": 0.018823529411764704,
+    "avgPosition": 11.518433179723502,
+    "avgCTR": 0.018433179723502304,
     "coverageErrors": [
       {
         "url": "https://powerstarapps.com/products/microphone-landing/voice-amplifier-app.html",
-        "impressions": 7,
+        "impressions": 8,
         "clicks": 2
       },
       {
         "url": "https://powerstarapps.com/es/products/voice-changer.html",
-        "impressions": 4,
+        "impressions": 5,
         "clicks": 0
       },
       {
@@ -509,7 +530,7 @@
       },
       {
         "url": "https://powerstarapps.com/pt/",
-        "impressions": 9,
+        "impressions": 8,
         "clicks": 0
       },
       {
@@ -519,7 +540,7 @@
       },
       {
         "url": "https://powerstarapps.com/terms.html",
-        "impressions": 4,
+        "impressions": 5,
         "clicks": 0
       }
     ]
@@ -548,7 +569,7 @@
       "change": 71.62162162162163,
       "threshold": 20,
       "details": "Indexing gap: only 21 of 74 pages indexed (71.6% unindexed)",
-      "detectedAt": "2026-11-26T16:28:46.100Z"
+      "detectedAt": "2026-11-27T16:13:26.419Z"
     }
   ]
 }
